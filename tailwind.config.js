@@ -6,6 +6,13 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    letterSpacing: {
+      5: "-.6rem",
+    },
+    fontFamily: {
+      aileron: ["aileron", "sans-serif"],
+      serif: ["ui-serif", "Georgia"],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
