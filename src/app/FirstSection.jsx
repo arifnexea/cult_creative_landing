@@ -51,11 +51,11 @@ const NextSection = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            controls
+            // controls
             src="https://res.cloudinary.com/dirld0zbv/video/upload/v1710312954/Trove_2_x_Cult_Creative_gib6vm.mov"
             className="h-[37rem] rounded-lg snap-center"
-            // autoPlay
-            // loop
+            autoPlay
+            loop
           >
             <source type="video/mp4" />
           </motion.video>
@@ -65,9 +65,9 @@ const NextSection = () => {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="h-[37rem] rounded-lg snap-center"
             src="https://res.cloudinary.com/dirld0zbv/video/upload/v1710399550/Bata_x_Cult_Creative_iqeaa9.mov"
-            controls
-            // autoPlay
-            // loop
+            // controls
+            autoPlay
+            loop
           >
             <source type="video/mp4" />
           </motion.video>
