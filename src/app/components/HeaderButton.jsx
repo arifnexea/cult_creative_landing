@@ -1,15 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import useToggle from "../hooks/toggle";
 
 const HeaderButton = () => {
+  const [setToggle] = useToggle();
   return (
     <>
-      <Link href={"/brands"}>
+      <Link href={"/brands"} onClick={() => setToggle(false)}>
         <motion.button
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
-          className="py-1.5 px-10 rounded-lg text-[#123eff] text-sm border border-[#123fff]"
+          className="py-1.5 px-10 rounded-lg text-[#8A5AFE] text-sm border border-[#8A5AFE]"
         >
           For brands
         </motion.button>
@@ -17,7 +19,7 @@ const HeaderButton = () => {
       <motion.button
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.8 }}
-        className="py-1.5 px-10 rounded-lg text-[#123eff] text-sm border border-[#123fff]"
+        className="py-1.5 px-10 rounded-lg text-[#8A5AFE] text-sm border border-[#8A5AFE]"
       >
         For creators
       </motion.button>
