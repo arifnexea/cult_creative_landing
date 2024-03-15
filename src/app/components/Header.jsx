@@ -12,7 +12,11 @@ const Header = () => {
   const [state, toggle, setToggle] = useToggle();
 
   return (
-    <nav className="py-4 px-8 bg-[#FAF9F6] sticky top-0 z-10 drop-shadow-md">
+    <nav
+      className={`py-4 px-8 bg-[#FAF9F6] sticky top-0 z-10 ${
+        !state && "drop-shadow-md"
+      }`}
+    >
       <div className="flex items-center">
         <Link href={"/"} onClick={() => setToggle(false)}>
           <motion.div whileHover={{ scale: 1.2 }}>
@@ -22,6 +26,7 @@ const Header = () => {
               width={120}
               height={120}
               className="text-cyan-600"
+              priority
             />
           </motion.div>
         </Link>
