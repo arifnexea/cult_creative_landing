@@ -38,7 +38,7 @@ const NextSection = () => {
           transition={{
             duration: 0.5,
           }}
-          className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 "
+          className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
         >
           <h1 className="lg:text-9xl text-7xl lg:tracking-5 font-aileron">
             let <span className="font-serif">our</span>{" "}
@@ -68,7 +68,7 @@ const NextSection = () => {
             to drive genuine user engagement.
           </p>
         </motion.div>
-        <div className="relative my-10">
+        <div className="relative my-10 basis-1/2">
           <div className="sm:hidden">
             <motion.video
               key={vidIndex}
