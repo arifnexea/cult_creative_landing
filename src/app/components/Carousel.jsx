@@ -4,9 +4,10 @@ import Badge from "./Badge";
 const Carousel = ({ url, title, badge1, badge2, cur, key }) => {
   return (
     <div
-      className={`flex gap-12 flex-col lg:flex-row items-center justify-between w-screen ease-in-out duration-500 transition-transform -translate-x-[${
-        cur * 100
-      }%]`}
+      className={`flex gap-12 flex-col lg:flex-row items-center justify-between w-screen ease-in-out duration-500 transition-transform`}
+      style={{
+        transform: `translateX(-${cur * 100}%)`,
+      }}
     >
       <div className="basis-1/2">
         <div className="aspect-video">

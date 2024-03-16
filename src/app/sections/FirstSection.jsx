@@ -27,7 +27,7 @@ const NextSection = () => {
   }, [vidIndex]);
 
   return (
-    <section className="p-8 bg-[#8A5AFE]">
+    <section className="p-8 bg-gradient-to-b from-[#8A5AFE] from-90% to-[#F4F4F4]">
       <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
