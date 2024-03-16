@@ -1,10 +1,7 @@
 "use client";
-import Image from "next/image";
-import Header from "./components/Header";
-import FirstSection from "./FirstSection";
+import FirstSection from "./sections/FirstSection";
 import { useEffect, useState } from "react";
-import useToggle from "./hooks/toggle";
-import SecondSection from "./SecondSection";
+import SecondSection from "./sections/SecondSection.jsx";
 
 export default function Home() {
   return (
