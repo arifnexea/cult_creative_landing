@@ -6,10 +6,10 @@ import { Icon } from "@iconify/react";
 
 const vid = [
   {
-    url: "https://res.cloudinary.com/dirld0zbv/video/upload/v1710312954/Trove_2_x_Cult_Creative_gib6vm.mov",
+    url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
   },
   {
-    url: "https://res.cloudinary.com/dirld0zbv/video/upload/v1710399550/Bata_x_Cult_Creative_iqeaa9.mov",
+    url: "https://storage.googleapis.com/landing_page_cult/Brands/Slae%20Cosmetics%20x%20Cult%20Creative.mov",
   },
 ];
 
@@ -17,12 +17,12 @@ const NextSection = () => {
   const [vidIndex, setVidIndex] = useState(0);
 
   useEffect(() => {
-    const test = setInterval(() => {
+    const vidScroll = setInterval(() => {
       setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
     }, 4000);
 
     return () => {
-      clearInterval(test);
+      clearInterval(vidScroll);
     };
   }, [vidIndex]);
 
