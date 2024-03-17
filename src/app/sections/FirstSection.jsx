@@ -79,6 +79,9 @@ const NextSection = () => {
               className="h-[37rem] rounded-lg"
               autoPlay
               loop
+              muted
+              webkit-playsinline
+              playsinline
             >
               <source type="video/mp4" />
             </motion.video>
@@ -96,6 +99,9 @@ const NextSection = () => {
                     className="h-[37rem] rounded-lg snap-center"
                     autoPlay
                     loop
+                    muted
+                    webkit-playsinline
+                    playsinline
                   >
                     <source type="video/mp4" />
                   </motion.video>
