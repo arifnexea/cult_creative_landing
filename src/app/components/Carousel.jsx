@@ -1,7 +1,7 @@
 import React from "react";
 import Badge from "./Badge";
 
-const Carousel = ({ url, title, badge1, badge2, cur, key }) => {
+const Carousel = ({ url, title, badge1, badge2, cur }) => {
   return (
     <div
       className={`flex gap-12 flex-col lg:flex-row items-center justify-between w-screen ease-in-out duration-500 transition-transform`}
@@ -17,6 +17,8 @@ const Carousel = ({ url, title, badge1, badge2, cur, key }) => {
             autoPlay
             loop
             muted
+            webkit-playsinline
+            playsinline
           >
             <source type="video/mp4" />
           </video>
