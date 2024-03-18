@@ -90,21 +90,22 @@ const NextSection = () => {
             <div className="flex gap-3 overflow-scroll">
               {vid.map((elem, i) => {
                 return (
-                  <motion.video
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    src={elem.url}
-                    className="h-[37rem] rounded-lg snap-center"
-                    autoPlay
-                    loop
-                    muted
-                    webkit-playsinline
-                    playsinline
-                  >
-                    <source type="video/mp4" />
-                  </motion.video>
+                  <div div key={i}>
+                    <motion.video
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5 }}
+                      src={elem.url}
+                      className="h-[37rem] rounded-lg snap-center"
+                      autoPlay
+                      loop
+                      muted
+                      webkit-playsinline
+                      playsinline
+                    >
+                      <source type="video/mp4" />
+                    </motion.video>
+                  </div>
                 );
               })}
             </div>
