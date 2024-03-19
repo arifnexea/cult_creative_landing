@@ -80,14 +80,13 @@ const NextSection = () => {
               autoPlay
               loop
               muted
-              webkit-playsinline
-              playsinline
+              playsInline
             >
               <source type="video/mp4" />
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <div className="flex gap-3 overflow-scroll">
+            <div className="flex gap-3 overflow-scroll justify-center">
               {vid.map((elem, i) => {
                 return (
                   <div div key={i}>
@@ -101,7 +100,7 @@ const NextSection = () => {
                       loop
                       muted
                       webkit-playsinline
-                      playsinline
+                      playsInline
                     >
                       <source type="video/mp4" />
                     </motion.video>
