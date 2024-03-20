@@ -3,26 +3,28 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import useToggle from "../hooks/toggle";
 
-const HeaderButton = () => {
+const HeaderButton = ({btnStyle ,textColor ,borderColor}) => {
   const [setToggle] = useToggle();
   return (
     <>
-      <Link href={"/brands"} onClick={() => setToggle(false)}>
+      <Link href={"/home"} onClick={() => setToggle(false)}>
         <motion.button
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
-          className="py-1.5 px-10 rounded-lg text-[#8A5AFE] text-sm border border-[#8A5AFE]"
+          className={`py-1.5 px-10 rounded-lg text-[${textColor}] text-sm border border-[${borderColor}]  ${btnStyle}`}
         >
           For brands
         </motion.button>
       </Link>
-      <motion.button
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.8 }}
-        className="py-1.5 px-10 rounded-lg text-[#8A5AFE] text-sm border border-[#8A5AFE]"
-      >
-        For creators
-      </motion.button>
+      <Link href={"/home"} onClick={() => setToggle(false)}>
+        <motion.button
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.8 }}
+          className={`py-1.5 px-10 rounded-lg text-[${textColor}] text-sm border border-[${borderColor}] ${btnStyle}`}
+        >
+          For creators
+        </motion.button>
+      </Link>
     </>
   );
 };

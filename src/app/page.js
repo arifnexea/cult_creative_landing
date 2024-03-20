@@ -8,10 +8,11 @@ import FifthSection from "./sections/FifthSection";
 import SixthSection from "./sections/SixthSection";
 import SeventhSection from "./sections/SeventhSection";
 import LastSection from "./sections/LastSection";
-
+import Header from "./components/Header";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
+      <Header logo={"/images/logo.png"} />
       <Suspense fallback={<p>Loading...</p>}>
         <FirstSection />
         <SecondSection />

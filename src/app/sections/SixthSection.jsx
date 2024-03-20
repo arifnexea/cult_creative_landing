@@ -42,6 +42,7 @@ const SixthSection = () => {
       <Companies
         title={" join 900+ other companies using Cult Creative"}
         companiesImages={companies}
+        rounded={"rounded-full"}
       />
     </main>
   );

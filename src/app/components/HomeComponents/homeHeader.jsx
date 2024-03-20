@@ -2,13 +2,13 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import HeaderButton from "./HeaderButton";
+import HeaderButton from "../HeaderButton";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import useToggle from "../hooks/toggle";
-import NavSmall from "./NavSmall";
+import useToggle from "@/app/hooks/toggle";
+import NavSmall from "../NavSmall";
 
-const Header = ({logo}) => {
+const HomeHeader = ({ logo }) => {
   const [state, toggle, setToggle] = useToggle();
 
   return (
@@ -31,7 +31,11 @@ const Header = ({logo}) => {
           </motion.div>
         </Link>
         <div className="sm:flex ms-auto gap-5 hidden">
-          <HeaderButton textColor={"#8A5AFE"} borderColor={"#8A5AFE"} btnStyle={""} />
+          <HeaderButton
+            textColor={"#1340FF"}
+            borderColor={"#1340FF"}
+            btnStyle={""}
+          />
         </div>
         <motion.div
           whileHover={{ scale: 1.2 }}
@@ -50,12 +54,12 @@ const Header = ({logo}) => {
       <NavSmall
         isVisible={state}
         linerstart={"#FAF9F6"}
-        linerEnd={"#8A5AFE"}
-        btnColor={"#5224be"}
+        linerEnd={"#1340FF"}
+        btnColor={"#1340FF"}
         btnstyle={""}
       />
     </nav>
   );
 };
 
-export default Header;
+export default HomeHeader;
