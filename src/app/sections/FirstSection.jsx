@@ -41,7 +41,7 @@ const NextSection = () => {
           className="flex flex-col text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="2xl:text-[12rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.8,
             }}
@@ -98,7 +98,7 @@ const NextSection = () => {
                   <video
                     key={i}
                     src={elem.url}
-                    className="h-[37rem] 2xl:h-[47rem] rounded-lg"
+                    className="h-[37rem] 2xl:h-[70vh] xl:[h-40vh] rounded-lg"
                     autoPlay
                     loop
                     muted
