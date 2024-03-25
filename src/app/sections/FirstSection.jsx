@@ -113,7 +113,7 @@ const NextSection = () => {
                 webkit-playsinline
                 playsInline
               >
-                <source type="video/mp4" />
+                <source type="video/mov" />
               </video>
               {/* {vid.map((elem, i) => {
                 return (
