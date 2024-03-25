@@ -21,7 +21,7 @@ const Header = () => {
         <Link href={"/"} onClick={() => setToggle(false)}>
           <motion.div whileHover={{ scale: 1.2 }}>
             <Image
-              src={"/images/logo.png"}
+              src={"/images/logo.svg"}
               alt="logo"
               width={120}
               height={120}
