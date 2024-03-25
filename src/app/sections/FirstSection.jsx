@@ -70,7 +70,7 @@ const NextSection = () => {
           </p>
         </motion.div>
         <div className="relative my-10 basis-1/2">
-          <div className="sm:hidden">
+          {/* <div className="sm:hidden">
             <motion.video
               key={vidIndex}
               initial={{ opacity: 0, scale: 0.5 }}
@@ -85,7 +85,7 @@ const NextSection = () => {
             >
               <source type="video/mp4" />
             </motion.video>
-          </div>
+          </div> */}
           <div className="hidden sm:block">
             <div className="flex gap-3 justify-center">
               {vid.map((elem, i) => {
