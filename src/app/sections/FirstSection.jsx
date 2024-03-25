@@ -87,13 +87,35 @@ const NextSection = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+            <div
+              // initial={{ opacity: 0, scale: 0.5 }}
+              // animate={{ opacity: 1, scale: 1 }}
+              // transition={{ duration: 0.5 }}
               className="flex gap-3 justify-center"
             >
-              {vid.map((elem, i) => {
+              <video
+                src={vid[0].url}
+                className="h-[37rem] rounded-lg"
+                autoPlay
+                loop
+                muted
+                webkit-playsinline
+                playsInline
+              >
+                <source type="video/mp4" />
+              </video>
+              <video
+                src={vid[1].url}
+                className="h-[37rem] rounded-lg"
+                autoPlay
+                loop
+                muted
+                webkit-playsinline
+                playsInline
+              >
+                <source type="video/mp4" />
+              </video>
+              {/* {vid.map((elem, i) => {
                 return (
                   <video
                     key={i}
@@ -108,8 +130,8 @@ const NextSection = () => {
                     <source type="video/mp4" />
                   </video>
                 );
-              })}
-            </motion.div>
+              })} */}
+            </div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
             {vid.map((_, i) => {
