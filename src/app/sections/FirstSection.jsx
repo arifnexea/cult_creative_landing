@@ -90,22 +90,21 @@ const NextSection = () => {
             <div className="flex gap-3 justify-center">
               {vid.map((elem, i) => {
                 return (
-                  <div key={i}>
-                    <motion.video
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5 }}
-                      src={elem.url}
-                      className="h-[37rem] rounded-lg"
-                      autoPlay
-                      loop
-                      muted
-                      webkit-playsinline
-                      playsInline
-                    >
-                      <source type="video/mp4" />
-                    </motion.video>
-                  </div>
+                  <motion.video
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    src={elem.url}
+                    className="h-[37rem] rounded-lg"
+                    autoPlay
+                    loop
+                    muted
+                    webkit-playsinline
+                    playsInline
+                  >
+                    <source type="video/mp4" />
+                  </motion.video>
                 );
               })}
             </div>
