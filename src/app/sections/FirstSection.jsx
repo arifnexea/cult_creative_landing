@@ -41,7 +41,7 @@ const NextSection = () => {
           className="flex flex-col text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[12rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.8,
             }}
@@ -87,10 +87,10 @@ const NextSection = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <div
-              // initial={{ opacity: 0, scale: 0.5 }}
-              // animate={{ opacity: 1, scale: 1 }}
-              // transition={{ duration: 0.5 }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
               className="flex gap-3 justify-center"
             >
               {vid.map((elem, i) => {
@@ -98,7 +98,7 @@ const NextSection = () => {
                   <video
                     key={i}
                     src={elem.url}
-                    className="h-[37rem] rounded-lg"
+                    className="h-[37rem] 2xl:h-[47rem] rounded-lg"
                     autoPlay
                     loop
                     muted
@@ -109,7 +109,7 @@ const NextSection = () => {
                   </video>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
             {vid.map((_, i) => {
