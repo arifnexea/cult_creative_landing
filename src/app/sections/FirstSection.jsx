@@ -9,7 +9,7 @@ const vid = [
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
   },
   {
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Slae%20Cosmetics%20x%20Cult%20Creative.mov",
+    url: "https://storage.googleapis.com/landing_page_cult/Brands/Slae%20Cosmetics%20x%20Cult%20Creative.mp4",
   },
 ];
 
@@ -93,29 +93,7 @@ const NextSection = () => {
               // transition={{ duration: 0.5 }}
               className="flex gap-3 justify-center"
             >
-              <video
-                src={vid[0].url}
-                className="h-[37rem] rounded-lg"
-                autoPlay
-                loop
-                muted
-                webkit-playsinline
-                playsInline
-              >
-                <source type="video/mp4" />
-              </video>
-              <video
-                src={vid[1].url}
-                className="h-[37rem] rounded-lg"
-                autoPlay
-                loop
-                muted
-                webkit-playsinline
-                playsInline
-              >
-                <source type="video/quicktime" />
-              </video>
-              {/* {vid.map((elem, i) => {
+              {vid.map((elem, i) => {
                 return (
                   <video
                     key={i}
@@ -130,7 +108,7 @@ const NextSection = () => {
                     <source type="video/mp4" />
                   </video>
                 );
-              })} */}
+              })}
             </div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
