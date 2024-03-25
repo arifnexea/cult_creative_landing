@@ -87,16 +87,16 @@ const NextSection = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <div className="flex gap-3 overflow-scroll justify-center">
+            <div className="flex gap-3 justify-center">
               {vid.map((elem, i) => {
                 return (
-                  <div div key={i}>
+                  <div key={i}>
                     <motion.video
                       initial={{ opacity: 0, scale: 0.5 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5 }}
                       src={elem.url}
-                      className="h-[37rem] rounded-lg snap-center"
+                      className="h-[37rem] rounded-lg"
                       autoPlay
                       loop
                       muted
