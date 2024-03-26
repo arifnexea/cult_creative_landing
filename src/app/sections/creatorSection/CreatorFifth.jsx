@@ -1,19 +1,19 @@
+"use client";
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
 import React, { useState } from "react";
 import { motion, useScroll } from "framer-motion";
 
-
-const FifthSection = () => {
+function CreatorFifth() {
   const [cur, setCur] = useState(0);
   return (
-    <section className="py-10 px-6 bg-[#8A5AFE] font-aileron text-[#F4F4F4]">
+    <section className="py-9 px-6 bg-[#006D53] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
         <div className="text-center col-span-2 md:col-span-1">
           <h1 className="text-7xl md:text-8xl lg:text-9xl -tracking-[.4rem] leading-[4rem]">
-            hear from
+            trusted
             <br />
-            <span className="font-serif italic">our users</span>
+            <span className="font-serif italic">by {"  "} creators</span>
           </h1>
         </div>
         <div className="col-span-2 md:col-span-1">
@@ -24,20 +24,18 @@ const FifthSection = () => {
                 transform: `translateX(-${cur * 100}%)`,
               }}
             >
-              <div className="flex flex-col py-5 mx-10 h-[80vh] gap-20">
+              <div className="flex flex-col w-[75%] py-5 mx-10 h-[80vh] gap-20">
                 <Icon icon="fa:quote-right" width={100} />
-                <p className="text-sm lg:text-2xl font-thin uppercase tracking-[.2rem]">
+                <p className="text-lg lg:text-3xl font-thin uppercase tracking-[.2rem]">
                   <TypeAnimation
                     sequence={[
-                      "WE LOVED Cult creative’s Wide network of content creators and Friendly account managers!",
+                      "Cult Creative has been exceptional in bridging the connection between the client and myself, articulating the client’s  brand identity with precision.",
                     ]}
                     speed={50}
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -IRMA syazreena,
-                  <span className="uppercase font-bold tracking-[0]">reka</span>
-                  .
+                -Anniecia thomas.
                 </p>
               </div>
             </motion.div>
@@ -47,22 +45,18 @@ const FifthSection = () => {
                 transform: `translateX(-${cur * 100}%)`,
               }}
             >
-              <div className="flex flex-col py-5 mx-10 h-[80vh] gap-20">
+              <div className="flex flex-col w-[75%] py-5 mx-10 h-[80vh] gap-20">
                 <Icon icon="fa:quote-right" width={100} />
-                <p className="text-sm lg:text-2xl font-thin uppercase  tracking-[.2rem]">
+                <p className="text-lg lg:text-3xl font-thin uppercase tracking-[.2rem]">
                   <TypeAnimation
                     sequence={[
-                      "cult creative understood our goals, needs and direction. They served us professionally  and filled in the gap.",
+                        "i appreciate cult creative for guiding me when they didn’t have to."
                     ]}
                     speed={50}
                   />
                 </p>
-                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.5rem]">
-                  -azah aziz,
-                  <span className="uppercase font-bold tracking-[0]">
-                    KISSAHH LABELS
-                  </span>
-                  .
+                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
+                -Wong yuet ting.
                 </p>
               </div>
             </motion.div>
@@ -72,22 +66,18 @@ const FifthSection = () => {
                 transform: `translateX(-${cur * 100}%)`,
               }}
             >
-              <div className="flex flex-col py-5 mx-10 h-[80vh] gap-20">
+              <div className="flex flex-col w-[75%] py-5 mx-10 h-[80vh] gap-20">
                 <Icon icon="fa:quote-right" width={100} />
-                <p className="text-sm lg:text-2xl font-thin uppercase  tracking-[.2rem]">
+                <p className="text-lg lg:text-3xl font-thin uppercase tracking-[.2rem]">
                   <TypeAnimation
                     sequence={[
-                      "cult creative’s attention to detail and their systematic workflow process are things we love about them.",
+                        "Cult creative deserves praise for their attention to detail. they carefully considered my concerns throughout the campaign."
                     ]}
                     speed={50}
                   />
                 </p>
-                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.5rem]">
-                  -charmaine chow,
-                  <span className="uppercase font-bold tracking-[0]">
-                    farm fresh
-                  </span>
-                  .
+                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
+                -Arina farhah
                 </p>
               </div>
             </motion.div>
@@ -119,6 +109,6 @@ const FifthSection = () => {
       </div>
     </section>
   );
-};
+}
 
-export default FifthSection;
+export default CreatorFifth;

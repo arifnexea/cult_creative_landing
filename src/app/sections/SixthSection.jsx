@@ -36,12 +36,13 @@ const companies = [
   },
 ];
 
-const SixthSection = () => {
+const SixthSection = ({title}) => {
   return (
     <main className="bg-[#F4F4F4] py-10 px-5">
       <Companies
-        title={" join 900+ other companies using Cult Creative"}
+        title={title}
         companiesImages={companies}
+        rounded={"rounded-full"}
       />
     </main>
   );

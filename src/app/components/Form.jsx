@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import FormInput from "./FormInput";
 
-const Form = ({ image }) => {
+const Form = ({ image, color }) => {
   return (
     <section className="flex items-center justify-center">
       <div className="basis-1/2 hidden xl:block">
@@ -25,7 +25,7 @@ const Form = ({ image }) => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
-              className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-serif uppercase flex-none"
+              className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-serif uppercase flex-none`}
             >
               Book a call
             </motion.button>
@@ -36,44 +36,60 @@ const Form = ({ image }) => {
             Want to get in touch? Tell us what you need.
           </h1>
           <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 text-[#F4F4F4]">
-            <FormInput label={"Name"} name={"first-name"} type={"text"} />
+            <FormInput
+              label={"Name"}
+              name={"first-name"}
+              type={"text"}
+              color={color}
+            />
             <FormInput
               label={"Work Email"}
               name={"first-name"}
               type={"email"}
+              color={color}
             />
             <FormInput
               label={"Phone Number"}
               name={"first-name"}
               type={"number"}
+              color={color}
             />
             <FormInput
               label={"Company Name"}
               name={"first-name"}
               type={"test"}
+              color={color}
             />
             <FormInput
               label={"Company Size"}
               name={"first-name"}
               type={"test"}
+              color={color}
             />
-            <FormInput label={"Industry"} name={"first-name"} type={"test"} />
+            <FormInput
+              label={"Industry"}
+              name={"first-name"}
+              type={"test"}
+              color={color}
+            />
             <FormInput
               label={"Monthly Influencer Budget"}
               name={"first-name"}
               type={"test"}
+              color={color}
             />
             <FormInput
               label={"Company Size"}
               name={"first-name"}
               type={"test"}
+              color={color}
             />
           </div>
           <div className="mx-auto">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
-              className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-serif uppercase flex-none"
+              className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-serif uppercase flex-none`}
             >
               Submit
             </motion.button>

@@ -2,13 +2,13 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import HeaderButton from "./HeaderButton";
+import HeaderButton from "../HeaderButton";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import useToggle from "../hooks/toggle";
-import NavSmall from "./NavSmall";
+import useToggle from "@/app/hooks/toggle";
+import NavSmall from "../NavSmall";
 
-const Header = ({logo}) => {
+const HomeHeader = ({ logo ,color  }) => {
   const [state, toggle, setToggle] = useToggle();
 
   return (
@@ -22,7 +22,6 @@ const Header = ({logo}) => {
           <motion.div whileHover={{ scale: 1.2 }}>
             <Image
               src={`${logo}`}
-//               src={"/images/logo.svg"}
               alt="logo"
               width={180}
               height={180}
@@ -32,7 +31,10 @@ const Header = ({logo}) => {
           </motion.div>
         </Link>
         <div className="sm:flex ms-auto gap-5 hidden">
-          <HeaderButton textColor={"#8A5AFE"} borderColor={"#8A5AFE"} btnStyle={""} />
+          <HeaderButton
+            borderColor={color}
+            btnStyle={""}
+          />
         </div>
         <motion.div
           whileHover={{ scale: 1.2 }}
@@ -51,12 +53,12 @@ const Header = ({logo}) => {
       <NavSmall
         isVisible={state}
         linerstart={"#FAF9F6"}
-        linerEnd={"#8A5AFE"}
-        btnColor={"#5224be"}
+        linerEnd={"#FAF9F6"}
+        btnColor={color}
         btnstyle={""}
       />
     </nav>
   );
 };
 
-export default Header;
+export default HomeHeader;
