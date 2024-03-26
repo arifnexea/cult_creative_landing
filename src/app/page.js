@@ -1,27 +1,31 @@
 "use client";
-import FirstSection from "./sections/FirstSection";
+import FirstSection from "./sections/brandsection/FirstSection";
 import { Suspense, useEffect, useState } from "react";
-import SecondSection from "./sections/SecondSection.jsx";
-import ThirdSection from "./sections/ThirdSection";
-import FourthSection from "./sections/FourthSection";
-import FifthSection from "./sections/FifthSection";
-import SixthSection from "./sections/SixthSection";
-import SeventhSection from "./sections/SeventhSection";
-import LastSection from "./sections/LastSection";
+import SixthSection from "./sections/brandsection/SixthSection";
+import LastSection from "./sections/brandsection/LastSection";
 import Header from "./components/Header";
+import HomeFirst from "./sections/homeSection/homeFirst";
+import HomeTwo from "./sections/homeSection/homeTwo";
+import HomeThree from "./sections/homeSection/homeThree";
+import HomeFour from "./sections/homeSection/homeFour";
+import HomeFive from "./sections/homeSection/homeFive";
+import HomeSix from "./sections/homeSection/homeSix";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <Header logo={"/images/brands/cc_logo3.png"} />
+      <Header logo={"/images/logo.svg"} />
       <Suspense fallback={<p>Loading...</p>}>
-        <FirstSection />
-        <SecondSection />
-        <ThirdSection />
-        <FourthSection />
-        <FifthSection />
-        <SixthSection title={" join 900+ other companies using Cult Creative"} />
-        <SeventhSection />
-        <LastSection color={"#8A5AFE"} />
+        <HomeFirst />
+        <HomeTwo />
+        <HomeThree />
+        <SixthSection
+          title={" join 900+ other companies using Cult Creative"}
+        />
+        <HomeFour />
+        <HomeFive />
+        <HomeSix />
+        <LastSection color={"#1340FF"} />
       </Suspense>
     </main>
   );

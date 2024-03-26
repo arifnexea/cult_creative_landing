@@ -1,5 +1,5 @@
 import React from "react";
-import Companies from "../components/Companies";
+import Companies from "../../components/Companies";
 
 const companies = [
   {
@@ -36,7 +36,7 @@ const companies = [
   },
 ];
 
-const SixthSection = ({title}) => {
+const SixthSection = ({ title }) => {
   return (
     <main className="bg-[#F4F4F4] py-10 px-5">
       <Companies

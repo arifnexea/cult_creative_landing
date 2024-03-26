@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import { Icon } from "@iconify/react";
 
-const LastSection = ({color}) => {
+const LastSection = ({ color }) => {
   return (
     <main className="bg-[#F4F4F4] py-10 px-20">
       <Footer hoverText={color} />

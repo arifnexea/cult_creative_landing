@@ -1,5 +1,6 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import Carousel from "../components/Carousel";
+import Carousel from "../../components/Carousel";
 import { Icon } from "@iconify/react";
 
 const vids = [

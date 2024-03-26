@@ -13,7 +13,7 @@ const vid = [
   },
 ];
 
-const NextSection = () => {
+const FirstSection = () => {
   const [vidIndex, setVidIndex] = useState(0);
 
   useEffect(() => {
@@ -81,6 +81,7 @@ const NextSection = () => {
               autoPlay
               loop
               muted
+              webkit-playsinline
               playsInline
             >
               <source type="video/mp4" />
@@ -128,7 +129,7 @@ const NextSection = () => {
         </div>
       </div>
 
-      <div className="text-center mt-5">
+      <div className="text-center my-10">
         <motion.button
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
@@ -141,4 +142,4 @@ const NextSection = () => {
   );
 };
 
-export default NextSection;
+export default FirstSection;

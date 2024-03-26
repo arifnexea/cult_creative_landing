@@ -1,8 +1,8 @@
+"use client";
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
 import React, { useState } from "react";
 import { motion, useScroll } from "framer-motion";
-
 
 const FifthSection = () => {
   const [cur, setCur] = useState(0);

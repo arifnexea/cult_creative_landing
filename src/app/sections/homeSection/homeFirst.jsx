@@ -27,7 +27,7 @@ const HomeFirst = () => {
   }, [vidIndex]);
 
   return (
-    <section className="p-8 bg-gradient-to-b from-[#1340FF] from-90% to-[#F4F4F4]">
+    <section className="p-8 bg-[#1340FF]">
       <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -40,7 +40,12 @@ const HomeFirst = () => {
           }}
           className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
         >
-          <h1 className="lg:text-9xl text-7xl lg:tracking-5 font-aileron">
+          <h1
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            style={{
+              lineHeight: 0.8,
+            }}
+          >
             where{" "}
             <motion.span
               initial={{ opacity: 0, scale: 0 }}
@@ -51,7 +56,7 @@ const HomeFirst = () => {
               transition={{
                 duration: 0.5,
               }}
-              className="font-serif italic"
+              className="-tracking-[.5rem] xl:-tracking-[1rem] font-times italic"
             >
               <br /> brands & <br />
               creators
@@ -59,11 +64,11 @@ const HomeFirst = () => {
             <br />
             co-create.
           </h1>
-          <p className="text-lg text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
             Cult Creative is the all-in-one portal for creators and brands to
             seamlessly work, collaborate and elevate.
           </p>
-          <p className="text-lg text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
             With our 13,000 talent pool across Southeast Asia, we help transform
             ideas into captivating, quality content for brands.
           </p>
@@ -80,35 +85,36 @@ const HomeFirst = () => {
               autoPlay
               loop
               muted
-              // webkit-playsinline
-              // playsinline
+              webkit-playsinline
+              playsInline
             >
               <source type="video/mp4" />
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <div className="flex gap-3 overflow-scroll">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex gap-3 overflow-scroll justify-center"
+            >
               {vid.map((elem, i) => {
                 return (
-                  <div div key={i}>
-                    <motion.video
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5 }}
-                      src={elem.url}
-                      className="h-[37rem] rounded-lg snap-center"
-                      autoPlay
-                      loop
-                      muted
-                      // webkit-playsinline
-                      // playsinline
-                    >
-                      <source type="video/mp4" />
-                    </motion.video>
-                  </div>
+                  <video
+                    key={i}
+                    src={elem.url}
+                    className="h-[37rem] 2xl:h-[70vh] xl:[h-40vh] rounded-lg"
+                    autoPlay
+                    loop
+                    muted
+                    webkit-playsinline
+                    playsInline
+                  >
+                    <source type="video/mp4" />
+                  </video>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
             {vid.map((_, i) => {
@@ -127,11 +133,11 @@ const HomeFirst = () => {
         </div>
       </div>
 
-      <div className="text-center mt-5">
+      <div className="text-center my-10">
         <motion.button
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
-          className="bg-slate-100 py-2 px-12 rounded-full text-[#1340FF] font-serif"
+          className="bg-slate-100 py-2 px-12 rounded-full text-[#1340FF] font-aileron uppercase font-bold"
         >
           Get Started
         </motion.button>

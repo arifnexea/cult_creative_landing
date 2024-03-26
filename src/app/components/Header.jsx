@@ -8,7 +8,7 @@ import Link from "next/link";
 import useToggle from "../hooks/toggle";
 import NavSmall from "./NavSmall";
 
-const Header = ({logo}) => {
+const Header = ({ logo }) => {
   const [state, toggle, setToggle] = useToggle();
 
   return (
@@ -21,8 +21,7 @@ const Header = ({logo}) => {
         <Link href={"/"} onClick={() => setToggle(false)}>
           <motion.div whileHover={{ scale: 1.2 }}>
             <Image
-              src={`${logo}`}
-//               src={"/images/logo.svg"}
+              src={"/images/logo.svg"}
               alt="logo"
               width={180}
               height={180}
@@ -32,7 +31,11 @@ const Header = ({logo}) => {
           </motion.div>
         </Link>
         <div className="sm:flex ms-auto gap-5 hidden">
-          <HeaderButton textColor={"#8A5AFE"} borderColor={"#8A5AFE"} btnStyle={""} />
+          <HeaderButton
+            textColor={"#8A5AFE"}
+            borderColor={"#8A5AFE"}
+            btnStyle={""}
+          />
         </div>
         <motion.div
           whileHover={{ scale: 1.2 }}
