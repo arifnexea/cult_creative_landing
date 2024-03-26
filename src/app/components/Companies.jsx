@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // flex px-10 my-6 gap-6 justify-center flex-wrap
+
 const Companies = ({ title, companiesImages, rounded, imgStyle }) => {
   return (
     <section className="text-[#1340FF] ">
@@ -29,7 +30,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle }) => {
                 </Link>
               ) : (
                 <Image
-                key={i}
+                  key={i}
                   src={elem.path}
                   alt={elem.name}
                   width={100}
