@@ -25,7 +25,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle }) => {
                     alt={elem.name}
                     width={100}
                     height={100}
-                    className={`${rounded} ${imgStyle}`}
+                    className={`${rounded} ${imgStyle} object-contain`}
                   />
                 </Link>
               ) : (
