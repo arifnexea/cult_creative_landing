@@ -12,6 +12,7 @@ module.exports = {
     fontFamily: {
       aileron: ["aileron", "sans-serif"],
       serif: ["ui-serif", "Georgia"],
+      times: ["Times New Roman Condensed"],
     },
 
     extend: {

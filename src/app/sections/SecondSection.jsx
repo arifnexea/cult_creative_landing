@@ -40,13 +40,13 @@ const SecondSection = () => {
     <main className="bg-[#F4F4F4] py-10 text-[#8A5AFE]">
       <div className="flex flex-col gap-5">
         <div className="flex xl:flex-row flex-col items-center gap-10 mx-auto px-8">
-          <h3 className="lg:text-9xl text-7xl font-aileron font-bold flex-1 text-center">
-            we&apos;re{" "}
+          <h3 className="lg:text-9xl text-7xl font-aileron font-bold text-center">
+            <span className="xl:tracking-5 -tracking-[.5rem]">we&apos;re</span>{" "}
             <span className="font-serif font-light tracking-[-.5rem] italic">
               different
             </span>
           </h3>
-          <p className="lg:w-[30vw] w-auto text-xl font-aileron font-light text-center">
+          <p className="xl:w-[30vw] md:max-w-[50vw] text-xl font-aileron font-light text-center xl:text-left">
             Rapid access to quality content by our expansive community of over
             13,000 talented creators ready to bring your vision to life.
           </p>
@@ -90,29 +90,6 @@ const SecondSection = () => {
             );
           })}
         </div>
-        {/* <div className="flex flex-row mx-auto">
-          <Icon
-            icon="icon-park-outline:dot"
-            width={20}
-            onClick={() => setCur(0)}
-            cursor={"pointer"}
-            className={cur === 0 && "scale-150"}
-          />
-          <Icon
-            icon="icon-park-outline:dot"
-            width={20}
-            onClick={() => setCur(1)}
-            cursor={"pointer"}
-            className={cur === 1 && "scale-150"}
-          />
-          <Icon
-            icon="icon-park-outline:dot"
-            width={20}
-            onClick={() => setCur(2)}
-            cursor={"pointer"}
-            className={cur === 2 && "scale-150"}
-          />
-        </div> */}
       </div>
     </main>
   );

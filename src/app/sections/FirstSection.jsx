@@ -9,7 +9,7 @@ const vid = [
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
   },
   {
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Slae%20Cosmetics%20x%20Cult%20Creative.mov",
+    url: "https://storage.googleapis.com/landing_page_cult/Brands/Slae%20Cosmetics%20x%20Cult%20Creative.mp4",
   },
 ];
 
@@ -27,7 +27,7 @@ const NextSection = () => {
   }, [vidIndex]);
 
   return (
-    <section className="p-8 bg-gradient-to-b from-[#8A5AFE] from-90% to-[#F4F4F4]">
+    <section className="p-8 bg-[#8A5AFE] ">
       <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -38,32 +38,33 @@ const NextSection = () => {
           transition={{
             duration: 0.5,
           }}
-          className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
+          className="flex flex-col text-center lg:text-left gap-10 basis-1/2"
         >
-          <h1 className="lg:text-9xl text-7xl lg:tracking-5 font-aileron">
-            let <span className="font-serif">our</span>{" "}
-            <motion.span
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                duration: 0.5,
-              }}
-              className="font-serif italic"
-            >
-              creators{" "}
-            </motion.span>
-            do <span className="font-serif italic">the work</span>
+          <h1
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            style={{
+              lineHeight: 0.8,
+            }}
+          >
+            let <span className="font-times">our</span>
             <br />
-            for <span className="font-serif italic">you.</span>
+            <span className="font-times -tracking-[.5rem] xl:-tracking-[1rem] italic">
+              creators
+            </span>{" "}
+            do
+            <br />
+            the{" "}
+            <span className="font-times -tracking-[.5rem] xl:-tracking-[1rem] italic">
+              work
+            </span>
+            <br />
+            for <span className="font-times">you</span>.
           </h1>
-          <p className="text-lg text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
             With our network of 13,000 creators we’ve built across Southeast
             Asia, we take the guesswork out of creator marketing.
           </p>
-          <p className="text-lg text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
             Get quality User-Generated Content and KOL campaigns for your brand,
             to drive genuine user engagement.
           </p>
@@ -86,28 +87,29 @@ const NextSection = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <div className="flex gap-3 overflow-scroll justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex gap-3 justify-center"
+            >
               {vid.map((elem, i) => {
                 return (
-                  <div div key={i}>
-                    <motion.video
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5 }}
-                      src={elem.url}
-                      className="h-[37rem] rounded-lg snap-center"
-                      autoPlay
-                      loop
-                      muted
-                      webkit-playsinline
-                      playsInline
-                    >
-                      <source type="video/mp4" />
-                    </motion.video>
-                  </div>
+                  <video
+                    key={i}
+                    src={elem.url}
+                    className="h-[37rem] 2xl:h-[70vh] xl:[h-40vh] rounded-lg"
+                    autoPlay
+                    loop
+                    muted
+                    webkit-playsinline
+                    playsInline
+                  >
+                    <source type="video/mp4" />
+                  </video>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
             {vid.map((_, i) => {
@@ -130,7 +132,7 @@ const NextSection = () => {
         <motion.button
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
-          className="bg-slate-100 py-2 px-12 rounded-full text-[#8A5AFE] font-serif"
+          className="bg-slate-100 py-2 px-12 rounded-full text-[#8A5AFE] font-aileron uppercase font-bold"
         >
           Get Started
         </motion.button>

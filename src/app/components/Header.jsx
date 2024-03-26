@@ -22,6 +22,7 @@ const Header = ({logo}) => {
           <motion.div whileHover={{ scale: 1.2 }}>
             <Image
               src={`${logo}`}
+//               src={"/images/logo.svg"}
               alt="logo"
               width={180}
               height={180}
