@@ -8,7 +8,7 @@ import Link from "next/link";
 import useToggle from "@/app/hooks/toggle";
 import NavSmall from "../NavSmall";
 
-const HomeHeader = ({ logo }) => {
+const HomeHeader = ({ logo ,color  }) => {
   const [state, toggle, setToggle] = useToggle();
 
   return (
@@ -23,8 +23,8 @@ const HomeHeader = ({ logo }) => {
             <Image
               src={`${logo}`}
               alt="logo"
-              width={120}
-              height={120}
+              width={180}
+              height={180}
               className="text-cyan-600"
               priority
             />
@@ -32,8 +32,7 @@ const HomeHeader = ({ logo }) => {
         </Link>
         <div className="sm:flex ms-auto gap-5 hidden">
           <HeaderButton
-            textColor={"#1340FF"}
-            borderColor={"#1340FF"}
+            borderColor={color}
             btnStyle={""}
           />
         </div>
@@ -54,8 +53,8 @@ const HomeHeader = ({ logo }) => {
       <NavSmall
         isVisible={state}
         linerstart={"#FAF9F6"}
-        linerEnd={"#1340FF"}
-        btnColor={"#1340FF"}
+        linerEnd={"#FAF9F6"}
+        btnColor={color}
         btnstyle={""}
       />
     </nav>

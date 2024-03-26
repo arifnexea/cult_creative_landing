@@ -9,7 +9,7 @@ const vid = [
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
   },
   {
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Slae%20Cosmetics%20x%20Cult%20Creative.mov",
+    url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
   },
 ];
 
@@ -80,8 +80,8 @@ const HomeFirst = () => {
               autoPlay
               loop
               muted
-              webkit-playsinline
-              playsinline
+              // webkit-playsinline
+              // playsinline
             >
               <source type="video/mp4" />
             </motion.video>
@@ -100,8 +100,8 @@ const HomeFirst = () => {
                       autoPlay
                       loop
                       muted
-                      webkit-playsinline
-                      playsinline
+                      // webkit-playsinline
+                      // playsinline
                     >
                       <source type="video/mp4" />
                     </motion.video>

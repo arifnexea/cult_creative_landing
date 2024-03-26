@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "../components/Footer";
 import { Icon } from "@iconify/react";
 
-const LastSection = () => {
+const LastSection = ({color}) => {
   return (
     <main className="bg-[#F4F4F4] py-10 px-20">
-      <Footer />
+      <Footer hoverText={color} />
       <div className="flex gap-3 mt-10 justify-end">
         <Icon
           icon="ic:baseline-whatsapp"

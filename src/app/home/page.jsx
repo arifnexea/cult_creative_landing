@@ -1,5 +1,4 @@
-'use client';
-
+"use client";
 import { Suspense, useEffect, useState } from "react";
 import HomeHeader from "../components/HomeComponents/homeHeader";
 import HomeFirst from "../sections/homeSection/homeFirst";
@@ -14,16 +13,16 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <HomeHeader logo={"/images/logo.png"} />
+      <HomeHeader color={"#1340FF"} logo={"/images/Main/cc_logo4.png"} />
       <Suspense fallback={<p>Loading...</p>}>
       <HomeFirst />
       <HomeTwo />
       <HomeThree />
-      <SixthSection />
+      <SixthSection title={" join 900+ other companies using Cult Creative"} />
       <HomeFour />
       <HomeFive />
       <HomeSix />
-      <LastSection />
+      <LastSection color={"#1340FF"} />
       </Suspense>
     </main>
   );

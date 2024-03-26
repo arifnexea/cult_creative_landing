@@ -23,8 +23,8 @@ const Header = ({logo}) => {
             <Image
               src={`${logo}`}
               alt="logo"
-              width={120}
-              height={120}
+              width={180}
+              height={180}
               className="text-cyan-600"
               priority
             />

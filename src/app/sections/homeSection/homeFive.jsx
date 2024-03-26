@@ -4,6 +4,7 @@ const vid = [
   {
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
   },
+
 ];
 
 function HomeFive() {
@@ -26,7 +27,7 @@ function HomeFive() {
         <span className="font-serif italic -tracking-[.6rem]">match you</span>{" "}
         to <span className="font-serif italic -tracking-[.6rem]">brands</span>
       </h1>
-      <div className="flex  flex-wrap lg:flex-row justify-evenly gap-10 mt-16 px-9">
+      <div className="flex flex-wrap lg:flex-row  justify-evenly gap-10 mt-16 px-9">
         <div className="flex flex-col text-center">
           <motion.video
             key={vidIndex}

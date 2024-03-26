@@ -15,6 +15,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle }) => {
             <>
               {elem?.link ? (
                 <Link
+                  key={i}
                   href={elem.link}
                   className="flex mx-3 my-3 overflow-visible"
                 >
@@ -28,6 +29,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle }) => {
                 </Link>
               ) : (
                 <Image
+                key={i}
                   src={elem.path}
                   alt={elem.name}
                   width={100}

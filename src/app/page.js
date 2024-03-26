@@ -12,16 +12,16 @@ import Header from "./components/Header";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <Header logo={"/images/logo.png"} />
+      <Header logo={"/images/brands/cc_logo3.png"} />
       <Suspense fallback={<p>Loading...</p>}>
         <FirstSection />
         <SecondSection />
         <ThirdSection />
         <FourthSection />
         <FifthSection />
-        <SixthSection />
+        <SixthSection title={" join 900+ other companies using Cult Creative"} />
         <SeventhSection />
-        <LastSection />
+        <LastSection color={"#8A5AFE"} />
       </Suspense>
     </main>
   );
