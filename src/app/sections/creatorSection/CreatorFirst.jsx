@@ -7,16 +7,16 @@ import { Icon } from "@iconify/react";
 const vid = [
   {
     key: 1,
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
+    url: "https://storage.googleapis.com/landing_page_cult/creators/Focus%20Foods%20x%20Cult%20Creative.mp4",
   },
   {
     key: 2,
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
+    url: "https://storage.googleapis.com/landing_page_cult/creators/Hotel%20Indigo%20x%20Cult%20Creative.mov",
   },
 ];
 
 const CreatorFirst = () => {
-  const [vidIndex, setVidIndex] = useState(0);
+  const [vidIndex, setVidIndex] = useState(1);
 
   useEffect(() => {
     const vidScroll = setInterval(() => {
@@ -32,23 +32,23 @@ const CreatorFirst = () => {
     <section className="p-8 bg-[#006D53]">
       <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start">
         <div className="relative my-7  basis-1/2 order-last lg:order-first">
-          {/* <div className="sm:hidden">
-          <motion.video
-            key={vidIndex}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            src={vid[vidIndex].url}
-            className="h-[37rem] rounded-lg"
-            autoPlay
-            loop
-            muted
-            webkit-playsinline
-            playsinline
-          >
-            <source type="video/mp4" />
-          </motion.video>
-        </div> */}
+          <div className="sm:hidden">
+            <motion.video
+              key={vidIndex}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              src={vid[vidIndex].url}
+              className="h-[37rem] rounded-lg"
+              autoPlay
+              loop
+              muted
+              webkit-playsinline
+              playsinline
+            >
+              <source type="video/mp4" />
+            </motion.video>
+          </div>
           <div className="hidden sm:block ">
             <div className="flex gap-3 overflow-scroll">
               {vid.map((elem, i) => {
@@ -59,11 +59,11 @@ const CreatorFirst = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5 }}
                       src={elem.url}
-                      className="h-[37rem] rounded-lg snap-center"
+                      className="h-[37rem] w-[34rem] rounded-xl "
                       autoPlay
                       loop
                       muted
-                      webkit-playsinline={true}
+                      webkit-playsinline
                       playsinline
                     >
                       <source type="video/mp4" />
@@ -73,20 +73,20 @@ const CreatorFirst = () => {
               })}
             </div>
           </div>
-          {/* <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
-          {vid.map((_, i) => {
-            return i === vidIndex ? (
-              <Icon key={i} icon="icon-park-outline:dot" width={20} />
-            ) : (
-              <Icon
-                key={i}
-                icon="octicon:dot-24"
-                width={20}
-                onClick={() => setVidIndex(i)}
-              />
-            );
-          })}
-        </div> */}
+          <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
+            {vid.map((_, i) => {
+              return i === vidIndex ? (
+                <Icon key={i} icon="icon-park-outline:dot" width={20} />
+              ) : (
+                <Icon
+                  key={i}
+                  icon="octicon:dot-24"
+                  width={20}
+                  onClick={() => setVidIndex(i)}
+                />
+              );
+            })}
+          </div>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -99,7 +99,7 @@ const CreatorFirst = () => {
           }}
           className="flex flex-col px-8 lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
         >
-          <h1 className="lg:text-9xl text-7xl lg:tracking-5 font-aileron">
+          <h1 className="lg:text-8xl xl:text-9xl text-7xl lg:tracking-5 font-aileron">
             get{" "}
             <motion.span
               initial={{ opacity: 0, scale: 0 }}

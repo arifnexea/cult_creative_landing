@@ -10,7 +10,7 @@ function CreatorFifth() {
     <section className="py-9 px-6 bg-[#006D53] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
         <div className="text-center col-span-2 md:col-span-1">
-          <h1 className="text-7xl md:text-8xl lg:text-9xl -tracking-[.4rem] leading-[4rem]">
+          <h1 className=" xl:text-9xl lg:text-8xl md:text-8xl   text-7xl -tracking-[.4rem] leading-[4rem]">
             trusted
             <br />
             <span className="font-serif italic">by {"  "} creators</span>
@@ -26,7 +26,7 @@ function CreatorFifth() {
             >
               <div className="flex flex-col w-[75%] py-5 mx-10 h-[80vh] gap-20">
                 <Icon icon="fa:quote-right" width={100} />
-                <p className="text-lg lg:text-3xl font-thin uppercase tracking-[.2rem]">
+                <p className=" xl:text-3xl lg:text-2xl text-lg  font-thin uppercase tracking-[.2rem]">
                   <TypeAnimation
                     sequence={[
                       "Cult Creative has been exceptional in bridging the connection between the client and myself, articulating the client’s  brand identity with precision.",

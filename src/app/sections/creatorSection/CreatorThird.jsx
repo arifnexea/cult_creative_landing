@@ -18,7 +18,7 @@ function CreatorThird() {
         className="flex flex-col justify-center items-center"
       >
         <div className="flex flex-col lg:flex-row w-[87%] items-center  content-center">
-          <h1 className="text-8xl basis-1/2 m-2">
+          <h1 className="xl:text-8xl lg:text-8xl text-7xl basis-1/2 m-2">
             we’re{" "}
             <motion.span
               initial={{ opacity: 0, scale: 0 }}
@@ -34,19 +34,19 @@ function CreatorThird() {
               different{" "}
             </motion.span>
           </h1>
-          <p className="basis-1/2 text-2xl">
+          <p className="basis-1/2 lg:text-2xl text-xl">
             We make sure you get paid in 30 days.No paperwork, no hassle. Just
             focus on being creative.
           </p>
         </div>
         <div className="flex flex-col lg:flex-row py-5">
           <div className="rounded-full  border-2 border-solid lg:p-5 p-3 my-4 mx-3 text-center">
-            <h1 className="lg:text-7xl text-3xl font-bold uppercase lg:-tracking-[.45rem]">
+            <h1 className="xl:text-7xl lg:text-6xl  text-3xl font-bold uppercase xl:-tracking-[.45rem] lg:-tracking-[.10rem] ">
               50 completed campaigns
             </h1>
           </div>
           <div className="rounded-full  border-2 border-solid lg:p-5 p-3 my-4  mx-3 text-center">
-            <h1 className="lg:text-7xl text-3xl font-bold uppercase lg:-tracking-[.45rem]">
+            <h1 className="xl:text-7xl lg:text-6xl text-3xl font-bold uppercase xl:-tracking-[.45rem] lg:-tracking-[.10rem] ">
               2700 creators matched
             </h1>
           </div>
