@@ -7,16 +7,25 @@ import { motion, useScroll } from "framer-motion";
 function CreatorFifth() {
   const [cur, setCur] = useState(0);
   return (
-    <section className="py-9 px-6 bg-[#006D53] font-aileron text-[#F4F4F4]">
+    <section className="py-9 lg:px-20 px-10 bg-[#006D53] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
-        <div className="text-center col-span-2 md:col-span-1">
-          <h1 className=" xl:text-9xl lg:text-8xl md:text-8xl   text-7xl -tracking-[.4rem] leading-[4rem]">
+        <div className="col-span-2 md:col-span-1">
+          <h1
+            className="xl:text-9xl lg:text-8xl md:text-8xl text-7xl -tracking-[.4rem]"
+            style={{
+              lineHeight: 0.7,
+            }}
+          >
             trusted
             <br />
-            <span className="font-serif italic">by {"  "} creators</span>
+            <span className="font-times">by {"  "}</span>
+            <span className="font-times italic -tracking-[.4rem] lg:-tracking-[.8rem]">
+              {" "}
+              creators
+            </span>
           </h1>
         </div>
-        <div className="col-span-2 md:col-span-1">
+        <div className="col-span-2 md:col-span-1 ">
           <div className="flex overflow-hidden">
             <motion.div
               className="border-2 border-slate-50 min-w-full transition-transform ease-in-out duration-300"
@@ -35,7 +44,7 @@ function CreatorFifth() {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                -Anniecia thomas.
+                  -Anniecia thomas.
                 </p>
               </div>
             </motion.div>
@@ -50,13 +59,13 @@ function CreatorFifth() {
                 <p className="text-lg lg:text-3xl font-thin uppercase tracking-[.2rem]">
                   <TypeAnimation
                     sequence={[
-                        "i appreciate cult creative for guiding me when they didn’t have to."
+                      "i appreciate cult creative for guiding me when they didn’t have to.",
                     ]}
                     speed={50}
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                -Wong yuet ting.
+                  -Wong yuet ting.
                 </p>
               </div>
             </motion.div>
@@ -71,13 +80,13 @@ function CreatorFifth() {
                 <p className="text-lg lg:text-3xl font-thin uppercase tracking-[.2rem]">
                   <TypeAnimation
                     sequence={[
-                        "Cult creative deserves praise for their attention to detail. they carefully considered my concerns throughout the campaign."
+                      "Cult creative deserves praise for their attention to detail. they carefully considered my concerns throughout the campaign.",
                     ]}
                     speed={50}
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                -Arina farhah
+                  -Arina farhah
                 </p>
               </div>
             </motion.div>

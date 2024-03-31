@@ -63,20 +63,20 @@ function CreatorSecond() {
 
   return (
     <section className="py-8 bg-[#F4F4F4] text-[#006D53]">
-      <h1 className="text-center font-aileron 2xl:text-8xl text-6xl  lg:text-8xl md:text-8xl ">
-        we{" "}
-        <span className="font-serif italic -tracking-[.4rem]">match you</span>{" "}
-        to <span className="font-serif italic -tracking-[.4rem]">brands</span>
+      <h1 className="text-center font-aileron 2xl:text-8xl text-6xl lg:text-8xl md:text-8xl -tracking-[.1rem] font-semibold">
+        we <span className="font-times italic -tracking-[.4rem]">match</span>{" "}
+        <span className="font-times -tracking-[.4rem]">you</span> to{" "}
+        <span className="font-times italic -tracking-[.4rem]">brands</span>
       </h1>
-      <div className="lg:flex  lg:flex-row  justify-evenly gap-10 mt-16 px-9 hidden">
-        <div className="flex flex-col text-center">
+      <div className="lg:flex lg:flex-row justify-center gap-10 mt-16 px-9 hidden">
+        <div className="flex flex-col ">
           <motion.video
             key={1}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             src={vids[0].url}
-            className="h-[26rem]"
+            className="h-[27rem] rounded-lg"
             autoPlay
             loop
             muted
@@ -85,16 +85,18 @@ function CreatorSecond() {
           >
             <source type="video/mp4" />
           </motion.video>
-          <h2 className="font-serif text-lg pt-3">Hotel Indigo</h2>
+          <h2 className="font-aileron text-lg pt-3 font-semibold">
+            Hotel Indigo
+          </h2>
         </div>
-        <div className="flex flex-col text-center">
+        <div className="flex flex-col">
           <motion.video
             key={2}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             src={vids[1].url}
-            className="h-[26rem] rounded-lg"
+            className="h-[27rem] rounded-lg"
             autoPlay
             loop
             muted
@@ -103,16 +105,16 @@ function CreatorSecond() {
           >
             <source type="video/mp4" />
           </motion.video>
-          <h2 className="font-serif text-lg pt-3">Trove</h2>
+          <h2 className="font-aileron text-lg pt-3 font-semibold">Trove</h2>
         </div>
-        <div className="flex flex-col text-center">
+        <div className="flex flex-col">
           <motion.video
             key={3}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             src={vids[2].url}
-            className="h-[26rem] rounded-lg"
+            className="h-[27rem] rounded-lg"
             autoPlay
             loop
             muted
@@ -121,16 +123,18 @@ function CreatorSecond() {
           >
             <source type="video/mp4" />
           </motion.video>
-          <h2 className="font-serif text-lg pt-3">Mimone Spa </h2>
+          <h2 className="font-aileron text-lg pt-3 font-semibold">
+            Mimone Spa{" "}
+          </h2>
         </div>
-        <div className="flex flex-col text-center">
+        <div className="flex flex-col">
           <motion.video
             key={4}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             src={vids[3].url}
-            className="h-[26rem] rounded-lg"
+            className="h-[27rem] rounded-lg"
             autoPlay
             loop
             muted
@@ -139,7 +143,9 @@ function CreatorSecond() {
           >
             <source type="video/mp4" />
           </motion.video>
-          <h2 className="font-serif text-lg pt-3">Supermama Lab</h2>
+          <h2 className="font-aileron text-lg pt-3 font-semibold">
+            Supermama Lab
+          </h2>
         </div>
       </div>
       <div className=" lg:hidden flex flex-col gap-5 ">
