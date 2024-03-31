@@ -49,14 +49,16 @@ const CreatorFirst = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <div className="flex gap-3 justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex gap-3 justify-center"
+            >
               {vid.map((elem, i) => {
                 return (
                   <div div key={elem.key}>
-                    <motion.video
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5 }}
+                    <video
                       src={elem.url}
                       className="h-[37rem] w-[34rem] rounded-xl "
                       autoPlay
@@ -66,11 +68,11 @@ const CreatorFirst = () => {
                       playsinline
                     >
                       <source type="video/mp4" />
-                    </motion.video>
+                    </video>
                   </div>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
             {vid.map((_, i) => {
