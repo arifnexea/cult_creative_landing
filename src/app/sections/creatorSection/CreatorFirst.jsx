@@ -100,7 +100,7 @@ const CreatorFirst = () => {
           className="flex flex-col px-8 lg:w-[50%] text-center lg:text-left basis-1/2 gap-7"
         >
           <h1
-            className="2xl:text-[15rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.9,
             }}

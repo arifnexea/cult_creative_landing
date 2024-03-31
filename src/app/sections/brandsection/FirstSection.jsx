@@ -41,7 +41,7 @@ const FirstSection = () => {
           className="flex flex-col text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="2xl:text-[15rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.8,
             }}
