@@ -10,8 +10,8 @@ const color = "#006D53"
     <section className="flex p-10  items-center justify-center bg-[#006D53]">
     <div className="basis-1/2 hidden xl:block">
       <Image
-        src={"/images/brands/form.jpg"}
-        alt="test"
+        src={"https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"}
+        alt="creator"
         width={500}
         height={500}
         className="rounded-lg"

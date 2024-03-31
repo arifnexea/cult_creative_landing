@@ -41,7 +41,7 @@ const FirstSection = () => {
           className="flex flex-col text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[15rem] xl:text-[9rem] lg:text-[7rem] text-7xl  lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.8,
             }}
@@ -60,11 +60,11 @@ const FirstSection = () => {
             <br />
             for <span className="font-times">you</span>.
           </h1>
-          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
+          <p className="2xl:text-[3rem] text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
             With our network of 13,000 creators we’ve built across Southeast
             Asia, we take the guesswork out of creator marketing.
           </p>
-          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
+          <p className="2xl:text-[3rem] text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
             Get quality User-Generated Content and KOL campaigns for your brand,
             to drive genuine user engagement.
           </p>

@@ -11,7 +11,7 @@ const NavSmall = ({ isVisible, linerstart, linerEnd, btnColor, btnstyle }) => {
         className={`absolute top-20 p-5 text-center left-0 w-screen h-50 bg-[#FAF9F6] bg-gradient-to-r from-[${linerstart}] to-[${linerEnd}`}
       >
         <div className="flex flex-col gap-5">
-          <Link href="/home">
+          <Link href="/brands">
           <motion.button
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 1.2 }}
