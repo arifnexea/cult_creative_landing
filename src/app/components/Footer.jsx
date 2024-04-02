@@ -8,7 +8,7 @@ const Footer = ({ hoverText }) => {
       <div className="flex item-start gap-10 xl:gap-40 flex-wrap">
         <div className="grow">
           <Image
-            src={"/images/logo.png"}
+            src={"/images/logo.svg"}
             alt="Cult creative"
             width={130}
             height={130}
