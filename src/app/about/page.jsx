@@ -93,7 +93,7 @@ function AboutUs() {
               <div className="xl:flex lg:flex flex-col justify-items-end items-end   basis-1/2 hidden">
                 <Image
                   src={
-                    "https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"
+                    "https://storage.googleapis.com/landing_page_cult/about/Cult%20Creative%204.jpg"
                   }
                   alt="creator"
                   width={500}
