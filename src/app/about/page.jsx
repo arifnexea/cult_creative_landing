@@ -19,17 +19,18 @@ function AboutUs() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 className="w-[100%] xl:h-[85vh] lg:h-[75vh]"
-                // autoPlay
+                autoPlay
                 loop
                 muted
                 webkit-playsinline
                 playsInline
+                controls
               >
                 <source type="video/mp4" />
               </motion.video>
             </div>
-            <div className="flex flex-col  justify-center items-center gap-y-8">
-              <h1 className="xl:text-[11rem]  lg:text-[8rem]  md:text-7xl  text-center text-4xl xl:-mt-[74px] lg:-mt-[60px]">
+            <div className="flex flex-col justify-center items-center gap-y-8">
+              <h1 className="xl:text-[11rem] lg:text-[8rem] md:text-7xl text-center text-5xl xl:-mt-[74px] lg:-mt-[60px]">
                 <span className="xl:text-[9rem] lg:text-[7rem]"> our </span>{" "}
                 <span className="font-times xl:-tracking-[0.7rem] lg:-tracking-[0.5rem] -tracking-[0.1rem] font-extralight">
                   operating
@@ -38,16 +39,16 @@ function AboutUs() {
                   beliefs
                 </span>
               </h1>
-              <div className="flex flex-col w-[90%] xl:text-3xl text-lg font-aileron font-thin gap-y-8  text-center text-justify ">
-                <p className="font-thin">
+              <div className="flex flex-col w-[90%] xl:text-3xl text-lg font-aileron font-thin gap-y-8 text-center md:text-left ">
+                <p className="font-thin -leading-[4rem]">
                   Every day we come together for a vision that we believe in
                   creators and the community, and that Cult Creative can assist
                   creators to achieve passion, purpose and paycheque.
                 </p>
-                <p>
+                <p className="font-thin -leading-[4rem]">
                   We stay grounded in our values that creatives are essential to
-                  the workforce, everyone has creativity in them, and we're able
-                  to smash long-standing stereotypes about creatives.
+                  the workforce, everyone has creativity in them, and we&apos;re
+                  able to smash long-standing stereotypes about creatives.
                 </p>
               </div>
             </div>
@@ -77,12 +78,12 @@ function AboutUs() {
                   transition={{
                     duration: 0.5,
                   }}
-                  className="font-times italic font-light -tracking-[.4rem]"
+                  className="font-times italic font-light -tracking-[.5rem]"
                 >
                   different{" "}
                 </motion.span>
               </h1>
-              <p className="basis-1/2 lg:text-2xl text-xl text-justify ">
+              <p className="basis-1/2 lg:text-2xl text-xl text-justify leading-tight">
                 Rapid access to quality content by our expansive community of
                 over 13,000 talented creators ready to bring your vision to
                 life.
@@ -100,8 +101,8 @@ function AboutUs() {
                   className="rounded-lg"
                 />
               </div>
-              <div className="flex flex-col lg:basis-1/2 xl:basis-1/2  basis-2/2 xl:text-4xl lg:text-3xl md:text-3xl  text-2xl">
-                <div className="lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full  ">
+              <div className="flex flex-col lg:basis-1/2 xl:basis-1/2  basis-2/2 xl:text-4xl lg:text-3xl md:text-3xl text-2xl justify-center">
+                <div className="lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full ">
                   {" "}
                   <h1 className="xl:text-6xl lg:text-5xl md:text-4xl  text-3xl font-bold uppercase  lg:-tracking-[.10rem] xl:text-start lg:text-start  text-center xl:-tracking-[0.3rem]">
                     2020:<span className="italic">THE year we starteD</span>

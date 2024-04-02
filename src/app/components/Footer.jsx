@@ -32,9 +32,13 @@ const Footer = ({ hoverText }) => {
         <div>
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Company</h1>
           <ul className="font-light text-sm">
-            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              About Us
-            </li>
+            <Link href={"/about"}>
+              <li
+                className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
+              >
+                About Us
+              </li>
+            </Link>
             <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               FAQs
             </li>
