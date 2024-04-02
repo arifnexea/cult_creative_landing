@@ -82,6 +82,7 @@ function CreatorSecond() {
             muted
             webkit-playsinline
             playsInline
+            controls
           >
             <source type="video/mp4" />
           </motion.video>
@@ -102,6 +103,7 @@ function CreatorSecond() {
             muted
             webkit-playsinline
             playsInline
+            controls
           >
             <source type="video/mp4" />
           </motion.video>
@@ -120,6 +122,7 @@ function CreatorSecond() {
             muted
             webkit-playsinline
             playsInline
+            controls
           >
             <source type="video/mp4" />
           </motion.video>
@@ -140,6 +143,7 @@ function CreatorSecond() {
             muted
             webkit-playsinline
             playsInline
+            controls
           >
             <source type="video/mp4" />
           </motion.video>

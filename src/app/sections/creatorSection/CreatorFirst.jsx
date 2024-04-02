@@ -65,7 +65,8 @@ const CreatorFirst = () => {
                       loop
                       muted
                       webkit-playsinline
-                      playsinline
+                      playsInline
+                      controls
                     >
                       <source type="video/mp4" />
                     </video>
