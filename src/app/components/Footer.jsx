@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const Footer = ({hoverText}) => {
+const Footer = ({ hoverText }) => {
   return (
     <section className="text-[#231F20]">
       <div className="flex item-start gap-10 xl:gap-40 flex-wrap">
@@ -20,10 +21,10 @@ const Footer = ({hoverText}) => {
         <div>
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Cult Careers</h1>
           <ul className="font-light text-sm">
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               Hire A Creative
             </li>
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               Apply To Creative Jobs
             </li>
           </ul>
@@ -31,19 +32,23 @@ const Footer = ({hoverText}) => {
         <div>
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Company</h1>
           <ul className="font-light text-sm">
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               About Us
             </li>
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               FAQs
             </li>
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
-              Contact
-            </li>
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <Link href={"/contact"}>
+              <li
+                className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
+              >
+                Contact
+              </li>
+            </Link>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               Resources
             </li>
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               Newsroom
             </li>
           </ul>
@@ -51,10 +56,10 @@ const Footer = ({hoverText}) => {
         <div>
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Support</h1>
           <ul className="font-light text-sm ">
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               Privacy policy{" "}
             </li>
-            <li className={`hover:text-[${hoverText}] duration-150 cursor-pointer`}>
+            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               Terms and conditions
             </li>
           </ul>

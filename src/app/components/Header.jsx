@@ -13,7 +13,7 @@ const Header = ({ logo }) => {
 
   return (
     <nav
-      className={`py-4 px-8 bg-[#FAF9F6] sticky top-0 z-10 ${
+      className={`py-4 px-8 bg-[#F4F4F4] sticky top-0 z-10 ${
         !state && "drop-shadow-md"
       }`}
     >

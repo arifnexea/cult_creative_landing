@@ -1,34 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-const NavSmall = ({ isVisible, linerstart, linerEnd, btnColor, btnstyle }) => {
+
+const NavSmall = ({ isVisible }) => {
   return (
     isVisible && (
       <motion.nav
         key="modal"
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`absolute top-20 p-5 text-center left-0 w-screen h-50 bg-[#FAF9F6] bg-gradient-to-r from-[${linerstart}] to-[${linerEnd}`}
+        className={`sticky top-0 p-5 left-0 h-50 bg-[#F4F4F4]`}
       >
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col justify-between items-center gap-10 mt-5">
           <Link href="/brands">
-          <motion.button
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 1.2 }}
-            className={`text-3xl font-serif italic text-[${btnColor}] font-bold ${btnstyle}`}
-          >
-            For brands
-          </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1.2 }}
+              className="text-slate-700 font-aileron text-lg font-semibold"
+              // className={`text-3xl font-serif italic text-[${btnColor}] font-bold ${btnstyle}`}
+            >
+              For brands
+            </motion.button>
           </Link>
           <Link href="/creators">
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1.2 }}
+              className="text-slate-700 font-aileron text-lg font-semibold"
+            >
+              For creators
+            </motion.button>
+          </Link>
           <motion.button
             whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 1.2 }}
-            className="text-3xl font-serif italic text-black font-bold "
+            whileTap={{ scale: 0.8 }}
+            className="bg-[#8A5AFE] py-3 px-12 text-md rounded-full text-zinc-100 font-aileron uppercase font-bold w-full"
           >
-            For creators
+            Get Started
           </motion.button>
-          </Link>
         </div>
       </motion.nav>
     )

@@ -81,7 +81,7 @@ function CreatorSecond() {
             loop
             muted
             webkit-playsinline
-            playsinline
+            playsInline
           >
             <source type="video/mp4" />
           </motion.video>
@@ -101,7 +101,7 @@ function CreatorSecond() {
             loop
             muted
             webkit-playsinline
-            playsinline
+            playsInline
           >
             <source type="video/mp4" />
           </motion.video>
@@ -119,7 +119,7 @@ function CreatorSecond() {
             loop
             muted
             webkit-playsinline
-            playsinline
+            playsInline
           >
             <source type="video/mp4" />
           </motion.video>
@@ -132,14 +132,14 @@ function CreatorSecond() {
             key={4}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             src={vids[3].url}
             className="h-[27rem] rounded-lg"
             autoPlay
             loop
             muted
             webkit-playsinline
-            playsinline
+            playsInline
           >
             <source type="video/mp4" />
           </motion.video>
