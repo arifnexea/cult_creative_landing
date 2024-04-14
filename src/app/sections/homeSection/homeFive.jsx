@@ -25,17 +25,17 @@ const vids = [
 ];
 
 function HomeFive() {
-  const [vidIndex, setVidIndex] = useState(0);
+  // const [vidIndex, setVidIndex] = useState(0);
 
-  useEffect(() => {
-    const vidScroll = setInterval(() => {
-      setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
-    }, 4000);
+  // useEffect(() => {
+  //   const vidScroll = setInterval(() => {
+  //     setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
+  //   }, 4000);
 
-    return () => {
-      clearInterval(vidScroll);
-    };
-  }, [vidIndex]);
+  //   return () => {
+  //     clearInterval(vidScroll);
+  //   };
+  // }, [vidIndex]);
 
   return (
     <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
