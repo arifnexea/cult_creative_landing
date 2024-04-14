@@ -46,28 +46,6 @@ function HomeThree() {
          
           </h1>
           
-          {/* <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-            }}
-            className="lg:text-lg text-base  md:text-lg text-[#F4f4f4] lg:w-[100%] lg:text-center text-justify"
-          
-          
-          >
-          <p className="lg:text-lg text-base  md:text-lg text-[#F4f4f4] lg:w-[90%] ">
-            We take the hassle out of creator marketing.
-          </p>
-          <p className="lg:text-lg text-base  md:text-lg text-[#F4f4f4] lg:w-[90%]  ">
-            With a simple monthly subscription,here’s how we bridge brands and 
-            agencies with creators to establish genuine relationships with
-            customers.
-          </p>
-          </motion.div> */}
              <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{

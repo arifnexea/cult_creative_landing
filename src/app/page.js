@@ -10,6 +10,8 @@ import HomeThree from "./sections/homeSection/homeThree";
 import HomeFour from "./sections/homeSection/homeFour";
 import HomeFive from "./sections/homeSection/homeFive";
 import HomeSix from "./sections/homeSection/homeSix";
+import Companies from "./components/Companies";
+import HomeCompanies from "./sections/homeSection/companies";
 
 export default function Home() {
   return (
@@ -19,9 +21,7 @@ export default function Home() {
         <HomeFirst />
         <HomeTwo />
         <HomeThree />
-        <SixthSection
-          title={" join 900+ other companies using Cult Creative"}
-        />
+        <HomeCompanies title={"trusted by 900+ companies"} />
         <HomeFour />
         <HomeFive />
         <HomeSix />

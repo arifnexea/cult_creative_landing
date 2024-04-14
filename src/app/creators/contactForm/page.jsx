@@ -1,17 +1,19 @@
 "use client";
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import Header from "@/app/components/Header";
 import LastSection from "@/app/sections/brandsection/LastSection";
 import { motion } from "framer-motion";
 import FormInput from "@/app/components/FormInput";
 import Image from "next/image";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
+import { PrismaClient } from "@prisma/client";
 
 import countries from "../../contants/countries.json";
 
 function CreatorForm() {
   const color = "#006D53";
+  const prisma = new PrismaClient();
 
   const schema = yup.object({
     name: yup.string().required(),
@@ -23,8 +25,21 @@ function CreatorForm() {
     instaUsername: yup.string().required(),
     tiktokUsername: yup.string().required(),
     language: yup.string().required(),
-    interests: yup.string().required(),
+    interests: yup.array().required(),
   });
+
+  const onSubmit = async (value) => {
+    await fetch("/api/createUser", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(value),
+    })
+      .then((res) => res.json())
+      .then((val) => alert(val.message))
+      .catch((err) => alert(JSON.stringify(err)));
+  };
 
   return (
     <main className="flex min-h-screen flex-col">
@@ -69,11 +84,9 @@ function CreatorForm() {
                   instaUsername: "",
                   tiktokUsername: "",
                   language: "",
-                  interests: "",
+                  interests: [],
                 }}
-                onSubmit={(values) => {
-                  alert(JSON.stringify(values, null, 2));
-                }}
+                onSubmit={onSubmit}
                 validationSchema={schema}
               >
                 <Form>
@@ -173,60 +186,112 @@ function CreatorForm() {
                         )}
                       </Field>
                     </div>
-                    <FormInput
-                      label={"Date of Birth"}
-                      name={"date-of-birth"}
-                      type={"date"}
-                      color={color}
-                    />
-                    <FormInput
-                      label={"Current Location"}
-                      name={"location"}
-                      type={"text"}
-                      color={color}
-                    />
-                    <FormInput
-                      label={"Instagram Username"}
-                      name={"instagram"}
-                      type={"text"}
-                      color={color}
-                    />
-                    <FormInput
-                      label={"Tik Tok Username"}
-                      name={"tiktok"}
-                      type={"text"}
-                      color={color}
-                    />
+                    <Field name="birthDate">
+                      {({ field, form: { errors }, meta }) => (
+                        <FormInput
+                          label={"Date of Birth"}
+                          type={"date"}
+                          field={field}
+                          color={color}
+                          errors={errors.birthDate}
+                        />
+                      )}
+                    </Field>
+                    <Field name="location">
+                      {({ field, form: { errors }, meta }) => (
+                        <FormInput
+                          label={"Current Location"}
+                          field={field}
+                          type={"text"}
+                          color={color}
+                          errors={errors.location}
+                        />
+                      )}
+                    </Field>
+                    <Field name="instaUsername">
+                      {({ field, form: { errors }, meta }) => (
+                        <FormInput
+                          label={"Instagram Username"}
+                          field={field}
+                          type={"text"}
+                          color={color}
+                          errors={errors.instaUsername}
+                        />
+                      )}
+                    </Field>
+                    <Field name="tiktokUsername">
+                      {({ field, form: { errors }, meta }) => (
+                        <FormInput
+                          label={"Tik Tok Username"}
+                          field={field}
+                          type={"text"}
+                          color={color}
+                          errors={errors.tiktokUsername}
+                        />
+                      )}
+                    </Field>
                     <div className="sm:col-span-3">
-                      <label
-                        htmlFor="languages"
-                        className="block text-sm font-medium leading-6"
-                      >
-                        Languages
-                      </label>
-                      <div className="mt-2">
-                        <select
-                          value={["malay", "english"]}
-                          className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}]`}
-                        >
-                          <option value="english">English</option>
-                          <option value="malay">Malay </option>
-                          <option value="mandarin">Mandarin </option>
-                          <option value="tamil">Tamil </option>
-                          <option value="hindi">Hindi</option>
-                          <option value="others">Others</option>
-                        </select>
-                      </div>
+                      <Field name="language">
+                        {({ field, form: { errors }, meta }) => (
+                          <>
+                            <label
+                              htmlFor="language"
+                              className="block text-sm font-medium leading-6"
+                            >
+                              Language
+                            </label>
+                            <div className="mt-2">
+                              <select
+                                {...field}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
+                                  errors.language && "border-red-500"
+                                }`}
+                              >
+                                <option value="">...</option>
+                                <option value="english">English</option>
+                                <option value="malay">Malay </option>
+                                <option value="mandarin">Mandarin </option>
+                                <option value="tamil">Tamil </option>
+                                <option value="hindi">Hindi</option>
+                                <option value="others">Others</option>
+                              </select>
+                            </div>
+                            {errors.language && (
+                              <p class="text-red-500 text-xs mx-2 my-1">
+                                {errors.language}
+                              </p>
+                            )}
+                          </>
+                        )}
+                      </Field>
                     </div>
-                    <FormInput
-                      label={"Interests"}
-                      name={"interests"}
-                      type={"text"}
-                      color={color}
-                    />
+                    <div className="sm:col-span-3">
+                      <Field name={"interests"}>
+                        {({ field, form: { errors }, meta }) => (
+                          <>
+                            <select
+                              {...field}
+                              multiple={true}
+                              className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
+                                errors.language && "border-red-500"
+                              }`}
+                            >
+                              <option value="NY">New York</option>
+                              <option value="SF">San Francisco</option>
+                              <option value="CH">Chicago</option>
+                              <option value="OTHER">Other</option>
+                            </select>
+                            {errors.interests && (
+                              <p class="text-red-500 text-xs mx-2 my-1">
+                                {errors.interests}
+                              </p>
+                            )}
+                          </>
+                        )}
+                      </Field>
+                    </div>
                   </div>
                   <div className="mt-10 text-center">
-                    {/* <Link href={"/creators/contactForm"}> */}
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.8 }}
@@ -235,7 +300,6 @@ function CreatorForm() {
                     >
                       Submit
                     </motion.button>
-                    {/* </Link> */}
                   </div>
                 </Form>
               </Formik>

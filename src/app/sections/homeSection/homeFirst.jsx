@@ -6,10 +6,10 @@ import { Icon } from "@iconify/react";
 
 const vid = [
   {
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
+    url: "https://storage.googleapis.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov",
   },
   {
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Nonico%20x%20Cult%20Creative.mp4",
+    url: "https://storage.googleapis.com/landing_page_cult/main/Bata%20x%20Cult%20Creative.mov",
   },
 ];
 
@@ -47,28 +47,20 @@ const HomeFirst = () => {
             }}
           >
             where{" "}
-            <motion.span
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                duration: 0.5,
-              }}
-              className="-tracking-[.5rem] xl:-tracking-[1rem] font-times italic"
-            >
+            <span className="-tracking-[.5rem] xl:-tracking-[1rem] font-times italic">
               <br /> brands & <br />
+            </span>
+            <span className="-tracking-[.5rem] xl:-tracking-[14px] font-times">
               creators
-            </motion.span>
+            </span>
             <br />
             co-create.
           </h1>
-          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
+          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
             Cult Creative is the all-in-one portal for creators and brands to
             seamlessly work, collaborate and elevate.
           </p>
-          <p className="text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
+          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
             With our 13,000 talent pool across Southeast Asia, we help transform
             ideas into captivating, quality content for brands.
           </p>
