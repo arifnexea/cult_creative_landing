@@ -97,12 +97,12 @@ const HomeFirst = () => {
                   <video
                     key={elem?.id}
                     src={elem?.url}
-                    className="h-[37rem] 2xl:h-[70vh] xl:[h-40vh] rounded-lg"
+                    className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-lg"
                     autoPlay
                     loop
                     muted
-                    webkit-playsinline
-                    playsinline
+                    webkit-playsInline
+                    playsInline
                     preload="none"
                   >
                     <source type="video/mp4" />
