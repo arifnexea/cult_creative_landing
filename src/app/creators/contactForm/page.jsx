@@ -8,12 +8,14 @@ import Image from "next/image";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import { PrismaClient } from "@prisma/client";
+import { useState } from "react";
 
 import countries from "../../contants/countries.json";
 
 function CreatorForm() {
   const color = "#006D53";
   const prisma = new PrismaClient();
+  const [loading, setLoading] = useState();
 
   const schema = yup.object({
     name: yup.string().required(),
@@ -28,7 +30,8 @@ function CreatorForm() {
     interests: yup.array().required(),
   });
 
-  const onSubmit = async (value) => {
+  const onSubmit = async (value, resetForm) => {
+    setLoading(true);
     await fetch("/api/createUser", {
       method: "POST",
       headers: {
@@ -37,8 +40,15 @@ function CreatorForm() {
       body: JSON.stringify(value),
     })
       .then((res) => res.json())
-      .then((val) => alert(val.message))
-      .catch((err) => alert(JSON.stringify(err)));
+      .then((val) => {
+        alert(val.message);
+        setLoading(false);
+        resetForm();
+      })
+      .catch((err) => alert(JSON.stringify(err)))
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -86,7 +96,9 @@ function CreatorForm() {
                   language: "",
                   interests: [],
                 }}
-                onSubmit={onSubmit}
+                onSubmit={(values, { resetForm }) => {
+                  onSubmit(values, resetForm);
+                }}
                 validationSchema={schema}
               >
                 <Form>
@@ -296,10 +308,53 @@ function CreatorForm() {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.8 }}
                       type="submit"
-                      className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-serif uppercase flex-none`}
+                      disabled={loading}
+                      className={`${
+                        loading ? "bg-slate-300" : "bg-slate-100 "
+                      } py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
                     >
+                      {loading && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="2em"
+                          height="2em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-dasharray="15"
+                            stroke-dashoffset="15"
+                            stroke-linecap="round"
+                            stroke-width="2"
+                            d="M12 3C16.9706 3 21 7.02944 21 12"
+                          >
+                            <animate
+                              fill="freeze"
+                              attributeName="stroke-dashoffset"
+                              dur="0.3s"
+                              values="15;0"
+                            />
+                            <animateTransform
+                              attributeName="transform"
+                              dur="1.5s"
+                              repeatCount="indefinite"
+                              type="rotate"
+                              values="0 12 12;360 12 12"
+                            />
+                          </path>
+                        </svg>
+                      )}
                       Submit
                     </motion.button>
+                    {/* <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.8 }}
+                      type="submit"
+                      className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
+                    >
+                      Submit
+                    </motion.button> */}
                   </div>
                 </Form>
               </Formik>
