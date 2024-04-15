@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 function CreatorThird() {
   return (
@@ -42,12 +43,12 @@ function CreatorThird() {
         <div className="flex flex-col lg:flex-row py-5">
           <div className="rounded-full  border-2 border-solid lg:p-5 p-3 my-4 mx-3 text-center">
             <h1 className="xl:text-7xl lg:text-6xl  text-3xl font-bold uppercase xl:-tracking-[.45rem] lg:-tracking-[.10rem] ">
-              50 completed campaigns
+              <CountUp start={0} end={50} /> completed campaigns
             </h1>
           </div>
           <div className="rounded-full  border-2 border-solid lg:p-5 p-3 my-4  mx-3 text-center">
             <h1 className="xl:text-7xl lg:text-6xl text-3xl font-bold uppercase xl:-tracking-[.45rem] lg:-tracking-[.10rem] ">
-              2700 creators matched
+              <CountUp start={0} end={2700} /> creators matched
             </h1>
           </div>
         </div>

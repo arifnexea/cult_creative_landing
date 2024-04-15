@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 const vid = [
   {
@@ -127,13 +128,15 @@ const CreatorFirst = () => {
             amazing brand deals.
           </p>
           <div className="text-center">
-            <motion.button
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
-              className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-times"
-            >
-              Get Started
-            </motion.button>
+            <Link href={"/creator/contactForm"}>
+              <motion.button
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-times"
+              >
+                Get Started
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>

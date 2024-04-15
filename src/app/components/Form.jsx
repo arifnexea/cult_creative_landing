@@ -28,13 +28,18 @@ const Form = ({ image, color }) => {
           <span className="font-times italic -tracking-[.5rem]">marketing</span>
         </h1>
         <div>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.8 }}
-            className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-serif uppercase flex-none`}
+          <a
+            href="https://calendly.com/danishmokhtar/30min?month=2024-03"
+            target="__blank"
           >
-            Book a call
-          </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-aileron uppercase flex-none`}
+            >
+              Book a call
+            </motion.button>
+          </a>
         </div>
         <div className="flex flex-col gap-6">
           <h1 className="text-xl font-bold -tracking-[.05rem]">

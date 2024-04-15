@@ -1,14 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion, wrap } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 const vid = [
   {
-    url: "https://storage.googleapis.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov",
+    id: 1,
+    url: "https://storage.cloud.google.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov?authuser=1",
   },
   {
+    id: 2,
     url: "https://storage.googleapis.com/landing_page_cult/main/Bata%20x%20Cult%20Creative.mov",
   },
 ];
@@ -84,29 +86,30 @@ const HomeFirst = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <motion.div
+            <div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               className="flex gap-3 justify-center"
             >
-              {vid.map((elem, i) => {
+              {vid.map((elem) => {
                 return (
                   <video
-                    key={i}
-                    src={elem.url}
+                    key={elem?.id}
+                    src={elem?.url}
                     className="h-[37rem] 2xl:h-[70vh] xl:[h-40vh] rounded-lg"
                     autoPlay
                     loop
                     muted
                     webkit-playsinline
-                    playsInline
+                    playsinline
+                    preload="none"
                   >
                     <source type="video/mp4" />
                   </video>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
             {vid.map((_, i) => {
@@ -126,13 +129,15 @@ const HomeFirst = () => {
       </div>
 
       <div className="text-center my-10">
-        <motion.button
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.8 }}
-          className="bg-slate-100 py-2 px-12 rounded-full text-[#1340FF] font-aileron uppercase font-bold"
-        >
-          Get Started
-        </motion.button>
+        <Link href={"/brands"}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            className="bg-slate-100 py-2 px-12 rounded-full text-[#1340FF] font-aileron uppercase font-bold"
+          >
+            Get Started
+          </motion.button>
+        </Link>
       </div>
     </section>
   );
