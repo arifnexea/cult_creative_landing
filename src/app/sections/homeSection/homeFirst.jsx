@@ -67,7 +67,7 @@ const HomeFirst = () => {
             ideas into captivating, quality content for brands.
           </p>
         </motion.div>
-        <div className="relative my-10 basis-1/2">
+        <div className="sticky top-32 my-10 basis-1/2">
           <div className="sm:hidden">
             <motion.video
               key={vidIndex}
@@ -97,7 +97,7 @@ const HomeFirst = () => {
                   <video
                     key={elem?.id}
                     src={elem?.url}
-                    className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-lg"
+                    className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover sticky top-0"
                     autoPlay
                     loop
                     muted
