@@ -25,18 +25,6 @@ const vids = [
 ];
 
 function HomeFive() {
-  // const [vidIndex, setVidIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const vidScroll = setInterval(() => {
-  //     setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
-  //   }, 4000);
-
-  //   return () => {
-  //     clearInterval(vidScroll);
-  //   };
-  // }, [vidIndex]);
-
   return (
     <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
       <h1 className="text-center font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem]">
@@ -52,7 +40,7 @@ function HomeFive() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               src={elem?.url}
-              className="h-[26rem]"
+              className="w-[16rem] rounded-md"
               autoPlay
               loop
               muted
