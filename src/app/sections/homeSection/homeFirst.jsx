@@ -7,7 +7,7 @@ import Link from "next/link";
 const vid = [
   {
     id: 1,
-    url: "https://storage.cloud.google.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov",
+    url: "https://storage.googleapis.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov",
   },
   {
     id: 2,
