@@ -17,16 +17,27 @@ function CreatorForm() {
   const [loading, setLoading] = useState();
 
   const schema = yup.object({
-    name: yup.string().required(),
-    email: yup.string().email("Invalid email address").required(),
-    pronoun: yup.string().required(),
-    nationality: yup.string().required(),
-    birthDate: yup.string().required(),
-    location: yup.string().min(20, "Minumum 20 characters").required(),
-    instaUsername: yup.string().required(),
-    tiktokUsername: yup.string().required(),
-    language: yup.string().required(),
-    interests: yup.array().required(),
+    name: yup
+      .string()
+      .min(5, "Minumum is 5 characters")
+      .required("Name is required"),
+    email: yup
+      .string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    pronoun: yup.string().required("Pronous is required"),
+    phoneNumber: yup.number().required("Phone number is required"),
+    employmentType: yup.string().required("Employment type is required"),
+    nationality: yup.string().required("Nationality is required"),
+    birthDate: yup.string().required("Birth date is required"),
+    location: yup
+      .string()
+      .min(20, "Minumum 20 characters")
+      .required("Location is required"),
+    instaUsername: yup.string().required("Instagram username is required"),
+    tiktokUsername: yup.string().required("Tiktok username is required"),
+    language: yup.string().required("Language is required"),
+    interests: yup.array().required("Interest is required"),
   });
 
   const onSubmit = async (value, resetForm) => {
@@ -87,6 +98,8 @@ function CreatorForm() {
                   name: "",
                   email: "",
                   pronoun: "",
+                  phoneNumber: "",
+                  employmentType: "",
                   nationality: "",
                   birthDate: "",
                   location: "",
@@ -103,33 +116,60 @@ function CreatorForm() {
                 <Form>
                   <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 text-[#F4F4F4]">
                     <Field name="name">
-                      {({ field, form: { errors } }) => (
+                      {({ field, form: { errors, touched } }) => (
                         <>
                           <FormInput
                             field={field}
                             type="text"
                             label={"Name"}
                             color={color}
-                            errors={errors.name}
+                            errors={touched.name && errors.name}
                           />
                         </>
                       )}
                     </Field>
                     <Field name="email">
-                      {({ field, form: { errors }, meta }) => (
+                      {({ field, form: { errors, touched }, meta }) => (
                         <FormInput
                           field={field}
                           label={"Email Address"}
                           type={"email"}
                           color={color}
-                          errors={errors.email}
+                          errors={touched.email && errors.email}
+                        />
+                      )}
+                    </Field>
+
+                    <Field name="phoneNumber">
+                      {({ field, form: { errors, touched } }) => (
+                        <>
+                          <FormInput
+                            field={field}
+                            type="number"
+                            label={"Phone Number"}
+                            color={color}
+                            errors={touched.phoneNumber && errors.phoneNumber}
+                          />
+                        </>
+                      )}
+                    </Field>
+                    <Field name="employmentType">
+                      {({ field, form: { errors, touched }, meta }) => (
+                        <FormInput
+                          field={field}
+                          label={"Current Employment Type"}
+                          type={"text"}
+                          color={color}
+                          errors={
+                            touched.employmentType && errors.employmentType
+                          }
                         />
                       )}
                     </Field>
 
                     <div className="sm:col-span-3">
                       <Field name="pronoun">
-                        {({ field, form: { errors }, meta }) => (
+                        {({ field, form: { errors, touched }, meta }) => (
                           <>
                             <label
                               htmlFor="pronoun"
@@ -142,7 +182,9 @@ function CreatorForm() {
                                 name="pronoun"
                                 {...field}
                                 className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
-                                  errors.pronoun && "border-red-500"
+                                  errors.pronoun &&
+                                  touched.pronoun &&
+                                  "border-red-500"
                                 }`}
                               >
                                 <option value="">...</option>
@@ -152,7 +194,7 @@ function CreatorForm() {
                                 <option value="others">Others</option>
                               </select>
                             </div>
-                            {errors.pronoun && (
+                            {errors.pronoun && touched.pronoun && (
                               <p class="text-red-500 text-xs mx-2 my-1">
                                 {errors.pronoun}
                               </p>
@@ -163,7 +205,7 @@ function CreatorForm() {
                     </div>
                     <div className="sm:col-span-3">
                       <Field name="nationality">
-                        {({ field, form: { errors }, meta }) => (
+                        {({ field, form: { errors, touched }, meta }) => (
                           <>
                             <label
                               htmlFor="nationality"
@@ -175,7 +217,9 @@ function CreatorForm() {
                               <select
                                 {...field}
                                 className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
-                                  errors.nationality && "border-red-500"
+                                  errors.nationality &&
+                                  touched.nationality &&
+                                  "border-red-500"
                                 }`}
                               >
                                 <option value="">...</option>
@@ -188,7 +232,7 @@ function CreatorForm() {
                                 })}
                               </select>
                             </div>
-                            {errors.nationality && (
+                            {errors.nationality && touched.nationality && (
                               <p class="text-red-500 text-xs mx-2 my-1">
                                 {errors.nationality}
                               </p>
@@ -198,52 +242,54 @@ function CreatorForm() {
                       </Field>
                     </div>
                     <Field name="birthDate">
-                      {({ field, form: { errors }, meta }) => (
+                      {({ field, form: { errors, touched }, meta }) => (
                         <FormInput
                           label={"Date of Birth"}
                           type={"date"}
                           field={field}
                           color={color}
-                          errors={errors.birthDate}
+                          errors={touched.birthDate && errors.birthDate}
                         />
                       )}
                     </Field>
                     <Field name="location">
-                      {({ field, form: { errors }, meta }) => (
+                      {({ field, form: { errors, touched }, meta }) => (
                         <FormInput
                           label={"Current Location"}
                           field={field}
                           type={"text"}
                           color={color}
-                          errors={errors.location}
+                          errors={touched.location && errors.location}
                         />
                       )}
                     </Field>
                     <Field name="instaUsername">
-                      {({ field, form: { errors }, meta }) => (
+                      {({ field, form: { errors, touched }, meta }) => (
                         <FormInput
                           label={"Instagram Username"}
                           field={field}
                           type={"text"}
                           color={color}
-                          errors={errors.instaUsername}
+                          errors={touched.instaUsername && errors.instaUsername}
                         />
                       )}
                     </Field>
                     <Field name="tiktokUsername">
-                      {({ field, form: { errors }, meta }) => (
+                      {({ field, form: { errors, touched }, meta }) => (
                         <FormInput
                           label={"Tik Tok Username"}
                           field={field}
                           type={"text"}
                           color={color}
-                          errors={errors.tiktokUsername}
+                          errors={
+                            touched.tiktokUsername && errors.tiktokUsername
+                          }
                         />
                       )}
                     </Field>
                     <div className="sm:col-span-3">
                       <Field name="language">
-                        {({ field, form: { errors }, meta }) => (
+                        {({ field, form: { errors, touched }, meta }) => (
                           <>
                             <label
                               htmlFor="language"
@@ -255,7 +301,9 @@ function CreatorForm() {
                               <select
                                 {...field}
                                 className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
-                                  errors.language && "border-red-500"
+                                  errors.language &&
+                                  touched.language &&
+                                  "border-red-500"
                                 }`}
                               >
                                 <option value="">...</option>
@@ -267,7 +315,7 @@ function CreatorForm() {
                                 <option value="others">Others</option>
                               </select>
                             </div>
-                            {errors.language && (
+                            {errors.language && touched.language && (
                               <p class="text-red-500 text-xs mx-2 my-1">
                                 {errors.language}
                               </p>
@@ -278,13 +326,15 @@ function CreatorForm() {
                     </div>
                     <div className="sm:col-span-3">
                       <Field name={"interests"}>
-                        {({ field, form: { errors }, meta }) => (
+                        {({ field, form: { errors, touched }, meta }) => (
                           <>
                             <select
                               {...field}
                               multiple={true}
                               className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
-                                errors.language && "border-red-500"
+                                errors.interests &&
+                                touched.interests &&
+                                "border-red-500"
                               }`}
                             >
                               <option value="NY">New York</option>
@@ -292,7 +342,7 @@ function CreatorForm() {
                               <option value="CH">Chicago</option>
                               <option value="OTHER">Other</option>
                             </select>
-                            {errors.interests && (
+                            {errors.interests && touched.interests && (
                               <p class="text-red-500 text-xs mx-2 my-1">
                                 {errors.interests}
                               </p>

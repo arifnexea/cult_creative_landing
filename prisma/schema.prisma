@@ -18,6 +18,8 @@ model Creator {
   name           String
   email          String
   pronoun        String
+  phoneNumber    String
+  employmentType String
   nationality    String
   birthDate      DateTime
   location       String   @db.VarChar(255)
