@@ -50,12 +50,7 @@ const CreatorFirst = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex gap-3 justify-center"
-            >
+            <div className="flex gap-3 justify-center">
               {vid.map((elem, i) => {
                 return (
                   <div div key={elem.key}>
@@ -73,7 +68,7 @@ const CreatorFirst = () => {
                   </div>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
             {vid.map((_, i) => {
