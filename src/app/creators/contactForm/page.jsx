@@ -15,6 +15,11 @@ function CreatorForm() {
   const color = "#006D53";
 
   const [loading, setLoading] = useState();
+  const [others, setOthers] = useState({
+    language: false,
+    interests: false,
+    employmentType: false,
+  });
 
   const schema = yup.object({
     name: yup
@@ -38,6 +43,9 @@ function CreatorForm() {
     tiktokUsername: yup.string().required("Tiktok username is required"),
     language: yup.string().required("Language is required"),
     interests: yup.array().required("Interest is required"),
+    // others: yup.object({
+    //   language: yup.string().required("Please specify your language"),
+    // }),
   });
 
   const onSubmit = async (value, resetForm) => {
@@ -59,6 +67,14 @@ function CreatorForm() {
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  const validateOthers = (value) => {
+    let error;
+    if (value === "") {
+      error = "Please specify your language";
+    }
+    return error;
   };
 
   return (
@@ -106,9 +122,13 @@ function CreatorForm() {
                   instaUsername: "",
                   tiktokUsername: "",
                   language: "",
+                  others: {
+                    language: "",
+                  },
                   interests: [],
                 }}
                 onSubmit={(values, { resetForm }) => {
+                  alert(JSON.stringify(values));
                   onSubmit(values, resetForm);
                 }}
                 validationSchema={schema}
@@ -289,7 +309,7 @@ function CreatorForm() {
                     </Field>
                     <div className="sm:col-span-3">
                       <Field name="language">
-                        {({ field, form: { errors, touched }, meta }) => (
+                        {({ field, form: { errors, touched } }) => (
                           <>
                             <label
                               htmlFor="language"
@@ -315,6 +335,27 @@ function CreatorForm() {
                                 <option value="others">Others</option>
                               </select>
                             </div>
+                            {field.value.includes("others") && (
+                              <Field
+                                name="others.language"
+                                validate={validateOthers}
+                              >
+                                {({ field, form: { errors, touched } }) => (
+                                  <>
+                                    <FormInput
+                                      {...field}
+                                      placeholder="Please specify your language"
+                                      type={"text"}
+                                      color={color}
+                                      errors={
+                                        touched?.others?.language &&
+                                        errors?.others?.language
+                                      }
+                                    />
+                                  </>
+                                )}
+                              </Field>
+                            )}
                             {errors.language && touched.language && (
                               <p class="text-red-500 text-xs mx-2 my-1">
                                 {errors.language}
