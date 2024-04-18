@@ -11,24 +11,28 @@ const vid = [
 
 const vids = [
   {
+    id: 1,
     title: "Hotal Indigo",
     badge1: "",
     badge2: "",
     url: "https://storage.googleapis.com/landing_page_cult/creators/Hotel%20Indigo%20CNY%20x%20Cult%20Creative%20.mp4",
   },
   {
+    id: 2,
     title: "Trove",
     badge1: "",
     badge2: "",
     url: "https://storage.googleapis.com/landing_page_cult/creators/Trove%20x%20Cult%20Creative.mov",
   },
   {
+    id: 3,
     title: "Mimone Spa",
     badge1: "",
     badge2: "",
     url: "https://storage.googleapis.com/landing_page_cult/creators/Mimone%20Spa%20x%20Cult%20Creative.mov",
   },
   {
+    id: 4,
     title: "Supermama",
     badge1: "",
     badge2: "",
@@ -37,18 +41,6 @@ const vids = [
 ];
 
 function CreatorSecond() {
-  // const [vidIndex, setVidIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const vidScroll = setInterval(() => {
-  //     setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
-  //   }, 4000);
-
-  //   return () => {
-  //     clearInterval(vidScroll);
-  //   };
-  // }, [vidIndex]);
-
   const [cur, setCur] = useState(0);
 
   useEffect(() => {
@@ -69,88 +61,28 @@ function CreatorSecond() {
         <span className="font-times italic -tracking-[.4rem]">brands</span>
       </h1>
       <div className="lg:flex lg:flex-row justify-center gap-10 mt-16 px-9 hidden">
-        <div className="flex flex-col ">
-          <motion.video
-            key={1}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            src={vids[0].url}
-            className="h-[27rem] rounded-lg"
-            autoPlay
-            loop
-            muted
-            webkit-playsinline
-            playsInline
-            controls
-          >
-            <source type="video/mp4" />
-          </motion.video>
-          <h2 className="font-aileron text-lg pt-3 font-semibold">
-            Hotel Indigo
-          </h2>
-        </div>
-        <div className="flex flex-col">
-          <motion.video
-            key={2}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            src={vids[1].url}
-            className="h-[27rem] rounded-lg"
-            autoPlay
-            loop
-            muted
-            webkit-playsinline
-            playsInline
-            controls
-          >
-            <source type="video/mp4" />
-          </motion.video>
-          <h2 className="font-aileron text-lg pt-3 font-semibold">Trove</h2>
-        </div>
-        <div className="flex flex-col">
-          <motion.video
-            key={3}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            src={vids[2].url}
-            className="h-[27rem] rounded-lg"
-            autoPlay
-            loop
-            muted
-            webkit-playsinline
-            playsInline
-            controls
-          >
-            <source type="video/mp4" />
-          </motion.video>
-          <h2 className="font-aileron text-lg pt-3 font-semibold">
-            Mimone Spa{" "}
-          </h2>
-        </div>
-        <div className="flex flex-col">
-          <motion.video
-            key={4}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            src={vids[3].url}
-            className="h-[27rem] rounded-lg"
-            autoPlay
-            loop
-            muted
-            webkit-playsinline
-            playsInline
-            controls
-          >
-            <source type="video/mp4" />
-          </motion.video>
-          <h2 className="font-aileron text-lg pt-3 font-semibold">
-            Supermama Lab
-          </h2>
-        </div>
+        {vids.map((elem) => (
+          <div key={elem.id} className="flex flex-col">
+            <motion.video
+              key={elem.id}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              src={elem.url}
+              className="w-[27rem] rounded-lg"
+              autoPlay
+              loop
+              muted
+              webkit-playsInline
+              playsInline
+            >
+              <source type="video/mp4" />
+            </motion.video>
+            <h2 className="font-aileron text-lg pt-3 font-semibold">
+              {elem.title}
+            </h2>
+          </div>
+        ))}
       </div>
       <div className=" lg:hidden flex flex-col gap-5 ">
         <div className="flex mx-auto">

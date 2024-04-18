@@ -86,18 +86,13 @@ const HomeFirst = () => {
             </motion.video>
           </div>
           <div className="hidden sm:block">
-            <div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex gap-3 justify-center"
-            >
+            <div className="flex gap-3 justify-center">
               {vid.map((elem) => {
                 return (
                   <video
                     key={elem?.id}
                     src={elem?.url}
-                    className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover sticky top-0"
+                    className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
                     autoPlay
                     loop
                     muted

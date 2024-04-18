@@ -30,8 +30,8 @@ const CreatorFirst = () => {
 
   return (
     <section className="p-8 bg-[#006D53]">
-      <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start">
-        <div className="relative my-7 basis-1/2 order-last lg:order-first">
+      <div className="flex flex-col-reverse lg:flex-row justify-between gap-3 items-center lg:items-start">
+        <div className="sticky top-32 my-7 basis-1/2 ">
           <div className="sm:hidden">
             <motion.video
               key={vidIndex}
@@ -43,7 +43,7 @@ const CreatorFirst = () => {
               autoPlay
               loop
               muted
-              webkit-playsinline
+              webkit-playsInline
               playsinline
             >
               <source type="video/mp4" />
@@ -61,13 +61,12 @@ const CreatorFirst = () => {
                   <div div key={elem.key}>
                     <video
                       src={elem.url}
-                      className="h-[37rem] w-[34rem] rounded-xl "
+                      className="2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
                       autoPlay
                       loop
                       muted
                       webkit-playsinline
                       playsInline
-                      controls
                     >
                       <source type="video/mp4" />
                     </video>

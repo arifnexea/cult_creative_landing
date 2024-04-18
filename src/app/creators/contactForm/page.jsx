@@ -7,14 +7,13 @@ import FormInput from "@/app/components/FormInput";
 import Image from "next/image";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
-import { PrismaClient } from "@prisma/client";
 import { useState } from "react";
 
 import countries from "../../contants/countries.json";
 
 function CreatorForm() {
   const color = "#006D53";
-  const prisma = new PrismaClient();
+
   const [loading, setLoading] = useState();
 
   const schema = yup.object({
@@ -23,7 +22,7 @@ function CreatorForm() {
     pronoun: yup.string().required(),
     nationality: yup.string().required(),
     birthDate: yup.string().required(),
-    location: yup.string().min(100, "Minumum 100 chars").required(),
+    location: yup.string().min(20, "Minumum 20 characters").required(),
     instaUsername: yup.string().required(),
     tiktokUsername: yup.string().required(),
     language: yup.string().required(),
@@ -55,16 +54,16 @@ function CreatorForm() {
     <main className="flex min-h-screen flex-col">
       <Header logo={"/images/logo.svg"} />
       <Suspense fallback={<p>Loading...</p>}>
-        <section className="flex p-10  items-center justify-center bg-[#006D53]">
+        <section className="flex p-10 gap-5 items-center justify-center bg-[#006D53]">
           <div className="basis-1/2 hidden xl:block">
             <Image
               src={
                 "https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"
               }
               alt="creator"
-              width={500}
-              height={500}
-              className="rounded-lg"
+              width={600}
+              height={600}
+              className="rounded-lg mx-auto"
             />
           </div>
           <div className="flex flex-col gap-5">
