@@ -28,15 +28,15 @@ const HomeFirst = () => {
   const [vid, setVid] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const vidScroll = setInterval(() => {
-      setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
-    }, 4000);
+  // useEffect(() => {
+  //   const vidScroll = setInterval(() => {
+  //     setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
+  //   }, 4000);
 
-    return () => {
-      clearInterval(vidScroll);
-    };
-  }, [vidIndex, vid]);
+  //   return () => {
+  //     clearInterval(vidScroll);
+  //   };
+  // }, [vidIndex, vid]);
 
   useEffect(() => {
     const fetchVideos = async (name) => {
