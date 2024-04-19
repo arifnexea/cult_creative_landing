@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
+import LoadingIcon from "@/app/components/Icons/loading-icon";
 
 // const vid = [
 //   {
@@ -25,10 +26,7 @@ const fileName = [
 const HomeFirst = () => {
   const [vidIndex, setVidIndex] = useState(0);
   const [vid, setVid] = useState([]);
-
-  // useEffect(() => {
-  //   console.log(vid);
-  // }, [vid]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const vidScroll = setInterval(() => {
@@ -43,17 +41,17 @@ const HomeFirst = () => {
   useEffect(() => {
     const fetchVideos = async (name) => {
       try {
+        setLoading(true);
         let data = await fetch(`/api/getMainContents/${name}`);
         data = await data.json();
+        setLoading(false);
         return data;
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
-
-    // Array.from([1, 2, 3]).forEach(() => {
-    //   console.log("TEST");
-    // });
 
     fileName.forEach(async (elem) => {
       const data = await fetchVideos(elem.name);
@@ -107,7 +105,7 @@ const HomeFirst = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              // src={vid[vidIndex].url}
+              src={vid[vidIndex].url}
               className="h-[37rem] rounded-lg"
               autoPlay
               loop
@@ -120,12 +118,13 @@ const HomeFirst = () => {
           </div>
           <div className="hidden sm:block">
             <div className="flex gap-3 justify-center">
+              {loading && <LoadingIcon w={"5em"} h={"5em"} c={"white"} />}
               {vid &&
                 vid.map((elem, i) => {
                   return (
                     <video
                       key={i}
-                      src={elem.url}
+                      src={elem?.url}
                       className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
                       autoPlay
                       loop
