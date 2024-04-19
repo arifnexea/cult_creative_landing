@@ -1,22 +1,34 @@
-"use client";
+/* eslint-disable react-hooks/exhaustive-deps */
+// "use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
 
-const vid = [
-  {
-    id: 1,
-    url: "https://storage.googleapis.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov",
-  },
-  {
-    id: 2,
-    url: "https://storage.googleapis.com/landing_page_cult/main/Bata%20x%20Cult%20Creative.mov",
-  },
+// const vid = [
+//   {
+//     id: 1,
+//     url: "https://storage.googleapis.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov",
+//   },
+//   {
+//     id: 2,
+//     url: "https://storage.googleapis.com/landing_page_cult/main/Bata%20x%20Cult%20Creative.mov",
+//   },
+// ];
+
+const fileName = [
+  { id: uuidv4(), name: "Trove 2 x Cult Creative.mov" },
+  { id: uuidv4(), name: "Bata x Cult Creative.mov" },
 ];
 
 const HomeFirst = () => {
   const [vidIndex, setVidIndex] = useState(0);
+  const [vid, setVid] = useState([]);
+
+  // useEffect(() => {
+  //   console.log(vid);
+  // }, [vid]);
 
   useEffect(() => {
     const vidScroll = setInterval(() => {
@@ -26,7 +38,28 @@ const HomeFirst = () => {
     return () => {
       clearInterval(vidScroll);
     };
-  }, [vidIndex]);
+  }, [vidIndex, vid]);
+
+  useEffect(() => {
+    const fetchVideos = async (name) => {
+      try {
+        let data = await fetch(`/api/getMainContents/${name}`);
+        data = await data.json();
+        return data;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    // Array.from([1, 2, 3]).forEach(() => {
+    //   console.log("TEST");
+    // });
+
+    fileName.forEach(async (elem) => {
+      const data = await fetchVideos(elem.name);
+      setVid((oldArray) => [...oldArray, { id: elem.id, url: data.url[0] }]);
+    });
+  }, []);
 
   return (
     <section className="p-8 bg-[#1340FF]">
@@ -74,7 +107,7 @@ const HomeFirst = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src={vid[vidIndex].url}
+              // src={vid[vidIndex].url}
               className="h-[37rem] rounded-lg"
               autoPlay
               loop
@@ -87,23 +120,24 @@ const HomeFirst = () => {
           </div>
           <div className="hidden sm:block">
             <div className="flex gap-3 justify-center">
-              {vid.map((elem) => {
-                return (
-                  <video
-                    key={elem?.id}
-                    src={elem?.url}
-                    className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    webkit-playsInline
-                    playsInline
-                    preload="none"
-                  >
-                    <source type="video/mp4" />
-                  </video>
-                );
-              })}
+              {vid &&
+                vid.map((elem, i) => {
+                  return (
+                    <video
+                      key={i}
+                      src={elem.url}
+                      className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      webkit-playsInline
+                      playsInline
+                      preload="none"
+                    >
+                      <source type="video/mp4" />
+                    </video>
+                  );
+                })}
             </div>
           </div>
           <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">

@@ -43,13 +43,13 @@ export async function POST(req) {
   }
 }
 
-// export async function GET() {
-//   return new NextResponse(
-//     JSON.stringify({
-//       message: `Hello`,
-//     }),
-//     {
-//       status: 200,
-//     }
-//   );
-// }
+export async function GET() {
+  return new NextResponse(
+    JSON.stringify({
+      message: `Hello`,
+    }),
+    {
+      status: 200,
+    }
+  );
+}

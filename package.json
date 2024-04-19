@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.10.0",
     "@iconify/react": "^4.1.1",
     "@prisma/client": "5.12.1",
     "formik": "^2.4.5",
@@ -20,6 +21,7 @@
     "react-countup": "^6.5.3",
     "react-dom": "^18",
     "react-type-animation": "^3.2.0",
+    "uuid": "^9.0.1",
     "yup": "^1.4.0"
   },
   "devDependencies": {
