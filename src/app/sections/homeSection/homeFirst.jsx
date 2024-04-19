@@ -74,7 +74,7 @@ const HomeFirst = () => {
           className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4f4f4]"
             style={{
               lineHeight: 0.8,
             }}
@@ -105,7 +105,7 @@ const HomeFirst = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src={vid[vidIndex].url}
+              src={vid[vidIndex]?.url}
               className="h-[37rem] rounded-lg"
               autoPlay
               loop
