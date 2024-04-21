@@ -110,7 +110,6 @@ const HomeFirst = () => {
                   return (
                     <video
                       key={i}
-                      src={elem?.name}
                       className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
                       autoPlay
                       loop
@@ -119,7 +118,7 @@ const HomeFirst = () => {
                       playsInline
                       preload="none"
                     >
-                      <source type="video/mp4" />
+                      <source src={elem?.name} type="video/mp4" />
                     </video>
                   );
                 })}
