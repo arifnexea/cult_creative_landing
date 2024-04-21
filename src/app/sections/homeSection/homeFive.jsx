@@ -11,7 +11,7 @@ const vids = [
   {
     id: uuid(),
     name: "Trove",
-    url: "https://storage.googleapis.com/landing-cultcreative/main/Trove%20x%20Cult%20Creative.mov",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Trove%20x%20Cult%20Creative.mp4",
   },
   {
     id: uuid(),
