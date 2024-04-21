@@ -8,7 +8,7 @@ const companies = [
   },
   {
     name: "indigo",
-    path: "/images/main/indigo.png",
+    path: "/images/Main/indigo.png",
   },
   {
     name: "bata",
@@ -28,11 +28,11 @@ const companies = [
   },
   {
     name: "pavillion",
-    path: "/images/main/pavi.png",
+    path: "/images/Main/pavi.png",
   },
   {
     name: "dressing paula",
-    path: "/images/main/uniqlo.png",
+    path: "/images/Main/uniqlo.png",
   },
 ];
 
