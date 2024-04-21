@@ -10,11 +10,11 @@ import LoadingIcon from "@/app/components/Icons/loading-icon";
 const vid = [
   {
     id: uuidv4(),
-    name: "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mov",
+    name: "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mp4",
   },
   {
     id: uuidv4(),
-    name: "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mov",
+    name: "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mp4",
   },
 ];
 
