@@ -43,7 +43,7 @@ const HomeFirst = () => {
   //   //   const data = await fetchVideos(elem.name);
   //   //   setVid((oldArray) => [...oldArray, { id: elem.id, url: data.url[0] }]);
   //   // });
-  // }, []);
+  // }, [])
 
   return (
     <section className="p-8 bg-[#1340FF]">
@@ -98,6 +98,7 @@ const HomeFirst = () => {
               muted
               webkit-playsinline
               playsInline
+              preload="metadata"
             >
               <source type="video/mp4" />
             </motion.video>
@@ -116,7 +117,7 @@ const HomeFirst = () => {
                       muted
                       webkit-playsInline
                       playsInline
-                      preload="none"
+                      preload="metadata"
                     >
                       <source src={elem?.name} type="video/mp4" />
                     </video>
