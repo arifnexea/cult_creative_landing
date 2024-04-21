@@ -7,57 +7,43 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import LoadingIcon from "@/app/components/Icons/loading-icon";
 
-// const vid = [
-//   {
-//     id: 1,
-//     url: "https://storage.googleapis.com/landing_page_cult/main/Trove%202%20x%20Cult%20Creative.mov",
-//   },
-//   {
-//     id: 2,
-//     url: "https://storage.googleapis.com/landing_page_cult/main/Bata%20x%20Cult%20Creative.mov",
-//   },
-// ];
-
-const fileName = [
-  { id: uuidv4(), name: "Trove 2 x Cult Creative.mov" },
-  { id: uuidv4(), name: "Bata x Cult Creative.mov" },
+const vid = [
+  {
+    id: uuidv4(),
+    name: "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mov",
+  },
+  {
+    id: uuidv4(),
+    name: "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mov",
+  },
 ];
 
 const HomeFirst = () => {
   const [vidIndex, setVidIndex] = useState(0);
-  const [vid, setVid] = useState([]);
+  // const [vid, setVid] = useState(vids);
   const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
-  //   const vidScroll = setInterval(() => {
-  //     setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
-  //   }, 4000);
-
-  //   return () => {
-  //     clearInterval(vidScroll);
+  //   const fetchVideos = async (name) => {
+  //     try {
+  //       setLoading(true);
+  //       let data = await fetch(`/api/getMainContents/${name}`);
+  //       data = await data.json();
+  //       setLoading(false);
+  //       return data;
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
   //   };
-  // }, [vidIndex, vid]);
 
-  useEffect(() => {
-    const fetchVideos = async (name) => {
-      try {
-        setLoading(true);
-        let data = await fetch(`/api/getMainContents/${name}`);
-        data = await data.json();
-        setLoading(false);
-        return data;
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fileName.forEach(async (elem) => {
-      const data = await fetchVideos(elem.name);
-      setVid((oldArray) => [...oldArray, { id: elem.id, url: data.url[0] }]);
-    });
-  }, []);
+  //   fetchVideos("Trove 2 x Cult Creative.mov");
+  //   // fileName.forEach(async (elem) => {
+  //   //   const data = await fetchVideos(elem.name);
+  //   //   setVid((oldArray) => [...oldArray, { id: elem.id, url: data.url[0] }]);
+  //   // });
+  // }, []);
 
   return (
     <section className="p-8 bg-[#1340FF]">
@@ -105,7 +91,7 @@ const HomeFirst = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src={vid[vidIndex]?.url}
+              src={vid[vidIndex]?.name}
               className="h-[37rem] rounded-lg"
               autoPlay
               loop
@@ -124,7 +110,7 @@ const HomeFirst = () => {
                   return (
                     <video
                       key={i}
-                      src={elem?.url}
+                      src={elem?.name}
                       className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
                       autoPlay
                       loop

@@ -1,0 +1,5 @@
+{
+  "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mov": { "integrity": "sha512-M7lQPBKx0Lacolv18FsTptkhPp9IldqlZTaidT3swakTw1vDy3pu+ELxUSh9B0a8qoRTAUpGnwPVhD+gTtjNuQ==", "contentType": "application/octet-stream" },
+  "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mov": { "integrity": "sha512-1p5mre3Z8TdsdP24tXNOH7bJXsWx1816SVTt3Rchhuywqaa1gu6xyGAWrejGYiREZSjhFakQAlV5HKa7xwDV0A==", "contentType": "video/mp4" },
+  "version": 1
+}

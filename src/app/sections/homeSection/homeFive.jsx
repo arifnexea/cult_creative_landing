@@ -1,26 +1,27 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { v4 as uuid } from "uuid";
 
 const vids = [
   {
-    id: 1,
+    id: uuid(),
     name: "Hotel Indigo",
-    url: "https://storage.googleapis.com/landing_page_cult/main/Hotel%20Indigo%20CNY%20x%20Cult%20Creative%20.mp4",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Hotel%20Indigo%20CNY%20x%20Cult%20Creative%20.mp4",
   },
   {
-    id: 2,
+    id: uuid(),
     name: "Trove",
-    url: "https://storage.googleapis.com/landing_page_cult/main/Trove%20x%20Cult%20Creative.mov",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Trove%20x%20Cult%20Creative.mov",
   },
   {
-    id: 3,
+    id: uuid(),
     name: "Mimone Spa",
-    url: "https://storage.googleapis.com/landing_page_cult/main/Mimone%20Spa%20x%20Cult%20Creative.mov",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Mimone%20Spa%20x%20Cult%20Creative.mov",
   },
   {
-    id: 4,
+    id: uuid(),
     name: "Supermama Lab",
-    url: "https://storage.googleapis.com/landing_page_cult/main/Supermama%20Lab%20x%20Cult%20Creative.mp4",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Supermama%20Lab%20x%20Cult%20Creative.mp4",
   },
 ];
 

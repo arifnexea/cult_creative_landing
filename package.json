@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npx next-video sync -w",
     "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,6 +12,7 @@
     "@google-cloud/storage": "^7.10.0",
     "@iconify/react": "^4.1.1",
     "@prisma/client": "5.12.1",
+    "@uidotdev/usehooks": "^2.4.1",
     "formik": "^2.4.5",
     "framer-motion": "^11.0.12",
     "next": "14.1.3",
