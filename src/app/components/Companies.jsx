@@ -11,7 +11,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle }) => {
         <h3 className="text-2xl -tracking-[.1rem] font-bold">{title}</h3>
         <hr className="grow border-2 border-[#1340FF]" />
       </div>
-      <div className="flex flex-wrap p-5 m-3 justify-evenly">
+      <div className="flex gap-5 flex-wrap p-5 m-3 justify-evenly">
         {companiesImages?.map((elem, i) => {
           return (
             <>

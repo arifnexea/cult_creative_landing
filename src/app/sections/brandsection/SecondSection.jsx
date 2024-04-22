@@ -6,20 +6,26 @@ import { Icon } from "@iconify/react";
 const vids = [
   {
     title: "bata",
-    badge1: "20 posts 3m reach",
-    badge2: "8.5m views 411k engagements",
+    badge1: "20 posts",
+    badge2: "3m reach",
+    badge3: "8.5m views",
+    badge4: "411k engagements",
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Bata%20-%20Case%20Study%20x%20Cult%20Creative.mp4",
   },
   {
     title: "It's The Ship",
-    badge1: "760 posts 177K reach",
-    badge2: "1.4M views 5K ENGAGEMENT",
+    badge1: "760 posts",
+    badge2: "177K reach",
+    badge3: "1.4M views",
+    badge4: "5K ENGAGEMENT",
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Its%20The%20Ship%20-%20Case%20Study%20x%20Cult%20Creative%20.mp4",
   },
   {
-    title: "bata",
-    badge1: "760 posts 177K reach",
-    badge2: "8.5m views 411k engagements",
+    title: "dressing paula",
+    badge1: "12 posts",
+    badge2: "36.2k reach",
+    badge3: "42k views",
+    badge4: "1.7k engagements",
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Dressing%20Paula%20-%20Case%20Study%20x%20Cult%20Creative.MOV",
   },
 ];
@@ -84,8 +90,11 @@ const SecondSection = () => {
                   title={elem.title}
                   badge1={elem.badge1}
                   badge2={elem.badge2}
+                  badge3={elem.badge3}
+                  badge4={elem.badge4}
                   cur={cur}
                   setCur={setCur}
+                  contentStyle={"grid grid-cols-2 gap-3"}
                 />
               </div>
             );

@@ -30,7 +30,7 @@ function AboutUs() {
               </motion.video>
             </div>
             <div className="flex flex-col justify-center items-center gap-y-8">
-              <h1 className="xl:text-[11rem] lg:text-[8rem] md:text-7xl text-center text-5xl xl:-mt-[74px] lg:-mt-[60px]">
+              <h1 className="xl:text-[11rem] lg:text-[8rem] md:text-7xl text-center text-5xl xl:-mt-[74px] lg:-mt-[60px] z-50">
                 <span className="xl:text-[9rem] lg:text-[7rem]"> our </span>{" "}
                 <span className="font-times xl:-tracking-[0.7rem] lg:-tracking-[0.5rem] -tracking-[0.1rem] font-extralight">
                   operating

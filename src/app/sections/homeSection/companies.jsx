@@ -38,11 +38,14 @@ const companies = [
 
 const HomeCompanies = ({ title }) => {
   return (
-    <main className="bg-[#F4F4F4] py-10 px-5">
+    <main className="bg-[#F4F4F4] py-8 px-5">
       <Companies
         title={title}
         companiesImages={companies}
         rounded={"rounded-full"}
+        imgStyle={
+          "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        }
       />
     </main>
   );

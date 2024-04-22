@@ -20,30 +20,7 @@ const vid = [
 
 const HomeFirst = () => {
   const [vidIndex, setVidIndex] = useState(0);
-  // const [vid, setVid] = useState(vids);
   const [loading, setLoading] = useState(false);
-
-  // useEffect(() => {
-  //   const fetchVideos = async (name) => {
-  //     try {
-  //       setLoading(true);
-  //       let data = await fetch(`/api/getMainContents/${name}`);
-  //       data = await data.json();
-  //       setLoading(false);
-  //       return data;
-  //     } catch (error) {
-  //       console.log(error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchVideos("Trove 2 x Cult Creative.mov");
-  //   // fileName.forEach(async (elem) => {
-  //   //   const data = await fetchVideos(elem.name);
-  //   //   setVid((oldArray) => [...oldArray, { id: elem.id, url: data.url[0] }]);
-  //   // });
-  // }, [])
 
   return (
     <section className="p-8 bg-[#1340FF]">

@@ -29,7 +29,7 @@ const FirstSection = () => {
   return (
     <section className="p-8 bg-[#8A5AFE] ">
       <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start">
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{
             opacity: 1,
@@ -65,6 +65,49 @@ const FirstSection = () => {
             Asia, we take the guesswork out of creator marketing.
           </p>
           <p className="2xl:text-[3rem] text-[25.4px] text-[#F4f4f4] w-[75%] lg:text-justify mx-auto lg:ms-1 -tracking-[.1rem]">
+            Get quality User-Generated Content and KOL campaigns for your brand,
+            to drive genuine user engagement.
+          </p>
+        </motion.div> */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+          className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
+        >
+          <h1
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4f4f4]"
+            style={{
+              lineHeight: 0.8,
+            }}
+          >
+            let <span className="font-times">our</span>
+            <span className="-tracking-[.5rem] xl:-tracking-[1rem] font-times italic">
+              <br /> creators
+            </span>{" "}
+            do <br />
+            <span className="-tracking-[.2rem] xl:-tracking-[1rem] font-times ">
+              the
+            </span>{" "}
+            <span className="-tracking-[.5rem] xl:-tracking-[14px] font-times italic">
+              work
+            </span>
+            <br />
+            for{" "}
+            <span className="-tracking-[.5rem] xl:-tracking-[1rem] font-times ">
+              you
+            </span>{" "}
+          </h1>
+          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+            With our network of 13,000 creators we’ve built across Southeast
+            Asia, we take the guesswork out of creator marketing.
+          </p>
+          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
             Get quality User-Generated Content and KOL campaigns for your brand,
             to drive genuine user engagement.
           </p>

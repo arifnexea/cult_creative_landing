@@ -29,8 +29,7 @@ function HomeFive() {
   return (
     <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
       <h1 className="text-center font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem]">
-        we <span className="font-times italic">match</span>{" "}
-        <span className="font-times ">you</span> to{" "}
+        we <span className="font-times italic">match you</span> to{" "}
         <span className="font-times italic ">brands</span>
       </h1>
       <div className="flex flex-wrap lg:flex-row justify-evenly gap-10 mt-16 px-9">

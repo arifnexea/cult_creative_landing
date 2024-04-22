@@ -13,7 +13,7 @@ function ContactUs() {
     <main className="flex min-h-screen flex-col">
       <Header logo={"/images/logo.svg"} />
       <Suspense fallback={<p>Loading...</p>}>
-        <section className="flex p-10  items-center justify-center bg-[#F4F4F4] text-[#8A5AFE] font-aileron">
+        <section className="flex p-10 items-center justify-center bg-[#F4F4F4] text-[#8A5AFE] font-aileron">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{
@@ -34,8 +34,9 @@ function ContactUs() {
                 </span>
               </h1>
             </div>
-            <div className="flex xl:flex-row lg:flex-row flex-col justify-center items-center gap-0">
-              <div className="flex flex-col flex-start justify-items-start p-7 xl:w-[60%] lg:w-[60%]">
+
+            <div className="flex xl:flex-row lg:flex-row flex-col justify-center">
+              <div className="flex flex-col flex-start justify-items-start p-7 basis-1/2">
                 <div className="flex flex-col justify-center items-center align-center p-8">
                   <Icon
                     icon="icomoon-free:location"
@@ -51,7 +52,7 @@ function ContactUs() {
                   </h3>
                 </div>
               </div>
-              <div className="flex flex-col flex-start justify-items-start p-7 w-[60%]">
+              <div className="flex flex-col flex-start justify-items-start p-7 basis-1/2">
                 <div className="flex flex-col justify-center items-center align-center p-8">
                   <Icon
                     icon="tabler:mail-filled"

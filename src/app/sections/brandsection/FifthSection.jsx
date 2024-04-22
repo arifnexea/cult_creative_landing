@@ -10,10 +10,11 @@ const FifthSection = () => {
     <section className="py-10 px-6 bg-[#8A5AFE] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
         <div className="text-center col-span-2 md:col-span-1">
-          <h1 className="text-7xl md:text-8xl lg:text-9xl -tracking-[.4rem] leading-[4rem]">
+          <h1 className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]">
             hear from
             <br />
-            <span className="font-serif italic">our users</span>
+            <span className="font-times">our</span>{" "}
+            <span className="font-times italic">users</span>
           </h1>
         </div>
         <div className="col-span-2 md:col-span-1">
@@ -35,7 +36,7 @@ const FifthSection = () => {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -IRMA syazreena,
+                  -Irma Syazreena,
                   <span className="uppercase font-bold tracking-[0]">reka</span>
                   .
                 </p>
@@ -57,8 +58,8 @@ const FifthSection = () => {
                     speed={50}
                   />
                 </p>
-                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.5rem]">
-                  -azah aziz,
+                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
+                  -Azah Aziz,
                   <span className="uppercase font-bold tracking-[0]">
                     KISSAHH LABELS
                   </span>
@@ -82,8 +83,8 @@ const FifthSection = () => {
                     speed={50}
                   />
                 </p>
-                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.5rem]">
-                  -charmaine chow,
+                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
+                  -Charmaine Chow,
                   <span className="uppercase font-bold tracking-[0]">
                     farm fresh
                   </span>

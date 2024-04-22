@@ -9,12 +9,7 @@ function HomeSix() {
     <section className="py-10 px-6 bg-[#1340FF] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
         <div className="col-span-2 md:col-span-1 mx-auto">
-          <h1
-            className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]"
-            // style={{
-            //   lineHeight: 0.6,
-            // }}
-          >
+          <h1 className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]">
             hear from
             <br />
             <span className="font-times">our</span>{" "}
@@ -40,7 +35,7 @@ function HomeSix() {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -IRMA syazreena,
+                  -Irma Syazreena,
                   <span className="uppercase font-bold tracking-[0]">reka</span>
                   .
                 </p>
@@ -62,8 +57,8 @@ function HomeSix() {
                     speed={50}
                   />
                 </p>
-                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.5rem]">
-                  -azah aziz,
+                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
+                  -Azah Aziz,
                   <span className="uppercase font-bold tracking-[0]">
                     KISSAHH LABELS
                   </span>
@@ -87,8 +82,8 @@ function HomeSix() {
                     speed={50}
                   />
                 </p>
-                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.5rem]">
-                  -charmaine chow,
+                <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
+                  -Charmaine Chow,
                   <span className="uppercase font-bold tracking-[0]">
                     farm fresh
                   </span>

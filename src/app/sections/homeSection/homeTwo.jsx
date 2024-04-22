@@ -1,5 +1,4 @@
 import React from "react";
-// import Companies from "../components/Companies";
 import Companies from "@/app/components/Companies";
 
 const companies = [

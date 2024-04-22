@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 const FourthSection = () => {
   return (
     <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
-      <h1 className="text-center font-aileron text-7xl md:text-9xl ">
+      <h1 className="text-center font-aileron text-7xl md:text-9xl -tracking-[.4rem]">
         find{" "}
         <span className="font-serif italic -tracking-[.6rem]">a solution</span>{" "}
-        that <span className="font-serif italic -tracking-[.6rem]">fits</span>
+        that <span className="font-serif italic -tracking-[.3rem]">fits</span>
       </h1>
       <div className="flex flex-col lg:flex-row gap-10 mt-16 px-9">
         <motion.div
@@ -16,21 +16,23 @@ const FourthSection = () => {
           }}
           className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-md"
         >
-          <div className="flex flex-col gap-5 items-center justify-center py-5">
-            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center">
+          <div className="flex flex-col gap-5  justify-center py-5">
+            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center m-auto">
               <p className="font-serif italic text-md font-semibold">Level 1</p>
             </div>
             <div className="text-center">
               <h1 className="text-2xl font-bold">RM2000</h1>
               <p>per month/3 months</p>
             </div>
-            <p className="text-lg">
+            <p className="text-lg mx-10">
               <span className="text-xl font-bold">4</span> UGC TikToks or Reels
             </p>
-            <p className="text-lg">
+            <p className="text-lg mx-10">
               <span className="text-xl font-bold">4</span> creators a month
             </p>
-            <p className="text-lg">crossposted as collaborator post</p>
+            <p className="text-lg text-center">
+              crossposted as collaborator post
+            </p>
           </div>
         </motion.div>
         <motion.div
@@ -39,21 +41,23 @@ const FourthSection = () => {
           }}
           className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-md"
         >
-          <div className="flex flex-col gap-5 items-center justify-center py-5">
-            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center">
+          <div className="flex flex-col gap-5 justify-center py-5">
+            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center m-auto">
               <p className="font-serif italic text-md font-semibold">Level 2</p>
             </div>
             <div className="text-center">
               <h1 className="text-2xl font-bold">RM3,400</h1>
               <p>per month/3 months</p>
             </div>
-            <p className="text-lg">
+            <p className="text-lg mx-10">
               <span className="text-xl font-bold">8</span> UGC TikToks or Reels
             </p>
-            <p className="text-lg">
+            <p className="text-lg mx-10">
               <span className="text-xl font-bold">8</span> creators a month
             </p>
-            <p className="text-lg">crossposted as collaborator post</p>
+            <p className="text-lg text-center">
+              crossposted as collaborator post
+            </p>
           </div>
         </motion.div>
         <motion.div
@@ -62,21 +66,23 @@ const FourthSection = () => {
           }}
           className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-md"
         >
-          <div className="flex flex-col gap-5 items-center justify-center py-5">
-            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center">
+          <div className="flex flex-col gap-5 justify-center py-5">
+            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center m-auto">
               <p className="font-serif italic text-md font-semibold">Level 3</p>
             </div>
             <div className="text-center">
               <h1 className="text-2xl font-bold">RM6,200</h1>
               <p>per month/3 months</p>
             </div>
-            <p className="text-lg">
+            <p className="text-lg mx-10">
               <span className="text-xl font-bold">16</span> UGC TikToks or Reels
             </p>
-            <p className="text-lg">
+            <p className="text-lg mx-10">
               <span className="text-xl font-bold">16</span> creators a month
             </p>
-            <p className="text-lg">crossposted as collaborator post</p>
+            <p className="text-lg text-center">
+              crossposted as collaborator post
+            </p>
           </div>
         </motion.div>
         <motion.div
