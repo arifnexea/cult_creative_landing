@@ -28,33 +28,33 @@ const BrandForm = ({ image, color }) => {
   };
 
   const schema = yup.object({
-    name: yup.string()
+    name: yup
+      .string()
       .min(5, "At least 5 characters required")
       .required("Required"),
-    email: yup.string()
-      .email("Invalid email address")
-      .required("Required"),
-    phoneNumber: yup.number()
+    email: yup.string().email("Invalid email address").required("Required"),
+    phoneNumber: yup
+      .number()
       .positive('Invalid character "-"')
       .integer('Invalid character "."')
       // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
       // "012 345 6789", minus two digits in case of some unusually short phone number
-      .min(100_000_00/*00*/, "Too short")
+      .min(100_000_00 /*00*/, "Too short")
       // "+60 12 3456 7890", plus two digits for redundancy
       .max(999_99_9999_9999_99, "Too long")
       .required("Required"),
-    companyName: yup.string()
-      .required("Required"),
-    companySize: yup.number()
+    companyName: yup.string().required("Required"),
+    companySize: yup
+      .number()
       .integer("Number must be an integer")
       // A value less than 1 is not "too low", it's outright invalid
       .min(1, "Must be positive")
       // Maximum value of 32-bit signed integer, we want this to fit in an `Int` in the database
       .max(2_147_483_647, "Too high")
       .required("Required"),
-    industry: yup.string()
-      .required("Required"),
-    monthlyInfluencerBudget: yup.number()
+    industry: yup.string().required("Required"),
+    monthlyInfluencerBudget: yup
+      .number()
       // We assume there is no need for fractional budgets
       .integer("Must be an integer")
       .min(1, "Must be positive")
@@ -67,7 +67,7 @@ const BrandForm = ({ image, color }) => {
       <div className="basis-1/2 hidden xl:block">
         <Image
           src={
-            "https://storage.googleapis.com/landing_page_cult/main/Cult%20Creative%201.jpg"
+            "https://storage.googleapis.com/landing-cultcreative/main/Cult%20Creative%201.jpg"
           }
           alt="test"
           width={600}
@@ -207,7 +207,10 @@ const BrandForm = ({ image, color }) => {
                         type="number"
                         label={"Monthly Influencer Budget"}
                         color={color}
-                        errors={touched.monthlyInfluencerBudget && errors.monthlyInfluencerBudget}
+                        errors={
+                          touched.monthlyInfluencerBudget &&
+                          errors.monthlyInfluencerBudget
+                        }
                       />
                     </>
                   )}
@@ -219,8 +222,9 @@ const BrandForm = ({ image, color }) => {
                   whileTap={{ scale: 0.8 }}
                   type="submit"
                   disabled={loading}
-                  className={`${loading ? "bg-slate-300" : "bg-slate-100 "
-                    } py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
+                  className={`${
+                    loading ? "bg-slate-300" : "bg-slate-100 "
+                  } py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
                 >
                   {loading && (
                     <svg
