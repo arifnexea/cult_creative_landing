@@ -8,16 +8,19 @@ const LastSection = ({ color }) => {
       <Footer hoverText={color} />
       <div className="flex gap-3 mt-10 justify-end">
         <a href="https://wa.me/60162678757" target="_blank">
-          <Icon icon="uil:whatsapp-alt" width={30} />
+          <Icon icon="ic:baseline-whatsapp" width={30} color="black" />
         </a>
         <a href="https://www.instagram.com/cultcreativeasia/" target="_blank">
-          <Icon icon="uil:instagram-alt" width={30} />
+          <Icon icon="mdi:instagram" width={30} color="black" />
         </a>
-        <a href="https://my.linkedin.com/company/cultcreativeapp" target="_blank">
-          <Icon icon="uil:linkedin" width={30} />
+        <a
+          href="https://my.linkedin.com/company/cultcreativeapp"
+          target="_blank"
+        >
+          <Icon icon="mdi:linkedin" width={30} color="black" />
         </a>
         <a href="https://www.youtube.com/@cultcreativeapp" target="_blank">
-          <Icon icon="uil:youtube" width={30} />
+          <Icon icon="mdi:youtube" width={30} color="black" />
         </a>
       </div>
     </main>

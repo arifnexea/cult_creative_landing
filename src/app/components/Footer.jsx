@@ -39,9 +39,13 @@ const Footer = ({ hoverText }) => {
                 About Us
               </li>
             </Link>
-            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              FAQs
-            </li>
+            <Link href={"/faq"}>
+              <li
+                className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
+              >
+                FAQs
+              </li>
+            </Link>
             <Link href={"/contact"}>
               <li
                 className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
