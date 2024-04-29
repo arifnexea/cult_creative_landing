@@ -13,7 +13,7 @@ const vids = [
     url: "https://storage.googleapis.com/landing_page_cult/Brands/Bata%20-%20Case%20Study%20x%20Cult%20Creative.mp4",
   },
   {
-    title: "It's The Ship",
+    title: "It’s The Ship",
     badge1: "760 posts",
     badge2: "177K reach",
     badge3: "1.4M views",
@@ -48,7 +48,7 @@ const SecondSection = () => {
       <div className="flex flex-col gap-5">
         <div className="flex xl:flex-row flex-col items-center gap-10 mx-auto px-8">
           <h3 className="lg:text-9xl text-7xl font-aileron font-bold text-center">
-            <span className="xl:tracking-5 -tracking-[.5rem]">we&apos;re</span>{" "}
+            <span className="xl:tracking-5 -tracking-[.5rem]">we’re</span>{" "}
             <span className="font-serif font-light tracking-[-.5rem] italic">
               different
             </span>

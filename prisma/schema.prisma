@@ -28,3 +28,14 @@ model Creator {
   language       String
   interests      String[]
 }
+
+model Brand {
+  id                      String @id @default(cuid())
+  name                    String
+  email                   String
+  phoneNumber             String
+  companyName             String
+  companySize             Int
+  industry                String
+  monthlyInfluencerBudget Int
+}

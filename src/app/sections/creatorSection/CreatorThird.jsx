@@ -36,7 +36,7 @@ function CreatorThird() {
             </motion.span>
           </h1>
           <p className="basis-1/2 lg:text-2xl text-xl text-center">
-            We make sure you get paid in 30 days.No paperwork, no hassle. Just
+            We make sure you get paid in 30 days. No paperwork, no hassle. Just
             focus on being creative.
           </p>
         </div>
