@@ -10,6 +10,7 @@ import * as yup from "yup";
 import { useState } from "react";
 
 import countries from "../../contants/countries.json";
+import toast from "react-hot-toast";
 
 const CreatorForm = () => {
   const color = "#006D53";
@@ -22,37 +23,30 @@ const CreatorForm = () => {
   // });
 
   const schema = yup.object({
-    name: yup.string()
+    name: yup
+      .string()
       .min(5, "At least 5 characters required")
       .required("Required"),
-    email: yup.string()
-      .email("Invalid email address")
-      .required("Required"),
-    pronoun: yup.string()
-      .required("Required"),
-    phoneNumber: yup.number()
+    email: yup.string().email("Invalid email address").required("Required"),
+    pronoun: yup.string().required("Required"),
+    phoneNumber: yup
+      .number()
       .positive('Invalid character "-"')
       .integer('Invalid character "."')
       .min(100_000_00, "Too short")
       .max(999_99_9999_9999_99, "Too long")
-    .required("Required"),
-    employmentType: yup.string()
       .required("Required"),
-    nationality: yup.string()
-      .required("Required"),
-    birthDate: yup.string()
-      .required("Required"),
-    location: yup.string()
+    employmentType: yup.string().required("Required"),
+    nationality: yup.string().required("Required"),
+    birthDate: yup.string().required("Required"),
+    location: yup
+      .string()
       .min(20, "At least 20 characters required")
       .required("Required"),
-    instaUsername: yup.string()
-      .required("Required"),
-    tiktokUsername: yup.string()
-      .required("Required"),
-    language: yup.string()
-      .required("Required"),
-    interests: yup.array()
-      .required("Required"),
+    instaUsername: yup.string().required("Required"),
+    tiktokUsername: yup.string().required("Required"),
+    language: yup.string().required("Required"),
+    interests: yup.array().required("Required"),
     // others: yup.object({
     //   language: yup.string().required("Please specify your language"),
     // }),
@@ -69,7 +63,7 @@ const CreatorForm = () => {
     })
       .then((res) => res.json())
       .then((val) => {
-        alert(val.message);
+        toast.success(val.message);
         setLoading(false);
         resetForm();
       })
@@ -92,7 +86,9 @@ const CreatorForm = () => {
         <section className="flex p-10 gap-5 items-center justify-center bg-[#006D53]">
           <div className="basis-1/2 hidden xl:block">
             <Image
-              src={"https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"}
+              src={
+                "https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"
+              }
               alt="creator"
               width={600}
               height={600}
@@ -110,7 +106,8 @@ const CreatorForm = () => {
             </div>
             <div className="flex flex-col gap-6">
               <h1 className="text-xl font-bold -tracking-[.05rem]">
-                We’re excited to work together.<br />
+                We’re excited to work together.
+                <br />
                 Tell us who you are and we’ll get back to you with suitable
                 brand deals.
               </h1>
@@ -207,10 +204,11 @@ const CreatorForm = () => {
                               <select
                                 name="pronoun"
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.pronoun &&
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                                  errors.pronoun &&
                                   touched.pronoun &&
                                   "border-red-500"
-                                  }`}
+                                }`}
                               >
                                 <option value="">...</option>
                                 <option value="he">He/Him</option>
@@ -241,10 +239,11 @@ const CreatorForm = () => {
                             <div className="mt-2">
                               <select
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.nationality &&
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                                  errors.nationality &&
                                   touched.nationality &&
                                   "border-red-500"
-                                  }`}
+                                }`}
                               >
                                 <option value="">...</option>
                                 {countries.map((elem) => {
@@ -324,10 +323,11 @@ const CreatorForm = () => {
                             <div className="mt-2">
                               <select
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${errors.language &&
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
+                                  errors.language &&
                                   touched.language &&
                                   "border-red-500"
-                                  }`}
+                                }`}
                               >
                                 <option value="">...</option>
                                 <option value="english">English</option>
@@ -375,10 +375,11 @@ const CreatorForm = () => {
                             <select
                               {...field}
                               multiple={true}
-                              className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${errors.interests &&
+                              className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
+                                errors.interests &&
                                 touched.interests &&
                                 "border-red-500"
-                                }`}
+                              }`}
                             >
                               <option value="NY">New York</option>
                               <option value="SF">San Francisco</option>
@@ -401,8 +402,9 @@ const CreatorForm = () => {
                       whileTap={{ scale: 0.8 }}
                       type="submit"
                       disabled={loading}
-                      className={`${loading ? "bg-slate-300" : "bg-slate-100 "
-                        } py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
+                      className={`${
+                        loading ? "bg-slate-300" : "bg-slate-100 "
+                      } py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
                     >
                       {loading && (
                         <svg
@@ -456,6 +458,6 @@ const CreatorForm = () => {
       </Suspense>
     </main>
   );
-}
+};
 
 export default CreatorForm;

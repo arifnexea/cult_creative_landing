@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import FormInput from "./FormInput";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
+import toast from "react-hot-toast";
 
 const BrandForm = ({ image, color }) => {
   const [loading, setLoading] = React.useState();
@@ -19,7 +20,7 @@ const BrandForm = ({ image, color }) => {
     })
       .then((res) => res.json())
       .then((val) => {
-        alert(val.message);
+        toast.success(val.message);
         setLoading(false);
         resetForm();
       })
@@ -114,7 +115,6 @@ const BrandForm = ({ image, color }) => {
               monthlyInfluencerBudget: "",
             }}
             onSubmit={(values, { resetForm }) => {
-              alert(JSON.stringify(values));
               onSubmit(values, resetForm);
             }}
             validationSchema={schema}
