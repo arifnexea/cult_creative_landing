@@ -44,8 +44,9 @@ function HomeFive() {
               autoPlay
               loop
               muted
-              webkit-playsinline
-              playsinline
+              webkit-playsInline
+              playsInline
+              preload="metadata"
             >
               <source type="video/mp4" />
             </motion.video>
