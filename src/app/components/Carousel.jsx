@@ -22,13 +22,13 @@ const Carousel = ({
         <div className="aspect-video">
           <video
             src={url}
-            // className="w-[50%] h-[37rem] rounded-lg ml-auto"
             className=" h-[37rem] rounded-lg ml-auto"
             autoPlay
             loop
             muted
-            webkit-playsinline
-            playsinline
+            webkit-playsInline
+            playsInline
+            preload="metadata"
           >
             <source type="video/mp4" />
           </video>

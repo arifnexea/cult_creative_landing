@@ -33,15 +33,15 @@ const vids = [
 const SecondSection = () => {
   const [cur, setCur] = useState(0);
 
-  useEffect(() => {
-    const vidScroll = setInterval(() => {
-      setCur(cur == vids.length - 1 ? 0 : cur + 1);
-    }, 4000);
+  // useEffect(() => {
+  //   const vidScroll = setInterval(() => {
+  //     setCur(cur == vids.length - 1 ? 0 : cur + 1);
+  //   }, 4000);
 
-    return () => {
-      clearInterval(vidScroll);
-    };
-  }, [cur]);
+  //   return () => {
+  //     clearInterval(vidScroll);
+  //   };
+  // }, [cur]);
 
   return (
     <main className="bg-[#F4F4F4] py-10 text-[#8A5AFE]">

@@ -89,7 +89,7 @@ const FirstSection = () => {
               autoPlay
               loop
               muted
-              webkit-playsinline
+              webkit-playsInline
               playsInline
               preload="metadata"
             >

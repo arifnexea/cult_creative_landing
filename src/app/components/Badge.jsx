@@ -5,7 +5,7 @@ const Badge = ({ contents }) => {
   return (
     <motion.div
       whileHover={{
-        scale: 1.2,
+        scale: 1.1,
       }}
       className="p-3 border border-[#8A5AFE] rounded-lg font-aileron font-bold"
     >

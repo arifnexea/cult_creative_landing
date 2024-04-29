@@ -46,7 +46,8 @@ const CreatorFirst = () => {
               loop
               muted
               webkit-playsInline
-              playsinline
+              playsInline
+              preload="metadata"
             >
               <source type="video/mp4" />
             </motion.video>
@@ -55,18 +56,18 @@ const CreatorFirst = () => {
             <div className="flex gap-3 justify-center">
               {vid.map((elem) => {
                 return (
-                  <div div key={elem.id}>
-                    <video
-                      className="2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
-                      autoPlay
-                      loop
-                      muted
-                      webkit-playsinline
-                      playsInline
-                    >
-                      <source src={elem.name} type="video/mp4" />
-                    </video>
-                  </div>
+                  <video
+                    key={elem.id}
+                    className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    webkit-playsInline
+                    playsInline
+                    preload="metadata"
+                  >
+                    <source src={elem.name} type="video/mp4" />
+                  </video>
                 );
               })}
             </div>
@@ -123,7 +124,7 @@ const CreatorFirst = () => {
             amazing brand deals.
           </p>
           <div className="text-center">
-            <Link href={"/creator/contactForm"}>
+            <Link href={"/creators/contactForm"}>
               <motion.button
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}
