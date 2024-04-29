@@ -40,7 +40,7 @@ function HomeFive() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               src={elem?.url}
-              className="max-w-[19rem] rounded-md"
+              className="max-w-[15rem] rounded-md"
               autoPlay
               loop
               muted
