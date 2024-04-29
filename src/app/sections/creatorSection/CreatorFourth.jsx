@@ -40,7 +40,9 @@ function CreatorFourth() {
   return (
     <section className="text-[#1340FF] bg-[#F4F4F4] p-5 gap-6">
       <div className="flex items-center gap-10">
-        <h3 className="lg:text-3xl text-xl -tracking-[.1rem] font-bold">Work with these names and upgrade your <br/>  content creator game</h3>
+        <h3 className="lg:text-3xl text-xl -tracking-[.1rem] font-bold">
+          Work with these names and upgrade your <br /> content creator game
+        </h3>
         <hr className="grow border-2 border-[#1340FF]" />
       </div>
       <div className="flex flex-wrap p-5 m-3 justify-evenly">
@@ -57,7 +59,9 @@ function CreatorFourth() {
                     alt={elem.name}
                     width={100}
                     height={100}
-                    className={'rounded-full  m-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'}
+                    className={
+                      "rounded-full  m-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                    }
                   />
                 </Link>
               ) : (

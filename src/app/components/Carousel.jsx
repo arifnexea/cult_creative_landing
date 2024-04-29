@@ -3,7 +3,7 @@ import Badge from "./Badge";
 
 const Carousel = ({
   url,
-  title,
+  name,
   badge1,
   badge2,
   badge3,
@@ -18,11 +18,12 @@ const Carousel = ({
         transform: `translateX(-${cur * 100}%)`,
       }}
     >
-      <div className="basis-1/2 bg-black">
+      <div className="basis-1/2">
         <div className="aspect-video">
           <video
             src={url}
-            className="h-[37rem] rounded-lg ml-auto"
+            // className="w-[50%] h-[37rem] rounded-lg ml-auto"
+            className=" h-[37rem] rounded-lg ml-auto"
             autoPlay
             loop
             muted
@@ -37,7 +38,7 @@ const Carousel = ({
         <h1 className="sm:text-6xl text-4xl font-aileron font-bold italic tracking-[-.2rem]">
           <span className="font-extralight text-4xl">Client :</span>
           <br />
-          {title.toUpperCase()}
+          {name?.toUpperCase()}
         </h1>
         <div className={`${contentStyle}`}>
           <Badge contents={badge1} />

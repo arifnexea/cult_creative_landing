@@ -72,7 +72,7 @@ const BrandForm = ({ image, color }) => {
           alt="test"
           width={600}
           height={600}
-          className="rounded-lg"
+          className="rounded-lg mx-auto"
         />
       </div>
       <div className="flex flex-col gap-5 xl:basis-1/2">

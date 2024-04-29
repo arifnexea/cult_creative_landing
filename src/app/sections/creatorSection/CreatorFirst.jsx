@@ -3,30 +3,32 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const vid = [
   {
-    key: 1,
-    url: "https://storage.googleapis.com/landing_page_cult/creators/Focus%20Foods%20x%20Cult%20Creative.mp4",
+    id: uuidv4(),
+    name: "https://storage.googleapis.com/landing-cultcreative/creator/cut%20Focus%20Foods%20x%20Cult%20Creative.mp4",
   },
   {
-    key: 2,
-    url: "https://storage.googleapis.com/landing_page_cult/creators/Hotel%20Indigo%20x%20Cult%20Creative.mov",
+    id: uuidv4(),
+    name: "https://storage.googleapis.com/landing-cultcreative/creator/cut%20Hotel%20Indigo%20x%20Cult%20Creative.mp4",
   },
 ];
 
 const CreatorFirst = () => {
   const [vidIndex, setVidIndex] = useState(1);
 
-  useEffect(() => {
-    const vidScroll = setInterval(() => {
-      setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
-    }, 4000);
+  // useEffect(() => {
+  //   const vidScroll = setInterval(() => {
+  //     setVidIndex(vidIndex == vid.length - 1 ? 0 : vidIndex + 1);
+  //   }, 4000);
 
-    return () => {
-      clearInterval(vidScroll);
-    };
-  }, [vidIndex]);
+  //   return () => {
+  //     clearInterval(vidScroll);
+  //   };
+  // }, [vidIndex]);
 
   return (
     <section className="p-8 bg-[#006D53]">
@@ -38,7 +40,7 @@ const CreatorFirst = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src={vid[vidIndex].url}
+              src={vid[vidIndex].name}
               className="h-[37rem] rounded-lg"
               autoPlay
               loop
@@ -51,11 +53,10 @@ const CreatorFirst = () => {
           </div>
           <div className="hidden sm:block">
             <div className="flex gap-3 justify-center">
-              {vid.map((elem, i) => {
+              {vid.map((elem) => {
                 return (
-                  <div div key={elem.key}>
+                  <div div key={elem.id}>
                     <video
-                      src={elem.url}
                       className="2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
                       autoPlay
                       loop
@@ -63,7 +64,7 @@ const CreatorFirst = () => {
                       webkit-playsinline
                       playsInline
                     >
-                      <source type="video/mp4" />
+                      <source src={elem.name} type="video/mp4" />
                     </video>
                   </div>
                 );

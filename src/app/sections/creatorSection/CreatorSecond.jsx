@@ -3,40 +3,28 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Carousel from "../../components/Carousel";
 import { Icon } from "@iconify/react";
-const vid = [
-  {
-    url: "https://storage.googleapis.com/landing_page_cult/creators/Supermama%20Lab%20x%20Cult%20Creative.mp4",
-  },
-];
+import { v4 as uuid } from "uuid";
 
 const vids = [
   {
-    id: 1,
-    title: "Hotal Indigo",
-    badge1: "",
-    badge2: "",
-    url: "https://storage.googleapis.com/landing_page_cult/creators/Hotel%20Indigo%20CNY%20x%20Cult%20Creative%20.mp4",
+    id: uuid(),
+    name: "Hotel Indigo",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Hotel%20Indigo%20CNY%20x%20Cult%20Creative%20.mp4",
   },
   {
-    id: 2,
-    title: "Trove",
-    badge1: "",
-    badge2: "",
-    url: "https://storage.googleapis.com/landing_page_cult/creators/Trove%20x%20Cult%20Creative.mov",
+    id: uuid(),
+    name: "Trove",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Trove%20x%20Cult%20Creative.mp4",
   },
   {
-    id: 3,
-    title: "Mimone Spa",
-    badge1: "",
-    badge2: "",
-    url: "https://storage.googleapis.com/landing_page_cult/creators/Mimone%20Spa%20x%20Cult%20Creative.mov",
+    id: uuid(),
+    name: "Mimone Spa",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Mimone%20Spa%20x%20Cult%20Creative.mov",
   },
   {
-    id: 4,
-    title: "Supermama",
-    badge1: "",
-    badge2: "",
-    url: "https://storage.googleapis.com/landing_page_cult/creators/Supermama%20Lab%20.mp4",
+    id: uuid(),
+    name: "Supermama Lab",
+    url: "https://storage.googleapis.com/landing-cultcreative/main/Supermama%20Lab%20x%20Cult%20Creative.mp4",
   },
 ];
 
@@ -69,7 +57,7 @@ function CreatorSecond() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               src={elem.url}
-              className="w-[27rem] rounded-lg"
+              className="w-[20rem] rounded-lg"
               autoPlay
               loop
               muted
@@ -79,7 +67,7 @@ function CreatorSecond() {
               <source type="video/mp4" />
             </motion.video>
             <h2 className="font-aileron text-lg pt-3 font-semibold">
-              {elem.title}
+              {elem.name}
             </h2>
           </div>
         ))}
@@ -121,7 +109,7 @@ function CreatorSecond() {
               <div key={i}>
                 <Carousel
                   url={elem.url}
-                  title={elem.title}
+                  name={elem.name}
                   badge1={elem.badge1}
                   badge2={elem.badge2}
                   cur={cur}

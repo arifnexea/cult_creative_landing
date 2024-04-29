@@ -10,7 +10,7 @@ const vids = [
     badge2: "3m reach",
     badge3: "8.5m views",
     badge4: "411k engagements",
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Bata%20-%20Case%20Study%20x%20Cult%20Creative.mp4",
+    url: "https://storage.googleapis.com/landing-cultcreative/brands/cut%20Bata%20-%20Case%20Study%20x%20Cult%20Creative.mp4",
   },
   {
     title: "It’s The Ship",
@@ -18,7 +18,7 @@ const vids = [
     badge2: "177K reach",
     badge3: "1.4M views",
     badge4: "5K ENGAGEMENT",
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Its%20The%20Ship%20-%20Case%20Study%20x%20Cult%20Creative%20.mp4",
+    url: "https://storage.googleapis.com/landing-cultcreative/brands/cut%20Its%20The%20Ship%20-%20Case%20Study%20x%20Cult%20Creative.mp4",
   },
   {
     title: "dressing paula",
@@ -26,7 +26,7 @@ const vids = [
     badge2: "36.2k reach",
     badge3: "42k views",
     badge4: "1.7k engagements",
-    url: "https://storage.googleapis.com/landing_page_cult/Brands/Dressing%20Paula%20-%20Case%20Study%20x%20Cult%20Creative.MOV",
+    url: "https://storage.googleapis.com/landing-cultcreative/brands/cut%20Dressing%20Paula%20-%20Case%20Study%20x%20Cult%20Creative.mp4",
   },
 ];
 
@@ -58,6 +58,7 @@ const SecondSection = () => {
             13,000 talented creators ready to bring your vision to life.
           </p>
         </div>
+
         <div className="flex mx-auto">
           <Icon
             icon="pepicons-pencil:line-x"
