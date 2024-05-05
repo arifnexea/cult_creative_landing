@@ -2,13 +2,10 @@
 import React, { Suspense } from "react";
 import Header from "@/app/components/Header";
 import LastSection from "../sections/brandsection/LastSection";
-import { AnimatePresence, motion, wrap } from "framer-motion";
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import FormInput from "../components/FormInput";
 
 function ContactUs() {
-  const color = "8A5AFE";
-
   return (
     <main className="flex min-h-screen flex-col">
       <Header logo={"/images/logo.svg"} />
@@ -120,7 +117,7 @@ function ContactUs() {
                 <motion.button
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
-                  className="bg-[#8A5AFE] py-2 px-12 rounded-full text-[#F4F4F4] "
+                  className="bg-[#8A5AFE] py-2 px-12 rounded-full text-[#F4F4F4]"
                 >
                   Send Message
                 </motion.button>

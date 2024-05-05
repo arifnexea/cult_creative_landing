@@ -37,7 +37,7 @@ const HomeFirst = () => {
           className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4f4f4]"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4F4F4]"
             style={{
               lineHeight: 0.8,
             }}

@@ -15,7 +15,10 @@ export async function POST(req) {
         companyName: value.companyName,
         companySize: value.companySize,
         industry: value.industry,
+        otherIndustry: value.otherIndustry,
         monthlyInfluencerBudget: value.monthlyInfluencerBudget,
+        instaUsername: value.instaUsername,
+        tiktokUsername: value.tiktokUsername,
       },
     });
 

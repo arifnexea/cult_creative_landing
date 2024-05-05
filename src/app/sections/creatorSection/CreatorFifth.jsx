@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
 import React, { useState } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 function CreatorFifth() {
   const [cur, setCur] = useState(0);

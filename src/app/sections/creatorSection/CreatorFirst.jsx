@@ -100,19 +100,18 @@ const CreatorFirst = () => {
           className="flex flex-col px-8 lg:w-[50%] text-center lg:text-left basis-1/2 gap-7"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4F4F4]"
             style={{
               lineHeight: 0.9,
             }}
           >
-            get <span className="font-times">brand</span>
+            get <span className="font-times">brand</span><br />
             <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
-              <br />
               deals,{" "}
             </span>
-            get
+            get<br />
             <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
-              <br /> paid.
+              paid.
             </span>
           </h1>
           <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
