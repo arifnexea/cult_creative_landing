@@ -33,10 +33,7 @@ const BrandForm = ({ color }) => {
       .string()
       .min(5, "At least 5 characters required")
       .required("Required"),
-    email: yup
-      .string()
-      .email("Invalid email address")
-      .required("Required"),
+    email: yup.string().email("Invalid email address").required("Required"),
     phoneNumber: yup
       .number()
       .positive("Invalid character “-”")
@@ -129,6 +126,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.name && errors.name}
+                        placeholder={"What's your name ?"}
                       />
                     </>
                   )}
@@ -142,6 +140,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.email && errors.email}
+                        placeholder={"What's your email ?"}
                       />
                     </>
                   )}
@@ -155,6 +154,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.phoneNumber && errors.phoneNumber}
+                        placeholder={"What's your phone number ?"}
                       />
                     </>
                   )}
@@ -168,6 +168,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.companyName && errors.companyName}
+                        placeholder={"What's your company name ?"}
                       />
                     </>
                   )}
@@ -186,12 +187,15 @@ const BrandForm = ({ color }) => {
                           <select
                             name="companySize"
                             {...field}
-                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.companySize
-                              && touched.companySize
-                              && "border-red-500"
-                              }`}
+                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                              errors.companySize &&
+                              touched.companySize &&
+                              "border-red-500"
+                            }`}
                           >
-                            <option value="">...</option>
+                            <option value="">
+                              {"What's your company size ?"}
+                            </option>
                             <option value="1to10">1–10</option>
                             <option value="11to50">11–50</option>
                             <option value="51to100">51–100</option>
@@ -222,22 +226,29 @@ const BrandForm = ({ color }) => {
                           <select
                             name="industry"
                             {...field}
-                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.industry
-                              && touched.industry
-                              && "border-red-500"
-                              }`}
+                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                              errors.industry &&
+                              touched.industry &&
+                              "border-red-500"
+                            }`}
                           >
-                            <option value="">...</option>
-                            <option value="bankingFinance">Banking & Finance</option>
+                            <option value="">{"What's your industry ?"}</option>
+                            <option value="bankingFinance">
+                              Banking & Finance
+                            </option>
                             <option value="beauty">Beauty</option>
                             <option value="lifestyle">Lifestyle</option>
-                            <option value="healthWellness">Health & Wellness</option>
+                            <option value="healthWellness">
+                              Health & Wellness
+                            </option>
                             <option value="foodBeverages">F&B</option>
                             <option value="fashion">Fashion</option>
                             <option value="charityOrNgo">Charity or NGO</option>
                             <option value="education">Education</option>
                             <option value="events">Events</option>
-                            <option value="motherhoodFamily">Motherhood & Family</option>
+                            <option value="motherhoodFamily">
+                              Motherhood & Family
+                            </option>
                             <option value="hotelTravel">Hotel & Travel</option>
                             <option value="jewellery">Jewellery</option>
                             <option value="footwear">Footwear</option>
@@ -249,7 +260,9 @@ const BrandForm = ({ color }) => {
                         {field.value.includes("others") && (
                           <Field
                             name="otherIndustry"
-                            validate={(value) => value === "" ? "Required" : ""}
+                            validate={(value) =>
+                              value === "" ? "Required" : ""
+                            }
                           >
                             {({ field, form: { errors, touched } }) => (
                               <>
@@ -258,7 +271,10 @@ const BrandForm = ({ color }) => {
                                   type="text"
                                   {...field}
                                   color={color}
-                                  errors={touched.otherIndustry && errors.otherIndustry}
+                                  errors={
+                                    touched.otherIndustry &&
+                                    errors.otherIndustry
+                                  }
                                 />
                               </>
                             )}
@@ -281,7 +297,11 @@ const BrandForm = ({ color }) => {
                         type="number"
                         field={field}
                         color={color}
-                        errors={touched.monthlyInfluencerBudget && errors.monthlyInfluencerBudget}
+                        errors={
+                          touched.monthlyInfluencerBudget &&
+                          errors.monthlyInfluencerBudget
+                        }
+                        placeholder={"What's your monthly influencer budget ?"}
                       />
                     </>
                   )}
@@ -294,6 +314,7 @@ const BrandForm = ({ color }) => {
                       field={field}
                       color={color}
                       errors={touched.instaUsername && errors.instaUsername}
+                      placeholder={"What's your instagram username ?"}
                     />
                   )}
                 </Field>
@@ -305,6 +326,7 @@ const BrandForm = ({ color }) => {
                       field={field}
                       color={color}
                       errors={touched.tiktokUsername && errors.tiktokUsername}
+                      placeholder={"What's your tiktok username ?"}
                     />
                   )}
                 </Field>
