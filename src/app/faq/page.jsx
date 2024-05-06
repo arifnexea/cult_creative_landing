@@ -29,7 +29,7 @@ const Accordion = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5">
             <AccordionItem
               header="Do I have to pay to use Cult Creative?"
-              text="Nope! Cult Creative is a free platform and won't cost you anything. "
+              text="Nope! Cult Creative is a free platform and won’t cost you anything. "
             />
             <AccordionItem
               header="Who do I contact if I have any questions/inquiries?"

@@ -6,7 +6,7 @@ import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import toast from "react-hot-toast";
 
-const BrandForm = ({ image, color }) => {
+const BrandForm = ({ color }) => {
   const [loading, setLoading] = React.useState();
 
   const onSubmit = async (value, resetForm) => {
@@ -33,11 +33,14 @@ const BrandForm = ({ image, color }) => {
       .string()
       .min(5, "At least 5 characters required")
       .required("Required"),
-    email: yup.string().email("Invalid email address").required("Required"),
+    email: yup
+      .string()
+      .email("Invalid email address")
+      .required("Required"),
     phoneNumber: yup
       .number()
-      .positive('Invalid character "-"')
-      .integer('Invalid character "."')
+      .positive("Invalid character “-”")
+      .integer("Invalid character “.”")
       // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
       // "012 345 6789", minus two digits in case of some unusually short phone number
       .min(100_000_00 /*00*/, "Too short")
@@ -45,31 +48,26 @@ const BrandForm = ({ image, color }) => {
       .max(999_99_9999_9999_99, "Too long")
       .required("Required"),
     companyName: yup.string().required("Required"),
-    companySize: yup
-      .number()
-      .integer("Number must be an integer")
-      // A value less than 1 is not "too low", it's outright invalid
-      .min(1, "Must be positive")
-      // Maximum value of 32-bit signed integer, we want this to fit in an `Int` in the database
-      .max(2_147_483_647, "Too high")
-      .required("Required"),
+    companySize: yup.string().required("Required"),
     industry: yup.string().required("Required"),
+    otherIndustry: yup.string(),
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
       .integer("Must be an integer")
       .min(1, "Must be positive")
-      .max(2_147_483_647, "Too high")
+      // We want the value to fit in an `Int`, and `2**32 - 1` is more than enough, but use 2 billion because it is a "nice number"
+      .max(2_000_000_000, "Too high")
       .required("Required"),
+    instaUsername: yup.string(),
+    tiktokUsername: yup.string(),
   });
 
   return (
     <section className="flex items-center justify-center">
       <div className="basis-1/2 hidden xl:block">
         <Image
-          src={
-            "https://storage.googleapis.com/landing-cultcreative/main/Cult%20Creative%201.jpg"
-          }
+          src="https://storage.googleapis.com/landing-cultcreative/main/Cult%20Creative%201.jpg"
           alt="test"
           width={600}
           height={600}
@@ -89,7 +87,7 @@ const BrandForm = ({ image, color }) => {
         <div>
           <a
             href="https://calendly.com/danishmokhtar/30min?month=2024-03"
-            target="__blank"
+            target="_blank"
           >
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -112,11 +110,12 @@ const BrandForm = ({ image, color }) => {
               companyName: "",
               companySize: "",
               industry: "",
+              otherIndustry: "",
               monthlyInfluencerBudget: "",
+              instaUsername: "",
+              tiktokUsername: "",
             }}
-            onSubmit={(values, { resetForm }) => {
-              onSubmit(values, resetForm);
-            }}
+            onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
             validationSchema={schema}
           >
             <Form>
@@ -125,9 +124,9 @@ const BrandForm = ({ image, color }) => {
                   {({ field, form: { errors, touched } }) => (
                     <>
                       <FormInput
-                        field={field}
+                        label="Name"
                         type="text"
-                        label={"Name"}
+                        field={field}
                         color={color}
                         errors={touched.name && errors.name}
                       />
@@ -138,9 +137,9 @@ const BrandForm = ({ image, color }) => {
                   {({ field, form: { errors, touched } }) => (
                     <>
                       <FormInput
-                        field={field}
+                        label="Email Address"
                         type="email"
-                        label={"Email Address"}
+                        field={field}
                         color={color}
                         errors={touched.email && errors.email}
                       />
@@ -151,9 +150,9 @@ const BrandForm = ({ image, color }) => {
                   {({ field, form: { errors, touched } }) => (
                     <>
                       <FormInput
-                        field={field}
+                        label="Phone Number"
                         type="number"
-                        label={"Phone Number"}
+                        field={field}
                         color={color}
                         errors={touched.phoneNumber && errors.phoneNumber}
                       />
@@ -164,55 +163,149 @@ const BrandForm = ({ image, color }) => {
                   {({ field, form: { errors, touched } }) => (
                     <>
                       <FormInput
-                        field={field}
+                        label="Company Name"
                         type="text"
-                        label={"Company Name"}
+                        field={field}
                         color={color}
                         errors={touched.companyName && errors.companyName}
                       />
                     </>
                   )}
                 </Field>
-                <Field name="companySize">
-                  {({ field, form: { errors, touched } }) => (
-                    <>
-                      <FormInput
-                        field={field}
-                        type="number"
-                        label={"Company Size"}
-                        color={color}
-                        errors={touched.companySize && errors.companySize}
-                      />
-                    </>
-                  )}
-                </Field>
-                <Field name="industry">
-                  {({ field, form: { errors, touched } }) => (
-                    <>
-                      <FormInput
-                        field={field}
-                        type="text"
-                        label={"Industry"}
-                        color={color}
-                        errors={touched.industry && errors.industry}
-                      />
-                    </>
-                  )}
-                </Field>
+                <div className="sm:col-span-3">
+                  <Field name="companySize">
+                    {({ field, form: { errors, touched } }) => (
+                      <>
+                        <label
+                          htmlFor="companySize"
+                          className="block text-sm font-medium leading-6"
+                        >
+                          Company Size
+                        </label>
+                        <div className="mt-2">
+                          <select
+                            name="companySize"
+                            {...field}
+                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.companySize
+                              && touched.companySize
+                              && "border-red-500"
+                              }`}
+                          >
+                            <option value="">...</option>
+                            <option value="1to10">1–10</option>
+                            <option value="11to50">11–50</option>
+                            <option value="51to100">51–100</option>
+                            <option value="101to200">101–200</option>
+                            <option value="over200">{">"}200</option>
+                          </select>
+                        </div>
+                        {errors.companySize && touched.companySize && (
+                          <p class="text-red-500 text-xs mx-2 my-1">
+                            {errors.companySize}
+                          </p>
+                        )}
+                      </>
+                    )}
+                  </Field>
+                </div>
+                <div className="sm:col-span-3">
+                  <Field name="industry">
+                    {({ field, form: { errors, touched } }) => (
+                      <>
+                        <label
+                          htmlFor="industry"
+                          className="block text-sm font-medium leading-6"
+                        >
+                          Industry
+                        </label>
+                        <div className="mt-2">
+                          <select
+                            name="industry"
+                            {...field}
+                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.industry
+                              && touched.industry
+                              && "border-red-500"
+                              }`}
+                          >
+                            <option value="">...</option>
+                            <option value="bankingFinance">Banking & Finance</option>
+                            <option value="beauty">Beauty</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="healthWellness">Health & Wellness</option>
+                            <option value="foodBeverages">F&B</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="charityOrNgo">Charity or NGO</option>
+                            <option value="education">Education</option>
+                            <option value="events">Events</option>
+                            <option value="motherhoodFamily">Motherhood & Family</option>
+                            <option value="hotelTravel">Hotel & Travel</option>
+                            <option value="jewellery">Jewellery</option>
+                            <option value="footwear">Footwear</option>
+                            <option value="art">Art</option>
+                            <option value="technology">Technology</option>
+                            <option value="others">Others</option>
+                          </select>
+                        </div>
+                        {field.value.includes("others") && (
+                          <Field
+                            name="otherIndustry"
+                            validate={(value) => value === "" ? "Required" : ""}
+                          >
+                            {({ field, form: { errors, touched } }) => (
+                              <>
+                                <FormInput
+                                  placeholder="Please specify your industry"
+                                  type="text"
+                                  {...field}
+                                  color={color}
+                                  errors={touched.otherIndustry && errors.otherIndustry}
+                                />
+                              </>
+                            )}
+                          </Field>
+                        )}
+                        {errors.industry && touched.industry && (
+                          <p class="text-red-500 text-xs mx-2 my-1">
+                            {errors.industry}
+                          </p>
+                        )}
+                      </>
+                    )}
+                  </Field>
+                </div>
                 <Field name="monthlyInfluencerBudget">
                   {({ field, form: { errors, touched } }) => (
                     <>
                       <FormInput
-                        field={field}
+                        label="Monthly Influencer Budget"
                         type="number"
-                        label={"Monthly Influencer Budget"}
+                        field={field}
                         color={color}
-                        errors={
-                          touched.monthlyInfluencerBudget &&
-                          errors.monthlyInfluencerBudget
-                        }
+                        errors={touched.monthlyInfluencerBudget && errors.monthlyInfluencerBudget}
                       />
                     </>
+                  )}
+                </Field>
+                <Field name="instaUsername">
+                  {({ field, form: { errors, touched } }) => (
+                    <FormInput
+                      label="Instagram Username"
+                      type="text"
+                      field={field}
+                      color={color}
+                      errors={touched.instaUsername && errors.instaUsername}
+                    />
+                  )}
+                </Field>
+                <Field name="tiktokUsername">
+                  {({ field, form: { errors, touched } }) => (
+                    <FormInput
+                      label="TikTok Username"
+                      type="text"
+                      field={field}
+                      color={color}
+                      errors={touched.tiktokUsername && errors.tiktokUsername}
+                    />
                   )}
                 </Field>
               </div>
@@ -222,9 +315,8 @@ const BrandForm = ({ image, color }) => {
                   whileTap={{ scale: 0.8 }}
                   type="submit"
                   disabled={loading}
-                  className={`${
-                    loading ? "bg-slate-300" : "bg-slate-100 "
-                  } py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
+                  className={`${loading ? "bg-slate-300" : "bg-slate-100 "}
+                  py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
                 >
                   {loading && (
                     <svg

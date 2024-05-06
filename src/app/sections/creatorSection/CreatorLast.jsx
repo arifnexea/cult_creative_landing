@@ -21,8 +21,8 @@ function CreatorLast() {
           className="rounded-lg"
         />
       </div>
-      <div className="flex flex-col gap-5">
-        <div className="flex flex-col gap-5 ">
+      <div className="flex flex-col gap-5 text-[#F4F4F4]">
+        <div className="flex flex-col gap-5">
           <h1 className="sm:text-8xl text-8xl -tracking-[.35rem]">
             get{" "}
             <span className="font-serif italic -tracking-[.6rem] text-8xl">

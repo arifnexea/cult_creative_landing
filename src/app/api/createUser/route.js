@@ -6,23 +6,24 @@ const prisma = new PrismaClient();
 export async function POST(req) {
   const value = await req.json();
 
-  const language = value.language === "others" ? value.others.language : value.language;
-
   try {
     await prisma.creator.create({
       data: {
         name: value.name,
-        email: value.email,
         pronoun: value.pronoun,
         phoneNumber: value.phoneNumber.toString(),
-        employmentType: value.employmentType,
+        email: value.email,
         nationality: value.nationality,
-        birthDate: new Date(value.birthDate),
         location: value.location,
+        birthDate: new Date(value.birthDate),
         instaUsername: value.instaUsername,
         tiktokUsername: value.tiktokUsername,
-        language: language,
+        languages: value.languages,
+        otherlanguagesString: value.otherlanguagesString,
         interests: value.interests,
+        otherinterestsString: value.otherinterestsString,
+        employmentType: value.employmentType,
+        otherEmploymentType: value.otherEmploymentType,
       },
     });
 

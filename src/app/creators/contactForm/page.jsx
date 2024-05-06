@@ -16,41 +16,6 @@ const CreatorForm = () => {
   const color = "#006D53";
 
   const [loading, setLoading] = useState();
-  // const [others, setOthers] = useState({
-  //   language: false,
-  //   interests: false,
-  //   employmentType: false,
-  // });
-
-  const schema = yup.object({
-    name: yup
-      .string()
-      .min(5, "At least 5 characters required")
-      .required("Required"),
-    email: yup.string().email("Invalid email address").required("Required"),
-    pronoun: yup.string().required("Required"),
-    phoneNumber: yup
-      .number()
-      .positive('Invalid character "-"')
-      .integer('Invalid character "."')
-      .min(100_000_00, "Too short")
-      .max(999_99_9999_9999_99, "Too long")
-      .required("Required"),
-    employmentType: yup.string().required("Required"),
-    nationality: yup.string().required("Required"),
-    birthDate: yup.string().required("Required"),
-    location: yup
-      .string()
-      .min(20, "At least 20 characters required")
-      .required("Required"),
-    instaUsername: yup.string().required("Required"),
-    tiktokUsername: yup.string().required("Required"),
-    language: yup.string().required("Required"),
-    interests: yup.array().required("Required"),
-    // others: yup.object({
-    //   language: yup.string().required("Please specify your language"),
-    // }),
-  });
 
   const onSubmit = async (value, resetForm) => {
     setLoading(true);
@@ -71,32 +36,52 @@ const CreatorForm = () => {
       .finally(() => setLoading(false));
   };
 
-  const validateOthers = (value) => {
-    let error;
-    if (value === "") {
-      error = "Please specify your language";
-    }
-    return error;
-  };
+  const schema = yup.object({
+    name: yup
+      .string()
+      .min(5, "At least 5 characters required")
+      .required("Required"),
+    pronoun: yup.string().required("Required"),
+    phoneNumber: yup
+      .number()
+      .positive("Invalid character “-”")
+      .integer("Invalid character “.”")
+      .min(100_000_00, "Too short")
+      .max(999_99_9999_9999_99, "Too long")
+      .required("Required"),
+    email: yup.string().email("Invalid email address").required("Required"),
+    nationality: yup.string().required("Required"),
+    location: yup.string().required("Required"),
+    birthDate: yup.string().required("Required"),
+    instaUsername: yup.string(),
+    tiktokUsername: yup.string(),
+    languages: yup.array().required("Required"),
+    interests: yup
+      .array()
+      .min(3, "Select 3 options")
+      .max(3, "Select 3 options")
+      .required("Required"),
+    employmentType: yup.string().required("Required"),
+  });
+
+  const validateOtherField = (value) => value === "" ? "Required" : "";
 
   return (
     <main className="flex min-h-screen flex-col">
       <Header logo={"/images/logo.svg"} />
       <Suspense fallback={<p>Loading...</p>}>
-        <section className="flex p-10 gap-5 items-center justify-center bg-[#006D53]">
+        <section className={`flex p-10 gap-5 items-center justify-center bg-[${color}]`}>
           <div className="basis-1/2 hidden xl:block">
             <Image
-              src={
-                "https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"
-              }
+              src="https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"
               alt="creator"
               width={600}
               height={600}
               className="rounded-lg mx-auto"
             />
           </div>
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-5 ">
+          <div className="flex flex-col gap-5 text-[#F4F4F4]">
+            <div className="flex flex-col gap-5">
               <h1 className="sm:text-8xl text-8xl -tracking-[.35rem]">
                 get{" "}
                 <span className="font-times italic -tracking-[.6rem] text-8xl">
@@ -106,29 +91,27 @@ const CreatorForm = () => {
             </div>
             <div className="flex flex-col gap-6">
               <h1 className="text-xl font-bold -tracking-[.05rem]">
-                We’re excited to work together.
-                <br />
+                We’re excited to work together.<br />
                 Tell us who you are and we’ll get back to you with suitable
                 brand deals.
               </h1>
-
               <Formik
                 initialValues={{
                   name: "",
-                  email: "",
                   pronoun: "",
                   phoneNumber: "",
-                  employmentType: "",
+                  email: "",
                   nationality: "",
-                  birthDate: "",
                   location: "",
+                  birthDate: "",
                   instaUsername: "",
                   tiktokUsername: "",
-                  language: "",
-                  others: {
-                    language: "",
-                  },
+                  languages: [],
+                  otherlanguagesString: "",
                   interests: [],
+                  otherinterestsString: "",
+                  employmentType: "",
+                  otherEmploymentType: "",
                 }}
                 onSubmit={(values, { resetForm }) => {
                   alert(JSON.stringify(values));
@@ -137,62 +120,23 @@ const CreatorForm = () => {
                 validationSchema={schema}
               >
                 <Form>
-                  <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 text-[#F4F4F4]">
+                  <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <Field name="name">
                       {({ field, form: { errors, touched } }) => (
                         <>
                           <FormInput
-                            field={field}
+                            label="Name"
                             type="text"
-                            label={"Name"}
+                            field={field}
                             color={color}
                             errors={touched.name && errors.name}
                           />
                         </>
                       )}
                     </Field>
-                    <Field name="email">
-                      {({ field, form: { errors, touched }, meta }) => (
-                        <FormInput
-                          field={field}
-                          label={"Email Address"}
-                          type={"email"}
-                          color={color}
-                          errors={touched.email && errors.email}
-                        />
-                      )}
-                    </Field>
-
-                    <Field name="phoneNumber">
-                      {({ field, form: { errors, touched } }) => (
-                        <>
-                          <FormInput
-                            field={field}
-                            type="number"
-                            label={"Phone Number"}
-                            color={color}
-                            errors={touched.phoneNumber && errors.phoneNumber}
-                          />
-                        </>
-                      )}
-                    </Field>
-                    <Field name="employmentType">
-                      {({ field, form: { errors, touched }, meta }) => (
-                        <FormInput
-                          field={field}
-                          label={"Current Employment Type"}
-                          type={"text"}
-                          color={color}
-                          errors={
-                            touched.employmentType && errors.employmentType
-                          }
-                        />
-                      )}
-                    </Field>
-
                     <div className="sm:col-span-3">
                       <Field name="pronoun">
-                        {({ field, form: { errors, touched }, meta }) => (
+                        {({ field, form: { errors, touched } }) => (
                           <>
                             <label
                               htmlFor="pronoun"
@@ -204,11 +148,10 @@ const CreatorForm = () => {
                               <select
                                 name="pronoun"
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
-                                  errors.pronoun &&
-                                  touched.pronoun &&
-                                  "border-red-500"
-                                }`}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.pronoun
+                                  && touched.pronoun
+                                  && "border-red-500"
+                                  }`}
                               >
                                 <option value="">...</option>
                                 <option value="he">He/Him</option>
@@ -226,9 +169,33 @@ const CreatorForm = () => {
                         )}
                       </Field>
                     </div>
+                    <Field name="phoneNumber">
+                      {({ field, form: { errors, touched } }) => (
+                        <>
+                          <FormInput
+                            label="Phone Number"
+                            type="number"
+                            field={field}
+                            color={color}
+                            errors={touched.phoneNumber && errors.phoneNumber}
+                          />
+                        </>
+                      )}
+                    </Field>
+                    <Field name="email">
+                      {({ field, form: { errors, touched } }) => (
+                        <FormInput
+                          label="Email Address"
+                          type="email"
+                          field={field}
+                          color={color}
+                          errors={touched.email && errors.email}
+                        />
+                      )}
+                    </Field>
                     <div className="sm:col-span-3">
                       <Field name="nationality">
-                        {({ field, form: { errors, touched }, meta }) => (
+                        {({ field, form: { errors, touched } }) => (
                           <>
                             <label
                               htmlFor="nationality"
@@ -239,11 +206,10 @@ const CreatorForm = () => {
                             <div className="mt-2">
                               <select
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
-                                  errors.nationality &&
-                                  touched.nationality &&
-                                  "border-red-500"
-                                }`}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.nationality
+                                  && touched.nationality
+                                  && "border-red-500"
+                                  }`}
                               >
                                 <option value="">...</option>
                                 {countries.map((elem) => {
@@ -264,104 +230,124 @@ const CreatorForm = () => {
                         )}
                       </Field>
                     </div>
+                    <div className="sm:col-span-3">
+                      <Field name="location">
+                        {({ field, form: { errors, touched } }) => (
+                          <>
+                            <label
+                              htmlFor="location"
+                              className="block text-sm font-medium leading-6"
+                            >
+                              Current Location
+                            </label>
+                            <div className="mt-2">
+                              <select
+                                name="location"
+                                {...field}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.location
+                                  && touched.location
+                                  && "border-red-500"
+                                  }`}
+                              >
+                                <option value="">...</option>
+                                <option value="kl">Kuala Lumpur</option>
+                                <option value="pj">Petaling Jaya</option>
+                                <option value="jb">Johor Bahru</option>
+                                <option value="penang">Penang</option>
+                              </select>
+                            </div>
+                            {errors.location && touched.location && (
+                              <p class="text-red-500 text-xs mx-2 my-1">
+                                {errors.location}
+                              </p>
+                            )}
+                          </>
+                        )}
+                      </Field>
+                    </div>
                     <Field name="birthDate">
-                      {({ field, form: { errors, touched }, meta }) => (
+                      {({ field, form: { errors, touched } }) => (
                         <FormInput
-                          label={"Date of Birth"}
-                          type={"date"}
+                          label="Date of Birth"
+                          type="date"
                           field={field}
                           color={color}
                           errors={touched.birthDate && errors.birthDate}
                         />
                       )}
                     </Field>
-                    <Field name="location">
-                      {({ field, form: { errors, touched }, meta }) => (
-                        <FormInput
-                          label={"Current Location"}
-                          field={field}
-                          type={"text"}
-                          color={color}
-                          errors={touched.location && errors.location}
-                        />
-                      )}
-                    </Field>
                     <Field name="instaUsername">
-                      {({ field, form: { errors, touched }, meta }) => (
+                      {({ field, form: { errors, touched } }) => (
                         <FormInput
-                          label={"Instagram Username"}
+                          label="Instagram Username"
+                          type="text"
                           field={field}
-                          type={"text"}
                           color={color}
                           errors={touched.instaUsername && errors.instaUsername}
                         />
                       )}
                     </Field>
                     <Field name="tiktokUsername">
-                      {({ field, form: { errors, touched }, meta }) => (
+                      {({ field, form: { errors, touched } }) => (
                         <FormInput
-                          label={"TikTok Username"}
+                          label="TikTok Username"
+                          type="text"
                           field={field}
-                          type={"text"}
                           color={color}
-                          errors={
-                            touched.tiktokUsername && errors.tiktokUsername
-                          }
+                          errors={touched.tiktokUsername && errors.tiktokUsername}
                         />
                       )}
                     </Field>
                     <div className="sm:col-span-3">
-                      <Field name="language">
+                      <Field name="languages">
                         {({ field, form: { errors, touched } }) => (
                           <>
                             <label
-                              htmlFor="language"
+                              htmlFor="languages"
                               className="block text-sm font-medium leading-6"
                             >
-                              Language
+                              Languages (Ctrl+click to select multiple)
                             </label>
                             <div className="mt-2">
                               <select
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
-                                  errors.language &&
-                                  touched.language &&
-                                  "border-red-500"
+                                multiple={true}
+                                className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.languages
+                                  && touched.languages
+                                  && "border-red-500"
                                 }`}
                               >
-                                <option value="">...</option>
                                 <option value="english">English</option>
-                                <option value="malay">Malay </option>
-                                <option value="mandarin">Mandarin </option>
-                                <option value="tamil">Tamil </option>
+                                <option value="malay">Malay</option>
+                                <option value="mandarin">Mandarin</option>
+                                <option value="cantonese">Cantonese</option>
+                                <option value="tamil">Tamil</option>
+                                <option value="korean">Korean</option>
                                 <option value="hindi">Hindi</option>
                                 <option value="others">Others</option>
                               </select>
                             </div>
                             {field.value.includes("others") && (
                               <Field
-                                name="others.language"
-                                validate={validateOthers}
+                                name="otherlanguagesString"
+                                validate={validateOtherField}
                               >
                                 {({ field, form: { errors, touched } }) => (
                                   <>
                                     <FormInput
+                                      placeholder="Please specify your languages"
+                                      type="text"
                                       {...field}
-                                      placeholder="Please specify your language"
-                                      type={"text"}
                                       color={color}
-                                      errors={
-                                        touched?.others?.language &&
-                                        errors?.others?.language
-                                      }
+                                      errors={touched.otherlanguagesString && errors.otherlanguagesString}
                                     />
                                   </>
                                 )}
                               </Field>
                             )}
-                            {errors.language && touched.language && (
+                            {errors.languages && touched.languages && (
                               <p class="text-red-500 text-xs mx-2 my-1">
-                                {errors.language}
+                                {errors.languages}
                               </p>
                             )}
                           </>
@@ -369,26 +355,127 @@ const CreatorForm = () => {
                       </Field>
                     </div>
                     <div className="sm:col-span-3">
-                      <Field name={"interests"}>
-                        {({ field, form: { errors, touched }, meta }) => (
+                      <Field name="interests">
+                        {({ field, form: { errors, touched } }) => (
                           <>
-                            <select
-                              {...field}
-                              multiple={true}
-                              className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
-                                errors.interests &&
-                                touched.interests &&
-                                "border-red-500"
-                              }`}
+                            <label
+                              htmlFor="interests"
+                              className="block text-sm font-medium leading-6"
                             >
-                              <option value="NY">New York</option>
-                              <option value="SF">San Francisco</option>
-                              <option value="CH">Chicago</option>
-                              <option value="OTHER">Other</option>
-                            </select>
+                              Interests (select 3)
+                            </label>
+                            <div className="mt-2">
+                              <select
+                                {...field}
+                                multiple={true}
+                                className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${errors.interests
+                                  && touched.interests
+                                  && "border-red-500"
+                                }`}
+                              >
+                                <option value="lifestyle">Lifestyle</option>
+                                <option value="beauty">Beauty</option>
+                                <option value="foodBeverages">F&B</option>
+                                <option value="motherhoodFamily">Motherhood & Family</option>
+                                <option value="sports">Sports</option>
+                                <option value="healthWellness">Health & Wellness</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="finance">Finance</option>
+                                <option value="education">Education</option>
+                                <option value="technology">Technology</option>
+                                <option value="music">Music</option>
+                                <option value="skincare">Skincare</option>
+                                <option value="comedy">Comedy</option>
+                                <option value="fitness">Fitness</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="travel">Travel</option>
+                                <option value="dance">Dance</option>
+                                <option value="entrepreneur">Entrepreneur</option>
+                                <option value="art">Art</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="homeDecor">Home Decor</option>
+                                <option value="others">Others</option>
+                              </select>
+                            </div>
+                            {field.value.includes("others") && (
+                              <Field
+                                name="otherinterestsString"
+                                validate={validateOtherField}
+                              >
+                                {({ field, form: { errors, touched } }) => (
+                                  <>
+                                    <FormInput
+                                      placeholder="Please specify your interests"
+                                      type="text"
+                                      {...field}
+                                      color={color}
+                                      errors={touched.otherinterestsString && errors.otherinterestsString}
+                                    />
+                                  </>
+                                )}
+                              </Field>
+                            )}
                             {errors.interests && touched.interests && (
                               <p class="text-red-500 text-xs mx-2 my-1">
                                 {errors.interests}
+                              </p>
+                            )}
+                          </>
+                        )}
+                      </Field>
+                    </div>
+                    <div className="sm:col-span-3">
+                      <Field name="employmentType">
+                        {({ field, form: { errors, touched } }) => (
+                          <>
+                            <label
+                              htmlFor="employmentType"
+                              className="block text-sm font-medium leading-6"
+                            >
+                              Employment Type
+                            </label>
+                            <div className="mt-2">
+                              <select
+                                name="employmentType"
+                                {...field}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.employmentType
+                                  && touched.employmentType
+                                  && "border-red-500"
+                                  }`}
+                              >
+                                <option value="">...</option>
+                                <option value="fulltime">Full-time</option>
+                                <option value="freelance">Freelance</option>
+                                <option value="parttime">Part-time</option>
+                                <option value="contract">Contract</option>
+                                <option value="gigWork">Gig Work</option>
+                                <option value="student">Student</option>
+                                <option value="changingJobs">Changing Jobs</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="others">Others</option>
+                              </select>
+                            </div>
+                            {field.value.includes("others") && (
+                              <Field
+                                name="otherEmploymentType"
+                                validate={validateOtherField}
+                              >
+                                {({ field, form: { errors, touched } }) => (
+                                  <>
+                                    <FormInput
+                                      placeholder="Please specify your employment type"
+                                      type="text"
+                                      {...field}
+                                      color={color}
+                                      errors={touched.otherinterestsString && errors.otherinterestsString}
+                                    />
+                                  </>
+                                )}
+                              </Field>
+                            )}
+                            {errors.employmentType && touched.employmentType && (
+                              <p class="text-red-500 text-xs mx-2 my-1">
+                                {errors.employmentType}
                               </p>
                             )}
                           </>
@@ -402,9 +489,8 @@ const CreatorForm = () => {
                       whileTap={{ scale: 0.8 }}
                       type="submit"
                       disabled={loading}
-                      className={`${
-                        loading ? "bg-slate-300" : "bg-slate-100 "
-                      } py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
+                      className={`${loading ? "bg-slate-300" : "bg-slate-100 "}
+                      py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
                     >
                       {loading && (
                         <svg
@@ -440,21 +526,13 @@ const CreatorForm = () => {
                       )}
                       Submit
                     </motion.button>
-                    {/* <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.8 }}
-                      type="submit"
-                      className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
-                    >
-                      Submit
-                    </motion.button> */}
                   </div>
                 </Form>
               </Formik>
             </div>
           </div>
         </section>
-        <LastSection color={"#006D53"} />
+        <LastSection color={color} />
       </Suspense>
     </main>
   );
