@@ -311,13 +311,12 @@ const CreatorForm = () => {
                             <div className="mt-2">
                               <select
                                 {...field}
-                                multiple
+                                multiple={true}
                                 className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.languages
                                   && touched.languages
                                   && "border-red-500"
-                                  }`}
+                                }`}
                               >
-                                <option value="">...</option>
                                 <option value="english">English</option>
                                 <option value="malay">Malay</option>
                                 <option value="mandarin">Mandarin</option>
@@ -368,13 +367,12 @@ const CreatorForm = () => {
                             <div className="mt-2">
                               <select
                                 {...field}
-                                multiple
+                                multiple={true}
                                 className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${errors.interests
                                   && touched.interests
                                   && "border-red-500"
                                 }`}
                               >
-                                <option value="">...</option>
                                 <option value="lifestyle">Lifestyle</option>
                                 <option value="beauty">Beauty</option>
                                 <option value="foodBeverages">F&B</option>
