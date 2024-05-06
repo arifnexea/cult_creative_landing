@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../components/Header";
 import LastSection from "../sections/brandsection/LastSection";
 import News from "../components/News";
+import newsdata from "../contants/newsroom.json";
 
 const Page = () => {
   return (
@@ -16,11 +17,22 @@ const Page = () => {
       </div>
       <div className="px-5 py-10 bg-slate-300">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {newsdata.map((elem, i) => (
+            <div key={i}>
+              <News
+                title={elem.title}
+                date={elem.date}
+                link={elem.link}
+                source={elem.source}
+                image={elem.image}
+              />
+            </div>
+          ))}
+          {/* <News /> */}
+          {/* <News />
           <News />
           <News />
-          <News />
-          <News />
-          <News />
+          <News /> */}
         </div>
       </div>
       <LastSection color={"#1340FF"} />
