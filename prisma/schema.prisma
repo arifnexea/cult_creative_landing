@@ -14,13 +14,13 @@ datasource db {
 }
 
 model Brand {
-  id                      String  @id @default(cuid())
+  id                      String   @id @default(cuid())
   name                    String
   email                   String
   phoneNumber             String
   companyName             String
   companySize             String
-  industry                String
+  industry                String[]
   otherIndustry           String
   monthlyInfluencerBudget Int
   instaUsername           String?

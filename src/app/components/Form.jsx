@@ -1,13 +1,68 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FormInput from "./FormInput";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import toast from "react-hot-toast";
+import MultiSelect from "./MultiSelect";
+
+const industry = [
+  {
+    name: "Banking & Finance",
+  },
+  {
+    name: "Beauty",
+  },
+  {
+    name: "Lifestyle",
+  },
+  {
+    name: "Health & Wellness",
+  },
+  {
+    name: "F&B",
+  },
+  {
+    name: "Fashion",
+  },
+  {
+    name: "Charity, NGO",
+  },
+  {
+    name: "Education",
+  },
+  {
+    name: "Events",
+  },
+  {
+    name: "Motherhood & Family",
+  },
+  {
+    name: "Hotel & Travel",
+  },
+  {
+    name: "Jewellery",
+  },
+  {
+    name: "Footwear",
+  },
+  {
+    name: "Art",
+  },
+  {
+    name: "Technology",
+  },
+  {
+    name: "Others",
+  },
+];
 
 const BrandForm = ({ color }) => {
   const [loading, setLoading] = React.useState();
+  
+  // Industry
+  const [selected, setSelectedItem] = useState([]);
 
   const onSubmit = async (value, resetForm) => {
     setLoading(true);
@@ -22,6 +77,7 @@ const BrandForm = ({ color }) => {
       .then((val) => {
         toast.success(val.message);
         setLoading(false);
+        setSelectedItem([]);
         resetForm();
       })
       .catch((err) => alert(JSON.stringify(err)))
@@ -46,8 +102,12 @@ const BrandForm = ({ color }) => {
       .required("Required"),
     companyName: yup.string().required("Required"),
     companySize: yup.string().required("Required"),
-    industry: yup.string().required("Required"),
-    otherIndustry: yup.string(),
+    industry: yup
+      .array()
+      .min(3, "Select 3 options")
+      .max(3, "Select 3 options")
+      .required("Required"),
+    // otherIndustry: yup.string(),
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
@@ -106,7 +166,7 @@ const BrandForm = ({ color }) => {
               phoneNumber: "",
               companyName: "",
               companySize: "",
-              industry: "",
+              industry: [],
               otherIndustry: "",
               monthlyInfluencerBudget: "",
               instaUsername: "",
@@ -213,7 +273,22 @@ const BrandForm = ({ color }) => {
                   </Field>
                 </div>
                 <div className="sm:col-span-3">
+                  {/* <Field name="industry"> */}
                   <Field name="industry">
+                    {({ field, form: { errors, touched, setFieldValue } }) => (
+                      <MultiSelect
+                        label={"Industry"}
+                        curData={industry}
+                        selected={selected}
+                        setSelectedItem={setSelectedItem}
+                        errors={errors}
+                        touched={touched}
+                        setFieldValue={setFieldValue}
+                      />
+                    )}
+                  </Field>
+                  {/* </Field> */}
+                  {/* <Field name="industry">
                     {({ field, form: { errors, touched } }) => (
                       <>
                         <label
@@ -287,7 +362,7 @@ const BrandForm = ({ color }) => {
                         )}
                       </>
                     )}
-                  </Field>
+                  </Field> */}
                 </div>
                 <Field name="monthlyInfluencerBudget">
                   {({ field, form: { errors, touched } }) => (
