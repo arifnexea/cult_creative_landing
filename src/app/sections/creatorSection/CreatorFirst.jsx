@@ -105,11 +105,13 @@ const CreatorFirst = () => {
               lineHeight: 0.9,
             }}
           >
-            get <span className="font-times">brand</span><br />
+            get <span className="font-times">brand</span>
+            <br />
             <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
               deals,{" "}
             </span>
-            get<br />
+            get
+            <br />
             <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
               paid.
             </span>

@@ -10,7 +10,7 @@ import * as yup from "yup";
 import { useState } from "react";
 
 import countries from "../../contants/countries.json";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const CreatorForm = () => {
   const color = "#006D53";
@@ -123,7 +123,6 @@ const CreatorForm = () => {
                   otherEmploymentType: "",
                 }}
                 onSubmit={(values, { resetForm }) => {
-                  alert(JSON.stringify(values));
                   onSubmit(values, resetForm);
                 }}
                 validationSchema={schema}
@@ -139,6 +138,7 @@ const CreatorForm = () => {
                             field={field}
                             color={color}
                             errors={touched.name && errors.name}
+                            placeholder={"What's your name ?"}
                           />
                         </>
                       )}
@@ -163,11 +163,13 @@ const CreatorForm = () => {
                                   "border-red-500"
                                 }`}
                               >
-                                <option value="">...</option>
-                                <option>He/Him</option>
-                                <option>She/Her</option>
-                                <option>They/Them</option>
-                                <option>Others</option>
+                                <option value="">
+                                  {"What's your pronoun?"}
+                                </option>
+                                <option value="he">He/Him</option>
+                                <option value="she">She/Her</option>
+                                <option value="they">They/Them</option>
+                                <option value="others">Others</option>
                               </select>
                             </div>
                             {errors.pronoun && touched.pronoun && (
@@ -188,6 +190,7 @@ const CreatorForm = () => {
                             field={field}
                             color={color}
                             errors={touched.phoneNumber && errors.phoneNumber}
+                            placeholder={"What's your phone number ?"}
                           />
                         </>
                       )}
@@ -200,6 +203,7 @@ const CreatorForm = () => {
                           field={field}
                           color={color}
                           errors={touched.email && errors.email}
+                          placeholder={"What's your email ?"}
                         />
                       )}
                     </Field>
@@ -222,7 +226,9 @@ const CreatorForm = () => {
                                   "border-red-500"
                                 }`}
                               >
-                                <option value="">...</option>
+                                <option value="">
+                                  {"What's your nationality ?"}
+                                </option>
                                 {countries.map((elem) => {
                                   return (
                                     <option key={elem.code} value={elem.name}>
@@ -261,11 +267,13 @@ const CreatorForm = () => {
                                   "border-red-500"
                                 }`}
                               >
-                                <option value="">...</option>
-                                <option>Kuala Lumpur</option>
-                                <option>Petaling Jaya</option>
-                                <option>Johor Bahru</option>
-                                <option>Penang</option>
+                                <option value="">
+                                  {"What's your current location ?"}
+                                </option>
+                                <option value="kl">Kuala Lumpur</option>
+                                <option value="pj">Petaling Jaya</option>
+                                <option value="jb">Johor Bahru</option>
+                                <option value="penang">Penang</option>
                               </select>
                             </div>
                             {errors.location && touched.location && (
@@ -284,7 +292,8 @@ const CreatorForm = () => {
                           type="date"
                           field={field}
                           color={color}
-                          errors={touched.dateOfBirth && errors.dateOfBirth}
+                          errors={touched.birthDate && errors.birthDate}
+                          placeholder={"What's your birth date ?"}
                         />
                       )}
                     </Field>
@@ -296,6 +305,7 @@ const CreatorForm = () => {
                           field={field}
                           color={color}
                           errors={touched.instaUsername && errors.instaUsername}
+                          placeholder={"What's your instagram username ?"}
                         />
                       )}
                     </Field>
@@ -309,6 +319,7 @@ const CreatorForm = () => {
                           errors={
                             touched.tiktokUsername && errors.tiktokUsername
                           }
+                          placeholder={"What's your tiktok username ?"}
                         />
                       )}
                     </Field>
@@ -332,14 +343,17 @@ const CreatorForm = () => {
                                   "border-red-500"
                                 }`}
                               >
-                                <option>English</option>
-                                <option>Malay</option>
-                                <option>Mandarin</option>
-                                <option>Cantonese</option>
-                                <option>Tamil</option>
-                                <option>Korean</option>
-                                <option>Hindi</option>
-                                <option>Others</option>
+                                <option value="">
+                                  {"What's your languages ?"}
+                                </option>
+                                <option value="english">English</option>
+                                <option value="malay">Malay</option>
+                                <option value="mandarin">Mandarin</option>
+                                <option value="cantonese">Cantonese</option>
+                                <option value="tamil">Tamil</option>
+                                <option value="korean">Korean</option>
+                                <option value="hindi">Hindi</option>
+                                <option value="others">Others</option>
                               </select>
                             </div>
                             {field.value.includes("Others") && (
@@ -560,6 +574,7 @@ const CreatorForm = () => {
           </div>
         </section>
         <LastSection color={color} />
+        <Toaster />
       </Suspense>
     </main>
   );

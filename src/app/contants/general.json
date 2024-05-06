@@ -1,0 +1,102 @@
+[
+      {
+        "question": "How do cretors get paid?",
+        "answer": "Creators are paid automatically on a schedule that you set, but can also be paid manually at any time."
+      },
+      {
+        "question": "What happens if my client doesn't pay you back?",
+        "answer": "July takes on all the risk of late payouts and defaults, so we'll never come after you for the cash."
+      },
+      {
+        "question": "What is the pricing for Fast Pay?",
+        "answer": "Our fees range between 3-6% of the deal amount. We set a price on a deal by deal basis based on a variety of factors, including the payment terms and your client's credit profile. We'll let you know the price of the deal, and you'll have the option to proceed. There are no other additional costs."
+      },
+      {
+        "question": "How do brands pay invoices?",
+        "answer": "Brands pay invoices using ACH, credit card or direct wire transfer. This means July will work even if brands use a third-party payments tool, like Lumanu or Bill.com."
+      },
+      {
+        "question": "How far back can I view my talents growth?",
+        "answer": "Unfortunately, at this point in time, we only start tracking a creator's growth from the day they connect their socials to July."
+      },
+      {
+        "question": "Do I need to update the stats myself?",
+        "answer": "Nope! July integrates with first-party social media APIs to record their analytics on a daily basis."
+      },
+      {
+        "question": "How often are these stats updated?",
+        "answer": "Stats are pulled directly from first-party social media APIs and are updated every day."
+      },
+      {
+        "question": "Where does July get creator status?",
+        "answer": "July integrates directly with Instagram, Tik Tok and Youtube and gets stats straight from the source. They're the exact same stats creators see from their own accounts."
+      },
+      {
+        "question": "Can I hide certain stats?",
+        "answer": "Yes! Hide any stat from Media Kit settings."
+      },
+      {
+        "question": "Can I also share my talent's rates?",
+        "answer": "Absolutely! There is an entire section where you can add your creator's rates. Show them or hide them depending on who you're sharing them with."
+      },
+      {
+        "question": "Is July invoicing only for deals I get on July?",
+        "answer": "No, use our invoicing tool for any brand deal you want."
+      },
+      {
+        "question": "Can brands see my personal bank information?",
+        "answer": "Nope - all of your personal information is protected. Payments are routed through our platform to make sure they're safe and reliable."
+      },
+      {
+        "question": "Do I need to pay to use July invoicing?",
+        "answer": "No - July invoicing is completely free. No monthly fee or subscriptions and zero transaction fees."
+      },
+      {
+        "question": "How does Fast Pay work?",
+        "answer": "\"With Fast Pay, creators can say goodbye to Net 30 and get their invoices paid the same day they're sent! When you send an invoice using July, we verify the details and let you know if Fast Pay is available. Once your invoice has been approved, you can get paid out immediately for 2.5% fee. FastPay is NOT required to use July and if you don't use FastPay you'll pay zero fees.\""
+      },
+      {
+        "question": "How will a July Media Kit help my business?",
+        "answer": "Using a Media Kit will enable you to quickly and efficiently land more brand deals, by combining your stats and portfolio into one beautiful location that's easy to share."
+      },
+      {
+        "question": "Can July see my personal data? (Passwords, Creator Fund etc)",
+        "answer": "Nope! Your personal information is never collected. All account integrations are done directly through social media platforms and only display information about your audience and engagement. No sensitive personal information is ever shared with July by social media platforms."
+      },
+      {
+        "question": "How up-to-date is my Media Kit?",
+        "answer": "We update your Media Kit every day! Information will never be more than 24 hours out of date (unlike PDFs)."
+      },
+      {
+        "question": "Where does July get its information?",
+        "answer": "July retrieves data directly from Facebook, Instagram and Google using first-party API's. To learn more, check out our Privacy Policy and Terms of Service."
+      },
+      {
+        "question": "How does July calculate engagement rate?",
+        "answer": "Your engagement rate is calculated by adding up all of your engagements (likes, comments and shares) per post, and dividing that number by your follower count."
+      },
+      {
+        "question": "Are these stats accurate?",
+        "answer": "Yes. Stats are pulled directly from social media API's and are updated every day."
+      },
+      {
+        "question": "Can Media Kits be password-protected?",
+        "answer": "Yes! Media Kits can be locked, which prevents anyone from viewing them without approval. If someone requests to view a Media Kit, you'll be notified by email - you can then choose to share a private access link with them."
+      },
+      {
+        "question": "How do I find the right influencers for my brand?",
+        "answer": "\"Tribe is an influencer marketplace, designed specifically for variety and scale. We've cultivated a pool of diverse and talented creators, to give you the best opportunity of finding the right influencer for your brand. With TRIBE, influencers will browse your campaign, create the content and submit your brief. You can then view the submissions to assess which posts and influencers best fit your campaign, and purchase the posts you love. If you want to know if an influencer is right for your business, you can simply click through to their social feed to get a better idea of their tone of voice, engagement and brand-fit.\""
+      },
+      {
+        "question": "How do I approve creators?",
+        "answer": "Each creator submission will include their Pitch, fee, bio & portfolio, their profile and estimated performance metrics. You'll be able to chat directly with creators to provide any feedback or collaborate before pre-approving those you want to work with. Pre-approval commits you to 50% of their fees and gives creators the go-ahead to create and submit their final content. Once they've resubmitted go ahead and approve the post and the creators will publish it to their social account."
+      },
+      {
+        "question": "What do I do if I haven't received any new submissions to my TRIBE campaign?",
+        "answer": "\"There are a few things you can do to boost the submissions to your campaign and capitalize on the creativity of our influencers. Contacting your CSM is always the first thing you need to do if you have any questions or concerns about a live campaign. We can spend some time looking at the requirements and target influencers that we know will fit best to encourage more submissions and approvals.\""
+      },
+      {
+        "question": "If I pay for the influencer content, do I own it?",
+        "answer": "\"You can repost on your own social media channels with credit but if you're looking for beautiful content for your paid media channels we can organize that for you too. Here are your options: 1. You can run a content campaign where creators craft content but don't post it to their channels. Instead, you license it directly. 2. You can request to license any piece of content from any of your campaigns from your content library 3. You can boost your top-performing posts from your influencer campaigns to run branded content ads on meta or spark ads on TikTok.\""
+      }
+]

@@ -1,13 +1,68 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FormInput from "./FormInput";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import toast from "react-hot-toast";
+import MultiSelect from "./MultiSelect";
+
+const industry = [
+  {
+    name: "Banking & Finance",
+  },
+  {
+    name: "Beauty",
+  },
+  {
+    name: "Lifestyle",
+  },
+  {
+    name: "Health & Wellness",
+  },
+  {
+    name: "F&B",
+  },
+  {
+    name: "Fashion",
+  },
+  {
+    name: "Charity, NGO",
+  },
+  {
+    name: "Education",
+  },
+  {
+    name: "Events",
+  },
+  {
+    name: "Motherhood & Family",
+  },
+  {
+    name: "Hotel & Travel",
+  },
+  {
+    name: "Jewellery",
+  },
+  {
+    name: "Footwear",
+  },
+  {
+    name: "Art",
+  },
+  {
+    name: "Technology",
+  },
+  {
+    name: "Others",
+  },
+];
 
 const BrandForm = ({ color }) => {
   const [loading, setLoading] = React.useState();
+  
+  // Industry
+  const [selected, setSelectedItem] = useState([]);
 
   const onSubmit = async (value, resetForm) => {
     setLoading(true);
@@ -22,6 +77,7 @@ const BrandForm = ({ color }) => {
       .then((val) => {
         toast.success(val.message);
         setLoading(false);
+        setSelectedItem([]);
         resetForm();
       })
       .catch((err) => alert(JSON.stringify(err)))
@@ -33,10 +89,7 @@ const BrandForm = ({ color }) => {
       .string()
       .min(5, "At least 5 characters required")
       .required("Required"),
-    email: yup
-      .string()
-      .email("Invalid email address")
-      .required("Required"),
+    email: yup.string().email("Invalid email address").required("Required"),
     phoneNumber: yup
       .number()
       .positive("Invalid character “-”")
@@ -49,8 +102,12 @@ const BrandForm = ({ color }) => {
       .required("Required"),
     companyName: yup.string().required("Required"),
     companySize: yup.string().required("Required"),
-    industry: yup.string().required("Required"),
-    otherIndustry: yup.string(),
+    industry: yup
+      .array()
+      .min(3, "Select 3 options")
+      .max(3, "Select 3 options")
+      .required("Required"),
+    // otherIndustry: yup.string(),
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
@@ -109,7 +166,7 @@ const BrandForm = ({ color }) => {
               phoneNumber: "",
               companyName: "",
               companySize: "",
-              industry: "",
+              industry: [],
               otherIndustry: "",
               monthlyInfluencerBudget: "",
               instaUsername: "",
@@ -129,6 +186,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.name && errors.name}
+                        placeholder={"What's your name ?"}
                       />
                     </>
                   )}
@@ -142,6 +200,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.email && errors.email}
+                        placeholder={"What's your email ?"}
                       />
                     </>
                   )}
@@ -155,6 +214,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.phoneNumber && errors.phoneNumber}
+                        placeholder={"What's your phone number ?"}
                       />
                     </>
                   )}
@@ -168,6 +228,7 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.companyName && errors.companyName}
+                        placeholder={"What's your company name ?"}
                       />
                     </>
                   )}
@@ -186,17 +247,20 @@ const BrandForm = ({ color }) => {
                           <select
                             name="companySize"
                             {...field}
-                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.companySize
-                              && touched.companySize
-                              && "border-red-500"
-                              }`}
+                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                              errors.companySize &&
+                              touched.companySize &&
+                              "border-red-500"
+                            }`}
                           >
-                            <option value="">...</option>
-                            <option>1 to 10</option>
-                            <option>11 to 50</option>
-                            <option>51 to 100</option>
-                            <option>101 to 200</option>
-                            <option>Over 200</option>
+                            <option value="">
+                              {"What's your company size ?"}
+                            </option>
+                            <option value="1to10">1–10</option>
+                            <option value="11to50">11–50</option>
+                            <option value="51to100">51–100</option>
+                            <option value="101to200">101–200</option>
+                            <option value="over200">{">"}200</option>
                           </select>
                         </div>
                         {errors.companySize && touched.companySize && (
@@ -209,7 +273,22 @@ const BrandForm = ({ color }) => {
                   </Field>
                 </div>
                 <div className="sm:col-span-3">
+                  {/* <Field name="industry"> */}
                   <Field name="industry">
+                    {({ field, form: { errors, touched, setFieldValue } }) => (
+                      <MultiSelect
+                        label={"Industry"}
+                        curData={industry}
+                        selected={selected}
+                        setSelectedItem={setSelectedItem}
+                        errors={errors}
+                        touched={touched}
+                        setFieldValue={setFieldValue}
+                      />
+                    )}
+                  </Field>
+                  {/* </Field> */}
+                  {/* <Field name="industry">
                     {({ field, form: { errors, touched } }) => (
                       <>
                         <label
@@ -222,34 +301,43 @@ const BrandForm = ({ color }) => {
                           <select
                             name="industry"
                             {...field}
-                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.industry
-                              && touched.industry
-                              && "border-red-500"
-                              }`}
+                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                              errors.industry &&
+                              touched.industry &&
+                              "border-red-500"
+                            }`}
                           >
-                            <option value="">...</option>
-                            <option>Banking & Finance</option>
-                            <option>Beauty</option>
-                            <option>Lifestyle</option>
-                            <option>Health & Wellness</option>
-                            <option>F&B</option>
-                            <option>Fashion</option>
-                            <option>Charity or NGO</option>
-                            <option>Education</option>
-                            <option>Events</option>
-                            <option>Motherhood & Family</option>
-                            <option>Hotel & Travel</option>
-                            <option>Jewellery</option>
-                            <option>Footwear</option>
-                            <option>Art</option>
-                            <option>Technology</option>
-                            <option>Others</option>
+                            <option value="">{"What's your industry ?"}</option>
+                            <option value="bankingFinance">
+                              Banking & Finance
+                            </option>
+                            <option value="beauty">Beauty</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="healthWellness">
+                              Health & Wellness
+                            </option>
+                            <option value="foodBeverages">F&B</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="charityOrNgo">Charity or NGO</option>
+                            <option value="education">Education</option>
+                            <option value="events">Events</option>
+                            <option value="motherhoodFamily">
+                              Motherhood & Family
+                            </option>
+                            <option value="hotelTravel">Hotel & Travel</option>
+                            <option value="jewellery">Jewellery</option>
+                            <option value="footwear">Footwear</option>
+                            <option value="art">Art</option>
+                            <option value="technology">Technology</option>
+                            <option value="others">Others</option>
                           </select>
                         </div>
                         {field.value.includes("Others") && (
                           <Field
                             name="otherIndustry"
-                            validate={(value) => value === "" ? "Required" : ""}
+                            validate={(value) =>
+                              value === "" ? "Required" : ""
+                            }
                           >
                             {({ field, form: { errors, touched } }) => (
                               <>
@@ -258,7 +346,10 @@ const BrandForm = ({ color }) => {
                                   type="text"
                                   {...field}
                                   color={color}
-                                  errors={touched.otherIndustry && errors.otherIndustry}
+                                  errors={
+                                    touched.otherIndustry &&
+                                    errors.otherIndustry
+                                  }
                                 />
                               </>
                             )}
@@ -271,7 +362,7 @@ const BrandForm = ({ color }) => {
                         )}
                       </>
                     )}
-                  </Field>
+                  </Field> */}
                 </div>
                 <Field name="monthlyInfluencerBudget">
                   {({ field, form: { errors, touched } }) => (
@@ -281,7 +372,11 @@ const BrandForm = ({ color }) => {
                         type="number"
                         field={field}
                         color={color}
-                        errors={touched.monthlyInfluencerBudget && errors.monthlyInfluencerBudget}
+                        errors={
+                          touched.monthlyInfluencerBudget &&
+                          errors.monthlyInfluencerBudget
+                        }
+                        placeholder={"What's your monthly influencer budget ?"}
                       />
                     </>
                   )}
@@ -294,6 +389,7 @@ const BrandForm = ({ color }) => {
                       field={field}
                       color={color}
                       errors={touched.instaUsername && errors.instaUsername}
+                      placeholder={"What's your instagram username ?"}
                     />
                   )}
                 </Field>
@@ -305,6 +401,7 @@ const BrandForm = ({ color }) => {
                       field={field}
                       color={color}
                       errors={touched.tiktokUsername && errors.tiktokUsername}
+                      placeholder={"What's your tiktok username ?"}
                     />
                   )}
                 </Field>
