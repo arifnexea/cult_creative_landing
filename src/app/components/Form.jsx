@@ -74,7 +74,7 @@ const BrandForm = ({ color }) => {
           className="rounded-lg mx-auto"
         />
       </div>
-      <div className="flex flex-col gap-5 xl:basis-1/2">
+      <div className="flex flex-col gap-5 xl:basis-1/2 text-[#F4F4F4]">
         <h1
           className="md:text-[7rem] text-6xl font-aileron md:-tracking-[.5rem] text-pretty max-w-[30rem]"
           style={{
@@ -119,7 +119,7 @@ const BrandForm = ({ color }) => {
             validationSchema={schema}
           >
             <Form>
-              <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 text-[#F4F4F4]">
+              <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <Field name="name">
                   {({ field, form: { errors, touched } }) => (
                     <>
@@ -192,11 +192,11 @@ const BrandForm = ({ color }) => {
                               }`}
                           >
                             <option value="">...</option>
-                            <option value="1to10">1–10</option>
-                            <option value="11to50">11–50</option>
-                            <option value="51to100">51–100</option>
-                            <option value="101to200">101–200</option>
-                            <option value="over200">{">"}200</option>
+                            <option>1 to 10</option>
+                            <option>11 to 50</option>
+                            <option>51 to 100</option>
+                            <option>101 to 200</option>
+                            <option>Over 200</option>
                           </select>
                         </div>
                         {errors.companySize && touched.companySize && (
@@ -228,25 +228,25 @@ const BrandForm = ({ color }) => {
                               }`}
                           >
                             <option value="">...</option>
-                            <option value="bankingFinance">Banking & Finance</option>
-                            <option value="beauty">Beauty</option>
-                            <option value="lifestyle">Lifestyle</option>
-                            <option value="healthWellness">Health & Wellness</option>
-                            <option value="foodBeverages">F&B</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="charityOrNgo">Charity or NGO</option>
-                            <option value="education">Education</option>
-                            <option value="events">Events</option>
-                            <option value="motherhoodFamily">Motherhood & Family</option>
-                            <option value="hotelTravel">Hotel & Travel</option>
-                            <option value="jewellery">Jewellery</option>
-                            <option value="footwear">Footwear</option>
-                            <option value="art">Art</option>
-                            <option value="technology">Technology</option>
-                            <option value="others">Others</option>
+                            <option>Banking & Finance</option>
+                            <option>Beauty</option>
+                            <option>Lifestyle</option>
+                            <option>Health & Wellness</option>
+                            <option>F&B</option>
+                            <option>Fashion</option>
+                            <option>Charity or NGO</option>
+                            <option>Education</option>
+                            <option>Events</option>
+                            <option>Motherhood & Family</option>
+                            <option>Hotel & Travel</option>
+                            <option>Jewellery</option>
+                            <option>Footwear</option>
+                            <option>Art</option>
+                            <option>Technology</option>
+                            <option>Others</option>
                           </select>
                         </div>
-                        {field.value.includes("others") && (
+                        {field.value.includes("Others") && (
                           <Field
                             name="otherIndustry"
                             validate={(value) => value === "" ? "Required" : ""}

@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion, wrap } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import LoadingIcon from "@/app/components/Icons/loading-icon";
 import { v4 as uuidv4 } from "uuid";
@@ -33,7 +32,7 @@ const FirstSection = () => {
 
   return (
     <section className="p-8 bg-[#8A5AFE] ">
-      <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start">
+      <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start text-[#F4F4F4]">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{
@@ -46,7 +45,7 @@ const FirstSection = () => {
           className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4f4f4]"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.8,
             }}
@@ -68,11 +67,11 @@ const FirstSection = () => {
               you
             </span>{" "}
           </h1>
-          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
             With our network of 13,000 creators we’ve built across Southeast
             Asia, we take the guesswork out of creator marketing.
           </p>
-          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
             Get quality User-Generated Content and KOL campaigns for your brand,
             to drive genuine user engagement.
           </p>

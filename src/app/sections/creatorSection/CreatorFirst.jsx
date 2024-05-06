@@ -97,10 +97,10 @@ const CreatorFirst = () => {
           transition={{
             duration: 0.5,
           }}
-          className="flex flex-col px-8 lg:w-[50%] text-center lg:text-left basis-1/2 gap-7"
+          className="flex flex-col px-8 lg:w-[50%] text-center text-[#F4F4F4] lg:text-left basis-1/2 gap-7"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4F4F4]"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.9,
             }}
@@ -114,11 +114,11 @@ const CreatorFirst = () => {
               paid.
             </span>
           </h1>
-          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
             Leverage your skills and make money off your current social media
             account.
           </p>
-          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
             Simply sign up and opt in to become a creator and get synced to
             amazing brand deals.
           </p>
