@@ -15,7 +15,7 @@ export async function POST(req) {
         email: value.email,
         nationality: value.nationality,
         location: value.location,
-        birthDate: new Date(value.birthDate),
+        dateOfBirth: new Date(value.dateOfBirth),
         instaUsername: value.instaUsername,
         tiktokUsername: value.tiktokUsername,
         languages: value.languages,

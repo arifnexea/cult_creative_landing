@@ -52,7 +52,11 @@ const CreatorForm = () => {
     email: yup.string().email("Invalid email address").required("Required"),
     nationality: yup.string().required("Required"),
     location: yup.string().required("Required"),
-    birthDate: yup.string().required("Required"),
+    dateOfBirth: yup
+      .date()
+      // Five-digit years can cause a form error
+      .max("9999-12-31", "Too long")
+      .required("Required"),
     instaUsername: yup.string(),
     tiktokUsername: yup.string(),
     languages: yup.array().required("Required"),
@@ -108,7 +112,7 @@ const CreatorForm = () => {
                   email: "",
                   nationality: "",
                   location: "",
-                  birthDate: "",
+                  dateOfBirth: "",
                   instaUsername: "",
                   tiktokUsername: "",
                   languages: [],
@@ -160,10 +164,10 @@ const CreatorForm = () => {
                                 }`}
                               >
                                 <option value="">...</option>
-                                <option value="he">He/Him</option>
-                                <option value="she">She/Her</option>
-                                <option value="they">They/Them</option>
-                                <option value="others">Others</option>
+                                <option>He/Him</option>
+                                <option>She/Her</option>
+                                <option>They/Them</option>
+                                <option>Others</option>
                               </select>
                             </div>
                             {errors.pronoun && touched.pronoun && (
@@ -258,10 +262,10 @@ const CreatorForm = () => {
                                 }`}
                               >
                                 <option value="">...</option>
-                                <option value="kl">Kuala Lumpur</option>
-                                <option value="pj">Petaling Jaya</option>
-                                <option value="jb">Johor Bahru</option>
-                                <option value="penang">Penang</option>
+                                <option>Kuala Lumpur</option>
+                                <option>Petaling Jaya</option>
+                                <option>Johor Bahru</option>
+                                <option>Penang</option>
                               </select>
                             </div>
                             {errors.location && touched.location && (
@@ -273,14 +277,14 @@ const CreatorForm = () => {
                         )}
                       </Field>
                     </div>
-                    <Field name="birthDate">
+                    <Field name="dateOfBirth">
                       {({ field, form: { errors, touched } }) => (
                         <FormInput
                           label="Date of Birth"
                           type="date"
                           field={field}
                           color={color}
-                          errors={touched.birthDate && errors.birthDate}
+                          errors={touched.dateOfBirth && errors.dateOfBirth}
                         />
                       )}
                     </Field>
@@ -328,17 +332,17 @@ const CreatorForm = () => {
                                   "border-red-500"
                                 }`}
                               >
-                                <option value="english">English</option>
-                                <option value="malay">Malay</option>
-                                <option value="mandarin">Mandarin</option>
-                                <option value="cantonese">Cantonese</option>
-                                <option value="tamil">Tamil</option>
-                                <option value="korean">Korean</option>
-                                <option value="hindi">Hindi</option>
-                                <option value="others">Others</option>
+                                <option>English</option>
+                                <option>Malay</option>
+                                <option>Mandarin</option>
+                                <option>Cantonese</option>
+                                <option>Tamil</option>
+                                <option>Korean</option>
+                                <option>Hindi</option>
+                                <option>Others</option>
                               </select>
                             </div>
-                            {field.value.includes("others") && (
+                            {field.value.includes("Others") && (
                               <Field
                                 name="otherlanguagesString"
                                 validate={validateOtherField}
@@ -388,39 +392,31 @@ const CreatorForm = () => {
                                   "border-red-500"
                                 }`}
                               >
-                                <option value="lifestyle">Lifestyle</option>
-                                <option value="beauty">Beauty</option>
-                                <option value="foodBeverages">F&B</option>
-                                <option value="motherhoodFamily">
-                                  Motherhood & Family
-                                </option>
-                                <option value="sports">Sports</option>
-                                <option value="healthWellness">
-                                  Health & Wellness
-                                </option>
-                                <option value="fashion">Fashion</option>
-                                <option value="finance">Finance</option>
-                                <option value="education">Education</option>
-                                <option value="technology">Technology</option>
-                                <option value="music">Music</option>
-                                <option value="skincare">Skincare</option>
-                                <option value="comedy">Comedy</option>
-                                <option value="fitness">Fitness</option>
-                                <option value="gaming">Gaming</option>
-                                <option value="travel">Travel</option>
-                                <option value="dance">Dance</option>
-                                <option value="entrepreneur">
-                                  Entrepreneur
-                                </option>
-                                <option value="art">Art</option>
-                                <option value="entertainment">
-                                  Entertainment
-                                </option>
-                                <option value="homeDecor">Home Decor</option>
-                                <option value="others">Others</option>
+                                <option>Lifestyle</option>
+                                <option>Beauty</option>
+                                <option>F&B</option>
+                                <option>Motherhood & Family</option>
+                                <option>Sports</option>
+                                <option>Health & Wellness</option>
+                                <option>Fashion</option>
+                                <option>Finance</option>
+                                <option>Education</option>
+                                <option>Technology</option>
+                                <option>Music</option>
+                                <option>Skincare</option>
+                                <option>Comedy</option>
+                                <option>Fitness</option>
+                                <option>Gaming</option>
+                                <option>Travel</option>
+                                <option>Dance</option>
+                                <option>Entrepreneur</option>
+                                <option>Art</option>
+                                <option>Entertainment</option>
+                                <option>Home Decor</option>
+                                <option>Others</option>
                               </select>
                             </div>
-                            {field.value.includes("others") && (
+                            {field.value.includes("Others") && (
                               <Field
                                 name="otherinterestsString"
                                 validate={validateOtherField}
@@ -471,20 +467,18 @@ const CreatorForm = () => {
                                 }`}
                               >
                                 <option value="">...</option>
-                                <option value="fulltime">Full-time</option>
-                                <option value="freelance">Freelance</option>
-                                <option value="parttime">Part-time</option>
-                                <option value="contract">Contract</option>
-                                <option value="gigWork">Gig Work</option>
-                                <option value="student">Student</option>
-                                <option value="changingJobs">
-                                  Changing Jobs
-                                </option>
-                                <option value="unemployed">Unemployed</option>
-                                <option value="others">Others</option>
+                                <option>Full-time</option>
+                                <option>Freelance</option>
+                                <option>Part-time</option>
+                                <option>Contract</option>
+                                <option>Gig Work</option>
+                                <option>Student</option>
+                                <option>Changing Jobs</option>
+                                <option>Unemployed</option>
+                                <option>Others</option>
                               </select>
                             </div>
-                            {field.value.includes("others") && (
+                            {field.value.includes("Others") && (
                               <Field
                                 name="otherEmploymentType"
                                 validate={validateOtherField}
