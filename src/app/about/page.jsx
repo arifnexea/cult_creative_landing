@@ -14,8 +14,8 @@ function AboutUs() {
           <div className="flex flex-col gap-4">
             <div className="flex flex-col lg:justify-center lg:items-center">
               <motion.video
-                src="https://storage.googleapis.com/landing_page_cult/about/Cult%20Creative%20About%20Page.mp4"
-                nitial={{ opacity: 0, scale: 0.5 }}
+                src="https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%20About%20Page.mp4"
+                initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
                 className="w-[100%] xl:h-[85vh] lg:h-[75vh]"

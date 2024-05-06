@@ -64,16 +64,20 @@ const CreatorForm = () => {
     employmentType: yup.string().required("Required"),
   });
 
-  const validateOtherField = (value) => value === "" ? "Required" : "";
+  const validateOtherField = (value) => (value === "" ? "Required" : "");
 
   return (
     <main className="flex min-h-screen flex-col">
       <Header logo={"/images/logo.svg"} />
       <Suspense fallback={<p>Loading...</p>}>
-        <section className={`flex p-10 gap-5 items-center justify-center bg-[${color}]`}>
+        <section
+          className={`flex p-10 gap-5 items-center justify-center bg-[${color}]`}
+        >
           <div className="basis-1/2 hidden xl:block">
             <Image
-              src="https://storage.googleapis.com/landing_page_cult/creators/Cult%20Creative%202.jpg"
+              src={
+                "https://storage.googleapis.com/landing-cultcreative/creator/Cult%20Creative%202%20(1).jpg"
+              }
               alt="creator"
               width={600}
               height={600}
@@ -91,7 +95,8 @@ const CreatorForm = () => {
             </div>
             <div className="flex flex-col gap-6">
               <h1 className="text-xl font-bold -tracking-[.05rem]">
-                We’re excited to work together.<br />
+                We’re excited to work together.
+                <br />
                 Tell us who you are and we’ll get back to you with suitable
                 brand deals.
               </h1>
@@ -148,10 +153,11 @@ const CreatorForm = () => {
                               <select
                                 name="pronoun"
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.pronoun
-                                  && touched.pronoun
-                                  && "border-red-500"
-                                  }`}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                                  errors.pronoun &&
+                                  touched.pronoun &&
+                                  "border-red-500"
+                                }`}
                               >
                                 <option value="">...</option>
                                 <option value="he">He/Him</option>
@@ -206,10 +212,11 @@ const CreatorForm = () => {
                             <div className="mt-2">
                               <select
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.nationality
-                                  && touched.nationality
-                                  && "border-red-500"
-                                  }`}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                                  errors.nationality &&
+                                  touched.nationality &&
+                                  "border-red-500"
+                                }`}
                               >
                                 <option value="">...</option>
                                 {countries.map((elem) => {
@@ -244,10 +251,11 @@ const CreatorForm = () => {
                               <select
                                 name="location"
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.location
-                                  && touched.location
-                                  && "border-red-500"
-                                  }`}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                                  errors.location &&
+                                  touched.location &&
+                                  "border-red-500"
+                                }`}
                               >
                                 <option value="">...</option>
                                 <option value="kl">Kuala Lumpur</option>
@@ -294,7 +302,9 @@ const CreatorForm = () => {
                           type="text"
                           field={field}
                           color={color}
-                          errors={touched.tiktokUsername && errors.tiktokUsername}
+                          errors={
+                            touched.tiktokUsername && errors.tiktokUsername
+                          }
                         />
                       )}
                     </Field>
@@ -312,9 +322,10 @@ const CreatorForm = () => {
                               <select
                                 {...field}
                                 multiple={true}
-                                className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.languages
-                                  && touched.languages
-                                  && "border-red-500"
+                                className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                                  errors.languages &&
+                                  touched.languages &&
+                                  "border-red-500"
                                 }`}
                               >
                                 <option value="english">English</option>
@@ -339,7 +350,10 @@ const CreatorForm = () => {
                                       type="text"
                                       {...field}
                                       color={color}
-                                      errors={touched.otherlanguagesString && errors.otherlanguagesString}
+                                      errors={
+                                        touched.otherlanguagesString &&
+                                        errors.otherlanguagesString
+                                      }
                                     />
                                   </>
                                 )}
@@ -368,17 +382,22 @@ const CreatorForm = () => {
                               <select
                                 {...field}
                                 multiple={true}
-                                className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${errors.interests
-                                  && touched.interests
-                                  && "border-red-500"
+                                className={`block w-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6  bg-[${color}] ${
+                                  errors.interests &&
+                                  touched.interests &&
+                                  "border-red-500"
                                 }`}
                               >
                                 <option value="lifestyle">Lifestyle</option>
                                 <option value="beauty">Beauty</option>
                                 <option value="foodBeverages">F&B</option>
-                                <option value="motherhoodFamily">Motherhood & Family</option>
+                                <option value="motherhoodFamily">
+                                  Motherhood & Family
+                                </option>
                                 <option value="sports">Sports</option>
-                                <option value="healthWellness">Health & Wellness</option>
+                                <option value="healthWellness">
+                                  Health & Wellness
+                                </option>
                                 <option value="fashion">Fashion</option>
                                 <option value="finance">Finance</option>
                                 <option value="education">Education</option>
@@ -390,9 +409,13 @@ const CreatorForm = () => {
                                 <option value="gaming">Gaming</option>
                                 <option value="travel">Travel</option>
                                 <option value="dance">Dance</option>
-                                <option value="entrepreneur">Entrepreneur</option>
+                                <option value="entrepreneur">
+                                  Entrepreneur
+                                </option>
                                 <option value="art">Art</option>
-                                <option value="entertainment">Entertainment</option>
+                                <option value="entertainment">
+                                  Entertainment
+                                </option>
                                 <option value="homeDecor">Home Decor</option>
                                 <option value="others">Others</option>
                               </select>
@@ -409,7 +432,10 @@ const CreatorForm = () => {
                                       type="text"
                                       {...field}
                                       color={color}
-                                      errors={touched.otherinterestsString && errors.otherinterestsString}
+                                      errors={
+                                        touched.otherinterestsString &&
+                                        errors.otherinterestsString
+                                      }
                                     />
                                   </>
                                 )}
@@ -438,10 +464,11 @@ const CreatorForm = () => {
                               <select
                                 name="employmentType"
                                 {...field}
-                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${errors.employmentType
-                                  && touched.employmentType
-                                  && "border-red-500"
-                                  }`}
+                                className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                                  errors.employmentType &&
+                                  touched.employmentType &&
+                                  "border-red-500"
+                                }`}
                               >
                                 <option value="">...</option>
                                 <option value="fulltime">Full-time</option>
@@ -450,7 +477,9 @@ const CreatorForm = () => {
                                 <option value="contract">Contract</option>
                                 <option value="gigWork">Gig Work</option>
                                 <option value="student">Student</option>
-                                <option value="changingJobs">Changing Jobs</option>
+                                <option value="changingJobs">
+                                  Changing Jobs
+                                </option>
                                 <option value="unemployed">Unemployed</option>
                                 <option value="others">Others</option>
                               </select>
@@ -467,17 +496,21 @@ const CreatorForm = () => {
                                       type="text"
                                       {...field}
                                       color={color}
-                                      errors={touched.otherinterestsString && errors.otherinterestsString}
+                                      errors={
+                                        touched.otherinterestsString &&
+                                        errors.otherinterestsString
+                                      }
                                     />
                                   </>
                                 )}
                               </Field>
                             )}
-                            {errors.employmentType && touched.employmentType && (
-                              <p class="text-red-500 text-xs mx-2 my-1">
-                                {errors.employmentType}
-                              </p>
-                            )}
+                            {errors.employmentType &&
+                              touched.employmentType && (
+                                <p class="text-red-500 text-xs mx-2 my-1">
+                                  {errors.employmentType}
+                                </p>
+                              )}
                           </>
                         )}
                       </Field>

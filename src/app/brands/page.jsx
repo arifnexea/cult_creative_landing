@@ -9,6 +9,7 @@ import SeventhSection from "@/app/sections/brandsection/SeventhSection";
 import SixthSection from "@/app/sections/brandsection/SixthSection";
 import ThirdSection from "@/app/sections/brandsection/ThirdSection";
 import React, { Suspense } from "react";
+import { Toaster } from "react-hot-toast";
 
 const Brands = () => {
   return (
@@ -25,6 +26,7 @@ const Brands = () => {
         />
         <SeventhSection />
         <LastSection color={"#8A5AFE"} />
+        <Toaster position="top-center" />
       </Suspense>
     </main>
   );

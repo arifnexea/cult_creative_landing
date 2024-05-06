@@ -12,6 +12,7 @@ import CreatorSixth from "../sections/creatorSection/CreatorSixth";
 import CreatorLast from "../sections/creatorSection/CreatorLast";
 import LastSection from "../sections/brandsection/LastSection";
 import Header from "../components/Header";
+import { Toaster } from "react-hot-toast";
 
 function Creators() {
   return (
@@ -26,6 +27,7 @@ function Creators() {
         <CreatorSixth />
         <CreatorLast />
         <LastSection color={"#006D53"} />
+        <Toaster position="top-center" />
       </Suspense>
     </main>
   );

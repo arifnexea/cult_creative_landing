@@ -12,6 +12,7 @@ import HomeFive from "./sections/homeSection/homeFive";
 import HomeSix from "./sections/homeSection/homeSix";
 import Companies from "./components/Companies";
 import HomeCompanies from "./sections/homeSection/companies";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <HomeFive />
         <HomeSix />
         <LastSection color={"#1340FF"} />
+        <Toaster position="top-center" />
       </Suspense>
     </main>
   );

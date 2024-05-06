@@ -33,7 +33,7 @@ function HomeThree() {
           transition={{
             duration: 0.5,
           }}
-          className="absolute lg:right-0 w-[90%] xl:w-[33%] lg:w-[40%] gap-10 lg:text-start "
+          className="lg:absolute lg:right-0 w-[90%] xl:w-[33%] lg:w-[40%] gap-10 lg:text-start"
         >
           <h1 className="lg:text-9xl lg:tracking-5 md:text-7xl text-4xl font-aileron font-light">
             how it{" "}
@@ -66,7 +66,7 @@ function HomeThree() {
             <p className="lg:w-[95%] lg:ml-4 text-md xl:text-3xl lg:text-xl md:text-xl my-3 font-aileron font-light">
               We take the hassle out of creator marketing.
             </p>
-            <p className=" lg:w-[85%] lg:ml-4 xl:text-3xl lg:text-xl md:text-xl text-sm text-justify font-aileron font-light">
+            <p className=" lg:w-[85%] lg:ml-4 xl:text-3xl lg:text-xl md:text-xl text-sm font-aileron font-light">
               With a simple monthly subscription,here’s how we bridge brands and
               agencies with creators to establish genuine relationships with
               customers.

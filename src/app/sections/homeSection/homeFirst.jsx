@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import LoadingIcon from "@/app/components/Icons/loading-icon";
+import toast from "react-hot-toast";
 
 const vid = [
   {
