@@ -131,7 +131,7 @@ const BrandForm = ({ color }) => {
           className="rounded-lg mx-auto"
         />
       </div>
-      <div className="flex flex-col gap-5 xl:basis-1/2">
+      <div className="flex flex-col gap-5 xl:basis-1/2 text-[#F4F4F4]">
         <h1
           className="md:text-[7rem] text-6xl font-aileron md:-tracking-[.5rem] text-pretty max-w-[30rem]"
           style={{
@@ -176,7 +176,7 @@ const BrandForm = ({ color }) => {
             validationSchema={schema}
           >
             <Form>
-              <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 text-[#F4F4F4]">
+              <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <Field name="name">
                   {({ field, form: { errors, touched } }) => (
                     <>
@@ -332,7 +332,7 @@ const BrandForm = ({ color }) => {
                             <option value="others">Others</option>
                           </select>
                         </div>
-                        {field.value.includes("others") && (
+                        {field.value.includes("Others") && (
                           <Field
                             name="otherIndustry"
                             validate={(value) =>

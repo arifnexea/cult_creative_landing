@@ -35,10 +35,10 @@ const HomeFirst = () => {
           transition={{
             duration: 0.5,
           }}
-          className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
+          className="flex flex-col lg:w-[50%] text-center text-[#F4F4F4] lg:text-left gap-10 basis-1/2"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron text-[#F4F4F4]"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: 0.8,
             }}
@@ -53,11 +53,11 @@ const HomeFirst = () => {
             <br />
             co-create.
           </h1>
-          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
             Cult Creative is the all-in-one portal for creators and brands to
             seamlessly work, collaborate and elevate.
           </p>
-          <p className="lg:text-xl text-xl text-[#F4f4f4] lg:w-[75%] lg:text-justify">
+          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
             With our 13,000 talent pool across Southeast Asia, we help transform
             ideas into captivating, quality content for brands.
           </p>
