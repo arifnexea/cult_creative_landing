@@ -16,7 +16,7 @@ import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col max-w-[100vw] overflow-hidden">
       <Header logo={"/images/logo.svg"} />
       <Suspense fallback={<p>Loading...</p>}>
         <HomeFirst />

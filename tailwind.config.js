@@ -31,8 +31,8 @@ module.exports = {
         },
       },
       animation: {
-        "loop-scroll-optics": "loop-scroll-optics 10s linear infinite",
-        "loop-scroll-companies": "loop-scroll-companies 10s linear infinite",
+        "loop-scroll-optics": "loop-scroll-optics 15s linear infinite",
+        "loop-scroll-companies": "loop-scroll-companies 15s linear infinite",
         "loop-paused": "animation-play-state: paused",
       },
     },

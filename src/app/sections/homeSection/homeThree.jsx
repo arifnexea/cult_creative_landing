@@ -1,28 +1,43 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 function HomeThree() {
   const [index, setIndex] = useState(false);
+  const [thumbnail, setThumbnail] = useState(true);
 
   return (
     <section className="lg:px-2 py-12 bg-[#1340FF]">
       <div className="flex flex-col md:flex-row p-2 items-center gap-10">
-        <iframe
-          src="https://www.youtube.com/embed/xTvO7RmOyBM?si=xKjLNN2DNwOTewu3"
-          frameborder="0"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          allowTransparency
-          loading="lazy"
-          className={`rounded-xl md:w-[500px] md:h-[281.25px] lg:w-[1000px] lg:h-[562.5px] ${
-            index && "z-10 transition duration-1000 ease-in-out"
-          } basis-1/2`}
-          onMouseEnter={() => setIndex(true)}
-          onMouseLeave={() => setIndex(false)}
-        />
+        {thumbnail ? (
+          <Image
+            src="/thumbnail.png"
+            alt="Thumbnail Image"
+            width={1000}
+            height={562.5}
+            className="rounded-md cursor-pointer"
+            onClick={() => setThumbnail(false)}
+          />
+        ) : (
+          <iframe
+            name="iframe_name"
+            src="https://www.youtube.com/embed/xTvO7RmOyBM?si=xKjLNN2DNwOTewu3"
+            frameborder="0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            allowTransparency
+            loading="lazy"
+            className={`rounded-xl md:w-[500px] md:h-[281.25px] lg:w-[1000px] lg:h-[562.5px] ${
+              index && "z-10 transition duration-1000 ease-in-out"
+            } basis-1/2`}
+            onMouseEnter={() => setIndex(true)}
+            onMouseLeave={() => setIndex(false)}
+          />
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 100 }}
