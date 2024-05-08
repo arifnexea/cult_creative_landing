@@ -7,11 +7,13 @@ import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import LoadingIcon from "@/app/components/Icons/loading-icon";
 import toast from "react-hot-toast";
+import VideoComponent from "@/app/components/VideoComponent";
 
 const vid = [
   {
     id: uuidv4(),
-    name: "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mp4",
+    // name: "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mp4",
+    name: "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mp4",
   },
   {
     id: uuidv4(),
@@ -74,7 +76,7 @@ const HomeFirst = () => {
               autoPlay
               loop
               muted
-              webkit-playsinline
+              webkit-playsinline="true"
               playsInline
               preload="metadata"
             >
@@ -87,18 +89,19 @@ const HomeFirst = () => {
               {vid &&
                 vid.map((elem, i) => {
                   return (
-                    <video
-                      key={i}
-                      className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
-                      autoPlay
-                      loop
-                      muted
-                      webkit-playsInline
-                      playsInline
-                      preload="metadata"
-                    >
-                      <source src={elem?.name} type="video/mp4" />
-                    </video>
+                    <VideoComponent key={i} src={elem?.name} />
+                    // <video
+                    //   key={i}
+                    // className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
+                    // autoPlay
+                    // loop
+                    // muted
+                    // webkit-playsInline
+                    // playsInline
+                    // preload="metadata"
+                    // >
+                    //   <source src={elem?.name} type="video/mp4" />
+                    // </video>
                   );
                 })}
             </div>

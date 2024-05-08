@@ -12,6 +12,7 @@ const MultiSelect = ({
   errors,
   touched,
   setFieldValue,
+  name,
 }) => {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState(curData);
@@ -50,8 +51,8 @@ const MultiSelect = ({
   }, []);
 
   useEffect(() => {
-    setFieldValue("industry", selected);
-  }, [selected, setFieldValue]);
+    setFieldValue(name, selected);
+  }, [selected, setFieldValue, name]);
 
   return (
     <div className="flex flex-col gap-2">
@@ -62,7 +63,7 @@ const MultiSelect = ({
         {label}
       </p>
       <fieldset
-        name={"industry"}
+        name={name}
         className={`bg-slate-100 text-black relative rounded-full w-[100%] bg-transparent border-2 ${
           errors.industry && touched.industry && "border-red-500"
         }`}

@@ -279,6 +279,7 @@ const BrandForm = ({ color }) => {
                       <MultiSelect
                         label={"Industry"}
                         curData={industry}
+                        name="industry"
                         selected={selected}
                         setSelectedItem={setSelectedItem}
                         errors={errors}
@@ -287,82 +288,6 @@ const BrandForm = ({ color }) => {
                       />
                     )}
                   </Field>
-                  {/* </Field> */}
-                  {/* <Field name="industry">
-                    {({ field, form: { errors, touched } }) => (
-                      <>
-                        <label
-                          htmlFor="industry"
-                          className="block text-sm font-medium leading-6"
-                        >
-                          Industry
-                        </label>
-                        <div className="mt-2">
-                          <select
-                            name="industry"
-                            {...field}
-                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
-                              errors.industry &&
-                              touched.industry &&
-                              "border-red-500"
-                            }`}
-                          >
-                            <option value="">{"What's your industry ?"}</option>
-                            <option value="bankingFinance">
-                              Banking & Finance
-                            </option>
-                            <option value="beauty">Beauty</option>
-                            <option value="lifestyle">Lifestyle</option>
-                            <option value="healthWellness">
-                              Health & Wellness
-                            </option>
-                            <option value="foodBeverages">F&B</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="charityOrNgo">Charity or NGO</option>
-                            <option value="education">Education</option>
-                            <option value="events">Events</option>
-                            <option value="motherhoodFamily">
-                              Motherhood & Family
-                            </option>
-                            <option value="hotelTravel">Hotel & Travel</option>
-                            <option value="jewellery">Jewellery</option>
-                            <option value="footwear">Footwear</option>
-                            <option value="art">Art</option>
-                            <option value="technology">Technology</option>
-                            <option value="others">Others</option>
-                          </select>
-                        </div>
-                        {field.value.includes("Others") && (
-                          <Field
-                            name="otherIndustry"
-                            validate={(value) =>
-                              value === "" ? "Required" : ""
-                            }
-                          >
-                            {({ field, form: { errors, touched } }) => (
-                              <>
-                                <FormInput
-                                  placeholder="Please specify your industry"
-                                  type="text"
-                                  {...field}
-                                  color={color}
-                                  errors={
-                                    touched.otherIndustry &&
-                                    errors.otherIndustry
-                                  }
-                                />
-                              </>
-                            )}
-                          </Field>
-                        )}
-                        {errors.industry && touched.industry && (
-                          <p class="text-red-500 text-xs mx-2 my-1">
-                            {errors.industry}
-                          </p>
-                        )}
-                      </>
-                    )}
-                  </Field> */}
                 </div>
                 <Field name="monthlyInfluencerBudget">
                   {({ field, form: { errors, touched } }) => (
