@@ -16,14 +16,14 @@ export async function POST(req) {
         nationality: value.nationality,
         location: value.location,
         dateOfBirth: new Date(value.dateOfBirth),
-        instaUsername: value.instaUsername,
-        tiktokUsername: value.tiktokUsername,
         languages: value.languages,
         otherlanguagesString: value.otherlanguagesString,
         interests: value.interests,
         otherinterestsString: value.otherinterestsString,
-        employmentType: value.employmentType,
-        otherEmploymentType: value.otherEmploymentType,
+        employmentStatus: value.employmentStatus,
+        otherEmploymentStatus: value.otherEmploymentStatus,
+        instaUsername: value.instaUsername,
+        tiktokUsername: value.tiktokUsername,
       },
     });
 

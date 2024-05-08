@@ -20,28 +20,26 @@ model Brand {
   phoneNumber             String
   companyName             String
   companySize             String
-  industry                String[]
-  otherIndustry           String
+  industries              String[]
+  otherindustriesString   String?
   monthlyInfluencerBudget Int
-  instaUsername           String?
-  tiktokUsername          String?
 }
 
 model Creator {
-  id                   String   @id @default(cuid())
-  name                 String
-  pronoun              String
-  phoneNumber          String
-  email                String
-  nationality          String
-  location             String   @db.VarChar(255)
-  dateOfBirth          DateTime
-  instaUsername        String
-  tiktokUsername       String
-  languages            String[]
-  otherlanguagesString String
-  interests            String[]
-  otherinterestsString String
-  employmentType       String
-  otherEmploymentType  String
+  id                    String   @id @default(cuid())
+  name                  String
+  pronoun               String
+  phoneNumber           String
+  email                 String
+  nationality           String
+  location              String   @db.VarChar(255)
+  dateOfBirth           DateTime
+  languages             String[]
+  otherlanguagesString  String?
+  interests             String[]
+  otherinterestsString  String?
+  employmentStatus      String
+  otherEmploymentStatus String?
+  instaUsername         String
+  tiktokUsername        String?
 }

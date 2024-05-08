@@ -14,11 +14,9 @@ export async function POST(req) {
         phoneNumber: value.phoneNumber.toString(),
         companyName: value.companyName,
         companySize: value.companySize,
-        industry: value.industry,
-        otherIndustry: value.otherIndustry,
+        industries: value.industries,
+        otherindustriesString: value.otherindustriesString,
         monthlyInfluencerBudget: value.monthlyInfluencerBudget,
-        instaUsername: value.instaUsername,
-        tiktokUsername: value.tiktokUsername,
       },
     });
 

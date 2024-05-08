@@ -1,31 +1,30 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import countries from "../contants/countries.json";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import { useRef } from "react";
 
 const MultiSelect = ({
-  curData,
+  fieldName,
   label,
-  selected,
+  placeholder,
+  curData,
+  selectedItem,
   setSelectedItem,
   errors,
   touched,
   setFieldValue,
-  name,
 }) => {
   const [open, setOpen] = useState(false);
-  const [data, setData] = useState(curData);
+  const [data] = useState(curData);
   const ref = useRef(null);
 
   const handleSelect = (name) => {
-    if (selected.includes(name)) {
-      const index = selected.indexOf(name);
-      selected.splice(index, 1);
-      setSelectedItem([...selected]);
+    if (selectedItem.includes(name)) {
+      const index = selectedItem.indexOf(name);
+      selectedItem.splice(index, 1);
+      setSelectedItem([...selectedItem]);
       return;
     }
-    setSelectedItem([...selected, name]);
+    setSelectedItem([...selectedItem, name]);
   };
 
   const handleClickOutside = (event) => {
@@ -35,9 +34,9 @@ const MultiSelect = ({
   };
 
   const handleDeleteItem = (name) => {
-    const index = selected.indexOf(name);
-    selected.splice(index, 1);
-    setSelectedItem([...selected]);
+    const index = selectedItem.indexOf(name);
+    selectedItem.splice(index, 1);
+    setSelectedItem([...selectedItem]);
   };
 
   useEffect(() => {
@@ -45,14 +44,13 @@ const MultiSelect = ({
     document.addEventListener("mousedown", handleClickOutside);
 
     // Detach the event listener when the component unmounts
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Do not remove the braces in this arrow function, or else "TypeError: destroy is not a function"
   useEffect(() => {
-    setFieldValue(name, selected);
-  }, [selected, setFieldValue, name]);
+    setFieldValue(fieldName, selectedItem)
+  }, [selectedItem, setFieldValue]);
 
   return (
     <div className="flex flex-col gap-2">
@@ -63,9 +61,9 @@ const MultiSelect = ({
         {label}
       </p>
       <fieldset
-        name={name}
-        className={`bg-slate-100 text-black relative rounded-full w-[100%] bg-transparent border-2 ${
-          errors.industry && touched.industry && "border-red-500"
+        name={fieldName}
+        className={`bg-slate-100 text-black relative rounded-md w-[100%] bg-transparent border-2 ${
+          errors.fieldName && touched.fieldName && "border-red-500"
         }`}
       >
         {/* Button */}
@@ -76,9 +74,9 @@ const MultiSelect = ({
           }}
           onClick={() => setOpen(true)}
         >
-          {selected.length > 0 ? (
+          {selectedItem.length > 0 ? (
             <div className="flex gap-1 flex-wrap items-center">
-              {selected.map((elem, i) => (
+              {selectedItem.map((elem, i) => (
                 <div
                   key={i}
                   className="flex justify-between gap-3 border-2 border-cyan-500 p-1 px-3 rounded-full text-xs items-center"
@@ -89,15 +87,13 @@ const MultiSelect = ({
                     icon="streamline:delete-1-solid"
                     s
                     width={8}
-                    onClick={() => {
-                      handleDeleteItem(elem);
-                    }}
+                    onClick={() => handleDeleteItem(elem)}
                   />
                 </div>
               ))}
             </div>
           ) : (
-            <p className="">Select {label}</p>
+            <p>{placeholder}</p>
           )}
           <Icon icon="solar:alt-arrow-down-bold" />
         </div>
@@ -116,12 +112,10 @@ const MultiSelect = ({
                   <div
                     key={i}
                     className={`hover:bg-slate-200 cursor-pointer p-2 rounded-md transition-all ease-in-out duration-200 flex flex-row justify-between`}
-                    onClick={() => {
-                      handleSelect(elem.name);
-                    }}
+                    onClick={() => handleSelect(elem.name)}
                   >
                     <p>{elem.name}</p>
-                    {selected.includes(elem.name) && <Icon icon="mdi:tick" />}
+                    {selectedItem.includes(elem.name) && <Icon icon="mdi:tick" />}
                   </div>
                 ))
               )}
@@ -129,8 +123,8 @@ const MultiSelect = ({
           </div>
         )}
       </fieldset>
-      {errors.industry && touched.industry && (
-        <p class="text-red-500 text-xs mx-2 my-1">{errors.industry}</p>
+      {errors.fieldName && touched.fieldName && (
+        <p class="text-red-500 text-xs mx-2 my-1">{errors.fieldName}</p>
       )}
     </div>
   );
