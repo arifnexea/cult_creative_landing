@@ -27,7 +27,7 @@ const HomeFirst = () => {
 
   return (
     <section className="p-8 bg-[#1340FF]">
-      <div className="flex lg:flex-row flex-col justify-stretch gap-10 items-center">
+      <div className="flex lg:flex-row flex-col justify-stretch gap-10 items-center lg:items-start text-[#F4F4F4]">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{
@@ -71,8 +71,7 @@ const HomeFirst = () => {
             ideas into captivating, quality content for brands.
           </p>
         </motion.div>
-
-        <div className="sticky basis-1/2">
+        <div className="sticky top-32 my-10 basis-1/2">
           <div className="sm:hidden">
             <motion.video
               key={vidIndex}
@@ -97,24 +96,24 @@ const HomeFirst = () => {
               {vid &&
                 vid.map((elem, i) => {
                   return (
-                    <VideoComponent key={i} src={elem?.name} />
-                    // <video
-                    //   key={i}
-                    // className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
-                    // autoPlay
-                    // loop
-                    // muted
-                    // webkit-playsInline
-                    // playsInline
-                    // preload="metadata"
-                    // >
-                    //   <source src={elem?.name} type="video/mp4" />
-                    // </video>
+                    // <VideoComponent key={i} src={elem?.name} />
+                    <video
+                      key={i}
+                      className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      webkit-playsInline
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source src={elem?.name} type="video/mp4" />
+                    </video>
                   );
                 })}
             </div>
           </div>
-          <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden md:hidden lg:hidden">
+          <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden">
             {vid.map((_, i) => {
               return i === vidIndex ? (
                 <Icon key={i} icon="icon-park-outline:dot" width={20} />
