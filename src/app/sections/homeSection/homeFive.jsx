@@ -107,10 +107,14 @@ function HomeFive() {
 
   return (
     <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
-      <h1 className="text-center font-aileron 2xl:text-[115px] text-6xl md:text-8xl -tracking-[.3rem] font-light">
-        we <span className="font-times italic -tracking-[.5rem]">match</span>{" "}
-        <span className="font-times -tracking-[.4rem]">you</span> to{" "}
-        <span className="font-times italic -tracking-[.4rem]">brands</span>
+      <h1 className="text-center font-aileron 2xl:text-[115px] text-7xl md:text-8xl font-light">
+        <span className="font-times italic -tracking-[6px] md:-tracking-[12px]">
+          creators
+        </span>{" "}
+        <span className="-tracking-[5px] md:text-[91px] text-6xl">get</span>{" "}
+        <span className="font-times italic -tracking-[6px] md:-tracking-[12px]">
+          brand deals
+        </span>
       </h1>
       <div className="lg:flex lg:flex-row justify-center gap-10 mt-16 px-9 hidden">
         {vids.map((elem) => (

@@ -17,10 +17,10 @@ function HomeSix() {
   }, [cur]);
 
   return (
-    <section className="py-10 px-6 bg-[#1340FF] font-aileron text-[#F4F4F4] h-screen">
+    <section className="py-10 px-6 bg-[#1340FF] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
         <div className="col-span-2 md:col-span-1 mx-auto">
-          <h1 className="font-aileron md:text-[115px] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[60%]">
+          <h1 className="font-aileron md:text-[115px] text-7xl md:-tracking-[.6rem] -tracking-[.3rem] leading-[60%]">
             hear from
             <br />
             <span className="font-times">our</span>{" "}
