@@ -22,13 +22,18 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes: {
-        "loop-scroll": {
-          from: { transform: "translateX(0%)" },
-          to: { transform: "translateX(-100%)" },
+        "loop-scroll-optics": {
+          to: { transform: "translateX(calc(-100% - 8.5rem))" },
+        },
+
+        "loop-scroll-companies": {
+          to: { transform: "translateX(calc(-100% - 6.5rem))" },
         },
       },
       animation: {
-        "loop-scroll": "loop-scroll 10s linear infinite",
+        "loop-scroll-optics": "loop-scroll-optics 10s linear infinite",
+        "loop-scroll-companies": "loop-scroll-companies 10s linear infinite",
+        "loop-paused": "animation-play-state: paused",
       },
     },
   },

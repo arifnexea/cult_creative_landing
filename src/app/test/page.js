@@ -1,5 +1,8 @@
 import React from "react";
-import Companies from "../../components/Companies";
+import Companies from "../components/Companies";
+import HorizontalScroll from "../components/Companies";
+import Link from "next/link";
+import Image from "next/image";
 
 const companies = [
   {
@@ -8,7 +11,7 @@ const companies = [
   },
   {
     name: "indigo",
-    path: "/images/brands/indigo.png",
+    path: "/images/Main/indigo.png",
   },
   {
     name: "bata",
@@ -28,25 +31,27 @@ const companies = [
   },
   {
     name: "pavillion",
-    path: "/images/brands/pavillion.png",
+    path: "/images/Main/pavi.png",
   },
   {
     name: "dressing paula",
-    path: "/images/brands/dressingpaula.png",
+    path: "/images/Main/uniqlo.png",
   },
 ];
 
-const SixthSection = ({ title }) => {
+const page = () => {
   return (
-    <main className="bg-[#F4F4F4] py-10 px-5">
+    <main className="bg-[#F4F4F4]">
       <Companies
-        title={title}
+        title="Test"
         companiesImages={companies}
-        type={"companies"}
         rounded={"rounded-full"}
+        imgStyle={
+          "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        }
       />
     </main>
   );
 };
 
-export default SixthSection;
+export default page;

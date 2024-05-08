@@ -1,41 +1,6 @@
 import React from "react";
 import Companies from "@/app/components/Companies";
 
-const companies = [
-  {
-    name: "melium",
-    path: "/images/brands/melium.png",
-  },
-  {
-    name: "indigo",
-    path: "/images/brands/indigo.png",
-  },
-  {
-    name: "bata",
-    path: "/images/brands/bata.jpg",
-  },
-  {
-    name: "huckleberry",
-    path: "/images/brands/huckleberry.png",
-  },
-  {
-    name: "longchamp",
-    path: "/images/brands/longchamp.png",
-  },
-  {
-    name: "farmfresh",
-    path: "/images/brands/farmfresh.png",
-  },
-  {
-    name: "pavillion",
-    path: "/images/brands/pavillion.png",
-  },
-  {
-    name: "dressing paula",
-    path: "/images/brands/dressingpaula.png",
-  },
-];
-
 const optics = [
   {
     name: "the edge markets",
@@ -88,6 +53,7 @@ const optics = [
     link: "https://vulcanpost.com/848582/cult-creative-malaysia-seed-funding-the-hive-southeast-asia/",
   },
 ];
+
 const HomeTwo = () => {
   return (
     <main className="bg-[#F4F4F4] py-8 px-5">
@@ -95,6 +61,7 @@ const HomeTwo = () => {
         title={"as Seen on"}
         companiesImages={optics}
         rounded={"rounded-full"}
+        type={"optics"}
         imgStyle={
           "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
         }

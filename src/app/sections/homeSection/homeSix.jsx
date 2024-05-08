@@ -1,15 +1,26 @@
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 
 function HomeSix() {
   const [cur, setCur] = useState(0);
+
+  useEffect(() => {
+    const vidScroll = setInterval(() => {
+      setCur(cur === 2 ? 0 : cur + 1);
+    }, 4000);
+
+    return () => {
+      clearInterval(vidScroll);
+    };
+  }, [cur]);
+
   return (
-    <section className="py-10 px-6 bg-[#1340FF] font-aileron text-[#F4F4F4]">
+    <section className="py-10 px-6 bg-[#1340FF] font-aileron text-[#F4F4F4] h-screen">
       <div className="grid grid-cols-2 gap-10">
         <div className="col-span-2 md:col-span-1 mx-auto">
-          <h1 className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]">
+          <h1 className="font-aileron md:text-[115px] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[60%]">
             hear from
             <br />
             <span className="font-times">our</span>{" "}
@@ -122,4 +133,3 @@ function HomeSix() {
 }
 
 export default HomeSix;
-

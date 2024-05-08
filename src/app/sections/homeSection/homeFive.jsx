@@ -107,8 +107,8 @@ function HomeFive() {
 
   return (
     <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
-      <h1 className="text-center font-aileron 2xl:text-8xl text-6xl lg:text-8xl md:text-8xl -tracking-[.1rem] font-semibold">
-        we <span className="font-times italic -tracking-[.4rem]">match</span>{" "}
+      <h1 className="text-center font-aileron 2xl:text-[115px] text-6xl md:text-8xl -tracking-[.3rem] font-light">
+        we <span className="font-times italic -tracking-[.5rem]">match</span>{" "}
         <span className="font-times -tracking-[.4rem]">you</span> to{" "}
         <span className="font-times italic -tracking-[.4rem]">brands</span>
       </h1>

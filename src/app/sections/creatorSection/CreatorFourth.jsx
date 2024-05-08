@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Companies from "@/app/components/Companies";
 
 const companies = [
   {
@@ -39,7 +40,13 @@ const companies = [
 function CreatorFourth() {
   return (
     <section className="text-[#1340FF] bg-[#F4F4F4] p-5 gap-6">
-      <div className="flex items-center gap-10">
+      <Companies
+        title={"Work with these names and upgrade your content creator game"}
+        companiesImages={companies}
+        type={"companies"}
+        rounded={"rounded-full"}
+      />
+      {/* <div className="flex items-center gap-10">
         <h3 className="lg:text-3xl text-xl -tracking-[.1rem] font-bold">
           Work with these names and upgrade your <br /> content creator game
         </h3>
@@ -76,7 +83,7 @@ function CreatorFourth() {
             </>
           );
         })}
-      </div>
+      </div> */}
     </section>
   );
 }

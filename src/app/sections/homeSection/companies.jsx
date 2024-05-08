@@ -43,6 +43,7 @@ const HomeCompanies = ({ title }) => {
         title={title}
         companiesImages={companies}
         rounded={"rounded-full"}
+        type={"companies"}
         imgStyle={
           "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
         }
