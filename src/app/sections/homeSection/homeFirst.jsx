@@ -1,13 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import LoadingIcon from "@/app/components/Icons/loading-icon";
-import toast from "react-hot-toast";
-import VideoComponent from "@/app/components/VideoComponent";
 
 const vid = [
   {
@@ -37,8 +35,8 @@ const HomeFirst = () => {
           transition={{
             duration: 0.5,
           }}
-          // className="flex flex-col lg:w-[50%] text-center text-[#F4F4F4] lg:text-left gap-10 basis-1/2 bg-slate-600"
-          className="basis-1/2 flex flex-col space-y-10 text-center lg:text-start text-[#F4F4F4]"
+          // className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2 bg-slate-600"
+          className="basis-1/2 flex flex-col space-y-10 text-center lg:text-start"
         >
           <h1
             className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"

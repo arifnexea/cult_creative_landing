@@ -22,10 +22,10 @@ const Footer = ({ hoverText }) => {
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Cult Careers</h1>
           <ul className="font-light text-sm">
             <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Hire A Creative
+              Hire a Creative
             </li>
             <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Apply To Creative Jobs
+              Apply to Creative Jobs
             </li>
           </ul>
         </div>
@@ -69,10 +69,10 @@ const Footer = ({ hoverText }) => {
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Support</h1>
           <ul className="font-light text-sm ">
             <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Privacy policy{" "}
+              Privacy Policy
             </li>
             <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Terms and conditions
+              Terms and Conditions
             </li>
           </ul>
         </div>

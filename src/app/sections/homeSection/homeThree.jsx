@@ -48,8 +48,7 @@ function HomeThree() {
           transition={{
             duration: 0.5,
           }}
-          // className="lg:absolute lg:right-0 w-[90%] xl:w-[33%] lg:w-[40%] gap-10 lg:text-start text-[#F4F4F4]"
-          className="basis-1/2 p-2"
+          className="basis-1/2 p-2 text-[#F4F4F4]"
         >
           <h1
             className="lg:text-[10rem] lg:tracking-5 md:text-7xl text-6xl font-aileron font-light"
