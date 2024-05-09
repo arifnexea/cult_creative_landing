@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import FormInput from "./FormInput";
 import { Formik, Form, Field } from "formik";
@@ -7,62 +7,30 @@ import * as yup from "yup";
 import toast from "react-hot-toast";
 import MultiSelect from "./MultiSelect";
 
-const industry = [
-  {
-    name: "Banking & Finance",
-  },
-  {
-    name: "Beauty",
-  },
-  {
-    name: "Lifestyle",
-  },
-  {
-    name: "Health & Wellness",
-  },
-  {
-    name: "F&B",
-  },
-  {
-    name: "Fashion",
-  },
-  {
-    name: "Charity, NGO",
-  },
-  {
-    name: "Education",
-  },
-  {
-    name: "Events",
-  },
-  {
-    name: "Motherhood & Family",
-  },
-  {
-    name: "Hotel & Travel",
-  },
-  {
-    name: "Jewellery",
-  },
-  {
-    name: "Footwear",
-  },
-  {
-    name: "Art",
-  },
-  {
-    name: "Technology",
-  },
-  {
-    name: "Others",
-  },
-];
+export const validateOtherField = (value) => value === "" ? "Required" : "";
 
 const BrandForm = ({ color }) => {
-  const [loading, setLoading] = React.useState();
-  
-  // Industry
-  const [selected, setSelectedItem] = useState([]);
+  const [loading, setLoading] = useState();
+
+  const industries = [
+    { name: "Banking and Finance" },
+    { name: "Beauty" },
+    { name: "Lifestyle" },
+    { name: "Health and Wellness" },
+    { name: "F&B" },
+    { name: "Fashion" },
+    { name: "Charities and NGOs" },
+    { name: "Education" },
+    { name: "Events" },
+    { name: "Motherhood and Family" },
+    { name: "Hotel and Travel" },
+    { name: "Jewellery" },
+    { name: "Footwear" },
+    { name: "Art" },
+    { name: "Technology" },
+    { name: "Others" },
+  ];
+  const [selectedIndustries, setSelectedIndustries] = useState([]);
 
   const onSubmit = async (value, resetForm) => {
     setLoading(true);
@@ -77,7 +45,8 @@ const BrandForm = ({ color }) => {
       .then((val) => {
         toast.success(val.message);
         setLoading(false);
-        setSelectedItem([]);
+        // Clear `MultiSelect` fields
+        setSelectedIndustries([]);
         resetForm();
       })
       .catch((err) => alert(JSON.stringify(err)))
@@ -85,39 +54,39 @@ const BrandForm = ({ color }) => {
   };
 
   const schema = yup.object({
-    name: yup
+    name: yup.string().required("Required"),
+    email: yup
       .string()
-      .min(5, "At least 5 characters required")
+      .email("Invalid email address")
       .required("Required"),
-    email: yup.string().email("Invalid email address").required("Required"),
     phoneNumber: yup
       .number()
       .positive("Invalid character “-”")
       .integer("Invalid character “.”")
       // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
       // "012 345 6789", minus two digits in case of some unusually short phone number
-      .min(100_000_00 /*00*/, "Too short")
+      .min(100_000_00/*00*/, `Must have at least ${"01234567".length} digits`)
       // "+60 12 3456 7890", plus two digits for redundancy
-      .max(999_99_9999_9999_99, "Too long")
+      .max(999_99_9999_9999_99, `Must have at most ${"+601234567890__".length} digits`)
       .required("Required"),
     companyName: yup.string().required("Required"),
     companySize: yup.string().required("Required"),
-    industry: yup
+    industries: yup
       .array()
-      .min(3, "Select 3 options")
-      .max(3, "Select 3 options")
+      .min(3, "Must have exactly 3")
+      .max(3, "Must have exactly 3")
       .required("Required"),
-    // otherIndustry: yup.string(),
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
       .integer("Must be an integer")
       .min(1, "Must be positive")
-      // We want the value to fit in an `Int`, and `2**32 - 1` is more than enough, but use 2 billion because it is a "nice number"
+      // Set a maximum of 2 billion because:
+      // * the client did not specify a desired maximum
+      // * we want it to fit in an `Int`, and `2**32 - 1` is more than enough
+      // * it is a "nice" number
       .max(2_000_000_000, "Too high")
       .required("Required"),
-    instaUsername: yup.string(),
-    tiktokUsername: yup.string(),
   });
 
   return (
@@ -166,11 +135,9 @@ const BrandForm = ({ color }) => {
               phoneNumber: "",
               companyName: "",
               companySize: "",
-              industry: [],
-              otherIndustry: "",
+              industries: [],
+              otherindustriesString: "",
               monthlyInfluencerBudget: "",
-              instaUsername: "",
-              tiktokUsername: "",
             }}
             onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
             validationSchema={schema}
@@ -186,7 +153,6 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.name && errors.name}
-                        placeholder={"What's your name ?"}
                       />
                     </>
                   )}
@@ -200,7 +166,6 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.email && errors.email}
-                        placeholder={"What's your email ?"}
                       />
                     </>
                   )}
@@ -214,7 +179,6 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.phoneNumber && errors.phoneNumber}
-                        placeholder={"What's your phone number ?"}
                       />
                     </>
                   )}
@@ -228,7 +192,6 @@ const BrandForm = ({ color }) => {
                         field={field}
                         color={color}
                         errors={touched.companyName && errors.companyName}
-                        placeholder={"What's your company name ?"}
                       />
                     </>
                   )}
@@ -253,14 +216,12 @@ const BrandForm = ({ color }) => {
                               "border-red-500"
                             }`}
                           >
-                            <option value="">
-                              {"What's your company size ?"}
-                            </option>
-                            <option value="1to10">1–10</option>
-                            <option value="11to50">11–50</option>
-                            <option value="51to100">51–100</option>
-                            <option value="101to200">101–200</option>
-                            <option value="over200">{">"}200</option>
+                            <option value="">Select one...</option>
+                            <option>1 to 10</option>
+                            <option>11 to 50</option>
+                            <option>51 to 100</option>
+                            <option>101 to 200</option>
+                            <option>Over 200</option>
                           </select>
                         </div>
                         {errors.companySize && touched.companySize && (
@@ -273,19 +234,44 @@ const BrandForm = ({ color }) => {
                   </Field>
                 </div>
                 <div className="sm:col-span-3">
-                  {/* <Field name="industry"> */}
-                  <Field name="industry">
+                  <Field name="industries">
                     {({ field, form: { errors, touched, setFieldValue } }) => (
-                      <MultiSelect
-                        label={"Industry"}
-                        curData={industry}
-                        name="industry"
-                        selected={selected}
-                        setSelectedItem={setSelectedItem}
-                        errors={errors}
-                        touched={touched}
-                        setFieldValue={setFieldValue}
-                      />
+                      <>
+                        <MultiSelect
+                          fieldName="industries"
+                          label="Industries"
+                          placeholder="Select three..."
+                          curData={industries}
+                          selectedItem={selectedIndustries}
+                          setSelectedItem={setSelectedIndustries}
+                          errors={errors}
+                          touched={touched}
+                          setFieldValue={setFieldValue}
+                        />
+                        {errors.industries && touched.industries && (
+                          <p class="text-red-500 text-xs mx-2 my-1">
+                            {errors.industries}
+                          </p>
+                        )}
+                        {field.value.includes("Others") && (
+                          <Field
+                            name="otherindustriesString"
+                            validate={validateOtherField}
+                          >
+                            {({ field, form: { errors, touched } }) => (
+                              <>
+                                <FormInput
+                                  placeholder="Please specify..."
+                                  type="text"
+                                  {...field}
+                                  color={color}
+                                  errors={touched.otherindustriesString && errors.otherindustriesString}
+                                />
+                              </>
+                            )}
+                          </Field>
+                        )}
+                      </>
                     )}
                   </Field>
                 </div>
@@ -293,41 +279,13 @@ const BrandForm = ({ color }) => {
                   {({ field, form: { errors, touched } }) => (
                     <>
                       <FormInput
-                        label="Monthly Influencer Budget"
+                        label="Monthly Influencer Budget (RM)"
                         type="number"
                         field={field}
                         color={color}
-                        errors={
-                          touched.monthlyInfluencerBudget &&
-                          errors.monthlyInfluencerBudget
-                        }
-                        placeholder={"What's your monthly influencer budget ?"}
+                        errors={touched.monthlyInfluencerBudget && errors.monthlyInfluencerBudget}
                       />
                     </>
-                  )}
-                </Field>
-                <Field name="instaUsername">
-                  {({ field, form: { errors, touched } }) => (
-                    <FormInput
-                      label="Instagram Username"
-                      type="text"
-                      field={field}
-                      color={color}
-                      errors={touched.instaUsername && errors.instaUsername}
-                      placeholder={"What's your instagram username ?"}
-                    />
-                  )}
-                </Field>
-                <Field name="tiktokUsername">
-                  {({ field, form: { errors, touched } }) => (
-                    <FormInput
-                      label="TikTok Username"
-                      type="text"
-                      field={field}
-                      color={color}
-                      errors={touched.tiktokUsername && errors.tiktokUsername}
-                      placeholder={"What's your tiktok username ?"}
-                    />
                   )}
                 </Field>
               </div>
