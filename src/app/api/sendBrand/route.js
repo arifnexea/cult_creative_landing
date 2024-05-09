@@ -14,8 +14,8 @@ export async function POST(req) {
         phoneNumber: value.phoneNumber.toString(),
         companyName: value.companyName,
         companySize: value.companySize,
-        industries: value.industries,
         otherindustriesString: value.otherindustriesString,
+        industries: value.industries,
         monthlyInfluencerBudget: value.monthlyInfluencerBudget,
       },
     });
@@ -30,9 +30,14 @@ export async function POST(req) {
     );
   } catch (error) {
     console.log(error);
-    return new NextResponse(JSON.stringify({ message: "Error" }), {
-      status: 404,
-    });
+    return new NextResponse(
+      JSON.stringify({
+        error: "Form failed to submit. Please contact our admin.",
+      }),
+      {
+        status: 404,
+      }
+    );
   }
 }
 

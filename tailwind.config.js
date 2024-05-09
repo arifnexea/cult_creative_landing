@@ -29,10 +29,19 @@ module.exports = {
         "loop-scroll-companies": {
           to: { transform: "translateX(calc(-100% - 6.5rem))" },
         },
+        "form-to-down": {
+          from: {
+            opacity: 0,
+          },
+          to: {
+            opacity: 1,
+          },
+        },
       },
       animation: {
         "loop-scroll-optics": "loop-scroll-optics 15s linear infinite",
         "loop-scroll-companies": "loop-scroll-companies 15s linear infinite",
+        "form-animation": "form-to-down .3s linear",
         "loop-paused": "animation-play-state: paused",
       },
     },

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const FourthSection = () => {
   return (
@@ -113,13 +114,18 @@ const FourthSection = () => {
         across platforms | RM180 for 3 months ads usage rights
       </p>
       <div className="text-center">
-        <motion.button
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.8 }}
-          className="uppercase bg-[#8A5AFE] py-2 px-12 rounded-full text-[#F4F4F4] font-aileron"
+        <Link
+          href={"https://calendly.com/danishmokhtar/30min?month=2024-03"}
+          target="_blank"
         >
-          Book a call
-        </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            className="uppercase bg-[#8A5AFE] py-2 px-12 rounded-full text-[#F4F4F4] font-aileron font-semibold"
+          >
+            Book a call
+          </motion.button>
+        </Link>
       </div>
     </section>
   );

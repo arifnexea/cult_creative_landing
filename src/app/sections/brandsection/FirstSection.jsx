@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import LoadingIcon from "@/app/components/Icons/loading-icon";
 import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
 
 const vid = [
   {
@@ -32,7 +33,7 @@ const FirstSection = () => {
 
   return (
     <section className="p-8 bg-[#8A5AFE] ">
-      <div className="flex lg:flex-row flex-col justify-between gap-3 items-center lg:items-start text-[#F4F4F4]">
+      <div className="flex lg:flex-row flex-col justify-stretch gap-10 items-center lg:items-start text-[#F4F4F4]">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{
@@ -42,12 +43,17 @@ const FirstSection = () => {
           transition={{
             duration: 0.5,
           }}
-          className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
+          className="basis-1/2 flex flex-col space-y-10 text-center lg:text-start text-[#F4F4F4] lg:w-[50%]"
+          // className="flex flex-col lg:w-[50%] text-center lg:text-left gap-10 basis-1/2"
         >
           <h1
+            // className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            // style={{
+            //   lineHeight: 0.8,
+            // }}
             className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
             style={{
-              lineHeight: 0.8,
+              lineHeight: "75%",
             }}
           >
             let <span className="font-times">our</span>
@@ -67,11 +73,17 @@ const FirstSection = () => {
               you
             </span>{" "}
           </h1>
-          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
+          <p
+            // className="lg:text-xl text-xl lg:w-[75%] lg:text-justify"
+            className="w-auto text-[25.5px] leading-tight tracking-[-2px] lg:w-[75%]"
+          >
             With our network of 13,000 creators we’ve built across Southeast
             Asia, we take the guesswork out of creator marketing.
           </p>
-          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
+          <p
+            // className="lg:text-xl text-xl lg:w-[75%] lg:text-justify"
+            className="w-auto text-[25.5px] leading-tight tracking-[-2px] lg:w-[75%]"
+          >
             Get quality User-Generated Content and KOL campaigns for your brand,
             to drive genuine user engagement.
           </p>
@@ -135,13 +147,18 @@ const FirstSection = () => {
       </div>
 
       <div className="text-center my-10">
-        <motion.button
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.8 }}
-          className="bg-slate-100 py-2 px-12 rounded-full text-[#8A5AFE] font-aileron uppercase font-bold"
+        <Link
+          href={"https://calendly.com/danishmokhtar/30min?month=2024-03"}
+          target="_blank"
         >
-          Get Started
-        </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
+            className="bg-slate-100 py-2 px-12 rounded-full text-[#8A5AFE] font-aileron uppercase font-bold"
+          >
+            Get Started
+          </motion.button>
+        </Link>
       </div>
     </section>
   );

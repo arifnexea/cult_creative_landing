@@ -7,7 +7,7 @@ import * as yup from "yup";
 import toast from "react-hot-toast";
 import MultiSelect from "./MultiSelect";
 
-export const validateOtherField = (value) => value === "" ? "Required" : "";
+export const validateOtherField = (value) => (value === "" ? "Required" : "");
 
 const BrandForm = ({ color }) => {
   const [loading, setLoading] = useState();
@@ -43,7 +43,11 @@ const BrandForm = ({ color }) => {
     })
       .then((res) => res.json())
       .then((val) => {
-        toast.success(val.message);
+        if (val.message) {
+          toast.success(val.message);
+        } else {
+          toast.error(val.error);
+        }
         setLoading(false);
         // Clear `MultiSelect` fields
         setSelectedIndustries([]);
@@ -53,21 +57,21 @@ const BrandForm = ({ color }) => {
       .finally(() => setLoading(false));
   };
 
-  const schema = yup.object({
+  const schemaOne = yup.object({
     name: yup.string().required("Required"),
-    email: yup
-      .string()
-      .email("Invalid email address")
-      .required("Required"),
+    email: yup.string().email("Invalid email address").required("Required"),
     phoneNumber: yup
       .number()
       .positive("Invalid character “-”")
       .integer("Invalid character “.”")
       // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
       // "012 345 6789", minus two digits in case of some unusually short phone number
-      .min(100_000_00/*00*/, `Must have at least ${"01234567".length} digits`)
+      .min(100_000_00 /*00*/, `Must have at least ${"01234567".length} digits`)
       // "+60 12 3456 7890", plus two digits for redundancy
-      .max(999_99_9999_9999_99, `Must have at most ${"+601234567890__".length} digits`)
+      .max(
+        999_99_9999_9999_99,
+        `Must have at most ${"+601234567890__".length} digits`
+      )
       .required("Required"),
     companyName: yup.string().required("Required"),
     companySize: yup.string().required("Required"),
@@ -76,6 +80,39 @@ const BrandForm = ({ color }) => {
       .min(3, "Must have exactly 3")
       .max(3, "Must have exactly 3")
       .required("Required"),
+
+    monthlyInfluencerBudget: yup
+      .number()
+      // We assume there is no need for fractional budgets
+      .integer("Must be an integer")
+      .min(1, "Must be positive")
+      // Set a maximum of 2 billion because:
+      // * the client did not specify a desired maximum
+      // * we want it to fit in an `Int`, and `2**32 - 1` is more than enough
+      // * it is a "nice" number
+      .max(2_000_000_000, "Too high")
+      .required("Required"),
+  });
+
+  const schemaTwo = yup.object({
+    name: yup.string().required("Required"),
+    email: yup.string().email("Invalid email address").required("Required"),
+    phoneNumber: yup
+      .number()
+      .positive("Invalid character “-”")
+      .integer("Invalid character “.”")
+      // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
+      // "012 345 6789", minus two digits in case of some unusually short phone number
+      .min(100_000_00 /*00*/, `Must have at least ${"01234567".length} digits`)
+      // "+60 12 3456 7890", plus two digits for redundancy
+      .max(
+        999_99_9999_9999_99,
+        `Must have at most ${"+601234567890__".length} digits`
+      )
+      .required("Required"),
+    companyName: yup.string().required("Required"),
+    companySize: yup.string().required("Required"),
+    otherindustriesString: yup.string().required("Required"),
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
@@ -118,7 +155,7 @@ const BrandForm = ({ color }) => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
-              className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-aileron uppercase flex-none`}
+              className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-aileron uppercase flex-none font-bold`}
             >
               Book a call
             </motion.button>
@@ -140,7 +177,9 @@ const BrandForm = ({ color }) => {
               monthlyInfluencerBudget: "",
             }}
             onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
-            validationSchema={schema}
+            validationSchema={
+              selectedIndustries.includes("Others") ? schemaTwo : schemaOne
+            }
           >
             <Form>
               <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -265,7 +304,10 @@ const BrandForm = ({ color }) => {
                                   type="text"
                                   {...field}
                                   color={color}
-                                  errors={touched.otherindustriesString && errors.otherindustriesString}
+                                  errors={
+                                    touched.otherindustriesString &&
+                                    errors.otherindustriesString
+                                  }
                                 />
                               </>
                             )}
@@ -283,7 +325,10 @@ const BrandForm = ({ color }) => {
                         type="number"
                         field={field}
                         color={color}
-                        errors={touched.monthlyInfluencerBudget && errors.monthlyInfluencerBudget}
+                        errors={
+                          touched.monthlyInfluencerBudget &&
+                          errors.monthlyInfluencerBudget
+                        }
                       />
                     </>
                   )}
@@ -296,7 +341,7 @@ const BrandForm = ({ color }) => {
                   type="submit"
                   disabled={loading}
                   className={`${loading ? "bg-slate-300" : "bg-slate-100 "}
-                  py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
+                  py-2 px-12 rounded-full text-[${color}] font-aileron uppercase inline-flex items-center gap-5 font-bold`}
                 >
                   {loading && (
                     <svg

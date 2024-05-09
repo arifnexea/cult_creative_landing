@@ -58,14 +58,14 @@ const HomeFirst = () => {
           </h1>
           <p
             // className="lg:text-[25.4px] text-xl lg:w-[75%] bg-slate-500 w-auto"
-            className="w-auto text-[25.5px] leading-tight tracking-[-2px]"
+            className="w-auto text-[25.5px] leading-tight tracking-[-2px] lg:w-[75%]"
           >
             Cult Creative is the all-in-one portal for creators and brands to
             seamlessly work, collaborate and elevate.
           </p>
           <p
             // className="lg:text-[25.4px] text-xl lg:w-[75%] lg:text-justify"
-            className="w-auto text-[25.5px] leading-tight tracking-[-2px]"
+            className="w-auto text-[25.5px] leading-tight tracking-[-2px] lg:w-[75%]"
           >
             With our 13,000 talent pool across Southeast Asia, we help transform
             ideas into captivating, quality content for brands.
