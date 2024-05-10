@@ -54,10 +54,10 @@ const Accordion = () => {
                 <h2 className="mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
                   Any Questions? Look Here
                 </h2>
-                <p className="text-base text-gray-500">
+                {/* <p className="text-base text-gray-500">
                   There are many variations of passages of Lorem Ipsum available
                   but the majority have suffered alteration in some form.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

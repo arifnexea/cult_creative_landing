@@ -4,7 +4,7 @@ import Link from "next/link";
 import useToggle from "../hooks/toggle";
 
 const HeaderButton = ({ btnStyle, borderColor }) => {
-  const [setToggle] = useToggle();
+  const [state, toggle, setToggle] = useToggle();
   return (
     <>
       <Link href={"/brands"} onClick={() => setToggle(false)}>
