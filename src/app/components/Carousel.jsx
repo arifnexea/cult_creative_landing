@@ -37,8 +37,14 @@ const Carousel = ({
       </div>
       <div className={`flex flex-col items-center gap-5 basis-1/2 lg:mt-20`}>
         <h1 className="sm:text-6xl text-4xl font-aileron font-bold italic tracking-[-.2rem]">
-          <span className="font-extralight text-4xl">Client : </span>{" "}
-          {title?.toUpperCase()}
+          {name ? (
+            name?.toUpperCase()
+          ) : (
+            <>
+              <span className="font-extralight text-4xl">Client : </span>{" "}
+              {title?.toUpperCase()}
+            </>
+          )}
         </h1>
         <div className={`${contentStyle}`}>
           <Badge contents={badge1} />

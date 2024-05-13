@@ -16,7 +16,7 @@ const Page = () => {
         <p className="my-6">Read our news from top talents</p>
       </div>
       <div className="px-5 py-10 bg-slate-300">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {newsdata.map((elem, i) => (
             <div key={i}>
               <News
@@ -28,11 +28,6 @@ const Page = () => {
               />
             </div>
           ))}
-          {/* <News /> */}
-          {/* <News />
-          <News />
-          <News />
-          <News /> */}
         </div>
       </div>
       <LastSection color={"#1340FF"} />

@@ -11,7 +11,7 @@ const vid = [
   {
     id: uuidv4(),
     // name: "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mp4",
-    name: "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mp4",
+    name: "https://storage.googleapis.com/landing-cultcreative/main/Raea%20x%20Cult%20Creative%20(1).mov",
   },
   {
     id: uuidv4(),
