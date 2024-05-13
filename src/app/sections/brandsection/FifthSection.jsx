@@ -6,10 +6,11 @@ import { motion } from "framer-motion";
 
 const FifthSection = () => {
   const [cur, setCur] = useState(0);
+
   return (
     <section className="py-10 px-6 bg-[#8A5AFE] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
-        <div className="text-center col-span-2 md:col-span-1">
+        <div className="col-span-2 md:col-span-1 mx-auto">
           <h1 className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]">
             hear from
             <br />
@@ -36,8 +37,10 @@ const FifthSection = () => {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -Irma Syazreena,
-                  <span className="uppercase font-bold tracking-[0]">reka</span>
+                  —Irma Syazreena,{" "}
+                  <span className="uppercase font-bold tracking-[0]">
+                    Reka
+                  </span>
                   .
                 </p>
               </div>
@@ -59,9 +62,9 @@ const FifthSection = () => {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -Azah Aziz,
+                  —Azah Aziz,{" "}
                   <span className="uppercase font-bold tracking-[0]">
-                    KISSAHH LABELS
+                    Kissahh Labels
                   </span>
                   .
                 </p>
@@ -84,9 +87,9 @@ const FifthSection = () => {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -Charmaine Chow,
+                  —Charmaine Chow,{" "}
                   <span className="uppercase font-bold tracking-[0]">
-                    farm fresh
+                    Farm Fresh
                   </span>
                   .
                 </p>

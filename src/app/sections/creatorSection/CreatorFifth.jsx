@@ -44,7 +44,7 @@ function CreatorFifth() {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -Anniecia thomas.
+                  —Anniecia Thomas
                 </p>
               </div>
             </motion.div>
@@ -65,7 +65,7 @@ function CreatorFifth() {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -Wong yuet ting.
+                  —Wong Yuet Ting
                 </p>
               </div>
             </motion.div>
@@ -86,7 +86,7 @@ function CreatorFifth() {
                   />
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
-                  -Arina farhah
+                  —Arina Farhah
                 </p>
               </div>
             </motion.div>

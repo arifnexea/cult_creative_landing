@@ -24,7 +24,7 @@ const FormInput = ({
           {...field}
           placeholder={placeholder}
           autoComplete="given-name"
-          className={`block w-full rounded-full border-2 py-1.5 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+          className={`block w-full rounded-full border-2 py-1.5 px-4 shadow-sm placeholder:text-gray-400 placeholder:italic focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
             errors && "border-red-500"
           } `}
           {...others}

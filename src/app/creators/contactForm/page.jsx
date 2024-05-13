@@ -107,7 +107,7 @@ const CreatorForm = () => {
       .min(3, "Must have exactly 3")
       .max(3, "Must have exactly 3")
       .required("Required"),
-    employmentStatus: yup.string().required("Required"),
+    employmentType: yup.string().required("Required"),
     instaUsername: yup.string().required("Required"),
     // Optional
     tiktokUsername: yup.string(),
@@ -156,8 +156,8 @@ const CreatorForm = () => {
                   otherlanguagesString: "",
                   interests: [],
                   otherinterestsString: "",
-                  employmentStatus: "",
-                  otherEmploymentStatus: "",
+                  employmentType: "",
+                  otherEmploymentType: "",
                   instaUsername: "",
                   tiktokUsername: "",
                 }}
@@ -172,6 +172,7 @@ const CreatorForm = () => {
                           <FormInput
                             label="Name"
                             type="text"
+                            placeholder="John Doe"
                             field={field}
                             color={color}
                             errors={touched.name && errors.name}
@@ -221,6 +222,7 @@ const CreatorForm = () => {
                           <FormInput
                             label="Phone Number"
                             type="number"
+                            placeholder="+601234567890"
                             field={field}
                             color={color}
                             errors={touched.phoneNumber && errors.phoneNumber}
@@ -233,6 +235,7 @@ const CreatorForm = () => {
                         <FormInput
                           label="Email Address"
                           type="email"
+                          placeholder="johndoe@example.com"
                           field={field}
                           color={color}
                           errors={touched.email && errors.email}
@@ -405,22 +408,22 @@ const CreatorForm = () => {
                       </Field>
                     </div>
                     <div className="sm:col-span-3">
-                      <Field name="employmentStatus">
+                      <Field name="employmentType">
                         {({ field, form: { errors, touched } }) => (
                           <>
                             <label
-                              htmlFor="employmentStatus"
+                              htmlFor="employmentType"
                               className="block text-sm font-medium leading-6"
                             >
                               Employment Type
                             </label>
                             <div className="mt-2">
                               <select
-                                name="employmentStatus"
+                                name="employmentType"
                                 {...field}
                                 className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
-                                  errors.employmentStatus &&
-                                  touched.employmentStatus &&
+                                  errors.employmentType &&
+                                  touched.employmentType &&
                                   "border-red-500"
                                 }`}
                               >
@@ -436,14 +439,14 @@ const CreatorForm = () => {
                                 <option>Others</option>
                               </select>
                             </div>
-                            {errors.employmentStatus && touched.employmentStatus && (
+                            {errors.employmentType && touched.employmentType && (
                               <p class="text-red-500 text-xs mx-2 my-1">
-                                {errors.employmentStatus}
+                                {errors.employmentType}
                               </p>
                             )}
                             {field.value.includes("Others") && (
                               <Field
-                                name="otherEmploymentStatus"
+                                name="otherEmploymentType"
                                 validate={validateOtherField}
                               >
                                 {({ field, form: { errors, touched } }) => (
@@ -453,7 +456,7 @@ const CreatorForm = () => {
                                       type="text"
                                       {...field}
                                       color={color}
-                                      errors={touched.otherEmploymentStatus && errors.otherEmploymentStatus}
+                                      errors={touched.otherEmploymentType && errors.otherEmploymentType}
                                     />
                                   </>
                                 )}
@@ -468,6 +471,7 @@ const CreatorForm = () => {
                         <FormInput
                           label="Instagram Username"
                           type="text"
+                          placeholder="johndoe"
                           field={field}
                           color={color}
                           errors={touched.instaUsername && errors.instaUsername}
@@ -479,6 +483,7 @@ const CreatorForm = () => {
                         <FormInput
                           label="TikTok Username"
                           type="text"
+                          placeholder="johndoe"
                           field={field}
                           color={color}
                           errors={touched.tiktokUsername && errors.tiktokUsername}

@@ -1,23 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
-import { useWindowSize } from "@uidotdev/usehooks";
-
-const vid = [
-  {
-    id: uuidv4(),
-    name: "https://storage.googleapis.com/landing-cultcreative/creator/cut%20Focus%20Foods%20x%20Cult%20Creative.mp4",
-  },
-  {
-    id: uuidv4(),
-    name: "https://storage.googleapis.com/landing-cultcreative/creator/cut%20Hotel%20Indigo%20x%20Cult%20Creative.mp4",
-  },
-];
 
 const CreatorFirst = () => {
+  const vid = [
+    {
+      id: uuidv4(),
+      name: "https://storage.googleapis.com/landing-cultcreative/creator/cut%20Focus%20Foods%20x%20Cult%20Creative.mp4",
+    },
+    {
+      id: uuidv4(),
+      name: "https://storage.googleapis.com/landing-cultcreative/creator/cut%20Hotel%20Indigo%20x%20Cult%20Creative.mp4",
+    },
+  ];
+
   const [vidIndex, setVidIndex] = useState(1);
 
   // useEffect(() => {
@@ -129,7 +128,7 @@ const CreatorFirst = () => {
               <motion.button
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}
-                className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-times"
+                className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-aileron font-bold uppercase"
               >
                 Get Started
               </motion.button>

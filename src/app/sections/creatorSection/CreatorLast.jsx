@@ -2,10 +2,9 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import FormInput from "../../components/FormInput";
 import Link from "next/link";
 
-function CreatorLast() {
+const CreatorLast = () => {
   const color = "#006D53";
 
   return (
@@ -41,7 +40,7 @@ function CreatorLast() {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
-                className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-serif uppercase flex-none`}
+                className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-aileron font-bold uppercase flex-none`}
               >
                 Contact Us
               </motion.button>

@@ -80,7 +80,6 @@ const BrandForm = ({ color }) => {
       .min(3, "Must have exactly 3")
       .max(3, "Must have exactly 3")
       .required("Required"),
-
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
@@ -189,6 +188,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Name"
                         type="text"
+                        placeholder="John Doe"
                         field={field}
                         color={color}
                         errors={touched.name && errors.name}
@@ -202,6 +202,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Email Address"
                         type="email"
+                        placeholder="johndoe@example.com"
                         field={field}
                         color={color}
                         errors={touched.email && errors.email}
@@ -215,6 +216,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Phone Number"
                         type="number"
+                        placeholder="+601234567890"
                         field={field}
                         color={color}
                         errors={touched.phoneNumber && errors.phoneNumber}
@@ -228,6 +230,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Company Name"
                         type="text"
+                        placeholder="Cult Creative"
                         field={field}
                         color={color}
                         errors={touched.companyName && errors.companyName}
@@ -323,6 +326,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Monthly Influencer Budget (RM)"
                         type="number"
+                        placeholder="1000"
                         field={field}
                         color={color}
                         errors={

@@ -29,9 +29,11 @@ function AboutUs() {
                 <source type="video/mp4" />
               </motion.video>
             </div>
-            <div className="flex flex-col justify-center items-center gap-y-8">
+            <div className="flex flex-col justify-center items-center gap-y-8 text-[#F4F4F4]">
               <h1 className="xl:text-[11rem] lg:text-[8rem] md:text-7xl text-center text-5xl xl:-mt-[74px] lg:-mt-[60px] z-50">
-                <span className="xl:text-[9rem] lg:text-[7rem]"> our </span>{" "}
+                <span className="xl:text-[9rem] lg:text-[7rem]">
+                  our
+                </span>{" "}
                 <span className="font-times xl:-tracking-[0.7rem] lg:-tracking-[0.5rem] -tracking-[0.1rem] font-extralight">
                   operating
                 </span>{" "}
@@ -47,7 +49,7 @@ function AboutUs() {
                 </p>
                 <p className="font-thin -leading-[4rem]">
                   We stay grounded in our values that creatives are essential to
-                  the workforce, everyone has creativity in them, and we&apos;re
+                  the workforce, everyone has creativity in them, and we’re
                   able to smash long-standing stereotypes about creatives.
                 </p>
               </div>
