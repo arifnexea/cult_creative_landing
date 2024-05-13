@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Icon } from "@iconify/react";
 
 function HomeThree() {
   const [index, setIndex] = useState(false);
@@ -12,14 +13,26 @@ function HomeThree() {
     <section className="lg:px-2 py-12 bg-[#1340FF]">
       <div className="flex flex-col lg:flex-row p-2 items-center gap-10">
         {thumbnail ? (
-          <Image
-            src="/thumbnail.png"
-            alt="Thumbnail Image"
-            width={1000}
-            height={562.5}
-            className="rounded-md cursor-pointer"
+          <div
+            className="relative overflow-hidden cursor-pointer rounded-md"
             onClick={() => setThumbnail(false)}
-          />
+          >
+            <Image
+              src="/thumbnail.png"
+              alt="Thumbnail Image"
+              width={1000}
+              height={562.5}
+              className="rounded-md hover:scale-105 transition-all ease-in-out duration-200"
+            />
+            <div
+              className="absolute top-[50%] left-[50%]"
+              style={{
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Icon icon="logos:youtube-icon" width={70} />
+            </div>
+          </div>
         ) : (
           <iframe
             name="iframe_name"
@@ -32,7 +45,7 @@ function HomeThree() {
             allowTransparency
             loading="lazy"
             className={`rounded-xl md:w-[500px] md:h-[281.25px] lg:w-[1000px] lg:h-[562.5px] ${
-              index && "z-10 transition duration-1000 ease-in-out"
+              index && "transition duration-1000 ease-in-out"
             } basis-1/2`}
             onMouseEnter={() => setIndex(true)}
             onMouseLeave={() => setIndex(false)}

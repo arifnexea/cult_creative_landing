@@ -43,9 +43,7 @@ const HomeSix = () => {
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
                   —Irma Syazreena,{" "}
-                  <span className="uppercase font-bold tracking-[0]">
-                    Reka
-                  </span>
+                  <span className="uppercase font-bold tracking-[0]">Reka</span>
                   .
                 </p>
               </div>
@@ -128,6 +126,6 @@ const HomeSix = () => {
       </div>
     </section>
   );
-}
+};
 
 export default HomeSix;
