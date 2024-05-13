@@ -351,7 +351,7 @@ const BrandForm = ({ color }) => {
                   className={`${loading ? "bg-slate-300" : "bg-slate-100 "}
                   py-2 px-12 rounded-full text-[${color}] font-aileron uppercase inline-flex items-center gap-5 font-bold`}
                 >
-                  {loading && (
+                  {loading ? (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="2em"
@@ -382,8 +382,9 @@ const BrandForm = ({ color }) => {
                         />
                       </path>
                     </svg>
+                  ) : (
+                    "Submit"
                   )}
-                  Submit
                 </motion.button>
               </div>
             </Form>

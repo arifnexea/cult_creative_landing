@@ -30,7 +30,7 @@ const CreatorFirst = () => {
   // }, [vidIndex]);
 
   return (
-    <section className="p-8 py-16 bg-[#006D53]">
+    <section className="p-8 bg-[#006D53]">
       <div className="flex flex-col lg:flex-row justify-between gap-3 items-center lg:items-start">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
