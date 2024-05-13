@@ -4,6 +4,7 @@ import Badge from "./Badge";
 const Carousel = ({
   url,
   name,
+  title,
   badge1,
   badge2,
   badge3,
@@ -13,7 +14,7 @@ const Carousel = ({
 }) => {
   return (
     <div
-      className={`flex gap-12 flex-col lg:flex-row items-center lg:items-start justify-between w-screen ease-in-out duration-500 transition-transform`}
+      className={`flex gap-2 flex-col lg:flex-row items-center lg:items-start justify-between w-screen ease-in-out duration-500 transition-transform`}
       style={{
         transform: `translateX(-${cur * 100}%)`,
       }}
@@ -34,11 +35,10 @@ const Carousel = ({
           </video>
         </div>
       </div>
-      <div className={`flex flex-col items-start gap-5 basis-1/2 lg:mt-20`}>
+      <div className={`flex flex-col items-center gap-5 basis-1/2 lg:mt-20`}>
         <h1 className="sm:text-6xl text-4xl font-aileron font-bold italic tracking-[-.2rem]">
-          <span className="font-extralight text-4xl">Client :</span>
-          <br />
-          {name?.toUpperCase()}
+          <span className="font-extralight text-4xl">Client : </span>{" "}
+          {title?.toUpperCase()}
         </h1>
         <div className={`${contentStyle}`}>
           <Badge contents={badge1} />

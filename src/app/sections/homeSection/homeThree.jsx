@@ -10,7 +10,7 @@ function HomeThree() {
 
   return (
     <section className="lg:px-2 py-12 bg-[#1340FF]">
-      <div className="flex flex-col md:flex-row p-2 items-center gap-10">
+      <div className="flex flex-col lg:flex-row p-2 items-center gap-10">
         {thumbnail ? (
           <Image
             src="/thumbnail.png"
@@ -51,7 +51,7 @@ function HomeThree() {
           className="basis-1/2 p-2 text-[#F4F4F4]"
         >
           <h1
-            className="lg:text-[10rem] lg:tracking-5 md:text-7xl text-6xl font-aileron font-light"
+            className="xl:text-[10rem] lg:tracking-5 md:text-8xl text-6xl font-aileron font-light"
             style={{
               lineHeight: "70%",
             }}
@@ -84,10 +84,10 @@ function HomeThree() {
             }}
             className="mt-7"
           >
-            <p className="lg:w-[95%] lg:ml-4 text-sm xl:text-2xl md:text-md my-3 font-aileron font-light text-balance">
+            <p className="lg:w-[95%] lg:ml-4 text-[20px] xl:text-2xl md:text-md my-3 font-aileron font-light text-balance">
               We take the hassle out of creator marketing.
             </p>
-            <p className=" lg:w-[85%] lg:ml-4 xl:text-2xl md:text-md text-sm font-aileron font-light text-balance">
+            <p className="lg:w-[85%] lg:ml-4 xl:text-2xl md:text-md text-[20px] font-aileron font-light text-balance">
               With a simple monthly subscription,here’s how we bridge brands and
               agencies with creators to establish genuine relationships with
               customers.

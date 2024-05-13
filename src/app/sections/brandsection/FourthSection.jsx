@@ -109,11 +109,11 @@ const FourthSection = () => {
           </div>
         </motion.div>
       </div>
-      <p className="text-center text-2xl font-aileron mt-8 mb-10">
+      {/* <p className="text-center text-2xl font-aileron mt-8 mb-10">
         <span className="font-bold">*Add-ons:</span> RM100 for cross posting
         across platforms | RM180 for 3 months ads usage rights
-      </p>
-      <div className="text-center">
+      </p> */}
+      <div className="text-center mt-8">
         <Link
           href={"https://calendly.com/danishmokhtar/30min?month=2024-03"}
           target="_blank"

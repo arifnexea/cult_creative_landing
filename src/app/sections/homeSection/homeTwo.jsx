@@ -58,7 +58,7 @@ const HomeTwo = () => {
   return (
     <main className="bg-[#F4F4F4] py-8 px-5">
       <Companies
-        title={"as Seen on"}
+        title={"as seen on"}
         companiesImages={optics}
         rounded={"rounded-full"}
         type={"optics"}

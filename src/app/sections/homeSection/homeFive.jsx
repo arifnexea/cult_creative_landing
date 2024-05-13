@@ -109,7 +109,7 @@ function HomeFive() {
     <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
       <h1 className="text-center font-aileron 2xl:text-[115px] text-7xl md:text-8xl font-light">
         <span className="font-times italic -tracking-[6px] md:-tracking-[12px]">
-          creators
+          creators,
         </span>{" "}
         <span className="-tracking-[5px] md:text-[91px] text-6xl">get</span>{" "}
         <span className="font-times italic -tracking-[6px] md:-tracking-[12px]">

@@ -13,14 +13,63 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
         {/* <h3 className="text-2xl -tracking-[.1rem] font-bold">{title}</h3> */}
         <hr className="grow border-2 border-[#1340FF]" />
       </div>
-      <div className="p-10 flex flex-nowrap overflow-hidden w-[90vw] mx-auto group">
-        <div
-          className={`flex space-x-24 ${
-            type === "companies"
-              ? "animate-loop-scroll-companies"
-              : "animate-loop-scroll-optics"
-          } group-hover:paused scroll-smooth`}
-        >
+      {type === "companies" && (
+        <div className="p-10 flex flex-nowrap overflow-hidden w-[90vw] mx-auto group">
+          <div
+            className={`flex space-x-24 ${
+              type === "companies" &&
+              "animate-loop-scroll-companies group-hover:paused scroll-smooth"
+            } `}
+          >
+            {companiesImages?.map((elem, i) => {
+              return elem?.link ? (
+                // <Link key={i} href={elem.link}>
+                <Image
+                  src={elem.path}
+                  alt={elem.name}
+                  width={100}
+                  height={100}
+                  className={`${rounded} ${imgStyle} object-contain`}
+                />
+              ) : (
+                // </Link>
+                <Image
+                  key={i}
+                  src={elem.path}
+                  alt={elem.name}
+                  width={100}
+                  height={100}
+                  className={`${rounded} ${imgStyle} object-fit`}
+                />
+              );
+            })}
+            {companiesImages?.map((elem, i) => {
+              return elem?.link ? (
+                // <Link key={i} href={elem.link}>
+                <Image
+                  src={elem.path}
+                  alt={elem.name}
+                  width={100}
+                  height={100}
+                  className={`${rounded} ${imgStyle} object-contain`}
+                />
+              ) : (
+                // </Link>
+                <Image
+                  key={i}
+                  src={elem.path}
+                  alt={elem.name}
+                  width={100}
+                  height={100}
+                  className={`${rounded} ${imgStyle}`}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
+      {type === "optics" && (
+        <div className="p-10 flex justify-around flex-wrap gap-4">
           {companiesImages?.map((elem, i) => {
             return elem?.link ? (
               // <Link key={i} href={elem.link}>
@@ -29,7 +78,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
                 alt={elem.name}
                 width={100}
                 height={100}
-                className={`${rounded} ${imgStyle} object-contain`}
+                className={`${rounded} ${imgStyle} object-contain cursor-pointer`}
               />
             ) : (
               // </Link>
@@ -39,34 +88,12 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
                 alt={elem.name}
                 width={100}
                 height={100}
-                className={`${rounded} ${imgStyle} object-fit`}
-              />
-            );
-          })}
-          {companiesImages?.map((elem, i) => {
-            return elem?.link ? (
-              // <Link key={i} href={elem.link}>
-              <Image
-                src={elem.path}
-                alt={elem.name}
-                width={100}
-                height={100}
-                className={`${rounded} ${imgStyle} object-contain`}
-              />
-            ) : (
-              // </Link>
-              <Image
-                key={i}
-                src={elem.path}
-                alt={elem.name}
-                width={100}
-                height={100}
-                className={`${rounded} ${imgStyle}`}
+                className={`${rounded} ${imgStyle} object-fit cursor-pointer`}
               />
             );
           })}
         </div>
-      </div>
+      )}
     </section>
   );
 };

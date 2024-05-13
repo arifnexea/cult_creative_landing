@@ -57,29 +57,39 @@ const BrandForm = ({ color }) => {
       .finally(() => setLoading(false));
   };
 
+  const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
   const schemaOne = yup.object({
-    name: yup.string().required("Required"),
-    email: yup.string().email("Invalid email address").required("Required"),
+    name: yup.string().required("Name is required."),
+    email: yup
+      .string()
+      .email("Invalid email address")
+      .required("Email is required."),
+    // phoneNumber: yup
+    //   .string()
+    //   .positive("Invalid character “-”")
+    //   .integer("Invalid character “.”")
+    //   // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
+    //   // "012 345 6789", minus two digits in case of some unusually short phone number
+    //   .min(100_000_00 /*00*/, `Must have at least ${"01234567".length} digits`)
+    //   // "+60 12 3456 7890", plus two digits for redundancy
+    //   .max(
+    //     999_99_9999_9999_99,
+    //     `Must have at most ${"+601234567890__".length} digits`
+    //   )
+    //   .required("Required"),
     phoneNumber: yup
-      .number()
-      .positive("Invalid character “-”")
-      .integer("Invalid character “.”")
-      // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
-      // "012 345 6789", minus two digits in case of some unusually short phone number
-      .min(100_000_00 /*00*/, `Must have at least ${"01234567".length} digits`)
-      // "+60 12 3456 7890", plus two digits for redundancy
-      .max(
-        999_99_9999_9999_99,
-        `Must have at most ${"+601234567890__".length} digits`
-      )
-      .required("Required"),
-    companyName: yup.string().required("Required"),
-    companySize: yup.string().required("Required"),
+      .string()
+      .matches(phoneRegExp, "Phone number is not valid")
+      .required("Phone number is required."),
+    companyName: yup.string().required("Company name is required."),
+    companySize: yup.string().required("Company size is required."),
     industries: yup
       .array()
       .min(3, "Must have exactly 3")
       .max(3, "Must have exactly 3")
-      .required("Required"),
+      .required("Industries are required."),
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
@@ -90,28 +100,22 @@ const BrandForm = ({ color }) => {
       // * we want it to fit in an `Int`, and `2**32 - 1` is more than enough
       // * it is a "nice" number
       .max(2_000_000_000, "Too high")
-      .required("Required"),
+      .required("Monthly influencer budget is required."),
   });
 
   const schemaTwo = yup.object({
-    name: yup.string().required("Required"),
-    email: yup.string().email("Invalid email address").required("Required"),
+    name: yup.string().required("Name is required."),
+    email: yup
+      .string()
+      .email("Invalid email address")
+      .required("Email is required."),
     phoneNumber: yup
-      .number()
-      .positive("Invalid character “-”")
-      .integer("Invalid character “.”")
-      // Hack: we're not using a regex to parse phone numbers, use this to force a minimum number of digits
-      // "012 345 6789", minus two digits in case of some unusually short phone number
-      .min(100_000_00 /*00*/, `Must have at least ${"01234567".length} digits`)
-      // "+60 12 3456 7890", plus two digits for redundancy
-      .max(
-        999_99_9999_9999_99,
-        `Must have at most ${"+601234567890__".length} digits`
-      )
-      .required("Required"),
-    companyName: yup.string().required("Required"),
-    companySize: yup.string().required("Required"),
-    otherindustriesString: yup.string().required("Required"),
+      .string()
+      .matches(phoneRegExp, "Phone number is not valid")
+      .required("Phone number is required."),
+    companyName: yup.string().required("Company name is required."),
+    companySize: yup.string().required("Company size is required."),
+    otherindustriesString: yup.string().required("Industry is required."),
     monthlyInfluencerBudget: yup
       .number()
       // We assume there is no need for fractional budgets
@@ -122,18 +126,18 @@ const BrandForm = ({ color }) => {
       // * we want it to fit in an `Int`, and `2**32 - 1` is more than enough
       // * it is a "nice" number
       .max(2_000_000_000, "Too high")
-      .required("Required"),
+      .required("Monthly influencer budget is required."),
   });
 
   return (
     <section className="flex items-center justify-center">
-      <div className="basis-1/2 hidden xl:block">
+      <div className="basis-1/2 hidden lg:block">
         <Image
-          src="https://storage.googleapis.com/landing-cultcreative/main/Cult%20Creative%201.jpg"
-          alt="test"
-          width={600}
-          height={600}
-          className="rounded-lg mx-auto"
+          src="https://storage.googleapis.com/landing-cultcreative/brands/Cult%20Creative%203.jpg"
+          alt="Brands"
+          width={400}
+          height={400}
+          className="rounded-lg mx-auto xl:w-[600px]"
         />
       </div>
       <div className="flex flex-col gap-5 xl:basis-1/2 text-[#F4F4F4]">
@@ -188,7 +192,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Name"
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="What's your name?"
                         field={field}
                         color={color}
                         errors={touched.name && errors.name}
@@ -202,7 +206,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Email Address"
                         type="email"
-                        placeholder="johndoe@example.com"
+                        placeholder="What's your email?"
                         field={field}
                         color={color}
                         errors={touched.email && errors.email}
@@ -215,8 +219,8 @@ const BrandForm = ({ color }) => {
                     <>
                       <FormInput
                         label="Phone Number"
-                        type="number"
-                        placeholder="+601234567890"
+                        type="text"
+                        placeholder="What's your phone number?"
                         field={field}
                         color={color}
                         errors={touched.phoneNumber && errors.phoneNumber}
@@ -230,7 +234,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Company Name"
                         type="text"
-                        placeholder="Cult Creative"
+                        placeholder="What's your company name?"
                         field={field}
                         color={color}
                         errors={touched.companyName && errors.companyName}
@@ -326,7 +330,7 @@ const BrandForm = ({ color }) => {
                       <FormInput
                         label="Monthly Influencer Budget (RM)"
                         type="number"
-                        placeholder="1000"
+                        placeholder="Whats's your monthly influencer budget?"
                         field={field}
                         color={color}
                         errors={
@@ -338,7 +342,7 @@ const BrandForm = ({ color }) => {
                   )}
                 </Field>
               </div>
-              <div className="mt-10 text-center">
+              <div className="mt-10 text-end">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.8 }}

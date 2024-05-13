@@ -11,14 +11,19 @@ const FifthSection = () => {
     <section className="py-10 px-6 bg-[#8A5AFE] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
         <div className="col-span-2 md:col-span-1 mx-auto">
-          <h1 className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]">
+          <h1
+            className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]"
+            style={{
+              lineHeight: " 70%",
+            }}
+          >
             hear from
             <br />
             <span className="font-times">our</span>{" "}
-            <span className="font-times italic">users</span>
+            <span className="font-times italic">clients</span>
           </h1>
         </div>
-        <div className="col-span-2 md:col-span-1">
+        <div className="col-span-2 md:col-span-1 relative">
           <div className="flex overflow-hidden">
             <motion.div
               className="border-2 border-slate-50 min-w-full transition-transform ease-in-out duration-300"
@@ -38,9 +43,7 @@ const FifthSection = () => {
                 </p>
                 <p className="ms-auto mt-auto text-lg sm:text-2xl italic tracking-[.2rem]">
                   —Irma Syazreena,{" "}
-                  <span className="uppercase font-bold tracking-[0]">
-                    Reka
-                  </span>
+                  <span className="uppercase font-bold tracking-[0]">Reka</span>
                   .
                 </p>
               </div>
@@ -96,9 +99,29 @@ const FifthSection = () => {
               </div>
             </motion.div>
           </div>
+          <div
+            className="absolute top-[50%] left-1"
+            onClick={() => setCur((prev) => (prev === 0 ? 2 : prev - 1))}
+          >
+            <Icon
+              icon="raphael:arrowleft"
+              width={40}
+              className="cursor-pointer hover:scale-125 transition-all ease-in-out duration-150"
+            />
+          </div>
+          <div
+            className="absolute top-[50%] right-1"
+            onClick={() => setCur((prev) => (prev === 2 ? 0 : prev + 1))}
+          >
+            <Icon
+              icon="raphael:arrowright"
+              width={40}
+              className="cursor-pointer hover:scale-125 transition-all ease-in-out duration-150"
+            />
+          </div>
         </div>
       </div>
-      <div className="flex flex-row justify-center my-7">
+      {/* <div className="flex flex-row justify-center my-7">
         <Icon
           icon="icon-park-outline:dot"
           width={20}
@@ -120,7 +143,7 @@ const FifthSection = () => {
           className={cur === 2 && "scale-150"}
           onClick={() => setCur(2)}
         />
-      </div>
+      </div> */}
     </section>
   );
 };

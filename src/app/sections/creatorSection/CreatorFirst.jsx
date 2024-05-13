@@ -30,8 +30,60 @@ const CreatorFirst = () => {
   // }, [vidIndex]);
 
   return (
-    <section className="p-8 bg-[#006D53]">
-      <div className="flex flex-col-reverse lg:flex-row justify-between gap-3 items-center lg:items-start">
+    <section className="p-8 py-16 bg-[#006D53]">
+      <div className="flex flex-col lg:flex-row justify-between gap-3 items-center lg:items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+          // className="flex flex-col px-8 lg:w-[50%] text-center text-[#F4F4F4] lg:text-left basis-1/2 gap-7"
+          className="basis-1/2 flex flex-col space-y-10 text-center lg:text-start text-[#F4F4F4] lg:w-[50%]"
+        >
+          <h1
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            style={{
+              lineHeight: "85%",
+            }}
+          >
+            get <span className="font-times">brand</span>
+            <br />
+            <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
+              deals,{" "}
+            </span>
+            get
+            <br />
+            <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
+              paid.
+            </span>
+          </h1>
+          <p className="w-auto text-[25.5px] leading-tight tracking-[-2px] lg:w-[75%]">
+            Leverage your skills and make money off your current social media
+            account.
+          </p>
+          <p
+            // className="lg:text-xl text-xl lg:w-[75%] lg:text-justify"
+            className="w-auto text-[25.5px] leading-tight tracking-[-2px] lg:w-[75%]"
+          >
+            Simply sign up and opt in to become a creator and get synced to
+            amazing brand deals.
+          </p>
+          <div className="text-center">
+            <Link href={"/creators/contactForm"}>
+              <motion.button
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-aileron font-bold uppercase"
+              >
+                Get Started
+              </motion.button>
+            </Link>
+          </div>
+        </motion.div>
         <div className="sticky top-32 my-7 basis-1/2 ">
           <div className="sm:hidden">
             <motion.video
@@ -86,55 +138,6 @@ const CreatorFirst = () => {
             })}
           </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.5,
-          }}
-          className="flex flex-col px-8 lg:w-[50%] text-center text-[#F4F4F4] lg:text-left basis-1/2 gap-7"
-        >
-          <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
-            style={{
-              lineHeight: 0.9,
-            }}
-          >
-            get <span className="font-times">brand</span>
-            <br />
-            <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
-              deals,{" "}
-            </span>
-            get
-            <br />
-            <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
-              paid.
-            </span>
-          </h1>
-          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
-            Leverage your skills and make money off your current social media
-            account.
-          </p>
-          <p className="lg:text-xl text-xl lg:w-[75%] lg:text-justify">
-            Simply sign up and opt in to become a creator and get synced to
-            amazing brand deals.
-          </p>
-          <div className="text-center">
-            <Link href={"/creators/contactForm"}>
-              <motion.button
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                className="bg-slate-100 py-2 px-12 rounded-full text-[#006D53] font-aileron font-bold uppercase"
-              >
-                Get Started
-              </motion.button>
-            </Link>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
