@@ -2,15 +2,21 @@
 import React, { Suspense } from "react";
 import Header from "@/app/components/Header";
 import LastSection from "../sections/brandsection/LastSection";
-import { AnimatePresence, motion, wrap } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-function AboutUs() {
+const AboutUs = () => {
+  const RoundedH1 = ({ children }) => (
+    <h1 className="rounded-full border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full font-bold uppercase lg:-tracking-[.1rem] xl:-tracking-[.1rem]">
+      {children}
+    </h1>
+  );
+
   return (
     <main className="flex min-h-screen flex-col">
       <Header logo={"/images/logo.svg"} />
       <Suspense fallback={<p>Loading...</p>}>
-        <section className="bg-[#FF3600] pt-6  pb-14 px-3">
+        <section className="bg-[#FF3600] pt-6 pb-14 px-3">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col lg:justify-center lg:items-center">
               <motion.video
@@ -24,7 +30,6 @@ function AboutUs() {
                 muted
                 webkit-playsinline
                 playsInline
-                controls
               >
                 <source type="video/mp4" />
               </motion.video>
@@ -41,9 +46,7 @@ function AboutUs() {
               </h1>
               <div className="flex flex-col w-[90%] xl:text-3xl text-lg font-aileron font-thin gap-y-8 text-center md:text-left ">
                 <p className="font-thin -leading-[4rem]">
-                  Every day we come together for a vision that we believe in
-                  creators and the community, and that Cult Creative can assist
-                  creators to achieve passion, purpose and paycheque.
+                  Every day we come together for a vision that we believe in creators and the community, and that Cult Creative can assist creators to achieve passion, purpose and paycheque.
                 </p>
                 <p className="font-thin -leading-[4rem]">
                   We stay grounded in our values that creatives are essential to
@@ -83,14 +86,12 @@ function AboutUs() {
                   different{" "}
                 </motion.span>
               </h1>
-              <p className="basis-1/2 lg:text-2xl text-xl text-justify leading-tight">
-                Rapid access to quality content by our expansive community of
-                over 13,000 talented creators ready to bring your vision to
-                life.
+              <p className="basis-1/2 lg:text-2xl text-xl leading-tight">
+                Rapid access to quality content by our expansive community of over 13,000 talented creators ready to bring your vision to life.
               </p>
             </div>
             <div className="flex flex-row py-6 gap-6">
-              <div className="xl:flex lg:flex flex-col justify-items-end items-end   basis-1/2 hidden">
+              <div className="xl:flex lg:flex flex-col justify-items-end items-end basis-1/2 hidden">
                 <Image
                   src={
                     "https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%204%20(1).jpg"
@@ -101,31 +102,15 @@ function AboutUs() {
                   className="rounded-lg"
                 />
               </div>
-              <div className="flex flex-col lg:basis-1/2 xl:basis-1/2  basis-2/2 xl:text-4xl lg:text-3xl md:text-3xl text-2xl justify-center">
-                <div className="lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full ">
-                  {" "}
-                  <h1 className="xl:text-6xl lg:text-5xl md:text-4xl  text-3xl font-bold uppercase  lg:-tracking-[.10rem] xl:text-start lg:text-start  text-center xl:-tracking-[0.3rem]">
-                    2020:<span className="italic">THE year we starteD</span>
+              <div className="flex flex-col lg:basis-1/2 xl:basis-1/2 basis-2/2 xl:text-4xl lg:text-3xl md:text-3xl text-2xl">
+                <div className="lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full">
+                  <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold uppercase lg:-tracking-[.10rem] xl:text-start lg:text-start text-center xl:-tracking-[0.3rem] italic">
+                    2020: the year we started
                   </h1>
                 </div>
-                <div className="rounded-full  border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full">
-                  {" "}
-                  <h1 className=" font-bold uppercase  lg:-tracking-[.1rem]   xl:-tracking-[.1rem]">
-                    13,000+ individual creators
-                  </h1>
-                </div>
-                <div className="rounded-full  border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full">
-                  {" "}
-                  <h1 className=" font-bold uppercase  lg:-tracking-[.1rem] text-center xl:-tracking-[.1rem]">
-                    900+ companies on boarded
-                  </h1>
-                </div>
-                <div className="rounded-full  border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center  xl:w-[70%] w-full">
-                  {" "}
-                  <h1 className=" font-bold uppercase  lg:-tracking-[.1rem]  xl:-tracking-[.1rem]">
-                    1,200 jobs matched
-                  </h1>
-                </div>
+                <RoundedH1>13,000+ individual creators</RoundedH1>
+                <RoundedH1>900+ companies onboarded</RoundedH1>
+                <RoundedH1>1,200 jobs matched</RoundedH1>
               </div>
             </div>
           </motion.div>
@@ -134,6 +119,6 @@ function AboutUs() {
       </Suspense>
     </main>
   );
-}
+};
 
 export default AboutUs;

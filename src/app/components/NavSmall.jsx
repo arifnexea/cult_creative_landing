@@ -35,13 +35,6 @@ const NavSmall = ({ isVisible }) => {
               For creators
             </motion.button>
           </Link>
-          {/* <motion.button
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.8 }}
-            className="bg-[#8A5AFE] py-3 px-12 text-md rounded-full text-zinc-100 font-aileron uppercase font-bold w-full"
-          >
-            Get Started
-          </motion.button> */}
         </div>
       </motion.nav>
     )
