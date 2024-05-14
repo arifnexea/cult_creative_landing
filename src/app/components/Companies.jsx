@@ -21,29 +21,55 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
               "animate-loop-scroll-companies group-hover:paused scroll-smooth"
             } `}
           >
-            {companiesImages?.map((elem, i) => {
-              return elem?.link ? (
-                // <Link key={i} href={elem.link}>
-                <Image
-                  src={elem.path}
-                  alt={elem.name}
-                  width={100}
-                  height={100}
-                  className={`${rounded} ${imgStyle} object-contain`}
-                />
-              ) : (
-                // </Link>
-                <Image
-                  key={i}
-                  src={elem.path}
-                  alt={elem.name}
-                  width={100}
-                  height={100}
-                  className={`${rounded} ${imgStyle} object-fit`}
-                />
-              );
-            })}
-            {companiesImages?.map((elem, i) => {
+            <div className="min-w-full flex space-x-24">
+              {companiesImages?.map((elem, i) => {
+                return elem?.link ? (
+                  // <Link key={i} href={elem.link}>
+                  <Image
+                    src={elem.path}
+                    alt={elem.name}
+                    width={100}
+                    height={100}
+                    className={`${rounded} ${imgStyle} object-contain`}
+                  />
+                ) : (
+                  // </Link>
+                  <Image
+                    key={i}
+                    src={elem.path}
+                    alt={elem.name}
+                    width={100}
+                    height={100}
+                    className={`${rounded} ${imgStyle} object-fit`}
+                  />
+                );
+              })}
+            </div>
+            <div className="min-w-full flex space-x-24">
+              {companiesImages?.map((elem, i) => {
+                return elem?.link ? (
+                  // <Link key={i} href={elem.link}>
+                  <Image
+                    src={elem.path}
+                    alt={elem.name}
+                    width={100}
+                    height={100}
+                    className={`${rounded} ${imgStyle} object-contain`}
+                  />
+                ) : (
+                  // </Link>
+                  <Image
+                    key={i}
+                    src={elem.path}
+                    alt={elem.name}
+                    width={100}
+                    height={100}
+                    className={`${rounded} ${imgStyle} object-fit`}
+                  />
+                );
+              })}
+            </div>
+            {/* {companiesImages?.map((elem, i) => {
               return elem?.link ? (
                 // <Link key={i} href={elem.link}>
                 <Image
@@ -64,7 +90,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
                   className={`${rounded} ${imgStyle}`}
                 />
               );
-            })}
+            })} */}
           </div>
         </div>
       )}
