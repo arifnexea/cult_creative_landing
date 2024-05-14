@@ -22,7 +22,7 @@ function HomeThree() {
               alt="Thumbnail Image"
               width={1000}
               height={562.5}
-              className="rounded-md hover:scale-105 transition-all ease-in-out duration-200"
+              className="rounded-md hover:scale-105 transition-all ease-in-out duration-200 "
             />
             <div
               className="absolute top-[50%] left-[50%]"
@@ -34,22 +34,25 @@ function HomeThree() {
             </div>
           </div>
         ) : (
-          <iframe
-            name="iframe_name"
-            src="https://www.youtube.com/embed/xTvO7RmOyBM?si=xKjLNN2DNwOTewu3"
-            frameborder="0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            allowTransparency
-            loading="lazy"
-            className={`rounded-xl md:w-[500px] md:h-[281.25px] lg:w-[1000px] lg:h-[562.5px] ${
-              index && "transition duration-1000 ease-in-out"
-            } basis-1/2`}
-            onMouseEnter={() => setIndex(true)}
-            onMouseLeave={() => setIndex(false)}
-          />
+          <div className="bg-black lg:w-[1000px] lg:h-[500px] w-[100%] sm:h-[400px] h-[200px]">
+            <iframe
+              name="iframe_name"
+              src="https://www.youtube.com/embed/xTvO7RmOyBM?si=xKjLNN2DNwOTewu3"
+              frameborder="0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              allowTransparency
+              loading="lazy"
+              // className={`rounded-xl md:w-[500px] md:h-[281.25px] lg:w-[1000px] lg:h-[562.5px] ${
+              //   index && "transition duration-1000 ease-in-out"
+              // } basis-1/2`}
+              className={`rounded-xl w-full h-full`}
+              onMouseEnter={() => setIndex(true)}
+              onMouseLeave={() => setIndex(false)}
+            />
+          </div>
         )}
 
         <motion.div
