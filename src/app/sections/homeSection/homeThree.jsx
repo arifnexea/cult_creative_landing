@@ -34,7 +34,7 @@ function HomeThree() {
             </div>
           </div>
         ) : (
-          <div className="bg-black lg:w-[1000px] lg:h-[500px] w-[100%] sm:h-[400px] h-[200px]">
+          <div className="bg-black lg:w-[1000px] lg:h-[500px] w-[100%] sm:h-[400px] h-[200px] rounded-xl">
             <iframe
               name="iframe_name"
               src="https://www.youtube.com/embed/xTvO7RmOyBM?si=xKjLNN2DNwOTewu3"
