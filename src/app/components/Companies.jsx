@@ -16,12 +16,12 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
       {type === "companies" && (
         <div className="p-10 flex flex-nowrap overflow-hidden w-[90vw] mx-auto group">
           <div
-            className={`flex space-x-24 ${
+            className={`flex gap-32 ${
               type === "companies" &&
               "animate-loop-scroll-companies group-hover:paused scroll-smooth"
             } `}
           >
-            <div className="min-w-full flex space-x-24">
+            <div className="min-w-full flex space-x-24 justify-between">
               {companiesImages?.map((elem, i) => {
                 return elem?.link ? (
                   // <Link key={i} href={elem.link}>
@@ -45,7 +45,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
                 );
               })}
             </div>
-            <div className="min-w-full flex space-x-24">
+            <div className="min-w-full flex space-x-24 justify-between">
               {companiesImages?.map((elem, i) => {
                 return elem?.link ? (
                   // <Link key={i} href={elem.link}>

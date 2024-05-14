@@ -27,7 +27,7 @@ module.exports = {
         },
 
         "loop-scroll-companies": {
-          to: { transform: "translateX(calc(-100% - 6.5rem))" },
+          to: { transform: "translateX(calc(-100% - 8rem))" },
         },
         "form-to-down": {
           from: {
