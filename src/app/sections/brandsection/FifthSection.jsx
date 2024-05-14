@@ -1,11 +1,17 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const FifthSection = () => {
   const [cur, setCur] = useState(0);
+
+  useEffect(() => {
+    const vidScroll = setInterval(() => setCur(cur === 2 ? 0 : cur + 1), 4000);
+
+    return () => clearInterval(vidScroll);
+  }, [cur]);
 
   return (
     <section className="py-10 px-6 bg-[#8A5AFE] font-aileron text-[#F4F4F4]">
@@ -14,7 +20,7 @@ const FifthSection = () => {
           <h1
             className="font-aileron md:text-[7rem] text-6xl md:-tracking-[.6rem] -tracking-[.3rem] lg:leading-[.6]"
             style={{
-              lineHeight: " 70%",
+              lineHeight: "70%",
             }}
           >
             hear from
@@ -99,7 +105,7 @@ const FifthSection = () => {
               </div>
             </motion.div>
           </div>
-          <div
+          {/* <div
             className="absolute top-[50%] left-1"
             onClick={() => setCur((prev) => (prev === 0 ? 2 : prev - 1))}
           >
@@ -118,10 +124,10 @@ const FifthSection = () => {
               width={40}
               className="cursor-pointer hover:scale-125 transition-all ease-in-out duration-150"
             />
-          </div>
+          </div> */}
         </div>
       </div>
-      {/* <div className="flex flex-row justify-center my-7">
+      <div className="flex flex-row justify-center my-7">
         <Icon
           icon="icon-park-outline:dot"
           width={20}
@@ -143,7 +149,7 @@ const FifthSection = () => {
           className={cur === 2 && "scale-150"}
           onClick={() => setCur(2)}
         />
-      </div> */}
+      </div>
     </section>
   );
 };

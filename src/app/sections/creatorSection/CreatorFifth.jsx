@@ -1,11 +1,18 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 function CreatorFifth() {
   const [cur, setCur] = useState(0);
+
+  useEffect(() => {
+    const vidScroll = setInterval(() => setCur(cur === 2 ? 0 : cur + 1), 4000);
+
+    return () => clearInterval(vidScroll);
+  }, [cur]);
+
   return (
     <section className="py-9 lg:px-20 px-10 bg-[#006D53] font-aileron text-[#F4F4F4]">
       <div className="grid grid-cols-2 gap-10">
