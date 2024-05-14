@@ -7,8 +7,12 @@ const NavSmall = ({ isVisible }) => {
     isVisible && (
       <motion.nav
         key="modal"
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, top: -100 }}
+        animate={{ opacity: 1, top: 0 }}
+        transition={{
+          ease: "linear",
+          duration: 1,
+        }}
         className={`sticky top-0 p-5 left-0 h-50 bg-[#F4F4F4]`}
       >
         <div className="flex flex-col justify-between items-center gap-10 mt-5">
