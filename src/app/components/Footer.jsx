@@ -21,12 +21,20 @@ const Footer = ({ hoverText }) => {
         <div>
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Cult Careers</h1>
           <ul className="font-light text-sm">
-            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Hire a Creative
-            </li>
-            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Apply to Creative Jobs
-            </li>
+            <Link href={"https://www.cultcreative.asia/"} target="__blank">
+              <li
+                className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
+              >
+                Hire a Creative
+              </li>
+            </Link>
+            <Link href={"https://www.cultcreative.asia/"} target="__blank">
+              <li
+                className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
+              >
+                Apply to Creative Jobs
+              </li>
+            </Link>
           </ul>
         </div>
         <div>
