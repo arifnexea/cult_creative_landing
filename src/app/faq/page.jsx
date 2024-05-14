@@ -2,40 +2,28 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import LastSection from "../sections/brandsection/LastSection";
-import questions from "../contants/general.json";
 
 const Accordion = () => {
-  const [currentTabs, setCurrentTab] = useState("general");
+  const [currentTab, setCurrentTab] = useState("creators");
 
-  const handleChangeTab = (e) => {
-    setCurrentTab(e.target.value);
-  };
+  const handleChangeTab = (e) => setCurrentTab(e.target.value);
 
-  const general = questions.map((item, i) => (
-    <div key={i} className="flex flex-col text-lg">
-      <Item title={item.question} text={item.answer} />
-    </div>
-  ));
-
-  const brand = (
-    <div className="flex flex-col text-lg">
-      <h1>None</h1>
+  const Item = ({ title, text }) => (
+    <div className={"grid grid-cols-1 md:grid-cols-2 gap-5 px-5 py-10 border-t-2 border-t-gray-200"}>
+      <p className="font-bold text-gray-800">{title}</p>
+      <p className="text-gray-600">{text}</p>
     </div>
   );
 
-  const creator = (
+  const creators = (
     <div className="flex flex-col text-lg">
       <Item
         title={"Do I have to pay to use Cult Creative?"}
-        text={
-          "Nope! Cult Creative is a free platform and won't cost you anything. "
-        }
+        text={"Nope! Cult Creative is a free platform and won’t cost you anything."}
       />
       <Item
         title={"Who do I contact if I have any questions/inquiries?"}
-        text={
-          "You may email our support team at support@cultcreative.asia or DM us on Instagram at @cultcreativeasia"
-        }
+        text={"You may email our support team at support@cultcreative.asia or DM us on Instagram at @cultcreativeasia"}
       />
     </div>
   );
@@ -54,10 +42,6 @@ const Accordion = () => {
                 <h2 className="mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
                   Any Questions? Look Here
                 </h2>
-                {/* <p className="text-base text-gray-500">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
-                </p> */}
               </div>
             </div>
           </div>
@@ -65,29 +49,9 @@ const Accordion = () => {
           {/* Tabs */}
           <div className="flex flex-row gap-5 px-5 my-10 font-aileron font-bold">
             <button
-              value={"general"}
+              value={"creators"}
               className={`${
-                currentTabs === "general" &&
-                "border-b-4 border-b-indigo-500 rounded-sm transition ease-in-out duration-300"
-              }`}
-              onClick={handleChangeTab}
-            >
-              General
-            </button>
-            <button
-              value={"brand"}
-              className={`${
-                currentTabs === "brand" &&
-                "border-b-4 border-b-indigo-500 rounded-sm  transition ease-in-out duration-300"
-              }`}
-              onClick={handleChangeTab}
-            >
-              Brand
-            </button>
-            <button
-              value={"creator"}
-              className={`${
-                currentTabs === "creator" &&
+                currentTab === "creators" &&
                 "border-b-4 border-b-indigo-500 rounded-sm transition ease-in-out duration-300"
               }`}
               onClick={handleChangeTab}
@@ -97,9 +61,7 @@ const Accordion = () => {
           </div>
 
           {/* Items */}
-          {currentTabs === "general" && general}
-          {currentTabs === "brand" && brand}
-          {currentTabs === "creator" && creator}
+          {currentTab === "creators" && creators}
         </div>
       </section>
       <LastSection />
@@ -158,15 +120,3 @@ export default Accordion;
 //     </div>
 //   );
 // };
-
-const Item = ({ title, text, position }) => {
-  let defaultCSS =
-    "grid grid-cols-1 md:grid-cols-2 gap-5 px-5 py-10 border-t-2 border-t-gray-200";
-
-  return (
-    <div className={defaultCSS}>
-      <p className="font-bold text-gray-800">{title}</p>
-      <p className="text-gray-600">{text}</p>
-    </div>
-  );
-};

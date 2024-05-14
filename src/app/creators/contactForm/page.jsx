@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import MultiSelect from "@/app/components/MultiSelect";
-import { validateOtherField } from "@/app/components/Form"
+import { validateOtherField, phoneRegExp } from "@/app/components/Form"
 
 import countries from "../../contants/countries.json";
 import toast, { Toaster } from "react-hot-toast";
@@ -78,37 +78,34 @@ const CreatorForm = () => {
   };
 
   const schema = yup.object({
-    name: yup.string().required("Required"),
-    pronoun: yup.string().required("Required"),
+    name: yup.string().required("Name is required"),
+    pronoun: yup.string().required("Pronouns are required"),
     phoneNumber: yup
-      .number()
-      .positive("Invalid character “-”")
-      .integer("Invalid character “.”")
-      .min(100_000_00, `Must have at least ${"01234567".length} digits`)
-      .max(999_99_9999_9999_99, `Must have at most ${"+601234567890__".length} digits`)
-      .required("Required"),
+    .string()
+    .matches(phoneRegExp, "Phone number is invalid")
+    .required("Phone number is required"),
     email: yup
       .string()
-      .email("Invalid email address")
-      .required("Required"),
-    nationality: yup.string().required("Required"),
-    location: yup.string().required("Required"),
+      .email("Email address is invalid")
+      .required("Email address is required"),
+    nationality: yup.string().required("Nationality is required"),
+    location: yup.string().required("Location is required"),
     dateOfBirth: yup
       .date()
       // Five-digit years can cause a form error
       .max("9999-12-31", "Too long")
-      .required("Required"),
+      .required("Date of birth is required"),
     languages: yup
       .array()
       .min(1, "Must have at least 1")
-      .required("Required"),
+      .required("Languages are required"),
     interests: yup
       .array()
       .min(3, "Must have exactly 3")
       .max(3, "Must have exactly 3")
-      .required("Required"),
-    employmentType: yup.string().required("Required"),
-    instaUsername: yup.string().required("Required"),
+      .required("Interests are required"),
+    employmentType: yup.string().required("Employment type is required"),
+    instaUsername: yup.string().required("Instagram username is required"),
     // Optional
     tiktokUsername: yup.string(),
   });
@@ -172,7 +169,7 @@ const CreatorForm = () => {
                           <FormInput
                             label="Name"
                             type="text"
-                            placeholder="John Doe"
+                            placeholder="What’s your name?"
                             field={field}
                             color={color}
                             errors={touched.name && errors.name}
@@ -222,7 +219,7 @@ const CreatorForm = () => {
                           <FormInput
                             label="Phone Number"
                             type="number"
-                            placeholder="+601234567890"
+                            placeholder="What’s your phone number?"
                             field={field}
                             color={color}
                             errors={touched.phoneNumber && errors.phoneNumber}
@@ -235,7 +232,7 @@ const CreatorForm = () => {
                         <FormInput
                           label="Email Address"
                           type="email"
-                          placeholder="johndoe@example.com"
+                          placeholder="What’s your email address?"
                           field={field}
                           color={color}
                           errors={touched.email && errors.email}
@@ -452,7 +449,7 @@ const CreatorForm = () => {
                                 {({ field, form: { errors, touched } }) => (
                                   <>
                                     <FormInput
-                                      placeholder="Please specify..."
+                                      placeholder="What’s your employment type?"
                                       type="text"
                                       {...field}
                                       color={color}
@@ -471,7 +468,7 @@ const CreatorForm = () => {
                         <FormInput
                           label="Instagram Username"
                           type="text"
-                          placeholder="johndoe"
+                          placeholder="What’s your Instagram username?"
                           field={field}
                           color={color}
                           errors={touched.instaUsername && errors.instaUsername}
@@ -483,7 +480,7 @@ const CreatorForm = () => {
                         <FormInput
                           label="TikTok Username"
                           type="text"
-                          placeholder="johndoe"
+                          placeholder="What’s your TikTok username?"
                           field={field}
                           color={color}
                           errors={touched.tiktokUsername && errors.tiktokUsername}
@@ -498,7 +495,7 @@ const CreatorForm = () => {
                       type="submit"
                       disabled={loading}
                       className={`${loading ? "bg-slate-300" : "bg-slate-100 "}
-                      py-2 px-12 rounded-full text-[${color}] font-serif uppercase inline-flex items-center gap-5`}
+                      py-2 px-12 rounded-full text-[${color}] font-aileron font-bold uppercase inline-flex items-center gap-5`}
                     >
                       {loading && (
                         <svg
