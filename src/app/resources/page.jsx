@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../components/Header";
 import LastSection from "../sections/brandsection/LastSection";
 import News from "../components/News";
-import newsdata from "../contants/newsroom.json";
+import resourcesData from "../contants/resources.json";
 
 const Page = () => {
   return (
@@ -17,14 +17,13 @@ const Page = () => {
       </div>
       <div className="px-5 py-10 bg-slate-300">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {newsdata.map((elem, i) => (
-            <div key={i}>
+          {resourcesData.map((elem, i) => (
+            <div key={i} className=" cursor-pointer">
               <News
                 title={elem.title}
-                date={elem.date}
-                link={elem.link}
-                source={elem.source}
                 image={elem.image}
+                type={"resource"}
+                path={elem.path}
               />
             </div>
           ))}
