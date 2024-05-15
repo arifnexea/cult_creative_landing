@@ -35,9 +35,8 @@ const CreatorThird = () => (
           </motion.span>
         </h1>
         <p className="basis-1/2 lg:text-2xl text-xl">
-          We make sure you get paid in 30 days.
-          No paperwork, no hassle.
-          Just focus on being creative.
+          We make sure you get paid in 30 days. No paperwork, no hassle. Just
+          focus on being creative.
         </p>
       </div>
       <div className="flex flex-col lg:flex-row py-5">

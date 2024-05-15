@@ -98,10 +98,10 @@ const FourthSection = () => (
               Enterprise
             </p>
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <h1 className="text-2xl font-bold">RM2000</h1>
             <p>per month/3 months</p>
-          </div>
+          </div> */}
           <p className="text-xl font-bold">
             Ready to supercharge your content creation strategy? Need an
             end-to-end fully managed service? Book a call with us.

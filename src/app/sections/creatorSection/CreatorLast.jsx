@@ -22,7 +22,7 @@ const CreatorLast = () => {
       </div>
       <div className="flex flex-col gap-5 text-[#F4F4F4]">
         <div className="flex flex-col gap-5">
-          <h1 className="sm:text-8xl text-8xl -tracking-[.35rem] text-center">
+          <h1 className="sm:text-8xl text-8xl -tracking-[.35rem]">
             get{" "}
             <span className="font-times italic -tracking-[.6rem] text-[7rem]">
               started.
@@ -35,7 +35,7 @@ const CreatorLast = () => {
             Tell us who you are and we’ll get back to you with suitable brand
             deals.
           </h1>
-          <div className="mx-auto">
+          <div>
             <Link href={"/creators/contactForm"}>
               <motion.button
                 whileHover={{ scale: 1.1 }}

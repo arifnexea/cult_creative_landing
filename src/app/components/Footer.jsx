@@ -21,14 +21,22 @@ const Footer = ({ hoverText }) => {
         <div>
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Cult Careers</h1>
           <ul className="font-light text-sm">
-            <Link href={"https://www.cultcreative.asia/"} target="__blank">
+            <Link
+              href={"https://www.cultcreative.asia/employers"}
+              target="__blank"
+            >
               <li
                 className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
               >
                 Hire a Creative
               </li>
             </Link>
-            <Link href={"https://www.cultcreative.asia/"} target="__blank">
+            <Link
+              href={
+                "https://web.cultcreative.asia/?utm_source=wix&utm_medium=job_page&utm_campaign=general_CCWL_website"
+              }
+              target="__blank"
+            >
               <li
                 className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
               >
@@ -83,9 +91,13 @@ const Footer = ({ hoverText }) => {
             <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
               Privacy Policy
             </li>
-            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Terms and Conditions
-            </li>
+            <Link href={"/terms&condition"}>
+              <li
+                className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
+              >
+                Terms and Conditions
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

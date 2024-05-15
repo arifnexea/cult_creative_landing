@@ -9,7 +9,8 @@ import MultiSelect from "./MultiSelect";
 
 export const validateOtherField = (value) => (value === "" ? "Required" : "");
 
-export const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+export const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const BrandForm = ({ color }) => {
   const [loading, setLoading] = useState();
@@ -73,8 +74,8 @@ const BrandForm = ({ color }) => {
     companySize: yup.string().required("Company size is required"),
     industries: yup
       .array()
-      .min(3, "Must have exactly 3")
-      .max(3, "Must have exactly 3")
+      .min(1, "Minimum is 1")
+      .max(3, "Maximum is 3")
       .required("Industries are required."),
     monthlyInfluencerBudget: yup
       .number()
@@ -114,7 +115,7 @@ const BrandForm = ({ color }) => {
     <section className="flex items-center justify-center">
       <div className="basis-1/2 hidden lg:block">
         <Image
-          src="https://storage.googleapis.com/landing-cultcreative/brands/Cult%20Creative%203.jpg"
+          src="https://storage.googleapis.com/landing-cultcreative/main/Cult%20Creative%201.jpg"
           alt="Brands"
           width={400}
           height={400}
@@ -322,51 +323,51 @@ const BrandForm = ({ color }) => {
                     </>
                   )}
                 </Field>
-              </div>
-              <div className="mt-10 text-end">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.8 }}
-                  type="submit"
-                  disabled={loading}
-                  className={`${loading ? "bg-slate-300" : "bg-slate-100 "}
+                <div className="text-end sm:col-span-3 mx-auto mt-auto">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.8 }}
+                    type="submit"
+                    disabled={loading}
+                    className={`${loading ? "bg-slate-300" : "bg-slate-100 "}
                   py-2 px-12 rounded-full text-[${color}] font-aileron uppercase inline-flex items-center gap-5 font-bold`}
-                >
-                  {loading ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="2em"
-                      height="2em"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-dasharray="15"
-                        stroke-dashoffset="15"
-                        stroke-linecap="round"
-                        stroke-width="2"
-                        d="M12 3C16.9706 3 21 7.02944 21 12"
+                  >
+                    {loading ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="2em"
+                        height="2em"
+                        viewBox="0 0 24 24"
                       >
-                        <animate
-                          fill="freeze"
-                          attributeName="stroke-dashoffset"
-                          dur="0.3s"
-                          values="15;0"
-                        />
-                        <animateTransform
-                          attributeName="transform"
-                          dur="1.5s"
-                          repeatCount="indefinite"
-                          type="rotate"
-                          values="0 12 12;360 12 12"
-                        />
-                      </path>
-                    </svg>
-                  ) : (
-                    "Submit"
-                  )}
-                </motion.button>
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-dasharray="15"
+                          stroke-dashoffset="15"
+                          stroke-linecap="round"
+                          stroke-width="2"
+                          d="M12 3C16.9706 3 21 7.02944 21 12"
+                        >
+                          <animate
+                            fill="freeze"
+                            attributeName="stroke-dashoffset"
+                            dur="0.3s"
+                            values="15;0"
+                          />
+                          <animateTransform
+                            attributeName="transform"
+                            dur="1.5s"
+                            repeatCount="indefinite"
+                            type="rotate"
+                            values="0 12 12;360 12 12"
+                          />
+                        </path>
+                      </svg>
+                    ) : (
+                      "Submit"
+                    )}
+                  </motion.button>
+                </div>
               </div>
             </Form>
           </Formik>

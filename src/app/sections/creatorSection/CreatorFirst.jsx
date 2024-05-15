@@ -72,7 +72,7 @@ const CreatorFirst = () => {
             Simply sign up and opt in to become a creator and get synced to
             amazing brand deals.
           </p>
-          <div className="text-center">
+          <div>
             <Link href={"/creators/contactForm"}>
               <motion.button
                 whileHover={{ scale: 1.2 }}

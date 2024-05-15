@@ -1,8 +1,10 @@
 import { Steps, Step } from "@/app/components/steps";
 
 const CreatorSixth = () => {
-  const Step_Local = ({number, children}) => (
-    <Step borderColor="[#006D53]" number={number}>{children}</Step>
+  const Step_Local = ({ number, children }) => (
+    <Step borderColor="[#006D53]" number={number}>
+      {children}
+    </Step>
   );
 
   return (
@@ -14,18 +16,20 @@ const CreatorSixth = () => {
       </h1>
       <Steps>
         <Step_Local number="01">
-          Fill in our form to opt in as a creator.
-          Show off past work to be considered.
+          Fill in our form to opt in as a creator. Show off past work to be
+          considered.
         </Step_Local>
         <Step_Local number="02">
-          When brands shortlist you, a Cult Creative team member will be in touch.
+          When brands shortlist you, a Cult Creative team member will be in
+          touch.
         </Step_Local>
         <Step_Local number="03">
-          Campaign details, products and so on are automated.
-          We’ll sort that out for you.
+          Campaign details, products and so on are automated. We’ll sort that
+          out for you.
         </Step_Local>
         <Step_Local number="04">
-          Just focus on being creative, film your content, then get paid within 30 days.
+          Just focus on being creative, film your content, then get paid within
+          30 days.
         </Step_Local>
       </Steps>
     </section>

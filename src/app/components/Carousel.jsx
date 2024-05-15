@@ -35,13 +35,15 @@ const Carousel = ({
           </video>
         </div>
       </div>
-      <div className={`flex flex-col items-center gap-5 basis-1/2 lg:mt-20`}>
-        <h1 className="sm:text-6xl text-4xl font-aileron font-bold italic tracking-[-.2rem]">
+      <div className={`flex flex-col gap-5 basis-1/2 lg:mt-20 relative`}>
+        <h1 className="sm:text-6xl text-4xl font-aileron font-bold italic tracking-[-.2rem] text-center">
           {name ? (
             name?.toUpperCase()
           ) : (
             <>
-              <span className="font-extralight text-4xl">Client : </span>{" "}
+              {/* <span className="font-extralight text-4xl absolute left-5 top-8 hidden sm:block">
+                Client :{" "}
+              </span>{" "} */}
               {title?.toUpperCase()}
             </>
           )}
