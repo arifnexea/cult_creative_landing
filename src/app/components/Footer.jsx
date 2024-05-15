@@ -87,10 +87,14 @@ const Footer = ({ hoverText }) => {
         </div>
         <div>
           <h1 className="font-bold text-2xl -tracking-[.1rem]">Support</h1>
-          <ul className="font-light text-sm ">
-            <li className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}>
-              Privacy Policy
-            </li>
+          <ul className="font-light text-sm">
+            <Link href={"/privacy&policy"}>
+              <li
+                className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
+              >
+                Privacy Policy
+              </li>
+            </Link>
             <Link href={"/terms&condition"}>
               <li
                 className={`hover:text-[#8A5AFE] duration-150 cursor-pointer`}
