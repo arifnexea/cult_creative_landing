@@ -1,34 +1,34 @@
 "use client";
-import FirstSection from "./sections/brandsection/FirstSection";
-import { Suspense, useEffect, useState } from "react";
-import SixthSection from "./sections/brandsection/SixthSection";
-import LastSection from "./sections/brandsection/LastSection";
-import Header from "./components/Header";
-import HomeFirst from "./sections/homeSection/homeFirst";
-import HomeTwo from "./sections/homeSection/homeTwo";
-import HomeThree from "./sections/homeSection/homeThree";
-import HomeFour from "./sections/homeSection/homeFour";
-import HomeFive from "./sections/homeSection/homeFive";
-import HomeSix from "./sections/homeSection/homeSix";
-import Companies from "./components/Companies";
-import HomeCompanies from "./sections/homeSection/companies";
+import Header from "@/app/components/Header";
+import { Suspense } from "react";
+import HomeFirst from "@/app/sections/homeSection/homeFirst";
+import HomeTwo from "@/app/sections/homeSection/homeTwo";
+import HomeThree from "@/app/sections/homeSection/homeThree";
+import HomeCompanies from "@/app/sections/homeSection/companies";
+import HomeFour from "@/app/sections/homeSection/homeFour";
+import HomeFive from "@/app/sections/homeSection/homeFive";
+import HomeSix from "@/app/sections/homeSection/homeSix";
+import LastSection from "@/app/sections/brandsection/LastSection";
 import { Toaster } from "react-hot-toast";
 
-export default function Home() {
-  return (
+const Home = () => (
+  <>
+    <title>Cult Creative</title>
     <main className="flex min-h-screen flex-col max-w-[100vw]">
-      <Header logo={"/images/logo.svg"} />
+      <Header logo="/images/logo.svg" />
       <Suspense fallback={<p>Loading...</p>}>
         <HomeFirst />
         <HomeTwo />
         <HomeThree />
-        <HomeCompanies title={"trusted by 900+ companies"} />
+        <HomeCompanies title="trusted by 900+ companies" />
         <HomeFour />
         <HomeFive />
         <HomeSix />
-        <LastSection color={"#1340FF"} />
+        <LastSection color="#1340FF" />
         <Toaster position="top-center" />
       </Suspense>
     </main>
-  );
-}
+  </>
+);
+
+export default Home;

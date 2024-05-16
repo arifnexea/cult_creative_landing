@@ -35,7 +35,7 @@ export const Body = ({ cur, setCur, children }) => {
       className={cur === 0 && "scale-150"}
       onClick={onClick}
     />
-  )
+  );
 
   return (
     <div className="col-span-2 md:col-span-1 relative">

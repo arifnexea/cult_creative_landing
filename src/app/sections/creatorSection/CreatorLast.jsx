@@ -36,7 +36,7 @@ const CreatorLast = () => {
             deals.
           </h1>
           <div>
-            <Link href={"/creators/contactForm"}>
+            <Link href={"/creators/contact"}>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}

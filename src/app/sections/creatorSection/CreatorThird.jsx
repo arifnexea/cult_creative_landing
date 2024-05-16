@@ -71,7 +71,7 @@ const CreatorThird = () => (
         </h1>
       </div>
       <div className="p-3">
-        <Link href={"/creators/contactForm"}>
+        <Link href={"/creators/contact"}>
           <motion.button
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}

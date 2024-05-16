@@ -73,7 +73,7 @@ const CreatorFirst = () => {
             amazing brand deals.
           </p>
           <div>
-            <Link href={"/creators/contactForm"}>
+            <Link href={"/creators/contact"}>
               <motion.button
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.8 }}
