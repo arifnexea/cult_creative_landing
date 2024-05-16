@@ -12,7 +12,7 @@ export const validateOtherField = (value) => (value === "" ? "Required" : "");
 export const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
-const BrandForm = ({ color }) => {
+const BrandForm = ({ color, image }) => {
   const [loading, setLoading] = useState();
 
   const industries = [
@@ -115,7 +115,7 @@ const BrandForm = ({ color }) => {
     <section className="flex items-center justify-center">
       <div className="basis-1/2 hidden lg:block">
         <Image
-          src="https://storage.googleapis.com/landing-cultcreative/main/Cult%20Creative%201.jpg"
+          src={image}
           alt="Brands"
           width={400}
           height={400}
