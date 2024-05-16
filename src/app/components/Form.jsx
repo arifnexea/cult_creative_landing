@@ -323,7 +323,7 @@ const BrandForm = ({ color, image }) => {
                     </>
                   )}
                 </Field>
-                <div className="text-end sm:col-span-3 mx-auto mt-auto">
+                <div className="text-end sm:col-span-3 mr-auto mt-auto">
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.8 }}
