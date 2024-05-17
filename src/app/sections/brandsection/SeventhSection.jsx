@@ -3,7 +3,7 @@ import BrandForm from "../../components/Form";
 
 const SeventhSection = () => {
   return (
-    <main id="form" className="bg-[#006D53] py-10 px-6">
+    <main className="bg-[#006D53] py-10 px-6">
       <BrandForm
         color={"#006D53"}
         image={

@@ -68,6 +68,12 @@ export const h2 = ({ children }) => (
   </h2>
 );
 
+export const h3 = ({ children }) => (
+  <h2 className="text-start text-1xl font-semibold text-pretty text-black my-10">
+    {children}
+  </h2>
+);
+
 export const p = ({ children }) => (
   <p className="my-3">
     {children}
@@ -78,6 +84,12 @@ export const ol = ({ children }) => (
   <ol className="list-decimal ml-10 my-5">
     {children}
   </ol>
+);
+
+export const ul = ({ children }) => (
+  <ul className="list-disc ml-10 my-5">
+    {children}
+  </ul>
 );
 
 export const li = ({ children }) => (

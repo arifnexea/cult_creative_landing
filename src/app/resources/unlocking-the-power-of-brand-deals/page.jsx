@@ -1,7 +1,7 @@
 "use client";
 import * as rc from "@/app/components/resource-content";
 
-const Resource1 = ({ params: { name } }) => {
+const Resource1 = () => {
   const title = "Unlocking the Power of Brand Deals: A Guide for Content Creators";
 
   return (
@@ -21,35 +21,37 @@ const Resource1 = ({ params: { name } }) => {
         </rc.p>
         <rc.ol>
           <rc.li>
-            Authenticity Is Key: Your audience trusts you for your authenticity, so it's important to collaborate with brands that align with your values and that resonate with your audience.
+            <b>Authenticity is key.</b> Your audience trusts you for your authenticity, so it's important to collaborate with brands that align with your values and that resonate with your audience.
           </rc.li>
           <rc.li>
-            Transparency in Disclosure: No one likes a liar and no one likes to get sued either. Always be transparent about your content by adhering to relevant advertising guidelines and clearly disclosing when a content is sponsored.
+            <b>Transparency in disclosure.</b> No one likes a liar and no one likes to get sued either. Always be transparent about your content by adhering to relevant advertising guidelines and clearly disclosing when a content is sponsored.
           </rc.li>
           <rc.li>
-            Quality over Quantity: Instead of pursuing numerous brand deals, prioritise the ones that will allow you to produce engaging and authentic content that adds value to both the brand and your audience.
+            <b>Quality over quantity.</b> Instead of pursuing numerous brand deals, prioritise the ones that will allow you to produce engaging and authentic content that adds value to both the brand and your audience.
           </rc.li>
           <rc.li>
-            Negotiation and Contracts: Familiarise yourself with negotiation tactics and remember to always navigate contracts with caution. Make sure the terms of the contract aligns with your brand and audience, and don't hesitate to seek legal guidance when necessary.
+            <b>Negotiation and contracts.</b> Familiarise yourself with negotiation tactics and remember to always navigate contracts with caution. Make sure the terms of the contract aligns with your brand and audience, and don't hesitate to seek legal guidance when necessary.
           </rc.li>
           <rc.li>
-            Consistent Brand Alignment: Maintain a consistent brand image and messaging across all your brand deals. This ensures cohesive and authentic representation of your brand and values.
+            <b>Consistent brand alignment.</b> Maintain a consistent brand image and messaging across all your brand deals. This ensures cohesive and authentic representation of your brand and values.
           </rc.li>
         </rc.ol>
         <rc.p>
           Stick to this guide when approaching brand deals, so you can establish yourself as a credible and sought-after content creator whilst also maintaining the trust of your audience.
         </rc.p>
 
-        <rc.h2>How do you get brand deals on Cult Creative?</rc.h2>
+        <rc.h2>How Do You Get Brand Deals on Cult Creative?</rc.h2>
         <rc.p>
-          Scoring your first (or second or third) brand deal just got easier thanks to Cult Creative’s creator platform. Whether you’re into fashion and beauty, tech and finance, or maybe you’re an explorer who’s ready to seize any opportunity that comes your way, we’ll connect you to amazing brands across South East Asia when you become a CC creator.
+          Scoring your first (or second or third) brand deal just got easier thanks to{" "}
+          <rc.a href="https://www.instagram.com/cultcreativeasia/">Cult Creative’s creator platform</rc.a>
+          . Whether you’re into fashion and beauty, tech and finance, or maybe you’re an explorer who’s ready to seize any opportunity that comes your way, we’ll connect you to amazing brands across Southeast Asia when you become a CC creator.
         </rc.p>
         <rc.p>
           Did I mention it’s free to use? Yup, it is!
         </rc.p>
         <rc.p>
           Simply fill out{" "}
-          <rc.a href="/brands#form">this form</rc.a>{" "}
+          <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">this form</rc.a>{" "}
           and you’re on your way to securing your next brand deal.
         </rc.p>
 
@@ -61,13 +63,12 @@ const Resource1 = ({ params: { name } }) => {
           With this guide, you’ll be well-equipped to forge successful partnerships with brands whilst also retaining the trust and loyalty of your audience. Remember to always be authentic, transparent, and genuine about your content no matter who you’re creating it for.
         </rc.p>
       </rc.Content>
-
       <rc.Keywords>
         <rc.Keyword value="Creator Economy Malaysia" />
         <rc.Keyword value="Brand Deals for Creators" />
       </rc.Keywords>
     </rc.Page>
   );
-}
+};
 
 export default Resource1;
