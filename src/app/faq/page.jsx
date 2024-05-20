@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import LastSection from "../sections/brandsection/LastSection";
+import * as head from "@/app/components/head";
 
 const Accordion = () => {
   const [currentTab, setCurrentTab] = useState("creators");
@@ -30,6 +31,7 @@ const Accordion = () => {
 
   return (
     <>
+      <head.Title value="FAQ" />
       <Header />
       <section className="relative z-1 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px] text-black">
         <div className="container mx-auto">
