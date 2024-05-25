@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
+import { createCreators } from "@/app/sheets/google-sheet-action";
 
 const prisma = new PrismaClient();
 
@@ -25,6 +26,24 @@ export async function POST(req) {
         instaUsername: value.instaUsername,
         tiktokUsername: value.tiktokUsername,
       },
+    });
+
+    await createCreators({
+      name: value.name,
+      pronoun: value.pronoun,
+      phoneNumber: value.phoneNumber.toString(),
+      email: value.email,
+      nationality: value.nationality,
+      location: value.location,
+      dateOfBirth: new Date(value.dateOfBirth),
+      languages: value.languages.toString(),
+      otherlanguagesString: value.otherlanguagesString,
+      interests: value.interests.toString(),
+      otherinterestsString: value.otherinterestsString,
+      employmentType: value.employmentType,
+      otherEmploymentType: value.otherEmploymentType,
+      instaUsername: value.instaUsername,
+      tiktokUsername: value.tiktokUsername,
     });
 
     return new NextResponse(

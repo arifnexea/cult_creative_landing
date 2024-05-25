@@ -1,27 +1,39 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-// "use client";
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import LoadingIcon from "@/app/components/Icons/loading-icon";
+import dynamic from "next/dynamic";
+import useMediaQuery from "@/app/hooks/useMediaQuery";
+// import { useMediaQuery } from "@uidotdev/usehooks";
 
-const vid = [
-  {
-    id: uuidv4(),
-    // name: "https://storage.googleapis.com/landing-cultcreative/main/Trove%202%20x%20Cult%20Creative.mp4",
-    name: "https://storage.googleapis.com/landing-cultcreative/main/Raea%20x%20Cult%20Creative%20(1).mov",
-  },
-  {
-    id: uuidv4(),
-    name: "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mp4",
-  },
-];
+const VideoSmall = dynamic(() =>
+  import("@/app/sections/homeSection/VideoSmall")
+);
+
+export function getVideos() {
+  const vids = [
+    {
+      id: uuidv4(),
+      name: "https://storage.googleapis.com/landing-cultcreative/main/Raea%20x%20Cult%20Creative%20(1).mov",
+    },
+    {
+      id: uuidv4(),
+      name: "https://storage.googleapis.com/landing-cultcreative/main/Bata%20x%20Cult%20Creative.mp4",
+    },
+  ];
+
+  return vids;
+}
 
 const HomeFirst = () => {
   const [vidIndex, setVidIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const { isMdAndAbove } = useMediaQuery();
+
+  const vids = getVideos();
 
   return (
     <section className="p-8 bg-[#1340FF]">
@@ -39,7 +51,7 @@ const HomeFirst = () => {
           className="basis-1/2 flex flex-col space-y-10 text-center lg:text-start"
         >
           <h1
-            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-7xl lg:tracking-5 font-aileron"
+            className="2xl:text-[11rem] xl:text-[9rem] lg:text-[7rem] text-8xl lg:tracking-5 font-aileron"
             style={{
               lineHeight: "70%",
             }}
@@ -69,35 +81,38 @@ const HomeFirst = () => {
             ideas into captivating, quality content for brands.
           </p>
         </motion.div>
-        <div className="sticky top-32 my-10 basis-1/2">
-          <div className="sm:hidden">
-            <motion.video
-              key={vidIndex}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              src={vid[vidIndex]?.name}
-              className="h-[37rem] rounded-lg"
-              autoPlay
-              loop
-              muted
-              webkit-playsinline="true"
-              playsInline
-              preload="metadata"
-            >
-              <source type="video/mp4" />
-            </motion.video>
-          </div>
-          <div className="hidden sm:block">
+        <div className="sticky top-28 basis-1/2">
+          {/* <div className="flex gap-5 sm:gap-3 overflow-hidden px-4">
+            {vids &&
+              vids?.map((elem, i) => {
+                return (
+                  <video
+                    key={i}
+                    className="w-[100%] sm:w-[50%] rounded-lg object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    webkit-playsInline
+                    playsInline
+                    preload="metadata"
+                    // style={{
+                    //   transform: "translateX(-106%)",
+                    // }}
+                  >
+                    <source src={elem?.name} type="video/mp4" />
+                  </video>
+                );
+              })}
+          </div> */}
+
+          {isMdAndAbove ? (
             <div className="flex gap-3 justify-center">
-              {loading && <LoadingIcon w={"5em"} h={"5em"} c={"white"} />}
-              {vid &&
-                vid.map((elem, i) => {
+              {vids &&
+                vids?.map((elem, i) => {
                   return (
-                    // <VideoComponent key={i} src={elem?.name} />
                     <video
                       key={i}
-                      className="w-[50%] 2xl:h-[70vh] xl:[h-40vh] rounded-md object-cover"
+                      className="w-[40%] lg:w-[50%] rounded-lg object-cover"
                       autoPlay
                       loop
                       muted
@@ -110,21 +125,62 @@ const HomeFirst = () => {
                   );
                 })}
             </div>
-          </div>
-          <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5 sm:hidden">
-            {vid.map((_, i) => {
-              return i === vidIndex ? (
-                <Icon key={i} icon="icon-park-outline:dot" width={20} />
-              ) : (
+          ) : (
+            <>
+              <div className="flex mx-auto justify-center">
                 <Icon
-                  key={i}
-                  icon="octicon:dot-24"
-                  width={20}
-                  onClick={() => setVidIndex(i)}
+                  icon="pepicons-pencil:line-x"
+                  style={{ color: vidIndex === 0 ? "#8ea0f1" : "black" }}
+                  width={70}
+                  onClick={() => setVidIndex(0)}
+                  cursor={"pointer"}
                 />
-              );
-            })}
-          </div>
+                <Icon
+                  icon="pepicons-pencil:line-x"
+                  style={{ color: vidIndex === 1 ? "#8ea0f1" : "black" }}
+                  width={70}
+                  onClick={() => setVidIndex(1)}
+                  cursor={"pointer"}
+                />
+              </div>
+              <VideoSmall src={vids[vidIndex]?.name} />
+            </>
+          )}
+
+          {/* <div className="hidden lg:block">
+            <motion.video
+              key={vidIndex}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              src={vids[vidIndex]?.name}
+              className="h-[37rem] rounded-lg"
+              autoPlay
+              loop
+              muted
+              webkit-playsinline="true"
+              playsInline
+              preload="metadata"
+            >
+              <source type="video/mp4" />
+            </motion.video>
+          </div> */}
+          {/* {isSmallDevice && (
+            <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5">
+              {vids?.map((_, i) => {
+                return i === vidIndex ? (
+                  <Icon key={i} icon="icon-park-outline:dot" width={20} />
+                ) : (
+                  <Icon
+                    key={i}
+                    icon="octicon:dot-24"
+                    width={20}
+                    onClick={() => setVidIndex(i)}
+                  />
+                );
+              })}
+            </div>
+          )} */}
         </div>
       </div>
 
