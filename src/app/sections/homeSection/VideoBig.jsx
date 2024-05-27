@@ -34,7 +34,7 @@ const VideoBig = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         src={elem.url}
-        className="w-[40vw] rounded-lg "
+        className="w-[40vw] rounded-lg"
         autoPlay
         loop
         muted

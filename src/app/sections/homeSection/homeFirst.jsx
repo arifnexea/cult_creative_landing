@@ -82,33 +82,10 @@ const HomeFirst = () => {
           </p>
         </motion.div>
         <div className="sticky top-28 basis-1/2">
-          {/* <div className="flex gap-5 sm:gap-3 overflow-hidden px-4">
-            {vids &&
-              vids?.map((elem, i) => {
-                return (
-                  <video
-                    key={i}
-                    className="w-[100%] sm:w-[50%] rounded-lg object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    webkit-playsInline
-                    playsInline
-                    preload="metadata"
-                    // style={{
-                    //   transform: "translateX(-106%)",
-                    // }}
-                  >
-                    <source src={elem?.name} type="video/mp4" />
-                  </video>
-                );
-              })}
-          </div> */}
-
           {isMdAndAbove ? (
             <div className="flex gap-3 justify-center">
               {vids &&
-                vids?.map((elem, i) => {
+                vids.map((elem, i) => {
                   return (
                     <video
                       key={i}
@@ -146,41 +123,6 @@ const HomeFirst = () => {
               <VideoSmall src={vids[vidIndex]?.name} />
             </>
           )}
-
-          {/* <div className="hidden lg:block">
-            <motion.video
-              key={vidIndex}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              src={vids[vidIndex]?.name}
-              className="h-[37rem] rounded-lg"
-              autoPlay
-              loop
-              muted
-              webkit-playsinline="true"
-              playsInline
-              preload="metadata"
-            >
-              <source type="video/mp4" />
-            </motion.video>
-          </div> */}
-          {/* {isSmallDevice && (
-            <div className="flex absolute left-[50%] translate-x-[-50%] bottom-5">
-              {vids?.map((_, i) => {
-                return i === vidIndex ? (
-                  <Icon key={i} icon="icon-park-outline:dot" width={20} />
-                ) : (
-                  <Icon
-                    key={i}
-                    icon="octicon:dot-24"
-                    width={20}
-                    onClick={() => setVidIndex(i)}
-                  />
-                );
-              })}
-            </div>
-          )} */}
         </div>
       </div>
 
