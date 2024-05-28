@@ -1,4 +1,3 @@
-import * as head from "@/app/components/head";
 import Header from "@/app/components/Header";
 import LastSection from "@/app/sections/brandsection/LastSection";
 
@@ -9,22 +8,19 @@ import LastSection from "@/app/sections/brandsection/LastSection";
 // # Sections
 
 // `children` shall contain only one `Content` followed by one `Keywords`
-export const Page = ({ title, children }) => (
-  <>
-    <head.Title value={title} />
-    <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
-      <Header logo={"/images/logo.svg"} />
-      <div className="text-center py-10 bg-[#8A5AFE]">
-        <h className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
-          Resources
-        </h>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 p-10 bg-slate-50 text-gray-500">
-        {children}
-      </div>
-      <LastSection color="#1340FF" />
-    </main>
-  </>
+export const Page = ({ children }) => (
+  <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
+    <Header logo={"/images/logo.svg"} />
+    <div className="text-center py-10 bg-[#8A5AFE]">
+      <h className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
+        Resources
+      </h>
+    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 p-10 bg-slate-50 text-gray-500">
+      {children}
+    </div>
+    <LastSection color="#1340FF" />
+  </main>
 );
 
 export const Content = ({ children }) => (

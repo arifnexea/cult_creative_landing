@@ -4,7 +4,7 @@ import Header from "@/app/components/Header";
 import LastSection from "../sections/brandsection/LastSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import * as head from "@/app/components/head";
+import PageMeta from "@/app/components/PageMeta";
 
 const AboutUs = () => {
   const RoundedH1 = ({ children }) => (
@@ -15,7 +15,10 @@ const AboutUs = () => {
 
   return (
     <>
-      <head.Title value="About Us" />
+      <PageMeta
+        title="About Us"
+        desc=""
+      />
       <main className="flex min-h-screen flex-col">
         <Header logo={"/images/logo.svg"} />
         <Suspense fallback={<p>Loading...</p>}>

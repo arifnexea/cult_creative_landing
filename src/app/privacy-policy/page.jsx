@@ -1,14 +1,16 @@
 "use client";
-import React from "react";
+import PageMeta from "@/app/components/PageMeta";
 import Header from "../components/Header";
-import LastSection from "../sections/brandsection/LastSection";
 import Image from "next/image";
-import * as head from "@/app/components/head";
+import LastSection from "../sections/brandsection/LastSection";
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <head.Title value="Privacy Policy" />
+      <PageMeta
+        title="Privacy Policy"
+        desc=""
+      />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header logo={"/images/logo.svg"} />
         <div className="text-center py-10 bg-[#8A5AFE]">
