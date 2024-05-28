@@ -9,7 +9,7 @@ export const PageMeta = ({ title, desc }) => {
   // This measurement ID is linked to the Google Analytics account for ljcnexea@m.nexea.co
   // TODO: Change it once the main Analytics account has been set up
   // ReactGA.initialize("G-DQ9HQYL7Y2");
-  ReactGA.initialize("G-WDLBYR1ETY");
+  ReactGA.initialize("G-NP1X4Y7S7R");
 
   return (
     <>
