@@ -1,5 +1,5 @@
 "use client";
-import * as head from "@/app/components/head";
+import PageMeta from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import CreatorFirst from "@/app/sections/creatorSection/CreatorFirst";
@@ -15,7 +15,10 @@ import { Toaster } from "react-hot-toast";
 const Creators = () => {
   return (
     <>
-      <head.Title value="Creators" />
+      <PageMeta
+        title="Creators"
+        desc=""
+      />
       <main className="flex min-h-screen flex-col">
         <Header logo={"/images/logo.svg"} />
         <Suspense fallback={<p>Loading...</p>}>

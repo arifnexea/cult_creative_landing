@@ -1,14 +1,17 @@
 "use client";
+import PageMeta from "@/app/components/PageMeta";
 import Header from "../components/Header";
-import LastSection from "../sections/brandsection/LastSection";
-import News from "../components/News";
 import resourcesData from "../contants/resources.json";
-import * as head from "@/app/components/head";
+import News from "../components/News";
+import LastSection from "../sections/brandsection/LastSection";
 
 const Resources = () => {
   return (
     <>
-      <head.Title value="Resources" />
+      <PageMeta
+        title="Resources"
+        desc=""
+      />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header logo={"/images/logo.svg"} />
         <div className="text-center py-10 bg-[#8A5AFE]">

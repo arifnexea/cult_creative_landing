@@ -1,15 +1,18 @@
 "use client";
-import { Suspense } from "react";
+import PageMeta from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
-import LastSection from "../sections/brandsection/LastSection";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import * as head from "@/app/components/head";
+import LastSection from "../sections/brandsection/LastSection";
 
 const ContactUs = () => {
   return (
     <>
-      <head.Title value="Contact Us" />
+      <PageMeta
+        title="Contact Us"
+        desc=""
+      />
       <main className="flex min-h-screen flex-col">
         <Header logo={"/images/logo.svg"} />
         <Suspense fallback={<p>Loading...</p>}>
