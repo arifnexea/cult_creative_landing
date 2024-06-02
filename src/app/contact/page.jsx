@@ -1,17 +1,18 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import LastSection from "../sections/brandsection/LastSection";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
-const ContactUs = () => {
+const Contact = () => {
   return (
     <>
       <PageMeta
         title="Contact Us"
         desc="Connect with Cult Creative. Reach out to our dedicated support team via email or Instagram for any inquiries or assistance."
+        canonicalPath="/contact"
       />
       <main className="flex min-h-screen flex-col">
         <Header logo={"/images/logo.svg"} />
@@ -137,4 +138,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;

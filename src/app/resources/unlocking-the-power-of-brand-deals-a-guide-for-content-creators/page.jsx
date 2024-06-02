@@ -1,8 +1,9 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import * as rc from "@/app/components/resource-content";
 
-const Resource1 = () => {
+// Resource1
+export default () => {
   const title = "Unlocking the Power of Brand Deals: A Guide for Content Creators";
 
   return (
@@ -10,6 +11,7 @@ const Resource1 = () => {
       <PageMeta
         title={title}
         desc="A guide to securing brand deals with Cult Creative to simplify the process of connecting with brands, letting creators grow their careers authentically and lucratively."
+        canonicalPath="/resources/unlocking-the-power-of-brand-deals-a-guide-for-content-creators"
       />
       <rc.Page>
         <rc.Content>
@@ -115,5 +117,3 @@ const Resource1 = () => {
     </>
   );
 };
-
-export default Resource1;

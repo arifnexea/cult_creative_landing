@@ -1,10 +1,10 @@
 "use client";
-import { Suspense } from "react";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
-import LastSection from "../sections/brandsection/LastSection";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import PageMeta from "@/app/components/PageMeta";
+import LastSection from "../sections/brandsection/LastSection";
 
 const RoundedItem = ({ children }) => (
   <p className="rounded-full border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full font-bold uppercase lg:-tracking-[.1rem] xl:-tracking-[.1rem]">
@@ -18,6 +18,7 @@ const About = () => {
       <PageMeta
         title="About Us"
         desc="At Cult Creative, we empower creators to pursue passion, purpose, and prosperity while challenging stereotypes about creativity."
+        canonicalPath="/about"
       />
       <main className="flex min-h-screen flex-col">
         <Header logo={"/images/logo.svg"} />

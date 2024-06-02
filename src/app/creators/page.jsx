@@ -1,5 +1,5 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import CreatorFirst from "@/app/sections/creatorSection/CreatorFirst";
@@ -18,6 +18,7 @@ const Creators = () => {
       <PageMeta
         title="Creators"
         desc="Join Cult Creative and monetize your social media presence with branded deals, where creators get paid hassle-free within 30 days. Sign up, get synced to amazing brand deals, and upgrade your content creator game today."
+        canonicalPath="/creators"
         ogTitle="Get Branded Deals for UGC - Earn Side Money while Creating Content"
       />
       <main className="flex min-h-screen flex-col">

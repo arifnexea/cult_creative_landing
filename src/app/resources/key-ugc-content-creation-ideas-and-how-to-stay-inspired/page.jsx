@@ -1,8 +1,9 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import * as rc from "@/app/components/resource-content";
 
-const Resource4 = () => {
+// Resource4
+export default () => {
   const title = "Key UGC Content Creation Ideas and How to Stay Inspired";
 
   return (
@@ -10,6 +11,7 @@ const Resource4 = () => {
       <PageMeta
         title={title}
         desc="Stay motivated by setting goals and engaging with a supportive community. Create high-quality content by understanding your audience, prioritising consistency and using engaging visuals."
+        canonicalPath="/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired"
       />
       <rc.Page>
         <rc.Content>
@@ -141,5 +143,3 @@ const Resource4 = () => {
     </>
   );
 };
-
-export default Resource4;

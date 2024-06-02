@@ -3,7 +3,7 @@ import { useState, Suspense } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import * as yup from "yup";
 import { phoneRegExp, validateOtherField } from "@/app/components/Form";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import { Formik, Form, Field } from "formik";
@@ -114,7 +114,9 @@ const CreatorForm = () => {
     <>
       <PageMeta
         title="Get Started as a Creator"
+        // TODO: Need description
         desc=""
+        canonicalPath="/creators/contact"
       />
       <main className="flex min-h-screen flex-col">
         <Header logo={"/images/logo.svg"} />

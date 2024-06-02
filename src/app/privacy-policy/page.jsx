@@ -1,5 +1,5 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "../components/Header";
 import Image from "next/image";
 import LastSection from "../sections/brandsection/LastSection";
@@ -10,6 +10,7 @@ const PrivacyPolicy = () => {
       <PageMeta
         title="Privacy Policy"
         desc="Safeguard your data with Cult Creative’s Privacy Policy. Learn how we protect your information and ensure transparency in our practices."
+        canonicalPath="/privacy-policy"
       />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header logo={"/images/logo.svg"} />

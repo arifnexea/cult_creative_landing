@@ -1,5 +1,5 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "../components/Header";
 import Image from "next/image";
 import LastSection from "../sections/brandsection/LastSection";
@@ -10,6 +10,7 @@ const Terms = () => {
       <PageMeta
         title="Terms and Conditions"
         desc="Understand Cult Creative’s Terms and Conditions. Discover our guidelines and agreements for using our platform and services."
+        canonicalPath="/terms-and-conditions"
       />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header logo={"/images/logo.svg"} />

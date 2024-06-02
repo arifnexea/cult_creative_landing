@@ -1,8 +1,9 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import * as rc from "@/app/components/resource-content";
 
-const Resource6 = () => {
+// Resource6
+export default () => {
   const title = "Why and How Does Creator Marketing Work?";
 
   return (
@@ -10,6 +11,7 @@ const Resource6 = () => {
       <PageMeta
         title={title}
         desc="Creator marketing thrives on authenticity. Brands can easily initiate UGC campaigns through platforms like Cult Creative, which connects brands with suitable creators hassle-free."
+        canonicalPath="/resources/why-and-how-does-creator-marketing-work"
       />
       <rc.Page>
         <rc.Content>
@@ -90,5 +92,3 @@ const Resource6 = () => {
     </>
   );
 };
-
-export default Resource6;

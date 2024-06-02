@@ -1,8 +1,9 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import * as rc from "@/app/components/resource-content";
 
-const Resource5 = () => {
+// Resource5
+export default () => {
   const title = "Unlocking UGC Creativity: How-To Guide + Examples";
 
   return (
@@ -10,6 +11,7 @@ const Resource5 = () => {
       <PageMeta
         title={title}
         desc="Read about the rise of user-generated content for marketing. Learn about what aspiring creators should do. See examples of impactful content formats for social media."
+        canonicalPath="/resources/unlocking-ugc-creativity-howto-guide-examples"
       />
       <rc.Page>
         <rc.Content>
@@ -85,5 +87,3 @@ const Resource5 = () => {
     </>
   );
 };
-
-export default Resource5;
