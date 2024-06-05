@@ -10,10 +10,8 @@ const CreatorLast = () => {
     <section className={`flex p-10  items-center justify-center bg-[${color}]`}>
       <div className="basis-1/2 hidden xl:block">
         <Image
-          src={
-            "https://storage.googleapis.com/landing-cultcreative/creator/Cult%20Creative%202%20(1).jpg"
-          }
-          alt="creator"
+          src="https://storage.googleapis.com/landing-cultcreative/creator/Cult%20Creative%202%20(1).jpg"
+          alt=""
           width={600}
           height={600}
           className="rounded-lg"

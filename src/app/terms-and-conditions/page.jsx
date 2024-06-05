@@ -15,9 +15,9 @@ const Terms = () => {
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header logo={"/images/logo.svg"} />
         <div className="text-center py-10 bg-[#8A5AFE]">
-          <h className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
             Terms and Conditions
-          </h>
+          </h1>
         </div>
         {/* <div className="w-[70%] py-10 mx-auto text-black text-justify font-times text-[1.1rem]">
           <p>
@@ -64,9 +64,9 @@ const Terms = () => {
               <Image
                 key={i}
                 src={`/tnc/tnc-${i + 1}.jpg`}
+                alt={`Terms and conditions, page ${i + 1}`}
                 width={400}
                 height={600}
-                alt="1"
                 className="bg-black bg-clip-text sm:w-[65%] w-full mx-auto"
                 draggable="false"
               />

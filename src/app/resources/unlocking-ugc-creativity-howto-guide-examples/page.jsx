@@ -73,8 +73,10 @@ export default () => {
           </rc.ol>
           <rc.p>
             We’ve worked with countless talented creators on brand deals and campaigns, from the newbies to the pros. If you’re looking to kickstart your content creator era, check out our creator platform and{" "}
-            <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">fill in this form</rc.a>
-            . We’ll get you those brand deals in no time!
+            <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">
+              fill in this form
+            </rc.a>.
+            We’ll get you those brand deals in no time!
           </rc.p>
         </rc.Content>
         <rc.Keywords>

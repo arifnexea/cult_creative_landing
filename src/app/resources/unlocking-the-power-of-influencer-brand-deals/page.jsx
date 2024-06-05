@@ -50,7 +50,9 @@ export default () => {
           <rc.ol>
             <rc.li>
               Opt into the platform by filling up{" "}
-              <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">this form</rc.a>.
+              <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">
+                this form
+              </rc.a>.
             </rc.li>
             <rc.li>
               We match you to brand deals that fit your personal brand.

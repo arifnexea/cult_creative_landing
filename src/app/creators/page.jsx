@@ -17,7 +17,7 @@ const Creators = () => {
     <>
       <PageMeta
         title="Creators"
-        desc="Join Cult Creative and monetize your social media presence with branded deals, where creators get paid hassle-free within 30 days. Sign up, get synced to amazing brand deals, and upgrade your content creator game today."
+        desc="Join Cult Creative and monetise your social media presence with brand deals, where creators get paid hassle-free within 30 days. Sign up, get synced to amazing brand deals, and up your content creator game today."
         canonicalPath="/creators"
         ogTitle="Get Branded Deals for UGC - Earn Side Money while Creating Content"
       />

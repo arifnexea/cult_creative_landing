@@ -16,9 +16,9 @@ const Resources = () => {
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header logo={"/images/logo.svg"} />
         <div className="text-center py-10 bg-[#8A5AFE]">
-          <h className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
             Resources
-          </h>
+          </h1>
           {/* <p className="my-6">Read our news from top talents</p> */}
         </div>
         <div className="px-5 py-10 bg-slate-300">

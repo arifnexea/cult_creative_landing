@@ -22,7 +22,7 @@ const Header = ({ logo }) => {
           <motion.div whileHover={{ scale: 1.2 }}>
             <Image
               src={"/images/logo.svg"}
-              alt="logo"
+              alt="Cult Creative header logo"
               width={180}
               height={180}
               className="text-cyan-600"

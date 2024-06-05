@@ -18,7 +18,7 @@ const HomeThree = () => {
           >
             <Image
               src="/thumbnail.png"
-              alt="Thumbnail Image"
+              alt="Cult Creative founder explains how their services work."
               width={1000}
               height={562.5}
               className="rounded-md hover:scale-105 transition-all ease-in-out duration-200 "
@@ -71,7 +71,7 @@ const HomeThree = () => {
               lineHeight: "70%",
             }}
           >
-            how it{" "}
+            how it<br />
             <motion.span
               initial={{ opacity: 0, scale: 0 }}
               animate={{
@@ -83,9 +83,8 @@ const HomeThree = () => {
               }}
               className="font-times italic"
             >
-              <br /> works
+              works<br />
             </motion.span>
-            <br />
           </h2>
 
           <motion.div

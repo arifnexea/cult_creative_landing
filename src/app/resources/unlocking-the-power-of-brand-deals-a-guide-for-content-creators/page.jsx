@@ -79,8 +79,8 @@ export default () => {
             thanks to{" "}
             <rc.a href="https://www.instagram.com/cultcreativeasia/">
               Cult Creative’s creator platform
-            </rc.a>
-            . Whether you’re into fashion and beauty, tech and finance, or maybe
+            </rc.a>.
+            Whether you’re into fashion and beauty, tech and finance, or maybe
             you’re an explorer who’s ready to seize any opportunity that comes
             your way, we’ll connect you to amazing brands across Southeast Asia
             when you become a CC creator.

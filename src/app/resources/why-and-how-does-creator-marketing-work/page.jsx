@@ -57,8 +57,9 @@ export default () => {
           <rc.h2>Get Started with Your Brand UGC Campaigns</rc.h2>
           <rc.p>
             To get started with creator marketing and run successful paid UGC campaigns, start with{" "}
-            <rc.a href="https://www.cultcreative.asia/hire-a-content-creation-team-with-cult-creative">Cult Creative</rc.a>
-            .
+            <rc.a href="https://www.cultcreative.asia/hire-a-content-creation-team-with-cult-creative">
+              Cult Creative
+            </rc.a>.
           </rc.p>
           <rc.p>
             We’ve set it up so it’s easy for you as a brand to ditch the hassle that’s related to UGC and influencer marketing.

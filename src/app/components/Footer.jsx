@@ -1,14 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const ListItem = ({ href, target, children }) => (
+  <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
+    <Link
+      href={href}
+      target={target}
+    >
+      {children}
+    </Link>
+  </li>
+);
+
 const Footer = () => {
   return (
     <section className="text-[#231F20]">
       <div className="flex item-start gap-10 xl:gap-40 flex-wrap">
         <div className="grow">
           <Image
-            src={"/images/logo1.png"}
-            alt="Cult creative"
+            src="/images/logo1.png"
+            alt="Cult Creative footer logo"
             width={130}
             height={130}
           />
@@ -20,67 +31,49 @@ const Footer = () => {
         <div>
           <p className="font-bold text-2xl -tracking-[.1rem]">Cult Careers</p>
           <ul className="font-light text-sm">
-            <Link
+            <ListItem
               href="https://www.cultcreative.asia/employers"
-              target="__blank"
+              target="_blank"
             >
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                Hire a Creative
-              </li>
-            </Link>
-            <Link
+              Hire a Creative
+            </ListItem>
+            <ListItem
               href="https://web.cultcreative.asia/?utm_source=wix&utm_medium=job_page&utm_campaign=general_CCWL_website"
-              target="__blank"
+              target="_blank"
             >
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                Apply to Creative Jobs
-              </li>
-            </Link>
+              Apply to Creative Jobs
+            </ListItem>
           </ul>
         </div>
         <div>
           <p className="font-bold text-2xl -tracking-[.1rem]">Company</p>
           <ul className="font-light text-sm">
-            <Link href="/about">
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                About Us
-              </li>
-            </Link>
-            <Link href="/faq">
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                FAQ
-              </li>
-            </Link>
-            <Link href="/contact">
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                Contact Us
-              </li>
-            </Link>
-            <Link href="/resources">
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                Resources
-              </li>
-            </Link>
-            <Link href="/newsroom">
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                Newsroom
-              </li>
-            </Link>
+            <ListItem href="/about">
+              About Us
+            </ListItem>
+            <ListItem href="/faq">
+              FAQ
+            </ListItem>
+            <ListItem href="/contact">
+              Contact Us
+            </ListItem>
+            <ListItem href="/resources">
+              Resources
+            </ListItem>
+            <ListItem href="/newsroom">
+              Newsroom
+            </ListItem>
           </ul>
         </div>
         <div>
           <p className="font-bold text-2xl -tracking-[.1rem]">Support</p>
           <ul className="font-light text-sm">
-            <Link href="/privacy-policy">
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                Privacy Policy
-              </li>
-            </Link>
-            <Link href="/terms-and-conditions">
-              <li className="hover:text-[#8A5AFE] duration-150 cursor-pointer">
-                Terms and Conditions
-              </li>
-            </Link>
+            <ListItem href="/privacy-policy">
+              Privacy Policy
+            </ListItem>
+            <ListItem href="/terms-and-conditions">
+              Terms and Conditions
+            </ListItem>
           </ul>
         </div>
       </div>

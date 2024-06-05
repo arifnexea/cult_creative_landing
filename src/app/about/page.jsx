@@ -17,7 +17,7 @@ const About = () => {
     <>
       <PageMeta
         title="About Us"
-        desc="At Cult Creative, we empower creators to pursue passion, purpose, and prosperity while challenging stereotypes about creativity."
+        desc="At Cult Creative, we empower creators to pursue passion, purpose and prosperity while challenging stereotypes about creativity."
         canonicalPath="/about"
       />
       <main className="flex min-h-screen flex-col">
@@ -28,6 +28,7 @@ const About = () => {
               <div className="flex flex-col lg:justify-center lg:items-center">
                 <motion.video
                   src="https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%20About%20Page.mp4"
+                  alt=""
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
@@ -100,10 +101,8 @@ const About = () => {
               <div className="flex flex-row py-6 gap-6">
                 <div className="xl:flex lg:flex flex-col justify-items-end items-end basis-1/2 hidden">
                   <Image
-                    src={
-                      "https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%204%20(1).jpg"
-                    }
-                    alt="creator"
+                    src="https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%204%20(1).jpg"
+                    alt=""
                     width={500}
                     height={500}
                     className="rounded-lg"

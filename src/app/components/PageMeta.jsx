@@ -14,9 +14,12 @@ export const PageMeta = ({
   //
   // If unspecified, equal to `title`
   ogTitle,
-  // If unspecified, has value `"website"`
+  // If unspecified, defaults to `"website"`
   ogType,
+  // If unspecified, defaults to 1200x630 Cult Creative logo
   ogImage,
+  // If unspecified, defaults to alt text for said logo
+  ogImageAlt,
   // If unspecified, equal to `desc`
   ogDesc
 }) => {
@@ -39,7 +42,9 @@ export const PageMeta = ({
       {/* Do not insert `<title>` suffix; guidelines recommend that branding be left out */}
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:type" content={ogType || "website"} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={ogImage || "/images/og-image.png"} />
+      {/* https://ogp.me/#structured states that this is optional, but also that it "should" be specified if `og:image` is specified */}
+      <meta property="og:image:alt" content={ogImageAlt || "Cult Creative logo"} />
       <meta property="og:url" content={canonicalUrl} />
       {/* This property is optional, but `desc` is a nice default to have */}
       <meta property="og:description" content={ogDesc || desc} />

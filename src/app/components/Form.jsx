@@ -116,7 +116,7 @@ const BrandForm = ({ color, image }) => {
       <div className="basis-1/2 hidden lg:block">
         <Image
           src={image}
-          alt="Brands"
+          alt=""
           width={400}
           height={400}
           className="rounded-lg mx-auto xl:w-[600px]"

@@ -114,8 +114,7 @@ const CreatorForm = () => {
     <>
       <PageMeta
         title="Get Started as a Creator"
-        // TODO: Need description
-        desc=""
+        desc="Fill in this form to begin your content-creation journey with Cult Creative."
         canonicalPath="/creators/contact"
       />
       <main className="flex min-h-screen flex-col">
@@ -125,7 +124,7 @@ const CreatorForm = () => {
             <div className="basis-1/2 hidden xl:block">
               <Image
                 src="https://storage.googleapis.com/landing-cultcreative/creator/Cult%20Creative%202%20(1).jpg"
-                alt="creator"
+                alt=""
                 width={600}
                 height={600}
                 className="rounded-lg mx-auto"
