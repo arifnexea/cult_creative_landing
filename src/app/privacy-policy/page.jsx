@@ -1,8 +1,8 @@
 "use client";
 import { PageMeta } from "@/app/components/PageMeta";
-import Header from "../components/Header";
+import Header from "@/app/components/Header";
 import Image from "next/image";
-import LastSection from "../sections/brandsection/LastSection";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
 const PrivacyPolicy = () => {
   return (
@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
         canonicalPath="/privacy-policy"
       />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">
           <p className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
             Privacy Policy
@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
               />
             ))}
         </div>
-        <LastSection color={"#1340FF"} />
+        <LastSection color="#1340FF" />
       </main>
     </>
   );

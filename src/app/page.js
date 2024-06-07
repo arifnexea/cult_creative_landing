@@ -27,7 +27,7 @@ const Home = () => {
         ogTitle="Discover UGC Creators, Brand Deals and Creator Marketing Solutions with SEA’s Chosen Platform"
       />
       <main className="flex min-h-screen flex-col max-w-[100vw]">
-        <Header logo="/images/logo.svg" />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <HomeFirst />
           <HomeTwo />

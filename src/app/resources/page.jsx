@@ -1,9 +1,9 @@
 "use client";
 import { PageMeta } from "@/app/components/PageMeta";
-import Header from "../components/Header";
-import resourcesData from "../contants/resources.json";
-import News from "../components/News";
-import LastSection from "../sections/brandsection/LastSection";
+import Header from "@/app/components/Header";
+import resourcesData from "@/app/contants/resources.json";
+import News from "@/app/components/News";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
 const Resources = () => {
   return (
@@ -14,12 +14,11 @@ const Resources = () => {
         canonicalPath="/resources"
       />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
             Resources
           </h1>
-          {/* <p className="my-6">Read our news from top talents</p> */}
         </div>
         <div className="px-5 py-10 bg-slate-300">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -28,14 +27,14 @@ const Resources = () => {
                 <News
                   title={elem.title}
                   image={elem.image}
-                  type={"resource"}
+                  type="resource"
                   path={elem.path}
                 />
               </div>
             ))}
           </div>
         </div>
-        <LastSection color={"#1340FF"} />
+        <LastSection color="#1340FF" />
       </main>
     </>
   );

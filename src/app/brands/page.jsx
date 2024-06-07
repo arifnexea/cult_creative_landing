@@ -24,7 +24,7 @@ const Brands = () => {
         ogTitle="Digital Marketing Solutions for SMEs and Brands - Flexible UGC and KOL Campaign Management Agency"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo="/images/logo.svg" />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <FirstSection />
           <SecondSection />

@@ -4,7 +4,7 @@ import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import LastSection from "../sections/brandsection/LastSection";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
 const RoundedItem = ({ children }) => (
   <p className="rounded-full border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full font-bold uppercase lg:-tracking-[.1rem] xl:-tracking-[.1rem]">
@@ -21,7 +21,7 @@ const About = () => {
         canonicalPath="/about"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <section className="bg-[#FF3600] pt-6 pb-14 px-3">
             <div className="flex flex-col gap-4">
@@ -121,7 +121,7 @@ const About = () => {
               </div>
             </motion.div>
           </section>
-          <LastSection color={"#8A5AFE"} />
+          <LastSection color="#8A5AFE" />
         </Suspense>
       </main>
     </>

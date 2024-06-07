@@ -11,11 +11,11 @@ const Contact = () => {
     <>
       <PageMeta
         title="Contact Us"
-        desc="Connect with Cult Creative. Reach out to our dedicated support team via email or Instagram for any inquiries or assistance."
+        desc="Connect with Cult Creative. Reach out to our dedicated support team via email or Instagram for any enquiries or assistance."
         canonicalPath="/contact"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <section className="flex p-10 items-center justify-center bg-[#F4F4F4] text-[#8A5AFE] font-aileron">
             <motion.div

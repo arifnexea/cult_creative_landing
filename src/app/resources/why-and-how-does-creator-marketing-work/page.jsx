@@ -1,5 +1,6 @@
 "use client";
 import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
 // Resource6
@@ -12,6 +13,7 @@ export default () => {
         title={title}
         desc="Creator marketing thrives on authenticity. Brands can easily initiate UGC campaigns through platforms like Cult Creative, which connects brands with suitable creators hassle-free."
         canonicalPath="/resources/why-and-how-does-creator-marketing-work"
+        ogImage={resources[5].image}
       />
       <rc.Page>
         <rc.Content>

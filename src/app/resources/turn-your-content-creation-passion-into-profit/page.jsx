@@ -1,5 +1,6 @@
 "use client";
 import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
 // Resource3
@@ -12,6 +13,7 @@ export default () => {
         title={title}
         desc="Big brands today partner with creators for marketing. Learn about monetization strategies and how to engage authentically with your audience. And beware of competition and burnout."
         canonicalPath="/resources/turn-your-content-creation-passion-into-profit"
+        ogImage={resources[2].image}
       />
       <rc.Page>
         <rc.Content>

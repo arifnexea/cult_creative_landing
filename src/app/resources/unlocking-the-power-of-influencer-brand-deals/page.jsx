@@ -1,5 +1,6 @@
 "use client";
 import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
 // Resource2
@@ -12,6 +13,7 @@ export default () => {
         title={title}
         desc="Creators signed up with Cult Creative can identify their niche, build credibility and land brand deals hassle-free. We handle the administrative work so you can focus on being creative."
         canonicalPath="/resources/unlocking-the-power-of-influencer-brand-deals"
+        ogImage={resources[1].image}
       />
       <rc.Page>
         <rc.Content>

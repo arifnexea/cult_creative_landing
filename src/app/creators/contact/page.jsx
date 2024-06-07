@@ -118,7 +118,7 @@ const CreatorForm = () => {
         canonicalPath="/creators/contact"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <section className={`flex p-10 gap-5 items-center justify-center bg-[${color}]`}>
             <div className="basis-1/2 hidden xl:block">

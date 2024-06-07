@@ -1,5 +1,6 @@
 "use client";
 import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
 // Resource5
@@ -12,6 +13,7 @@ export default () => {
         title={title}
         desc="Read about the rise of user-generated content for marketing. Learn about what aspiring creators should do. See examples of impactful content formats for social media."
         canonicalPath="/resources/unlocking-ugc-creativity-howto-guide-examples"
+        ogImage={resources[4].image}
       />
       <rc.Page>
         <rc.Content>

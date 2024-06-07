@@ -1,5 +1,6 @@
 "use client";
 import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
 // Resource4
@@ -12,6 +13,7 @@ export default () => {
         title={title}
         desc="Stay motivated by setting goals and engaging with a supportive community. Create high-quality content by understanding your audience, prioritising consistency and using engaging visuals."
         canonicalPath="/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired"
+        ogImage={resources[3].image}
       />
       <rc.Page>
         <rc.Content>

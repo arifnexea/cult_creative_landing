@@ -22,7 +22,7 @@ const Creators = () => {
         ogTitle="Get Branded Deals for UGC - Earn Side Money while Creating Content"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <CreatorFirst />
           <CreatorSecond />
@@ -31,7 +31,7 @@ const Creators = () => {
           <CreatorFifth />
           <CreatorSixth />
           <CreatorLast />
-          <LastSection color={"#006D53"} />
+          <LastSection color="#006D53" />
           <Toaster position="top-center" />
         </Suspense>
       </main>
