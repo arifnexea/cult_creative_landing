@@ -1,32 +1,34 @@
 "use client";
-import { Suspense } from "react";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
-import LastSection from "../sections/brandsection/LastSection";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import PageMeta from "@/app/components/PageMeta";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
-const AboutUs = () => {
-  const RoundedH1 = ({ children }) => (
-    <h1 className="rounded-full border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full font-bold uppercase lg:-tracking-[.1rem] xl:-tracking-[.1rem]">
-      {children}
-    </h1>
-  );
+const RoundedItem = ({ children }) => (
+  <p className="rounded-full border-2 border-solid border-[#FF3600] lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full font-bold uppercase lg:-tracking-[.1rem] xl:-tracking-[.1rem]">
+    {children}
+  </p>
+);
 
+const About = () => {
   return (
     <>
       <PageMeta
         title="About Us"
-        desc=""
+        desc="At Cult Creative, we empower creators to pursue passion, purpose and prosperity while challenging stereotypes about creativity."
+        canonicalPath="/about"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <section className="bg-[#FF3600] pt-6 pb-14 px-3">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col lg:justify-center lg:items-center">
                 <motion.video
                   src="https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%20About%20Page.mp4"
+                  alt=""
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
@@ -76,7 +78,7 @@ const AboutUs = () => {
               className="flex flex-col justify-center items-center"
             >
               <div className="flex flex-col lg:flex-row w-[87%] items-center content-center">
-                <h1 className="xl:text-8xl lg:text-8xl text-7xl basis-1/2 m-2 -tracking-[.6rem] text-center">
+                <h2 className="xl:text-8xl lg:text-8xl text-7xl basis-1/2 m-2 -tracking-[.6rem] text-center">
                   we’re{" "}
                   <motion.span
                     initial={{ opacity: 0, scale: 0 }}
@@ -91,7 +93,7 @@ const AboutUs = () => {
                   >
                     different{" "}
                   </motion.span>
-                </h1>
+                </h2>
                 <p className="basis-1/2 lg:text-2xl text-xl leading-tight">
                   Rapid access to quality content by our expansive community of over 13,000 talented creators ready to bring your vision to life.
                 </p>
@@ -99,10 +101,8 @@ const AboutUs = () => {
               <div className="flex flex-row py-6 gap-6">
                 <div className="xl:flex lg:flex flex-col justify-items-end items-end basis-1/2 hidden">
                   <Image
-                    src={
-                      "https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%204%20(1).jpg"
-                    }
-                    alt="creator"
+                    src="https://storage.googleapis.com/landing-cultcreative/about/Cult%20Creative%204%20(1).jpg"
+                    alt=""
                     width={500}
                     height={500}
                     className="rounded-lg"
@@ -110,23 +110,22 @@ const AboutUs = () => {
                 </div>
                 <div className="flex flex-col lg:basis-1/2 xl:basis-1/2 basis-2/2 xl:text-4xl lg:text-3xl md:text-3xl text-2xl">
                   <div className="lg:p-5 p-3 my-4 mx-3 text-center xl:w-[70%] w-full">
-                    <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold uppercase lg:-tracking-[.10rem] xl:text-start lg:text-start text-center xl:-tracking-[0.3rem] italic">
+                    <p className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-bold uppercase lg:-tracking-[.10rem] xl:text-start lg:text-start text-center xl:-tracking-[0.3rem] italic">
                       2020: the year we started
-                    </h1>
+                    </p>
                   </div>
-                  <RoundedH1>13,000+ individual creators</RoundedH1>
-                  <RoundedH1>900+ companies onboarded</RoundedH1>
-                  <RoundedH1>1,200 jobs matched</RoundedH1>
+                  <RoundedItem>13,000+ individual creators</RoundedItem>
+                  <RoundedItem>900+ companies onboarded</RoundedItem>
+                  <RoundedItem>1,200 jobs matched</RoundedItem>
                 </div>
               </div>
             </motion.div>
           </section>
-          <LastSection color={"#8A5AFE"} />
+          <LastSection color="#8A5AFE" />
         </Suspense>
       </main>
     </>
-
   );
 };
 
-export default AboutUs;
+export default About;

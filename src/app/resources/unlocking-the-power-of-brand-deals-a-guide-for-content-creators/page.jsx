@@ -1,16 +1,19 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-const Resource1 = () => {
-  const title =
-    "Unlocking the Power of Brand Deals: A Guide for Content Creators";
+// Resource1
+export default () => {
+  const title = "Unlocking the Power of Brand Deals: A Guide for Content Creators";
 
   return (
     <>
       <PageMeta
         title={title}
-        desc=""
+        desc="A guide to securing brand deals with Cult Creative to simplify the process of connecting with brands, letting creators grow their careers authentically and lucratively."
+        canonicalPath="/resources/unlocking-the-power-of-brand-deals-a-guide-for-content-creators"
+        ogImage={resources[0].image}
       />
       <rc.Page>
         <rc.Content>
@@ -78,8 +81,8 @@ const Resource1 = () => {
             thanks to{" "}
             <rc.a href="https://www.instagram.com/cultcreativeasia/">
               Cult Creative’s creator platform
-            </rc.a>
-            . Whether you’re into fashion and beauty, tech and finance, or maybe
+            </rc.a>.
+            Whether you’re into fashion and beauty, tech and finance, or maybe
             you’re an explorer who’s ready to seize any opportunity that comes
             your way, we’ll connect you to amazing brands across Southeast Asia
             when you become a CC creator.
@@ -108,10 +111,11 @@ const Resource1 = () => {
         <rc.Keywords>
           <rc.Keyword value="Creator Economy Malaysia" />
           <rc.Keyword value="Brand Deals for Creators" />
+          <rc.Keyword value="Content Creator Tips" />
+          <rc.Keyword value="Authentic Brand Collaborations" />
+          <rc.Keyword value="Negotiating Brand Contracts" />
         </rc.Keywords>
       </rc.Page>
     </>
   );
 };
-
-export default Resource1;

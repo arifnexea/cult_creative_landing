@@ -1,15 +1,19 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-const Resource2 = () => {
+// Resource2
+export default () => {
   const title = "Unlocking the Power of Influencer Brand Deals";
 
   return (
     <>
       <PageMeta
         title={title}
-        desc=""
+        desc="Creators signed up with Cult Creative can identify their niche, build credibility and land brand deals hassle-free. We handle the administrative work so you can focus on being creative."
+        canonicalPath="/resources/unlocking-the-power-of-influencer-brand-deals"
+        ogImage={resources[1].image}
       />
       <rc.Page>
         <rc.Content>
@@ -48,7 +52,9 @@ const Resource2 = () => {
           <rc.ol>
             <rc.li>
               Opt into the platform by filling up{" "}
-              <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">this form</rc.a>.
+              <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">
+                this form
+              </rc.a>.
             </rc.li>
             <rc.li>
               We match you to brand deals that fit your personal brand.
@@ -77,13 +83,12 @@ const Resource2 = () => {
           </rc.p>
         </rc.Content>
         <rc.Keywords>
-          {/* TODO: No keywords given */}
-          <rc.Keyword value="" />
-          <rc.Keyword value="" />
+          <rc.Keyword value="UGC Marketing" />
+          <rc.Keyword value="Influencer Marketing" />
+          <rc.Keyword value="Brand Deals" />
+          <rc.Keyword value="Content Creator Tips" />
         </rc.Keywords>
       </rc.Page>
     </>
   );
 };
-
-export default Resource2;

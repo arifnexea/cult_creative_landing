@@ -1,20 +1,21 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import LastSection from "../sections/brandsection/LastSection";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
-const ContactUs = () => {
+const Contact = () => {
   return (
     <>
       <PageMeta
         title="Contact Us"
-        desc=""
+        desc="Connect with Cult Creative. Reach out to our dedicated support team via email or Instagram for any enquiries or assistance."
+        canonicalPath="/contact"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <section className="flex p-10 items-center justify-center bg-[#F4F4F4] text-[#8A5AFE] font-aileron">
             <motion.div
@@ -30,10 +31,9 @@ const ContactUs = () => {
             >
               <div>
                 <h1 className="lg:text-8xl xl:text-8xl text-5xl xl:-tracking-[.3rem] lg:-tracking-[.3rem] -tracking-[.1rem]">
-                  get
-                  <span className="font-times  font-medium">
-                    {" "}
-                    in <span className="italic xl:-tracking-[.5rem]"> touch</span>
+                  get{" "}
+                  <span className="font-times font-medium">
+                    in <span className="italic xl:-tracking-[.5rem]">touch</span>
                   </span>
                 </h1>
               </div>
@@ -138,4 +138,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;

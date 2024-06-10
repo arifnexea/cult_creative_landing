@@ -1,5 +1,5 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import CreatorFirst from "@/app/sections/creatorSection/CreatorFirst";
@@ -17,10 +17,12 @@ const Creators = () => {
     <>
       <PageMeta
         title="Creators"
-        desc=""
+        desc="Join Cult Creative and monetise your social media presence with brand deals, where creators get paid hassle-free within 30 days. Sign up, get synced to amazing brand deals, and up your content creator game today."
+        canonicalPath="/creators"
+        ogTitle="Get Branded Deals for UGC - Earn Side Money while Creating Content"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <CreatorFirst />
           <CreatorSecond />
@@ -29,7 +31,7 @@ const Creators = () => {
           <CreatorFifth />
           <CreatorSixth />
           <CreatorLast />
-          <LastSection color={"#006D53"} />
+          <LastSection color="#006D53" />
           <Toaster position="top-center" />
         </Suspense>
       </main>

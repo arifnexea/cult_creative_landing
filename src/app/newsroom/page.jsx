@@ -1,24 +1,24 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
-import Header from "../components/Header";
-import newsdata from "../contants/newsroom.json";
-import News from "../components/News";
-import LastSection from "../sections/brandsection/LastSection";
+import { PageMeta } from "@/app/components/PageMeta";
+import Header from "@/app/components/Header";
+import newsdata from "@/app/contants/newsroom.json";
+import News from "@/app/components/News";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
 const Newsroom = () => {
   return (
     <>
       <PageMeta
         title="Newsroom"
-        desc=""
+        desc="Stay updated with Cult Creative’s newsroom. Access the latest announcements, press releases and media coverage to stay informed about our journey and industry impact."
+        canonicalPath="/newsroom"
       />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">
-          <h className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
             Newsroom
-          </h>
-          <p className="my-6">Read our news from top talents</p>
+          </h1>
         </div>
         <div className="px-5 py-10 bg-slate-300">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -35,7 +35,7 @@ const Newsroom = () => {
             ))}
           </div>
         </div>
-        <LastSection color={"#1340FF"} />
+        <LastSection color="#1340FF" />
       </main>
     </>
   );

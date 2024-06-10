@@ -2,14 +2,28 @@
 
 import ReactGA from "react-ga4";
 
-// Take attributes instead of `children` because:
-// * we don't want to allow the user to pass anything but a string
-// * there is no need to type a closing tag
-export const PageMeta = ({ title, desc }) => {
-  // This measurement ID is linked to the Google Analytics account for ljcnexea@m.nexea.co
-  // TODO: Change it once the main Analytics account has been set up
-  // ReactGA.initialize("G-DQ9HQYL7Y2");
+export const PageMeta = ({
+  title,
+  desc,
+  // The path portion of the page's canonical URL
+  // Example: if the canonical URL is `http://www.example.com/example/page.html`, then `canonicalPath` is `/example/page.html`
+  canonicalPath,
+
+  // OpenGraph properties: https://ogp.me/
+  // Guidelines: https://ahrefs.com/blog/open-graph-meta-tags/
+  //
+  // If unspecified, equal to `title`
+  ogTitle,
+  // If unspecified, defaults to `"website"`
+  ogType,
+  // If unspecified, defaults to 1200x630 Cult Creative logo
+  ogImage,
+  // If unspecified, equal to `desc`
+  ogDesc
+}) => {
   ReactGA.initialize("G-NP1X4Y7S7R");
+
+  const canonicalUrl = `https://www.cultcreativeasia.com${canonicalPath}`;
 
   return (
     <>
@@ -21,8 +35,15 @@ export const PageMeta = ({ title, desc }) => {
       */}
       <title>{`${title} - Cult Creative`}</title>
       <meta name="description" content={desc} />
+      <link rel="canonical" href={canonicalUrl} />
+
+      {/* Do not insert `<title>` suffix; guidelines recommend that branding be left out */}
+      <meta property="og:title" content={ogTitle || title} />
+      <meta property="og:type" content={ogType || "website"} />
+      <meta property="og:image" content={ogImage || "/images/og-image.png"} />
+      <meta property="og:url" content={canonicalUrl} />
+      {/* This property is optional, but `desc` is a nice default to have */}
+      <meta property="og:description" content={ogDesc || desc} />
     </>
   );
 };
-
-export default PageMeta;

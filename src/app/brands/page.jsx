@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
@@ -19,10 +19,12 @@ const Brands = () => {
     <>
       <PageMeta
         title="Brands"
-        desc=""
+        desc="Tailored digital creator marketing solutions for SMEs and brands with flexible UGC and KOL campaign management to amplify your brand’s reach and engagement."
+        canonicalPath="/brands"
+        ogTitle="Digital Marketing Solutions for SMEs and Brands - Flexible UGC and KOL Campaign Management Agency"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo="/images/logo.svg" />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <FirstSection />
           <SecondSection />

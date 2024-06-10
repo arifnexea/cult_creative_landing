@@ -1,15 +1,19 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-const Resource6 = () => {
+// Resource6
+export default () => {
   const title = "Why and How Does Creator Marketing Work?";
 
   return (
     <>
       <PageMeta
         title={title}
-        desc=""
+        desc="Creator marketing thrives on authenticity. Brands can easily initiate UGC campaigns through platforms like Cult Creative, which connects brands with suitable creators hassle-free."
+        canonicalPath="/resources/why-and-how-does-creator-marketing-work"
+        ogImage={resources[5].image}
       />
       <rc.Page>
         <rc.Content>
@@ -55,8 +59,9 @@ const Resource6 = () => {
           <rc.h2>Get Started with Your Brand UGC Campaigns</rc.h2>
           <rc.p>
             To get started with creator marketing and run successful paid UGC campaigns, start with{" "}
-            <rc.a href="https://www.cultcreative.asia/hire-a-content-creation-team-with-cult-creative">Cult Creative</rc.a>
-            .
+            <rc.a href="https://www.cultcreative.asia/hire-a-content-creation-team-with-cult-creative">
+              Cult Creative
+            </rc.a>.
           </rc.p>
           <rc.p>
             We’ve set it up so it’s easy for you as a brand to ditch the hassle that’s related to UGC and influencer marketing.
@@ -80,13 +85,13 @@ const Resource6 = () => {
           </rc.p>
         </rc.Content>
         <rc.Keywords>
-          {/* TODO: No keywords given */}
-          <rc.Keyword value="" />
-          <rc.Keyword value="" />
+          <rc.Keyword value="Creator Marketing Benefits" />
+          <rc.Keyword value="Influencer Marketing Advantages" />
+          <rc.Keyword value="Building Brand Trust with Influencers" />
+          <rc.Keyword value="Effective UGC Strategies" />
+          <rc.Keyword value="Simplified UGC Campaign Management" />
         </rc.Keywords>
       </rc.Page>
     </>
   );
 };
-
-export default Resource6;

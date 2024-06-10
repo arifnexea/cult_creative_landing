@@ -3,7 +3,7 @@ import { useState, Suspense } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import * as yup from "yup";
 import { phoneRegExp, validateOtherField } from "@/app/components/Form";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import { Formik, Form, Field } from "formik";
@@ -114,16 +114,17 @@ const CreatorForm = () => {
     <>
       <PageMeta
         title="Get Started as a Creator"
-        desc=""
+        desc="Fill in this form to begin your content-creation journey with Cult Creative."
+        canonicalPath="/creators/contact"
       />
       <main className="flex min-h-screen flex-col">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <section className={`flex p-10 gap-5 items-center justify-center bg-[${color}]`}>
             <div className="basis-1/2 hidden xl:block">
               <Image
                 src="https://storage.googleapis.com/landing-cultcreative/creator/Cult%20Creative%202%20(1).jpg"
-                alt="creator"
+                alt=""
                 width={600}
                 height={600}
                 className="rounded-lg mx-auto"
@@ -139,12 +140,12 @@ const CreatorForm = () => {
                 </h1>
               </div>
               <div className="flex flex-col gap-6">
-                <h1 className="text-xl font-bold -tracking-[.05rem]">
+                <p className="text-xl font-bold -tracking-[.05rem]">
                   We’re excited to work together.
                   <br />
                   Tell us who you are and we’ll get back to you with suitable
                   brand deals.
-                </h1>
+                </p>
                 <Formik
                   initialValues={{
                     name: "",

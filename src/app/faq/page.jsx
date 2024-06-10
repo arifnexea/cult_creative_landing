@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import PageMeta from "@/app/components/PageMeta";
-import Header from "../components/Header";
-import LastSection from "../sections/brandsection/LastSection";
+import { PageMeta } from "@/app/components/PageMeta";
+import Header from "@/app/components/Header";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
 const Accordion = () => {
   const [currentTab, setCurrentTab] = useState("creators");
@@ -19,12 +19,12 @@ const Accordion = () => {
   const creators = (
     <div className="flex flex-col text-lg">
       <Item
-        title={"Do I have to pay to use Cult Creative?"}
-        text={"Nope! Cult Creative is a free platform and won’t cost you anything."}
+        title="Do I have to pay to use Cult Creative?"
+        text="Nope! Cult Creative is a free platform and won’t cost you anything."
       />
       <Item
-        title={"Who do I contact if I have any questions/inquiries?"}
-        text={"You may email our support team at support@cultcreative.asia or DM us on Instagram at @cultcreativeasia."}
+        title="Who do I contact if I have any questions/enquiries?"
+        text="You may email our support team at support@cultcreative.asia or DM us on Instagram at @cultcreativeasia."
       />
     </div>
   );
@@ -33,7 +33,8 @@ const Accordion = () => {
     <>
       <PageMeta
         title="FAQ"
-        desc=""
+        desc="Find answers to common questions here! Contact our support team via email or Instagram for enquiries."
+        canonicalPath="/faq"
       />
       <Header />
       <section className="relative z-1 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px] text-black">

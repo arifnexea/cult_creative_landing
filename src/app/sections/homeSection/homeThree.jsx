@@ -1,11 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 
-function HomeThree() {
+const HomeThree = () => {
   const [index, setIndex] = useState(false);
   const [thumbnail, setThumbnail] = useState(true);
 
@@ -19,7 +18,7 @@ function HomeThree() {
           >
             <Image
               src="/thumbnail.png"
-              alt="Thumbnail Image"
+              alt="Cult Creative founder explains how their services work."
               width={1000}
               height={562.5}
               className="rounded-md hover:scale-105 transition-all ease-in-out duration-200 "
@@ -66,13 +65,13 @@ function HomeThree() {
           }}
           className="basis-1/2 p-2 text-[#F4F4F4]"
         >
-          <h1
+          <h2
             className="xl:text-[10rem] lg:tracking-5 md:text-8xl text-6xl font-aileron font-light"
             style={{
               lineHeight: "70%",
             }}
           >
-            how it{" "}
+            how it<br />
             <motion.span
               initial={{ opacity: 0, scale: 0 }}
               animate={{
@@ -84,10 +83,9 @@ function HomeThree() {
               }}
               className="font-times italic"
             >
-              <br /> works
+              works<br />
             </motion.span>
-            <br />
-          </h1>
+          </h2>
 
           <motion.div
             initial={{ opacity: 0, y: 100 }}
@@ -104,7 +102,7 @@ function HomeThree() {
               We take the hassle out of creator marketing.
             </p>
             <p className="lg:w-[85%] lg:ml-4 xl:text-2xl md:text-md text-[20px] font-aileron font-light text-balance">
-              With a simple monthly subscription,here’s how we bridge brands and
+              With a simple monthly subscription, here’s how we bridge brands and
               agencies with creators to establish genuine relationships with
               customers.
             </p>
@@ -113,6 +111,6 @@ function HomeThree() {
       </div>
     </section>
   );
-}
+};
 
 export default HomeThree;

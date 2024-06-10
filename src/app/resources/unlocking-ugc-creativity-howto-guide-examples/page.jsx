@@ -1,15 +1,19 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-const Resource5 = () => {
+// Resource5
+export default () => {
   const title = "Unlocking UGC Creativity: How-To Guide + Examples";
 
   return (
     <>
       <PageMeta
         title={title}
-        desc=""
+        desc="Read about the rise of user-generated content for marketing. Learn about what aspiring creators should do. See examples of impactful content formats for social media."
+        canonicalPath="/resources/unlocking-ugc-creativity-howto-guide-examples"
+        ogImage={resources[4].image}
       />
       <rc.Page>
         <rc.Content>
@@ -71,18 +75,19 @@ const Resource5 = () => {
           </rc.ol>
           <rc.p>
             We’ve worked with countless talented creators on brand deals and campaigns, from the newbies to the pros. If you’re looking to kickstart your content creator era, check out our creator platform and{" "}
-            <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">fill in this form</rc.a>
-            . We’ll get you those brand deals in no time!
+            <rc.a href="https://airtable.com/appMK1DimSupLgFeU/shrc6kh4QsG1N0geq">
+              fill in this form
+            </rc.a>.
+            We’ll get you those brand deals in no time!
           </rc.p>
         </rc.Content>
         <rc.Keywords>
-          {/* TODO: No keywords given */}
-          <rc.Keyword value="" />
-          <rc.Keyword value="" />
+          <rc.Keyword value="UGC Marketing Guide" />
+          <rc.Keyword value="Content Creation Tips" />
+          <rc.Keyword value="Brand Deals for Creators" />
+          <rc.Keyword value="Creator Economy Malaysia" />
         </rc.Keywords>
       </rc.Page>
     </>
   );
 };
-
-export default Resource5;

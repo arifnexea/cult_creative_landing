@@ -1,22 +1,23 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
-import Header from "../components/Header";
+import { PageMeta } from "@/app/components/PageMeta";
+import Header from "@/app/components/Header";
 import Image from "next/image";
-import LastSection from "../sections/brandsection/LastSection";
+import LastSection from "@/app/sections/brandsection/LastSection";
 
 const Terms = () => {
   return (
     <>
       <PageMeta
         title="Terms and Conditions"
-        desc=""
+        desc="Understand Cult Creative’s Terms and Conditions. Discover our guidelines and agreements for using our platform and services."
+        canonicalPath="/terms-and-conditions"
       />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
-        <Header logo={"/images/logo.svg"} />
+        <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">
-          <h className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
             Terms and Conditions
-          </h>
+          </h1>
         </div>
         {/* <div className="w-[70%] py-10 mx-auto text-black text-justify font-times text-[1.1rem]">
           <p>
@@ -63,9 +64,9 @@ const Terms = () => {
               <Image
                 key={i}
                 src={`/tnc/tnc-${i + 1}.jpg`}
+                alt={`Terms and conditions, page ${i + 1}`}
                 width={400}
                 height={600}
-                alt="1"
                 className="bg-black bg-clip-text sm:w-[65%] w-full mx-auto"
                 draggable="false"
               />

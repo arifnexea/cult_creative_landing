@@ -1,15 +1,19 @@
 "use client";
-import PageMeta from "@/app/components/PageMeta";
+import { PageMeta } from "@/app/components/PageMeta";
+import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-const Resource3 = () => {
+// Resource3
+export default () => {
   const title = "Turn Your Content Creation Passion into Profit";
 
   return (
     <>
       <PageMeta
         title={title}
-        desc=""
+        desc="Big brands today partner with creators for marketing. Learn about monetization strategies and how to engage authentically with your audience. And beware of competition and burnout."
+        canonicalPath="/resources/turn-your-content-creation-passion-into-profit"
+        ogImage={resources[2].image}
       />
       <rc.Page>
         <rc.Content>
@@ -154,13 +158,14 @@ const Resource3 = () => {
           </rc.p>
         </rc.Content>
         <rc.Keywords>
-          {/* TODO: No keywords given */}
-          <rc.Keyword value="" />
-          <rc.Keyword value="" />
+          <rc.Keyword value="Content Creation Career" />
+          <rc.Keyword value="Content Creator Tips" />
+          <rc.Keyword value="Building an Online Presence" />
+          <rc.Keyword value="Social Media Engagement" />
+          <rc.Keyword value="Monetizing Content Creation" />
+          <rc.Keyword value="Creator Economy Malaysia" />
         </rc.Keywords>
       </rc.Page>
     </>
   );
 };
-
-export default Resource3;
