@@ -3,8 +3,7 @@ import { PageMeta } from "@/app/components/PageMeta";
 import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-// Resource3
-export default () => {
+const Resource3 = () => {
   const title = "Turn Your Content Creation Passion into Profit";
 
   return (
@@ -169,3 +168,5 @@ export default () => {
     </>
   );
 };
+
+export default Resource3;

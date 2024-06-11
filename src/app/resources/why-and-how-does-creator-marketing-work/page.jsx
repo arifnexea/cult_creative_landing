@@ -3,8 +3,7 @@ import { PageMeta } from "@/app/components/PageMeta";
 import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-// Resource6
-export default () => {
+const Resource6 = () => {
   const title = "Why and How Does Creator Marketing Work?";
 
   return (
@@ -95,3 +94,5 @@ export default () => {
     </>
   );
 };
+
+export default Resource6;
