@@ -3,8 +3,7 @@ import { PageMeta } from "@/app/components/PageMeta";
 import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-// Resource2
-export default () => {
+const Resource2 = () => {
   const title = "Unlocking the Power of Influencer Brand Deals";
 
   return (
@@ -92,3 +91,5 @@ export default () => {
     </>
   );
 };
+
+export default Resource2;

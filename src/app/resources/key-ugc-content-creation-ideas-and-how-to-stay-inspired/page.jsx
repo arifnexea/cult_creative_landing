@@ -3,8 +3,7 @@ import { PageMeta } from "@/app/components/PageMeta";
 import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-// Resource4
-export default () => {
+const Resource4 = () => {
   const title = "Key UGC Content Creation Ideas and How to Stay Inspired";
 
   return (
@@ -145,3 +144,5 @@ export default () => {
     </>
   );
 };
+
+export default Resource4;

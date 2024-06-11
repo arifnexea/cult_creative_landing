@@ -3,8 +3,7 @@ import { PageMeta } from "@/app/components/PageMeta";
 import resources from "@/app/contants/resources.json";
 import * as rc from "@/app/components/resource-content";
 
-// Resource1
-export default () => {
+const Resource1 = () => {
   const title = "Unlocking the Power of Brand Deals: A Guide for Content Creators";
 
   return (
@@ -119,3 +118,5 @@ export default () => {
     </>
   );
 };
+
+export default Resource1;
