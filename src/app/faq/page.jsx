@@ -1,41 +1,21 @@
-"use client";
-import { useState } from "react";
+import { makeCanonicalUrl } from "@/app/components/misc";
 import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
+import { Content } from "./Content";
 import LastSection from "@/app/sections/brandsection/LastSection";
 
-const Accordion = () => {
-  const [currentTab, setCurrentTab] = useState("creators");
+export const metadata = {
+  title: "FAQ",
+  description: "Find answers to common questions here! Contact our support team via email or Instagram for enquiries.",
+  alternates: {
+    canonical: makeCanonicalUrl("/faq"),
+  },
+};
 
-  const handleChangeTab = (e) => setCurrentTab(e.target.value);
-
-  const Item = ({ title, text }) => (
-    <div className={"grid grid-cols-1 md:grid-cols-2 gap-5 px-5 py-10 border-t-2 border-t-gray-200"}>
-      <p className="font-bold text-gray-800">{title}</p>
-      <p className="text-gray-600">{text}</p>
-    </div>
-  );
-
-  const creators = (
-    <div className="flex flex-col text-lg">
-      <Item
-        title="Do I have to pay to use Cult Creative?"
-        text="Nope! Cult Creative is a free platform and won’t cost you anything."
-      />
-      <Item
-        title="Who do I contact if I have any questions/enquiries?"
-        text="You may email our support team at support@cultcreative.asia or DM us on Instagram at @cultcreativeasia."
-      />
-    </div>
-  );
-
+const Faq = () => {
   return (
     <>
-      <PageMeta
-        title="FAQ"
-        desc="Find answers to common questions here! Contact our support team via email or Instagram for enquiries."
-        canonicalPath="/faq"
-      />
+      <PageMeta />
       <Header />
       <section className="relative z-1 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px] text-black">
         <div className="container mx-auto">
@@ -51,23 +31,7 @@ const Accordion = () => {
               </div>
             </div>
           </div>
-
-          {/* Tabs */}
-          <div className="flex flex-row gap-5 px-5 my-10 font-aileron font-bold">
-            <button
-              value={"creators"}
-              className={`${
-                currentTab === "creators" &&
-                "border-b-4 border-b-indigo-500 rounded-sm transition ease-in-out duration-300"
-              }`}
-              onClick={handleChangeTab}
-            >
-              Creator
-            </button>
-          </div>
-
-          {/* Items */}
-          {currentTab === "creators" && creators}
+          <Content />
         </div>
       </section>
       <LastSection />
@@ -75,4 +39,4 @@ const Accordion = () => {
   );
 };
 
-export default Accordion;
+export default Faq;

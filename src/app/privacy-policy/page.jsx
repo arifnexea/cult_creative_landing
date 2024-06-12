@@ -1,17 +1,21 @@
-"use client";
+import { makeCanonicalUrl } from "@/app/components/misc";
 import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import LastSection from "@/app/sections/brandsection/LastSection";
 
+export const metadata = {
+  title: "Privacy Policy",
+  description: "Safeguard your data with Cult Creative’s Privacy Policy. Learn how we protect your information and ensure transparency in our practices.",
+  alternates: {
+    canonical: makeCanonicalUrl("/privacy-policy"),
+  },
+};
+
 const PrivacyPolicy = () => {
   return (
     <>
-      <PageMeta
-        title="Privacy Policy"
-        desc="Safeguard your data with Cult Creative’s Privacy Policy. Learn how we protect your information and ensure transparency in our practices."
-        canonicalPath="/privacy-policy"
-      />
+      <PageMeta />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">

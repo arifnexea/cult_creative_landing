@@ -2,13 +2,11 @@ import Header from "@/app/components/Header";
 import LastSection from "@/app/sections/brandsection/LastSection";
 
 // Components for content of Resources pages
-// For convenience, names should be short
 // Recommended import: `import * as rc from "@/app/components/resource-content";`
 
-// # Sections
-
-// `children` shall contain only one `Content` followed by one `Keywords`
-export const Page = ({ children }) => (
+// `children` should contain the elements defined here
+// `keywords` shall be an array of strings
+export const Page = ({ children, keywords }) => (
   <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
     <Header />
     <div className="text-center py-10 bg-[#8A5AFE]">
@@ -18,37 +16,28 @@ export const Page = ({ children }) => (
       </p>
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 p-10 bg-slate-50 text-gray-500">
-      {children}
+      {/* Content */}
+      <div className="col-span-2 text-pretty text-[1.1rem]">
+        {children}
+      </div>
+
+      {/* Keywords */}
+      <div className="col-span-1 p-5">
+        <p className="text-start text-2xl font-semibold text-pretty text-black">
+          Keywords
+        </p>
+        <div className="flex flex-wrap gap-2 my-4">
+          {keywords.map((elem, i) => (
+            <div key={i} className="p-2 bg-[#DFD4FA] text-[#8A5AFE] rounded-full inline-block px-3 text-xs font-semibold font-aileron">
+              {elem}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
     <LastSection color="#1340FF" />
   </main>
 );
-
-export const Content = ({ children }) => (
-  <div className="col-span-2 text-pretty text-[1.1rem]">
-    {children}
-  </div>
-);
-
-// `children` shall contain only `Keyword`s
-export const Keywords = ({ children }) => (
-  <div className="col-span-1 p-5">
-    <p className="text-start text-2xl font-semibold text-pretty text-black ">
-      Keywords
-    </p>
-    <div className="flex flex-wrap gap-2 my-4">
-      {children}
-    </div>
-  </div>
-);
-
-export const Keyword = ({ value }) => (
-  <div className="p-2 bg-[#dfd4fa] text-[#8A5AFE] rounded-full inline-block px-3 text-xs font-semibold font-aileron">
-    {value}
-  </div>
-);
-
-// # Elements
 
 export const h1 = ({ children }) => (
   <h1
