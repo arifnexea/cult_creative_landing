@@ -1,5 +1,4 @@
 import { makeCanonicalUrl } from "@/app/components/misc";
-import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import * as cc from "./client-components"
@@ -16,7 +15,6 @@ export const metadata = {
 const About = () => {
   return (
     <main className="flex min-h-screen flex-col">
-      <PageMeta />
       <Header />
       <Suspense fallback={<p>Loading...</p>}>
         <section className="bg-[#FF3600] pt-6 pb-14 px-3">

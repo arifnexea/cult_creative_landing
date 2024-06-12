@@ -1,6 +1,5 @@
 import resources from "@/app/contants/resources.json";
 import { makeCanonicalUrl } from "@/app/components/misc";
-import { PageMeta } from "@/app/components/PageMeta";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Key UGC Content Creation Ideas and How to Stay Inspired";
@@ -30,7 +29,6 @@ export const metadata = {
 const Resource4 = () => {
   return (
     <>
-      <PageMeta />
       <rc.Page keywords={keywords}>
         <rc.h1>{title}</rc.h1>
 

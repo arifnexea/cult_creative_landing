@@ -1,5 +1,4 @@
 import { makeCanonicalUrl } from "@/app/components/misc";
-import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import LastSection from "@/app/sections/brandsection/LastSection";
@@ -15,7 +14,6 @@ export const metadata = {
 const PrivacyPolicy = () => {
   return (
     <>
-      <PageMeta />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">

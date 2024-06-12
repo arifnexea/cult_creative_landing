@@ -1,5 +1,4 @@
 import { makeCanonicalUrl } from "@/app/components/misc";
-import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Content } from "./Content";
 import LastSection from "@/app/sections/brandsection/LastSection";
@@ -15,7 +14,6 @@ export const metadata = {
 const Faq = () => {
   return (
     <>
-      <PageMeta />
       <Header />
       <section className="relative z-1 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px] text-black">
         <div className="container mx-auto">

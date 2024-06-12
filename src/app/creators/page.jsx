@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import { makeCanonicalUrl } from "@/app/components/misc";
-import { PageMeta } from "@/app/components/PageMeta";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
@@ -28,7 +27,6 @@ export const metadata = {
 const Creators = () => {
   return (
     <main className="flex min-h-screen flex-col">
-      <PageMeta />
       <Header />
       <Suspense fallback={<p>Loading...</p>}>
         <CreatorFirst />

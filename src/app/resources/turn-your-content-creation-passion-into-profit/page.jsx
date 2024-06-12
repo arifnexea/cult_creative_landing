@@ -1,6 +1,5 @@
 import resources from "@/app/contants/resources.json";
 import { makeCanonicalUrl } from "@/app/components/misc";
-import { PageMeta } from "@/app/components/PageMeta";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Turn Your Content Creation Passion into Profit";
@@ -29,7 +28,6 @@ export const metadata = {
 const Resource3 = () => {
   return (
     <>
-      <PageMeta />
       <rc.Page keywords={keywords}>
         <rc.h1>{title}</rc.h1>
 
