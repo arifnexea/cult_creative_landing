@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { MetaPixel } from "@/app/components/MetaPixel";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body className={inter.className}>
         {children}
+        <MetaPixel />
       </body>
       <GoogleAnalytics gaId="G-NP1X4Y7S7R" />
     </html>
