@@ -93,7 +93,7 @@ const HomeFirst = () => {
                       autoPlay
                       loop
                       muted
-                      webkit-playsInline
+                      webkit-playsinline="true"
                       playsInline
                       preload="metadata"
                     >

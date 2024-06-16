@@ -1,7 +1,4 @@
-"use client";
-import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
   return (
@@ -26,6 +23,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
                 return elem?.link ? (
                   // <Link key={i} href={elem.link}>
                   <Image
+                    key={i}
                     src={elem.path}
                     alt={elem.name}
                     width={100}
@@ -50,6 +48,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
                 return elem?.link ? (
                   // <Link key={i} href={elem.link}>
                   <Image
+                    key={i}
                     src={elem.path}
                     alt={elem.name}
                     width={100}
@@ -100,6 +99,7 @@ const Companies = ({ title, companiesImages, rounded, imgStyle, type }) => {
             return elem?.link ? (
               // <Link key={i} href={elem.link}>
               <Image
+                key={i}
                 src={elem.path}
                 alt={elem.name}
                 width={100}

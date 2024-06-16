@@ -61,7 +61,7 @@ const CreatorSecond = () => {
               autoPlay
               loop
               muted
-              webkit-playsInline
+              webkit-playsinline="true"
               playsInline
             >
               <source type="video/mp4" />

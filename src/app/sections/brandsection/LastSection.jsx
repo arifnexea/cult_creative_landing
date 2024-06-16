@@ -1,5 +1,5 @@
-import React from "react";
-import Footer from "../../components/Footer";
+"use client";
+import Footer from "@/app/components/Footer";
 import { Icon } from "@iconify/react";
 
 const LastSection = ({ color }) => {
