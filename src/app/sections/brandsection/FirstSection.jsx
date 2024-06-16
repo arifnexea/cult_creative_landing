@@ -100,7 +100,7 @@ const FirstSection = () => {
               autoPlay
               loop
               muted
-              webkit-playsInline
+              webkit-playsinline="true"
               playsInline
               preload="metadata"
             >
@@ -119,7 +119,7 @@ const FirstSection = () => {
                       autoPlay
                       loop
                       muted
-                      webkit-playsInline
+                      webkit-playsinline="true"
                       playsInline
                       preload="metadata"
                     >

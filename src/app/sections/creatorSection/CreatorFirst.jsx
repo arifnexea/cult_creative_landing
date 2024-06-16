@@ -96,7 +96,7 @@ const CreatorFirst = () => {
               autoPlay
               loop
               muted
-              webkit-playsInline
+              webkit-playsinline="true"
               playsInline
               preload="metadata"
             >
@@ -113,7 +113,7 @@ const CreatorFirst = () => {
                     autoPlay
                     loop
                     muted
-                    webkit-playsInline
+                    webkit-playsinline="true"
                     playsInline
                     preload="metadata"
                   >

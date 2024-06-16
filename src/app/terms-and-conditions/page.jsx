@@ -1,17 +1,19 @@
-"use client";
-import { PageMeta } from "@/app/components/PageMeta";
+import { makeCanonicalUrl } from "@/app/components/misc";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import LastSection from "@/app/sections/brandsection/LastSection";
 
+export const metadata = {
+  title: "Terms and Conditions",
+  description: "Understand Cult Creative’s Terms and Conditions. Discover our guidelines and agreements for using our platform and services.",
+  alternates: {
+    canonical: makeCanonicalUrl("/terms-and-conditions"),
+  },
+};
+
 const Terms = () => {
   return (
     <>
-      <PageMeta
-        title="Terms and Conditions"
-        desc="Understand Cult Creative’s Terms and Conditions. Discover our guidelines and agreements for using our platform and services."
-        canonicalPath="/terms-and-conditions"
-      />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">

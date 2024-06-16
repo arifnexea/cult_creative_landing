@@ -1,18 +1,20 @@
-"use client";
-import { PageMeta } from "@/app/components/PageMeta";
+import { makeCanonicalUrl } from "@/app/components/misc";
 import Header from "@/app/components/Header";
 import newsdata from "@/app/contants/newsroom.json";
 import News from "@/app/components/News";
 import LastSection from "@/app/sections/brandsection/LastSection";
 
+export const metadata = {
+  title: "Newsroom",
+  description: "Stay updated with Cult Creative’s newsroom. Access the latest announcements, press releases and media coverage to stay informed about our journey and industry impact.",
+  alternates: {
+    canonical: makeCanonicalUrl("/newsroom"),
+  },
+};
+
 const Newsroom = () => {
   return (
     <>
-      <PageMeta
-        title="Newsroom"
-        desc="Stay updated with Cult Creative’s newsroom. Access the latest announcements, press releases and media coverage to stay informed about our journey and industry impact."
-        canonicalPath="/newsroom"
-      />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">
