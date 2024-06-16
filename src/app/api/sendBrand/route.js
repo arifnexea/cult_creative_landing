@@ -21,16 +21,18 @@ export async function POST(req) {
       },
     });
 
-    await createBrands({
-      name: value.name,
-      email: value.email,
-      phoneNumber: value.phoneNumber.toString(),
-      companyName: value.companyName,
-      companySize: value.companySize,
-      otherindustriesString: value.otherindustriesString,
-      industries: value.industries,
-      monthlyInfluencerBudget: value.monthlyInfluencerBudget,
-    });
+    if (process.env.NODE_ENV === "production") {
+      await createBrands({
+        name: value.name,
+        email: value.email,
+        phoneNumber: value.phoneNumber.toString(),
+        companyName: value.companyName,
+        companySize: value.companySize,
+        otherindustriesString: value.otherindustriesString,
+        industries: value.industries,
+        monthlyInfluencerBudget: value.monthlyInfluencerBudget,
+      });
+    }
 
     return new NextResponse(
       JSON.stringify({

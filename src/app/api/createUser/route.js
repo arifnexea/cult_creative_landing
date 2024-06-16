@@ -28,23 +28,25 @@ export async function POST(req) {
       },
     });
 
-    await createCreators({
-      name: value.name,
-      pronoun: value.pronoun,
-      phoneNumber: value.phoneNumber.toString(),
-      email: value.email,
-      nationality: value.nationality,
-      location: value.location,
-      dateOfBirth: new Date(value.dateOfBirth),
-      languages: value.languages.toString(),
-      otherlanguagesString: value.otherlanguagesString,
-      interests: value.interests.toString(),
-      otherinterestsString: value.otherinterestsString,
-      employmentType: value.employmentType,
-      otherEmploymentType: value.otherEmploymentType,
-      instaUsername: value.instaUsername,
-      tiktokUsername: value.tiktokUsername,
-    });
+    if (process.env.NODE_ENV === "production") {
+      await createCreators({
+        name: value.name,
+        pronoun: value.pronoun,
+        phoneNumber: value.phoneNumber.toString(),
+        email: value.email,
+        nationality: value.nationality,
+        location: value.location,
+        dateOfBirth: new Date(value.dateOfBirth),
+        languages: value.languages.toString(),
+        otherlanguagesString: value.otherlanguagesString,
+        interests: value.interests.toString(),
+        otherinterestsString: value.otherinterestsString,
+        employmentType: value.employmentType,
+        otherEmploymentType: value.otherEmploymentType,
+        instaUsername: value.instaUsername,
+        tiktokUsername: value.tiktokUsername,
+      });
+    }
 
     return new NextResponse(
       JSON.stringify({

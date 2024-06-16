@@ -1,5 +1,5 @@
 "use client";
-import {  useState } from "react";
+import { useState } from "react";
 import { getSheetData, createData } from "./google-sheet-action";
 
 export default function Page() {
@@ -25,7 +25,6 @@ export default function Page() {
     } catch (error) {
       console.log(error);
     }
-    // e.preventDefault();
   };
 
   return (
