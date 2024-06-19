@@ -6,6 +6,7 @@ export default function Document() {
     <Html>
       <Head>
         <noscript>
+          {/* Change to Image component from next */}
           <img
             height="1"
             width="1"
