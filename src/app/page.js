@@ -1,10 +1,9 @@
 import dynamic from "next/dynamic";
 import { makeCanonicalUrl } from "@/app/components/misc";
+import Script from "next/script";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
-import Head from "next/head";
-import Script from "next/script";
 
 const HomeFirst = dynamic(
   () => import("@/app/sections/homeSection/homeFirst"),
@@ -50,7 +49,7 @@ const Home = () => {
               (s[i].q=s[i].q||[]).push(arguments)});s[i].l=+new Date;c=n.createElement(t);
               h=n.getElementsByTagName(t)[0];c.src='//snid.snitcher.com/8426934.js';
               h.parentNode.insertBefore(c,h)}(window,document,'snid','script');
-                  
+
               snid('verify', '8426934');
             `,
         }}
