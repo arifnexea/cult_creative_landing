@@ -1,5 +1,4 @@
-// TODO: This Pixel ID is from a testing account, change this (and remove this comment)
-export const FB_PIXEL_ID = 1165013624792679;
+export const FB_PIXEL_ID = 468114322366676;
 
 export const pageview = () => {
   window.fbq("track", "PageView");
