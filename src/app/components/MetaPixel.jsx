@@ -1,8 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { useEffect, useState } from "react";
 
 const sendPageview = () => {
   window.fbq("track", "PageView");
