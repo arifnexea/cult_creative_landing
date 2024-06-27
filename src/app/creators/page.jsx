@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import { makeCanonicalUrl } from "@/app/components/misc";
+import Script from "next/script";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
-import Script from "next/script";
 
 const CreatorFirst = dynamic(() =>
   import("@/app/sections/creatorSection/CreatorFirst")
@@ -61,8 +61,9 @@ const Creators = () => {
             `,
         }}
       />
+
+      <Header />
       <main className="flex min-h-screen flex-col">
-        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <CreatorFirst />
           <CreatorSecond />
@@ -71,10 +72,10 @@ const Creators = () => {
           <CreatorFifth />
           <CreatorSixth />
           <CreatorLast />
-          <LastSection color="#006D53" />
           <Toaster position="top-center" />
         </Suspense>
       </main>
+      <LastSection color="#006D53" />
     </>
   );
 };

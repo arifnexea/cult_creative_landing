@@ -63,8 +63,8 @@ const Brands = () => {
         }}
       />
 
+      <Header />
       <main className="flex min-h-screen flex-col">
-        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <FirstSection />
           <SecondSection />
@@ -73,10 +73,10 @@ const Brands = () => {
           <FifthSection />
           <SixthSection title="join 900+ other companies using Cult Creative" />
           <SeventhSection />
-          <LastSection color="#8A5AFE" />
           <Toaster position="top-center" />
         </Suspense>
       </main>
+      <LastSection color="#8A5AFE" />
     </>
   );
 };
