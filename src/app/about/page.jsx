@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import * as cc from "./client-components"
@@ -8,7 +7,7 @@ export const metadata = {
   title: "About Us",
   description: "At Cult Creative, we empower creators to pursue passion, purpose and prosperity while challenging stereotypes about creativity.",
   alternates: {
-    canonical: makeCanonicalUrl("/about"),
+    canonical: "/about",
   },
 };
 

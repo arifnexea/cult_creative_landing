@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Script from "next/script";
 import Header from "@/app/components/Header";
 import Image from "next/image";
@@ -9,7 +8,7 @@ export const metadata = {
   description:
     "Understand Cult Creative’s Terms and Conditions. Discover our guidelines and agreements for using our platform and services.",
   alternates: {
-    canonical: makeCanonicalUrl("/terms-and-conditions"),
+    canonical: "/terms-and-conditions",
   },
 };
 

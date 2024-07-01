@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Why and How Does Creator Marketing Work?";
@@ -20,7 +19,7 @@ export const metadata = {
     images: [resources[5].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/why-and-how-does-creator-marketing-work"),
+    canonical: "/resources/why-and-how-does-creator-marketing-work",
   },
 };
 

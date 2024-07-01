@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Key UGC Content Creation Ideas and How to Stay Inspired";
@@ -22,7 +21,7 @@ export const metadata = {
     images: [resources[3].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired"),
+    canonical: "/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired",
   },
 };
 

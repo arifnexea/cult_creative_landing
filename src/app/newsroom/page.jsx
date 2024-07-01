@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Script from "next/script";
 import Header from "@/app/components/Header";
 import newsdata from "@/app/contants/newsroom.json";
@@ -10,7 +9,7 @@ export const metadata = {
   description:
     "Stay updated with Cult Creative’s newsroom. Access the latest announcements, press releases and media coverage to stay informed about our journey and industry impact.",
   alternates: {
-    canonical: makeCanonicalUrl("/newsroom"),
+    canonical: "/newsroom",
   },
 };
 

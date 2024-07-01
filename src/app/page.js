@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Script from "next/script";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
@@ -32,7 +31,7 @@ export const metadata = {
       "Discover UGC Creators, Brand Deals and Creator Marketing Solutions with SEA’s Chosen Platform",
   },
   alternates: {
-    canonical: makeCanonicalUrl("/"),
+    canonical: "/",
   },
 };
 

@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
@@ -41,7 +40,7 @@ export const metadata = {
     images: ["/opengraph-image.png"],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/brands"),
+    canonical: "/brands",
   },
 };
 

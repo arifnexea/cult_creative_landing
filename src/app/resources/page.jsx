@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Header from "@/app/components/Header";
 import resourcesData from "@/app/contants/resources.json";
 import News from "@/app/components/News";
@@ -8,7 +7,7 @@ export const metadata = {
   title: "Resources",
   description: "Discover invaluable insights and resources at Cult Creative’s blog. Dive into inspiration, expert tips, and stay ahead of industry trends with our creator-friendly content hub.",
   alternates: {
-    canonical: makeCanonicalUrl("/resources"),
+    canonical: "/resources",
   },
 };
 

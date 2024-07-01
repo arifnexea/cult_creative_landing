@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Turn Your Content Creation Passion into Profit";
@@ -21,7 +20,7 @@ export const metadata = {
     images: [resources[2].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/turn-your-content-creation-passion-into-profit"),
+    canonical: "/resources/turn-your-content-creation-passion-into-profit",
   },
 };
 

@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Script from "next/script";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
@@ -10,7 +9,7 @@ export const metadata = {
   description:
     "Connect with Cult Creative. Reach out to our dedicated support team via email or Instagram for any enquiries or assistance.",
   alternates: {
-    canonical: makeCanonicalUrl("/contact"),
+    canonical: "/contact",
   },
 };
 

@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { CreatorForm } from "./CreatorForm";
@@ -10,7 +9,7 @@ export const metadata = {
   title: "Get Started as a Creator",
   description: "Fill in this form to begin your content-creation journey with Cult Creative.",
   alternates: {
-    canonical: makeCanonicalUrl("/creators/contact"),
+    canonical: "/creators/contact",
   },
 };
 

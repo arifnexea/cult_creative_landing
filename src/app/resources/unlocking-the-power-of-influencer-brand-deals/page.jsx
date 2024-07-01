@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Unlocking the Power of Influencer Brand Deals";
@@ -19,7 +18,7 @@ export const metadata = {
     images: [resources[1].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/unlocking-the-power-of-influencer-brand-deals"),
+    canonical: "/resources/unlocking-the-power-of-influencer-brand-deals",
   },
 };
 

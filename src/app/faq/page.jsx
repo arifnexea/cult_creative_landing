@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Script from "next/script";
 import Header from "@/app/components/Header";
 import { Content } from "./Content";
@@ -9,7 +8,7 @@ export const metadata = {
   description:
     "Find answers to common questions here! Contact our support team via email or Instagram for enquiries.",
   alternates: {
-    canonical: makeCanonicalUrl("/faq"),
+    canonical: "/faq",
   },
 };
 
