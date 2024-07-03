@@ -1,4 +1,3 @@
-import { makeCanonicalUrl } from "@/app/components/misc";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import LastSection from "@/app/sections/brandsection/LastSection";
@@ -7,15 +6,15 @@ export const metadata = {
   title: "Privacy Policy",
   description: "Safeguard your data with Cult Creative’s Privacy Policy. Learn how we protect your information and ensure transparency in our practices.",
   alternates: {
-    canonical: makeCanonicalUrl("/privacy-policy"),
+    canonical: "/privacy-policy",
   },
 };
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <Header />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
-        <Header />
         <div className="text-center py-10 bg-[#8A5AFE]">
           <p className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
             Privacy Policy
@@ -36,8 +35,8 @@ const PrivacyPolicy = () => {
               />
             ))}
         </div>
-        <LastSection color="#1340FF" />
       </main>
+      <LastSection color="#1340FF" />
     </>
   );
 };

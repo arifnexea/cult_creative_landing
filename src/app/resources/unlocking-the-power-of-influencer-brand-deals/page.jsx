@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Unlocking the Power of Influencer Brand Deals";
@@ -16,10 +15,10 @@ export const metadata = {
   description: "Creators signed up with Cult Creative can identify their niche, build credibility and land brand deals hassle-free. We handle the administrative work so you can focus on being creative.",
   keywords: keywords,
   openGraph: {
-    images: [{ url: resources[1].image }],
+    images: [resources[1].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/unlocking-the-power-of-influencer-brand-deals"),
+    canonical: "/resources/unlocking-the-power-of-influencer-brand-deals",
   },
 };
 

@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Turn Your Content Creation Passion into Profit";
@@ -18,10 +17,10 @@ export const metadata = {
   description: "Big brands today partner with creators for marketing. Learn about monetization strategies and how to engage authentically with your audience. And beware of competition and burnout.",
   keywords: keywords,
   openGraph: {
-    images: [{ url: resources[2].image }],
+    images: [resources[2].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/turn-your-content-creation-passion-into-profit"),
+    canonical: "/resources/turn-your-content-creation-passion-into-profit",
   },
 };
 

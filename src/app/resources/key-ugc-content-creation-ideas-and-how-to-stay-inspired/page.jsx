@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Key UGC Content Creation Ideas and How to Stay Inspired";
@@ -19,10 +18,10 @@ export const metadata = {
   description: "Stay motivated by setting goals and engaging with a supportive community. Create high-quality content by understanding your audience, prioritising consistency and using engaging visuals.",
   keywords: keywords,
   openGraph: {
-    images: [{ url: resources[3].image }],
+    images: [resources[3].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired"),
+    canonical: "/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired",
   },
 };
 

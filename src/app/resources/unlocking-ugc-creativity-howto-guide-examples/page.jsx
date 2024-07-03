@@ -1,5 +1,4 @@
 import resources from "@/app/contants/resources.json";
-import { makeCanonicalUrl } from "@/app/components/misc";
 import * as rc from "@/app/components/resource-content";
 
 const title = "Unlocking UGC Creativity: How-To Guide + Examples";
@@ -16,10 +15,10 @@ export const metadata = {
   description: "Read about the rise of user-generated content for marketing. Learn about what aspiring creators should do. See examples of impactful content formats for social media.",
   keywords: keywords,
   openGraph: {
-    images: [{ url: resources[4].image }],
+    images: [resources[4].image],
   },
   alternates: {
-    canonical: makeCanonicalUrl("/resources/unlocking-ugc-creativity-howto-guide-examples"),
+    canonical: "/resources/unlocking-ugc-creativity-howto-guide-examples",
   },
 };
 

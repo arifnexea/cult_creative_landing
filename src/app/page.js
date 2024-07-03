@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
-import { makeCanonicalUrl } from "@/app/components/misc";
-import Script from "next/script";
+import { Snitcher } from "@/app/components/Snitcher";
 import Header from "@/app/components/Header";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
@@ -32,31 +31,16 @@ export const metadata = {
       "Discover UGC Creators, Brand Deals and Creator Marketing Solutions with SEA’s Chosen Platform",
   },
   alternates: {
-    canonical: makeCanonicalUrl("/"),
+    canonical: "/",
   },
 };
 
 const Home = () => {
   return (
     <>
-      {/* <!-- Snitcher analytics code --> */}
-      <Script
-        id="snitcher-script"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-              !function(s,n,i,t,c,h){s.SnitchObject=i;s[i]||(s[i]=function(){
-              (s[i].q=s[i].q||[]).push(arguments)});s[i].l=+new Date;c=n.createElement(t);
-              h=n.getElementsByTagName(t)[0];c.src='//snid.snitcher.com/8426934.js';
-              h.parentNode.insertBefore(c,h)}(window,document,'snid','script');
-
-              snid('verify', '8426934');
-            `,
-        }}
-      />
-
+      <Snitcher />
+      <Header />
       <main className="flex min-h-screen flex-col max-w-[100vw]">
-        <Header />
         <Suspense fallback={<p>Loading...</p>}>
           <HomeFirst />
           <HomeTwo />
@@ -65,10 +49,10 @@ const Home = () => {
           <HomeFour />
           <HomeFive />
           <HomeSix />
-          <LastSection color="#1340FF" />
           <Toaster position="top-center" />
         </Suspense>
       </main>
+      <LastSection color="#1340FF" />
     </>
   );
 };
