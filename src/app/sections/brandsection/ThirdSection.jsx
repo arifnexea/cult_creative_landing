@@ -1,6 +1,6 @@
-import { Steps, Step } from "@/app/components/steps";
+import { Steps, Step } from "@/app/components/steps.jsx";
 
-const Step_Local = ({number, children}) => (
+const Step_Local = ({ number, children }) => (
   <Step borderColor="slate-50" number={number}>
     {children}
   </Step>

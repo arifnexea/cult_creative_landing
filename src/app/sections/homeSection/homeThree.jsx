@@ -103,9 +103,7 @@ const HomeThree = () => {
               We take the hassle out of creator marketing.
             </p>
             <p className="lg:w-[85%] lg:ml-4 xl:text-2xl md:text-md text-[20px] font-aileron font-light text-balance">
-              With a simple monthly subscription, here’s how we bridge brands and
-              agencies with creators to establish genuine relationships with
-              customers.
+              With our simple, plug-and-play way of working, we can bridge your brand or your agency with relevant creators to generate quality, genuine content.
             </p>
           </motion.div>
         </motion.div>

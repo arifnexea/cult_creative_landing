@@ -3,11 +3,11 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import * as yup from "yup";
-import { phoneRegExp, validateOtherField } from "@/app/components/Form";
+import { phoneRegExp, validateOtherField } from "@/app/components/BrandForm.jsx";
 import { Formik, Form, Field } from "formik";
-import FormInput from "@/app/components/FormInput";
+import FormInput from "@/app/components/FormInput.jsx";
 import countries from "@/app/contants/countries.json";
-import MultiSelect from "@/app/components/MultiSelect";
+import MultiSelect from "@/app/components/MultiSelect.jsx";
 import { motion } from "framer-motion";
 
 const color = "#006D53";

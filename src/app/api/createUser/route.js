@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
-import { createCreators } from "@/app/sheets/google-sheet-action";
+import { createCreators } from "@/app/components/google-sheet-actions.js";
 
 const prisma = new PrismaClient();
 

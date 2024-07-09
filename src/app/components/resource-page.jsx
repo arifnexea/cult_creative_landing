@@ -1,8 +1,11 @@
-import Header from "@/app/components/Header";
-import LastSection from "@/app/sections/brandsection/LastSection";
+"use client";
 
-// Components for content of Resources pages
-// Recommended import: `import * as rc from "@/app/components/resource-content";`
+import Header from "@/app/components/Header.jsx";
+import LastSection from "@/app/sections/brandsection/LastSection.jsx";
+import { InstagramEmbed } from "react-social-media-embed";
+
+// Components for resource pages
+// Recommended: `import * as rp`
 
 // `children` should contain the elements defined here
 // `keywords` shall be an array of strings
@@ -93,4 +96,13 @@ export const a = ({ href, children }) => (
   >
     {children}
   </a>
+);
+
+export const IgEmbed = ({ url }) => (
+  <div style={{
+    display: "flex",
+    justifyContent: "center",
+  }}>
+    <InstagramEmbed url={url} />
+  </div>
 );

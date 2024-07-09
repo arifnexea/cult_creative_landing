@@ -1,49 +1,53 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import FormInput from "./FormInput";
-import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
+import { useState } from "react";
 import toast from "react-hot-toast";
-import MultiSelect from "./MultiSelect";
+import Image from "next/image";
+import { Formik, Form, Field } from "formik";
+import FormInput from "./FormInput.jsx";
+import { motion } from "framer-motion";
 
+// TODO: Probably no longer required, check `CreatorForm` "other" fields
 export const validateOtherField = (value) => (value === "" ? "Required" : "");
 
 export const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
-const BrandForm = ({ color, image }) => {
-  const [loading, setLoading] = useState();
+const schema = yup.object({
+  name: yup.string().required("Name is required"),
+  email: yup
+    .string()
+    .email("Email address is invalid")
+    .required("Email address is required"),
+  phoneNumber: yup
+    .string()
+    .matches(phoneRegExp, "Phone number is invalid")
+    .required("Phone number is required"),
+  companyName: yup.string().required("Company name is required"),
+  companySize: yup.string().required("Company size is required"),
+  industry: yup.string().required("Industry is required"),
+  monthlyInfluencerBudget: yup
+    .number()
+    // We assume there is no need for fractional budgets
+    .integer("Must be an integer")
+    .min(1, "Must be positive")
+    // Set a maximum of 2 billion because:
+    // * the client did not specify a desired maximum
+    // * we want it to fit in an `Int`, and `2**32 - 1` is more than enough
+    // * it is a "nice" number
+    .max(2_000_000_000, "Too high")
+    .required("Monthly influencer budget is required"),
+});
 
-  const industries = [
-    { name: "Banking and Finance" },
-    { name: "Beauty" },
-    { name: "Lifestyle" },
-    { name: "Health and Wellness" },
-    { name: "F&B" },
-    { name: "Fashion" },
-    { name: "Charities and NGOs" },
-    { name: "Education" },
-    { name: "Events" },
-    { name: "Motherhood and Family" },
-    { name: "Hotel and Travel" },
-    { name: "Jewellery" },
-    { name: "Footwear" },
-    { name: "Art" },
-    { name: "Technology" },
-    { name: "Others" },
-  ];
-  const [selectedIndustries, setSelectedIndustries] = useState([]);
+export const BrandForm = ({ color, image }) => {
+  const [loading, setLoading] = useState();
 
   const onSubmit = async (value, resetForm) => {
     setLoading(true);
     await fetch("/api/sendBrand", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=UTF-8",
-      },
+      headers: { "Content-Type": "application/json; charset=UTF-8" },
       body: JSON.stringify(value),
     })
       .then((res) => res.json())
@@ -54,64 +58,11 @@ const BrandForm = ({ color, image }) => {
           toast.error(val.error);
         }
         setLoading(false);
-        // Clear `MultiSelect` fields
-        setSelectedIndustries([]);
         resetForm();
       })
       .catch((err) => alert(JSON.stringify(err)))
       .finally(() => setLoading(false));
   };
-
-  const schemaOne = yup.object({
-    name: yup.string().required("Name is required"),
-    email: yup
-      .string()
-      .email("Email address is invalid")
-      .required("Email address is required"),
-    phoneNumber: yup
-      .string()
-      .matches(phoneRegExp, "Phone number is invalid")
-      .required("Phone number is required"),
-    companyName: yup.string().required("Company name is required"),
-    companySize: yup.string().required("Company size is required"),
-    industries: yup
-      .array()
-      .min(1, "Minimum is 1")
-      .max(3, "Maximum is 3")
-      .required("Industries are required."),
-    monthlyInfluencerBudget: yup
-      .number()
-      // We assume there is no need for fractional budgets
-      .integer("Must be an integer")
-      .min(1, "Must be positive")
-      // Set a maximum of 2 billion because:
-      // * the client did not specify a desired maximum
-      // * we want it to fit in an `Int`, and `2**32 - 1` is more than enough
-      // * it is a "nice" number
-      .max(2_000_000_000, "Too high")
-      .required("Monthly influencer budget is required"),
-  });
-
-  const schemaTwo = yup.object({
-    name: yup.string().required("Name is required"),
-    email: yup
-      .string()
-      .email("Email address is invalid")
-      .required("Email address is required"),
-    phoneNumber: yup
-      .string()
-      .matches(phoneRegExp, "Phone number is invalid")
-      .required("Phone number is required"),
-    companyName: yup.string().required("Company name is required"),
-    companySize: yup.string().required("Company size is required"),
-    otherindustriesString: yup.string().required("Industry is required"),
-    monthlyInfluencerBudget: yup
-      .number()
-      .integer("Must be an integer")
-      .min(1, "Must be positive")
-      .max(2_000_000_000, "Too high")
-      .required("Monthly influencer budget is required."),
-  });
 
   return (
     <section className="flex items-center justify-center">
@@ -134,23 +85,9 @@ const BrandForm = ({ color, image }) => {
           power up <span className="font-times">your</span>{" "}
           <span className="font-times italic -tracking-[.5rem]">marketing</span>
         </h2>
-        <div>
-          <a
-            href="https://calendly.com/danishmokhtar/30min?month=2024-03"
-            target="_blank"
-          >
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.8 }}
-              className={`bg-slate-100 py-2 px-12 rounded-full text-[${color}] font-aileron uppercase flex-none font-bold`}
-            >
-              Book a call
-            </motion.button>
-          </a>
-        </div>
         <div className="flex flex-col gap-6">
           <p className="text-xl font-bold -tracking-[.05rem]">
-            Want to get in touch? Tell us what you need.
+            Want to power up your marketing? Register your interest with us and a representative will get back to you soonest.
           </p>
           <Formik
             initialValues={{
@@ -159,14 +96,12 @@ const BrandForm = ({ color, image }) => {
               phoneNumber: "",
               companyName: "",
               companySize: "",
-              industries: [],
-              otherindustriesString: "",
+              industry: "",
+              otherIndustry: "",
               monthlyInfluencerBudget: "",
             }}
             onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
-            validationSchema={
-              selectedIndustries.includes("Others") ? schemaTwo : schemaOne
-            }
+            validationSchema={schema}
           >
             <Form>
               <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -264,29 +199,53 @@ const BrandForm = ({ color, image }) => {
                   </Field>
                 </div>
                 <div className="sm:col-span-3">
-                  <Field name="industries">
-                    {({ field, form: { errors, touched, setFieldValue } }) => (
+                  <Field name="industry">
+                    {({ field, form: { errors, touched } }) => (
                       <>
-                        <MultiSelect
-                          fieldName="industries"
-                          label="Industries"
-                          placeholder="Select three..."
-                          curData={industries}
-                          selectedItem={selectedIndustries}
-                          setSelectedItem={setSelectedIndustries}
-                          errors={errors}
-                          touched={touched}
-                          setFieldValue={setFieldValue}
-                        />
-                        {errors.industries && touched.industries && (
+                        <label
+                          htmlFor="industry"
+                          className="block text-sm font-medium leading-6"
+                        >
+                          Industry
+                        </label>
+                        <div className="mt-2">
+                          <select
+                            name="industry"
+                            {...field}
+                            className={`block w-full rounded-full border-2 py-2 px-4 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6 bg-[${color}] ${
+                              errors.industry &&
+                              touched.industry &&
+                              "border-red-500"
+                            }`}
+                          >
+                            <option value="">Select one...</option>
+                            <option>Banking and Finance</option>
+                            <option>Beauty</option>
+                            <option>Lifestyle</option>
+                            <option>Health and Wellness</option>
+                            <option>F&B</option>
+                            <option>Fashion</option>
+                            <option>Charities and NGOs</option>
+                            <option>Education</option>
+                            <option>Events</option>
+                            <option>Motherhood and Family</option>
+                            <option>Hotel and Travel</option>
+                            <option>Jewellery</option>
+                            <option>Footwear</option>
+                            <option>Art</option>
+                            <option>Technology</option>
+                            <option>Others</option>
+                          </select>
+                        </div>
+                        {errors.industry && touched.industry && (
                           <p class="text-red-500 text-xs mx-2 my-1">
-                            {errors.industries}
+                            {errors.industry}
                           </p>
                         )}
                         {field.value.includes("Others") && (
                           <Field
-                            name="otherindustriesString"
-                            validate={validateOtherField}
+                            name="otherIndustry"
+                            validate={(value) => value === "" ? "Industry is required" : ""}
                           >
                             {({ field, form: { errors, touched } }) => (
                               <>
@@ -295,10 +254,7 @@ const BrandForm = ({ color, image }) => {
                                   type="text"
                                   {...field}
                                   color={color}
-                                  errors={
-                                    touched.otherindustriesString &&
-                                    errors.otherindustriesString
-                                  }
+                                  errors={touched.otherIndustry && errors.otherIndustry}
                                 />
                               </>
                             )}
@@ -378,5 +334,3 @@ const BrandForm = ({ color, image }) => {
     </section>
   );
 };
-
-export default BrandForm;

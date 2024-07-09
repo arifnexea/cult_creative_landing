@@ -5,7 +5,10 @@ import Link from "next/link";
 
 const FourthSection = () => {
   return (
-    <section className="py-8 bg-[#F4F4F4] text-[#8A5AFE]">
+    <section
+      className="py-8 bg-[#F4F4F4] text-[#8A5AFE]"
+      id="solutions"
+    >
       <h2 className="text-center font-aileron text-7xl md:text-9xl -tracking-[.4rem]">
         find{" "}
         <span className="font-serif -tracking-[.6rem]">

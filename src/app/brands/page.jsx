@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import { Snitcher } from "@/app/components/Snitcher";
-import Header from "@/app/components/Header";
+import { Snitcher } from "@/app/components/Snitcher.jsx";
+import Header from "@/app/components/Header.jsx";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 
@@ -54,10 +54,10 @@ const Brands = () => {
           <FirstSection />
           <SecondSection />
           <ThirdSection />
+          <SeventhSection />
           <FourthSection />
           <FifthSection />
           <SixthSection title="join 900+ other companies using Cult Creative" />
-          <SeventhSection />
           <Toaster position="top-center" />
         </Suspense>
       </main>
