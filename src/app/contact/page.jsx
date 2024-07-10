@@ -1,8 +1,7 @@
-import { Snitcher } from "@/app/components/Snitcher";
-import Header from "@/app/components/Header";
+import Header from "@/app/components/Header.jsx";
 import { Suspense } from "react";
-import { Content } from "./Content";
-import LastSection from "@/app/sections/brandsection/LastSection";
+import { Content } from "./Content.jsx";
+import LastSection from "@/app/sections/brandsection/LastSection.jsx";
 
 export const metadata = {
   title: "Contact Us",
@@ -16,7 +15,6 @@ export const metadata = {
 const Contact = () => {
   return (
     <>
-      <Snitcher />
       <Header />
       <main className="flex min-h-screen flex-col">
         <Suspense fallback={<p>Loading...</p>}>

@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
-import { Snitcher } from "@/app/components/Snitcher";
-import Header from "@/app/components/Header";
+import Header from "@/app/components/Header.jsx";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 
@@ -38,7 +37,6 @@ export const metadata = {
 const Home = () => {
   return (
     <>
-      <Snitcher />
       <Header />
       <main className="flex min-h-screen flex-col max-w-[100vw]">
         <Suspense fallback={<p>Loading...</p>}>
