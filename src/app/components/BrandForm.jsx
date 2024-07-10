@@ -87,7 +87,8 @@ export const BrandForm = ({ color, image }) => {
         </h2>
         <div className="flex flex-col gap-6">
           <p className="text-xl font-bold -tracking-[.05rem]">
-            Want to power up your marketing? Register your interest with us and a representative will get back to you soonest.
+            Want to power up your marketing? Register your interest with us and
+            a representative will get back to you soonest.
           </p>
           <Formik
             initialValues={{
@@ -245,7 +246,9 @@ export const BrandForm = ({ color, image }) => {
                         {field.value.includes("Others") && (
                           <Field
                             name="otherIndustry"
-                            validate={(value) => value === "" ? "Industry is required" : ""}
+                            validate={(value) =>
+                              value === "" ? "Industry is required" : ""
+                            }
                           >
                             {({ field, form: { errors, touched } }) => (
                               <>
@@ -254,7 +257,10 @@ export const BrandForm = ({ color, image }) => {
                                   type="text"
                                   {...field}
                                   color={color}
-                                  errors={touched.otherIndustry && errors.otherIndustry}
+                                  errors={
+                                    touched.otherIndustry &&
+                                    errors.otherIndustry
+                                  }
                                 />
                               </>
                             )}

@@ -57,7 +57,7 @@ export async function POST(req) {
       }
     );
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return new NextResponse(JSON.stringify({ message: "Error" }), {
       status: 404,
     });

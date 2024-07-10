@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 
 export const POST = async (req) => {
   const value = await req.json();
+
   const data = {
     name: value.name,
     email: value.email,
@@ -25,19 +26,20 @@ export const POST = async (req) => {
 
     return new NextResponse(
       JSON.stringify({ message: `Submitted. Thanks, ${value.name}!` }),
-      { status: 200 },
+      { status: 200 }
     );
   } catch (error) {
     return new NextResponse(
-      JSON.stringify({ error: "Form failed to submit. Please contact our admin." }),
-      { status: 404 },
+      JSON.stringify({
+        error: "Form failed to submit. Please contact our admin.",
+      }),
+      { status: 404 }
     );
   }
 };
 
 export const GET = async () => {
-  return new NextResponse(
-    JSON.stringify({ message: "Hello" }),
-    { status: 200 },
-  );
+  return new NextResponse(JSON.stringify({ message: "Hello" }), {
+    status: 200,
+  });
 };

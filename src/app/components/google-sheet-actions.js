@@ -50,7 +50,8 @@ export async function createData(value) {
     });
     return "Success";
   } catch (error) {
-    console.log(error);
+    return error;
+    // console.log(error);
   }
 }
 
@@ -88,7 +89,8 @@ export async function createBrands(values) {
       },
     });
   } catch (error) {
-    console.log(error);
+    return error;
+    // console.log(error);
   }
 }
 
@@ -115,6 +117,7 @@ export async function createCreators(values) {
       },
     });
   } catch (error) {
-    console.log(error);
+    return error;
+    // console.log(error);
   }
 }
