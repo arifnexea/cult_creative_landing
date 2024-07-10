@@ -1,6 +1,7 @@
 "use client";
 
-import Footer from "@/app/components/Footer";
+import Footer from "@/app/components/Footer.jsx";
+import { whatsappLink } from "@/app/components/misc.js";
 import { Icon } from "@iconify/react";
 
 const LastSection = ({ color }) => {
@@ -8,7 +9,7 @@ const LastSection = ({ color }) => {
     <section className="bg-[#F4F4F4] py-10 px-20">
       <Footer hoverText={color} />
       <div className="flex gap-3 mt-10 justify-end">
-        <a href="https://wa.me/60162678757" target="_blank">
+        <a href={whatsappLink} target="_blank">
           <Icon icon="ic:baseline-whatsapp" width={30} color="black" />
         </a>
         <a href="https://www.instagram.com/cultcreativeasia/" target="_blank">

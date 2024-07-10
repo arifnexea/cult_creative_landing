@@ -1,66 +1,43 @@
 import { PrismaClient } from "@prisma/client";
+import { createBrands } from "@/app/components/google-sheet-actions.js";
 import { NextResponse } from "next/server";
-import { createBrands } from "@/app/sheets/google-sheet-action";
 
 const prisma = new PrismaClient();
 
-export async function POST(req) {
+export const POST = async (req) => {
   const value = await req.json();
+  const data = {
+    name: value.name,
+    email: value.email,
+    phoneNumber: value.phoneNumber.toString(),
+    companyName: value.companyName,
+    companySize: value.companySize,
+    industry: value.industry,
+    otherIndustry: value.otherIndustry,
+    monthlyInfluencerBudget: value.monthlyInfluencerBudget,
+  };
 
   try {
-    await prisma.brand.create({
-      data: {
-        name: value.name,
-        email: value.email,
-        phoneNumber: value.phoneNumber.toString(),
-        companyName: value.companyName,
-        companySize: value.companySize,
-        otherindustriesString: value.otherindustriesString,
-        industries: value.industries,
-        monthlyInfluencerBudget: value.monthlyInfluencerBudget,
-      },
-    });
-
+    await prisma.brand.create({ data: data });
     if (process.env.NODE_ENV === "production") {
-      await createBrands({
-        name: value.name,
-        email: value.email,
-        phoneNumber: value.phoneNumber.toString(),
-        companyName: value.companyName,
-        companySize: value.companySize,
-        otherindustriesString: value.otherindustriesString,
-        industries: value.industries,
-        monthlyInfluencerBudget: value.monthlyInfluencerBudget,
-      });
+      await createBrands(data);
     }
 
     return new NextResponse(
-      JSON.stringify({
-        message: `Submitted. Thanks, ${value.name}!`,
-      }),
-      {
-        status: 200,
-      }
+      JSON.stringify({ message: `Submitted. Thanks, ${value.name}!` }),
+      { status: 200 },
     );
   } catch (error) {
     return new NextResponse(
-      JSON.stringify({
-        error: "Form failed to submit. Please contact our admin.",
-      }),
-      {
-        status: 404,
-      }
+      JSON.stringify({ error: "Form failed to submit. Please contact our admin." }),
+      { status: 404 },
     );
   }
-}
+};
 
-export async function GET() {
+export const GET = async () => {
   return new NextResponse(
-    JSON.stringify({
-      message: "Hello",
-    }),
-    {
-      status: 200,
-    }
+    JSON.stringify({ message: "Hello" }),
+    { status: 200 },
   );
-}
+};

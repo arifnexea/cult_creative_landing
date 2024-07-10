@@ -1,7 +1,6 @@
-import { Snitcher } from "@/app/components/Snitcher";
-import Header from "@/app/components/Header";
-import { Content } from "./Content";
-import LastSection from "@/app/sections/brandsection/LastSection";
+import Header from "@/app/components/Header.jsx";
+import { Content } from "./Content.jsx";
+import LastSection from "@/app/sections/brandsection/LastSection.jsx";
 
 export const metadata = {
   title: "FAQ",
@@ -15,7 +14,6 @@ export const metadata = {
 const Faq = () => {
   return (
     <>
-      <Snitcher />
       <Header />
       <main className="relative z-1 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px] text-black">
         <div className="container mx-auto">

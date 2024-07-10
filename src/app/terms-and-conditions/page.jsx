@@ -1,7 +1,6 @@
-import { Snitcher } from "@/app/components/Snitcher";
-import Header from "@/app/components/Header";
+import Header from "@/app/components/Header.jsx";
 import Image from "next/image";
-import LastSection from "@/app/sections/brandsection/LastSection";
+import LastSection from "@/app/sections/brandsection/LastSection.jsx";
 
 export const metadata = {
   title: "Terms and Conditions",
@@ -15,7 +14,6 @@ export const metadata = {
 const Terms = () => {
   return (
     <>
-      <Snitcher />
       <Header />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
         <div className="text-center py-10 bg-[#8A5AFE]">

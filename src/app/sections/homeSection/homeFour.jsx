@@ -1,4 +1,4 @@
-import BrandForm from "@/app/components/Form";
+import { BrandForm } from "@/app/components/BrandForm.jsx";
 
 const HomeFour = () => {
   return (

@@ -1,32 +1,57 @@
 [
-    {
-        "title": "A Starter’s Guide for Content Creators in Malaysia",
-        "image": "https://storage.googleapis.com/landing-cultcreative/resources/Blog%201%20-%20A%20Starter%E2%80%99s%20Guide%20for%20Content%20Creators%20In%20Malaysia.jpg",
-        "path": "/resources/unlocking-the-power-of-brand-deals-a-guide-for-content-creators"
-    },
-    {
-        "title": "Unlocking the Power of UGC Brand Deals",
-        "image": "https://storage.googleapis.com/landing-cultcreative/resources/Blog%202%20-%20Unlocking%20the%20Power%20of%20UGC%20Brand%20Deals.jpg",
-        "path": "/resources/unlocking-the-power-of-influencer-brand-deals"
-    },
-    {
-        "title": "Turn Your Content Creation Passion into Profit",
-        "image": "https://storage.googleapis.com/landing-cultcreative/resources/Blog%203%20-%20Turn%20Your%20Content%20Creation%20Passion%20into%20Profit.jpg",
-        "path": "/resources/turn-your-content-creation-passion-into-profit"
-    },
-    {
-        "title": "Key UGC Content Creation Ideas and How to Stay Inspired",
-        "image": "https://storage.googleapis.com/landing-cultcreative/resources/Blog%204%20-%20Key%20UGC%20Content%20Creation%20Ideas%20And%20How%20To%20Stay%20Inspired.jpg",
-        "path": "/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired"
-    },
-    {
-        "title": "UGC Creativity How-To Guide + Examples",
-        "image": "https://storage.googleapis.com/landing-cultcreative/resources/Blog%205%20-%20Unlocking%20UGC%20Creativity%20How-To%20Guide%20%2B%20Examples.jpg",
-        "path": "/resources/unlocking-ugc-creativity-howto-guide-examples"
-    },
-    {
-        "title": "Why and How Does Creator Marketing Work?",
-        "image": "https://storage.googleapis.com/landing-cultcreative/resources/Blog%206%20-%20Why%20And%20How%20Does%20Creator%20Marketing%20Work.jpg",
-        "path": "/resources/why-and-how-does-creator-marketing-work"
-    }
+  {
+    "title": "A Starter’s Guide for Content Creators in Malaysia",
+    "image": "/images/resources/resource1.png",
+    "path": "/resources/a-starters-guide-for-content-creators-in-malaysia"
+  },
+  {
+    "title": "Unlocking the Power of UGC Brand Deals",
+    "image": "/images/resources/resource2.png",
+    "path": "/resources/unlocking-the-power-of-influencer-brand-deals"
+  },
+  {
+    "title": "Turn Your Content Creation Passion into Profit",
+    "image": "/images/resources/resource3.png",
+    "path": "/resources/turn-your-content-creation-passion-into-profit"
+  },
+  {
+    "title": "Key UGC Content Creation Ideas and How to Stay Inspired",
+    "image": "/images/resources/resource4.png",
+    "path": "/resources/key-ugc-content-creation-ideas-and-how-to-stay-inspired"
+  },
+  {
+    "title": "UGC Creativity How-To Guide + Examples",
+    "image": "/images/resources/resource5.png",
+    "path": "/resources/unlocking-ugc-creativity-howto-guide-examples"
+  },
+  {
+    "title": "Why and How Does Creator Marketing Work?",
+    "image": "/images/resources/resource6.png",
+    "path": "/resources/why-and-how-does-creator-marketing-work"
+  },
+  {
+    "title": "The Impact of Malaysian Creator Marketing on Brand Awareness and Sales",
+    "image": "/images/resources/resource7.png",
+    "path": "/resources/the-impact-of-malaysian-creator-marketing-on-brand-awareness-and-sales"
+  },
+  {
+    "title": "Common Challenges That Businesses Face When Dealing with Content Creators",
+    "image": "/images/resources/resource8.png",
+    "path": "/resources/common-challenges-that-businesses-face-when-dealing-with-content-creators"
+  },
+  {
+    "title": "What Is UGC?",
+    "image": "/images/resources/resource9.png",
+    "path": "/resources/what-is-ugc"
+  },
+  {
+    "title": "The Power of User-Generated Content (UGC) for Businesses: Why It’s Worth the Investment",
+    "image": "/images/resources/resource10.png",
+    "path": "/resources/the-power-of-usergenerated-content-ugc-for-businesses-why-its-worth-the-investment"
+  },
+  {
+    "title": "Elevating Your Brand with Cult Creative",
+    "image": "/images/resources/resource11.png",
+    "path": "/resources/elevating-your-brand-with-cult-creative"
+  }
 ]

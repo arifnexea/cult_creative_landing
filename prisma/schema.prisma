@@ -20,8 +20,8 @@ model Brand {
   phoneNumber             String
   companyName             String
   companySize             String
-  industries              String[]
-  otherindustriesString   String?
+  industry                String
+  otherIndustry           String?
   monthlyInfluencerBudget Int
 }
 

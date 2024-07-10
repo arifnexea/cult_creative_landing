@@ -1,7 +1,7 @@
-import Header from "@/app/components/Header";
-import resourcesData from "@/app/contants/resources.json";
-import News from "@/app/components/News";
-import LastSection from "@/app/sections/brandsection/LastSection";
+import Header from "@/app/components/Header.jsx";
+import resources from "@/app/contants/resources.json";
+import News from "@/app/components/News.jsx";
+import LastSection from "@/app/sections/brandsection/LastSection.jsx";
 
 export const metadata = {
   title: "Resources",
@@ -23,8 +23,8 @@ const Resources = () => {
         </div>
         <div className="px-5 py-10 bg-slate-300">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {resourcesData.map((elem, i) => (
-              <div key={i} className=" cursor-pointer">
+            {resources.map((elem, i) => (
+              <div key={i} className="cursor-pointer">
                 <News
                   title={elem.title}
                   image={elem.image}
