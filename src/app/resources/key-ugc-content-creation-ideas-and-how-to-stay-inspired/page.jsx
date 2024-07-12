@@ -60,7 +60,7 @@ const Resource4 = () => {
         </rp.p>
         <rp.ul>
           <rp.li>
-            <b>Exploring trending topics</b> Staying on top of trending topics
+            <b>Exploring trending topics.</b> Staying on top of trending topics
             and current events can provide a wealth of inspiration for content
             creation. From popular challenges to viral news stories, there’s
             always something new to explore and centre your content around.
