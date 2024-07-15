@@ -88,7 +88,7 @@ export const CreatorForm = () => {
 
   const onSubmit = async (value, resetForm) => {
     setLoading(true);
-    await fetch("/api/createUser", {
+    await fetch("/api/submit-creator", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",

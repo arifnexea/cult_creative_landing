@@ -15,6 +15,7 @@ datasource db {
 
 model Brand {
   id                      String   @id @default(cuid())
+  createdOn               DateTime
   name                    String
   email                   String
   phoneNumber             String
@@ -27,6 +28,7 @@ model Brand {
 
 model Creator {
   id                   String   @id @default(cuid())
+  createdOn            DateTime
   name                 String
   pronoun              String
   phoneNumber          String

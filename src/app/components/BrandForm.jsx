@@ -45,9 +45,11 @@ export const BrandForm = ({ color, image }) => {
 
   const onSubmit = async (value, resetForm) => {
     setLoading(true);
-    await fetch("/api/sendBrand", {
+    await fetch("/api/submit-brand", {
       method: "POST",
-      headers: { "Content-Type": "application/json; charset=UTF-8" },
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      },
       body: JSON.stringify(value),
     })
       .then((res) => res.json())
