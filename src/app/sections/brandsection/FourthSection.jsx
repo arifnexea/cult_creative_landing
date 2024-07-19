@@ -3,6 +3,49 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+// # Components for subscription info
+
+const Box = ({ children }) => (
+  <motion.div
+    whileHover={{
+      scale: 1.1,
+    }}
+    className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-2xl"
+  >
+    <div className="flex flex-col gap-5 justify-center py-5">
+      {children}
+    </div>
+  </motion.div>
+);
+
+const Label = ({ isHighlighted, children }) => (
+  <div className={`border-2 border-[#8A5AFE] ${isHighlighted && "bg-[#8A5AFE]"} px-5 inline-block rounded-full text-center m-auto`}>
+    <h3 className={`text-md ${isHighlighted && "text-[#F4F4F4]"} font-semibold`}>{children}</h3>
+  </div>
+);
+
+// Both arguments shall be strings
+const Price = ({ price, validity }) => (
+  <div className="text-center">
+    <p className="text-2xl"><b>{price}</b></p>
+    <p>validity: {validity}</p>
+  </div>
+);
+
+const Detail = ({ children }) => (
+  <p className="text-lg mx-5">
+    {children}
+  </p>
+);
+
+const ValueAdd = () => (
+  <p className="text-sm mx-5">
+    Value Add: an in-depth performance report (metrics, audience sentiments & suggestions)
+  </p>
+);
+
+// # Page
+
 const FourthSection = () => {
   return (
     <section
@@ -16,115 +59,70 @@ const FourthSection = () => {
         </span>{" "}
         that <span className="font-serif italic -tracking-[.3rem]">fits</span>
       </h2>
-      <div className="flex flex-col lg:flex-row gap-10 mt-16 px-9">
-        <motion.div
-          whileHover={{
-            scale: 1.1,
-          }}
-          className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-2xl"
-        >
-          <div className="flex flex-col gap-5  justify-center py-5">
-            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center m-auto">
-              <h3 className="text-md font-semibold">Trial</h3>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold">RM1,500</p>
-              <p>validity: 1 month</p>
-            </div>
-            <p className="text-lg mx-10">
-              <span className="font-bold">2</span> UGC Credits
-            </p>
-            <p className="text-lg mx-10">
-              <span className="font-bold">2</span> UGC Videos/Nano-Micro Creators
-            </p>
-            <p className="text-lg mx-10">
-              <span className="font-bold">1</span> Campaign
-            </p>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{
-            scale: 1.1,
-          }}
-          className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-2xl"
-        >
-          <div className="flex flex-col gap-5 justify-center py-5">
-            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center m-auto">
-              <h3 className="text-md font-semibold">Basic</h3>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold">RM5,000</p>
-              <p>validity: 2 months</p>
-            </div>
-            <p className="text-lg mx-10">
-              <span className="font-bold">10</span> UGC Credits
-            </p>
-            <p className="text-lg mx-10">
-              <span className="font-bold">10</span> UGC Videos/Nano-Micro Creators
-            </p>
-            <p className="text-lg mx-10">
-              Up to <span className="font-bold">2</span> Campaigns
-            </p>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{
-            scale: 1.1,
-          }}
-          className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-2xl"
-        >
-          <div className="flex flex-col gap-5 justify-center py-5">
-            <div className="border-2 border-[#8A5AFE] bg-[#8A5AFE] px-5 inline-block rounded-full text-center m-auto">
-              <h3 className="text-md text-[#F4F4F4] font-semibold">Essential</h3>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold">RM13,500</p>
-              <p>validity: 6 months</p>
-            </div>
-            <p className="text-lg mx-10">
-              <span className="font-bold">30</span> UGC Credits
-            </p>
-            <p className="text-lg mx-10">
-              <span className="font-bold">30</span> UGC Videos/Nano-Micro Creators
-            </p>
-            <p className="text-lg mx-10">
-              Up to <span className="font-bold">6</span> Campaigns
-            </p>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{
-            scale: 1.1,
-          }}
-          className="border-2 border-[#8A5AFE] p-3 basis-1/4 rounded-2xl"
-        >
-          <div className="flex flex-col gap-5 justify-center py-5">
-            <div className="border-2 border-[#8A5AFE] px-5 inline-block rounded-full text-center m-auto">
-              <h3 className="text-md font-semibold">Pro</h3>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold">RM21,250</p>
-              <p>validity: 12 months</p>
-            </div>
-            <p className="text-lg mx-10">
-              <span className="font-bold">50</span> UGC Credits
-            </p>
-            <p className="text-lg mx-10">
-              <span className="font-bold">50</span> UGC Videos/Nano-Micro Creators
-            </p>
-            <p className="text-lg mx-10">
-              Up to <span className="font-bold">12</span> Campaigns
-            </p>
-          </div>
-        </motion.div>
+      <div className="flex flex-col lg:flex-row gap-10 mt-16 my-6 px-9">
+        <Box>
+          <Label>Trial</Label>
+          <Price
+            price="RM2,800"
+            validity="1 month"
+          />
+          <Detail><b>5</b> UGC Credits</Detail>
+          <Detail><b>5</b> UGC Videos/Nano-Micro Creators</Detail>
+          <Detail><b>1</b> Campaign</Detail>
+          <Detail>Credit Validity: <b>1</b> Month</Detail>
+        </Box>
+        <Box>
+          <Label>Basic</Label>
+          <Price
+            price="RM8,000"
+            validity="3 months"
+          />
+          <Detail><b>15</b> UGC Credits</Detail>
+          <Detail><b>15</b> UGC Videos/Nano-Micro Creators</Detail>
+          <Detail>Up to <b>3</b> Campaigns</Detail>
+          <Detail>Credit Validity: <b>3</b> Months</Detail>
+        </Box>
+        <Box>
+          <Label isHighlighted>
+            Essential
+          </Label>
+          <Price
+            price="RM13,500"
+            validity="4 months"
+          />
+          <Detail><b>30</b> UGC Credits</Detail>
+          <Detail><b>30</b> UGC Videos/Nano-Micro Creators</Detail>
+          <Detail>Up to <b>6</b> Campaigns</Detail>
+          <Detail>Credit Validity: <b>4</b> Months</Detail>
+          <ValueAdd />
+        </Box>
+        <Box>
+          <Label>Pro</Label>
+          <Price
+            price="RM23,000"
+            validity="8 months"
+          />
+          <Detail><b>50</b> UGC Credits</Detail>
+          <Detail><b>50</b> UGC Videos/Nano-Micro Creators</Detail>
+          <Detail>Up to <b>10</b> Campaigns</Detail>
+          <Detail>Credit Validity: <b>8</b> Months</Detail>
+          <ValueAdd />
+        </Box>
       </div>
-      {/* Add top margin because the above cards expand when moused-over */}
-      <p className="text-lg text-center my-4">
-        *Additional charges apply for cross-posting videos and monthly ads-usage rights. Bulk price available.
-      </p>
-      <div className="text-center mt-8">
+      <div className="text-center">
+        <div className="text-lg">
+          <p className="my-4">
+            *Additional charges apply for cross-posting videos and monthly ads-usage rights.
+            Bulk price available.
+          </p>
+          <p className="my-2 font-bold">
+            Looking for a better fit?
+            We offer custom packages that can be tailored to your campaign needs.
+            Contact us today to learn more.
+          </p>
+        </div>
         <Link
-          href={"https://calendly.com/danishmokhtar/30min?month=2024-03"}
+          href="https://calendly.com/danishmokhtar/30min?month=2024-03"
           target="_blank"
         >
           <motion.button
