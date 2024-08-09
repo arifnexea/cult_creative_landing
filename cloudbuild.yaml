@@ -23,3 +23,6 @@ serviceAccount: "cloud-run-landing@cult-creative-421007.iam.gserviceaccount.com"
 
 images:
   - gcr.io/cult-creative-421007/github.com
+
+options:
+  defaultLogsBucketBehavior: "REGIONAL_USER_OWNED_BUCKET"
