@@ -51,7 +51,7 @@ const CreatorFirst = () => {
               lineHeight: "85%",
             }}
           >
-            get <span className="font-times">brand Afiqq</span>
+            get <span className="font-times">brandsssss</span>
             <br />
             <span className="font-times italic -tracking-[.5rem] xl:-tracking-[.8rem]">
               deals,{" "}
