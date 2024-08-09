@@ -1,12 +1,13 @@
 steps:
   # Step 1: Build the Docker image
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/cult-creative-421007/github.com", "."]
+    args:
+      ["build", "-t", "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA", "."]
 
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/cult-creative-421007/github.com"]
+    args: ["push", "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA"]
 
-  - name: "gcr.io/google.com/cloudsdktook/cloud-sdk"
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args:
       [
@@ -14,7 +15,7 @@ steps:
         "deploy",
         "cult-creative-landing",
         "--image",
-        "gcr.io/cult-creative-421007/github.com",
+        "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA",
         "--region",
         "asia-southeast1",
       ]
@@ -22,7 +23,7 @@ steps:
 serviceAccount: "cloud-run-landing@cult-creative-421007.iam.gserviceaccount.com"
 
 images:
-  - gcr.io/cult-creative-421007/github.com
+  - "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA"
 
 options:
   defaultLogsBucketBehavior: "REGIONAL_USER_OWNED_BUCKET"
