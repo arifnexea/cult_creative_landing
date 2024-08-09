@@ -19,5 +19,7 @@ steps:
         "asia-southeast1",
       ]
 
+serviceAccount: "cloud-run-landing@cult-creative-421007.iam.gserviceaccount.com"
+
 images:
   - gcr.io/cult-creative-421007/github.com
