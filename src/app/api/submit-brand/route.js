@@ -34,7 +34,7 @@ export const POST = async (req) => {
       }),
       {
         status: 200,
-      },
+      }
     );
   } catch (error) {
     return new NextResponse(
@@ -43,16 +43,17 @@ export const POST = async (req) => {
       }),
       {
         status: 404,
-      },
+      }
     );
   }
 };
 
-export const GET = async () => new NextResponse(
-  JSON.stringify({
-    message: "Hello",
-  }),
-  {
-    status: 200,
-  },
-);
+export const GET = async () =>
+  new NextResponse(
+    JSON.stringify({
+      message: "Hello",
+    }),
+    {
+      status: 200,
+    }
+  );

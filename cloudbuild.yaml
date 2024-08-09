@@ -5,3 +5,19 @@ steps:
 
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "gcr.io/cult-creative-421007/github.com"]
+
+  - name: "gcr.io/google.com/cloudsdktook/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      [
+        "run",
+        "deploy",
+        "cult-creative-landing",
+        "--image",
+        "gcr.io/cult-creative-421007/github.com",
+        "--region",
+        "asia-southeast1",
+      ]
+
+images:
+  - gcr.io/cult-creative-421007/github.com
