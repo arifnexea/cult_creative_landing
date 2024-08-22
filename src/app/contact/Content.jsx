@@ -32,9 +32,8 @@ export const Content = () => (
         <div className="flex flex-col justify-center items-center text-center gap-4">
           <h3 className="text-3xl font-semibold">address</h3>
           <h3 className="xl:w-[70%] lg:w-[70%] w-[70%] justify-text">
-            Lot 4-401 & 4-402, Level 4, The Starling Mall, Jalan SS
-            21/37, Damansara Utama, 47400 Petaling Jaya, Selangor,
-            Malaysia.
+            Lot 4-401 & 4-402, Level 4, The Starling Mall, Jalan SS 21/37,
+            Damansara Utama, 47400 Petaling Jaya, Selangor, Malaysia.
           </h3>
         </div>
       </div>

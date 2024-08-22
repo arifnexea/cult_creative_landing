@@ -40,3 +40,5 @@ videos/*
 !videos/*.json
 !videos/*.js
 !videos/*.ts
+
+/databaseConfig
