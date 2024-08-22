@@ -34,7 +34,7 @@ RUN \
     fi
 
 # Generate Prisma Client
-RUN yarn deploy
+# RUN yarn deploy
 
 # Production image, copy all the files and run next
 FROM base AS runner
