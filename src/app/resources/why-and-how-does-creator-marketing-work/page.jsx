@@ -2,6 +2,11 @@ import resources from "@/app/contants/resources.json";
 import * as rp from "@/app/components/resource-page.jsx";
 
 const resource = resources[5];
+const relatedResources = [
+  resources[4], 
+  resources[9],
+  resources[0],
+];
 
 const title = resource.title;
 
@@ -28,7 +33,7 @@ export const metadata = {
 const Resource6 = () => {
   return (
     <>
-      <rp.Page keywords={keywords}>
+      <rp.Page keywords={keywords} relatedResources={relatedResources}>
         <rp.h1>{title}</rp.h1>
         <rp.p>
           Here’s the short answer: people no longer want brands to simply sell to them.

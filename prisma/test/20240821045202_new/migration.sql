@@ -36,3 +36,14 @@ CREATE TABLE "Creator" (
 
     CONSTRAINT "Creator_pkey" PRIMARY KEY ("id")
 );
+
+CREATE TABLE "Contact" (
+    "id" TEXT NOT NULL,
+    "createdOn" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "name" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "subject" TEXT NOT NULL,
+    "message" TEXT NOT NULL,
+    
+    CONSTRAINT "Contact_pkey" PRIMARY KEY ("id")
+);

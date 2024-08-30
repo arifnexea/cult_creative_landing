@@ -2,6 +2,11 @@ import resources from "@/app/contants/resources.json";
 import * as rp from "@/app/components/resource-page.jsx";
 
 const resource = resources[2];
+const relatedResources = [
+  resources[5], 
+  resources[9],
+  resources[0],
+];
 
 const title = resource.title;
 
@@ -29,7 +34,7 @@ export const metadata = {
 const Resource3 = () => {
   return (
     <>
-      <rp.Page keywords={keywords}>
+      <rp.Page keywords={keywords} relatedResources={relatedResources}>
         <rp.h1>{title}</rp.h1>
 
         <rp.h2>How to Turn Content Creation into a Career</rp.h2>

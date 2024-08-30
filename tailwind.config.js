@@ -14,18 +14,15 @@ module.exports = {
       serif: ["ui-serif", "Georgia"],
       times: ["Times New Roman Condensed"],
     },
-
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       keyframes: {
         "loop-scroll-optics": {
           to: { transform: "translateX(calc(-100% - 8.5rem))" },
         },
-
         "loop-scroll-companies": {
           to: { transform: "translateX(calc(-100% - 8rem))" },
         },
@@ -37,12 +34,22 @@ module.exports = {
             opacity: 1,
           },
         },
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       animation: {
         "loop-scroll-optics": "loop-scroll-optics 15s linear infinite",
         "loop-scroll-companies": "loop-scroll-companies 15s linear infinite",
         "form-animation": "form-to-down .3s linear",
         "loop-paused": "animation-play-state: paused",
+        marquee: 'marquee 15s linear infinite',
+        'marquee-reverse': 'marquee-reverse 15s linear infinite',
       },
     },
   },

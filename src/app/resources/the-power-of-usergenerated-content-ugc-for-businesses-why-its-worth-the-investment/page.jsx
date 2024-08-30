@@ -2,6 +2,11 @@ import resources from "@/app/contants/resources.json";
 import * as rp from "@/app/components/resource-page.jsx";
 
 const resource = resources[9];
+const relatedResources = [
+  resources[5], 
+  resources[9],
+  resources[0],
+];
 
 const title = resource.title;
 
@@ -29,7 +34,7 @@ export const metadata = {
 const Resource10 = () => {
   return (
     <>
-      <rp.Page keywords={keywords}>
+      <rp.Page keywords={keywords} relatedResources={relatedResources}>
         <rp.h1>{title}</rp.h1>
         <rp.p>
           Businesses are adopting and experimenting with the growing number of

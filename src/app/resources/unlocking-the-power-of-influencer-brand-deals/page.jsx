@@ -2,6 +2,11 @@ import resources from "@/app/contants/resources.json";
 import * as rp from "@/app/components/resource-page.jsx";
 
 const resource = resources[1];
+const relatedResources = [
+  resources[2], 
+  resources[3],
+  resources[4],
+];
 
 // Not to match `resource.title`
 const title = "Unlocking the Power of Influencer Brand Deals";
@@ -28,7 +33,7 @@ export const metadata = {
 const Resource2 = () => {
   return (
     <>
-      <rp.Page keywords={keywords}>
+      <rp.Page keywords={keywords} relatedResources={relatedResources}>
         <rp.h1>{title}</rp.h1>
         <rp.p>
           Influencer and User-Generated Content (UGC) marketing is growing rapidly in Malaysia. Brands begin to recognise the power that social media users have in boosting their brand awareness, customer engagement, and ultimately, sales.

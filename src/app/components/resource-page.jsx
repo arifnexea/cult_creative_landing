@@ -2,6 +2,8 @@
 
 import Header from "@/app/components/Header.jsx";
 import LastSection from "@/app/sections/brandsection/LastSection.jsx";
+import Image from "next/image";
+import Link from "next/link";
 import { InstagramEmbed } from "react-social-media-embed";
 
 // Components for resource pages
@@ -9,12 +11,11 @@ import { InstagramEmbed } from "react-social-media-embed";
 
 // `children` should contain the elements defined here
 // `keywords` shall be an array of strings
-export const Page = ({ children, keywords }) => (
+export const Page = ({ children, keywords = [], relatedResources = [] }) => (
   <>
     <Header />
     <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
       <div className="text-center py-10 bg-[#8A5AFE]">
-        {/* Don't use `h1`, because each article has its own title */}
         <p className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
           Resources
         </p>
@@ -27,6 +28,37 @@ export const Page = ({ children, keywords }) => (
 
         {/* Keywords */}
         <div className="col-span-1 p-5">
+          <div className="mt-8">
+            <p className="text-start text-2xl font-semibold text-black">You’ll Also Like</p>
+            <div className="flex flex-wrap gap-2 my-4">
+              {relatedResources.length > 0 ? (
+                relatedResources.map((relatedResource) => (
+                  <div key={relatedResource.path} className="flex gap-4">
+                    <Link href={relatedResource.path}>
+                      <div className="relative w-24 h-24 flex-shrink-0 cursor-pointer overflow-hidden">
+                        <Image
+                          src={relatedResource.image}
+                          alt={relatedResource.title}
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-md transition-transform duration-300 ease-in-out transform hover:scale-105"
+                        />
+                      </div>
+                    </Link>
+                    <div className="flex flex-col justify-center">
+                      <Link href={relatedResource.path} passHref>
+                        <p className="text-sm font-medium text-black no-underline cursor-pointer">
+                          {relatedResource.title}
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>No related resources available.</p>
+              )}
+            </div>
+          </div>
           <p className="text-start text-2xl font-semibold text-pretty text-black">
             Keywords
           </p>
@@ -37,6 +69,7 @@ export const Page = ({ children, keywords }) => (
               </div>
             ))}
           </div>
+          
         </div>
       </div>
     </main>
