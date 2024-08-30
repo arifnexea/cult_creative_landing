@@ -9,7 +9,10 @@ import FormInput from "./FormInput.jsx";
 
 const schema = yup.object({
   name: yup.string().required("Name is required"),
-  email: yup.string().email("Invalid email address").required("Email is required"),
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is required"),
   subject: yup.string().required("Subject is required"),
   message: yup.string().required("Message is required"),
 });
@@ -59,18 +62,25 @@ const Content = () => {
       <div className="flex xl:flex-row lg:flex-row flex-col justify-center">
         <div className="flex flex-col flex-start justify-items-start p-7 basis-1/2">
           <div className="flex flex-col justify-center items-center align-center p-8">
-            <Icon icon="icomoon-free:location" className="text-6xl text-[#8A5AFE]" />
+            <Icon
+              icon="icomoon-free:location"
+              className="text-6xl text-[#8A5AFE]"
+            />
           </div>
           <div className="flex flex-col justify-center items-center text-center gap-4">
             <h3 className="text-3xl font-semibold">address</h3>
             <h3 className="xl:w-[70%] lg:w-[70%] w-[70%] justify-text">
-              Lot 4-401 & 4-402, Level 4, The Starling Mall, Jalan SS 21/37, Damansara Utama, 47400 Petaling Jaya, Selangor, Malaysia.
+              Lot 4-401 & 4-402, Level 4, The Starling Mall, Jalan SS 21/37,
+              Damansara Utama, 47400 Petaling Jaya, Selangor, Malaysia.
             </h3>
           </div>
         </div>
         <div className="flex flex-col flex-start justify-items-start p-7 basis-1/2">
           <div className="flex flex-col justify-center items-center align-center p-8">
-            <Icon icon="tabler:mail-filled" className="text-6xl text-[#8A5AFE]" />
+            <Icon
+              icon="tabler:mail-filled"
+              className="text-6xl text-[#8A5AFE]"
+            />
           </div>
           <div className="flex flex-col justify-center items-center">
             <h3 className="text-3xl font-semibold">Mail</h3>
@@ -103,7 +113,9 @@ const Content = () => {
                           className="w-full p-3 rounded-md shadow-sm bg-[#CFB5F6] text-black"
                         />
                         {touched.name && errors.name && (
-                          <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                          <p className="text-red-500 text-sm mt-1">
+                            {errors.name}
+                          </p>
                         )}
                       </div>
                     )}
@@ -125,7 +137,9 @@ const Content = () => {
                           className="w-full p-3 rounded-md shadow-sm bg-[#CFB5F6] text-black"
                         />
                         {touched.email && errors.email && (
-                          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                          <p className="text-red-500 text-sm mt-1">
+                            {errors.email}
+                          </p>
                         )}
                       </div>
                     )}
@@ -148,7 +162,9 @@ const Content = () => {
                         className="w-full p-3 rounded-md shadow-sm bg-[#CFB5F6] text-black"
                       />
                       {touched.subject && errors.subject && (
-                        <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.subject}
+                        </p>
                       )}
                     </div>
                   )}
@@ -169,7 +185,9 @@ const Content = () => {
                         className="w-full p-3 rounded-md shadow-sm bg-[#CFB5F6] text-black"
                       />
                       {touched.message && errors.message && (
-                        <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.message}
+                        </p>
                       )}
                     </div>
                   )}
@@ -185,7 +203,7 @@ const Content = () => {
                     loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >
-                  {loading ? "Sending..." : "Send Message"}
+                  {loading ? "Sending..." : "Send message"}
                 </motion.button>
               </div>
             </Form>
