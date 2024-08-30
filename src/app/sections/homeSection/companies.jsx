@@ -36,22 +36,38 @@ const HomeCompanies = ({ title }) => {
         <hr className="grow border-2 border-[#1340FF]" />
       </div>
 
-      <div className="flex space-x-10 animate-marquee">
+      <Companies
+        companiesImages={companiesGroup1}
+        rounded="rounded-full"
+        type="companies"
+        imgStyle="w-20 h-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        animation={"animate-loop-scroll-companies"}
+      />
+
+      <Companies
+        companiesImages={companiesGroup2}
+        rounded="rounded-full"
+        type="companies"
+        imgStyle="w-20 h-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+        animation={"animate-loop-scroll-companies-reverse"}
+      />
+
+      {/* <div className="flex space-x-10 animate-marquee">
         <Companies
           companiesImages={companiesGroup1}
           rounded="rounded-full"
           type="companies"
-          imgStyle="w-16 h-16 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          // imgStyle="w-16 h-16 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
         />
-      </div>
-      <div className="flex space-x-10 animate-marquee-reverse mt-5">
+      </div> */}
+      {/* <div className="flex space-x-10 animate-marquee-reverse mt-5">
         <Companies
           companiesImages={companiesGroup2}
           rounded="rounded-full"
           type="companies"
-          imgStyle="w-16 h-16 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          // imgStyle="w-16 h-16 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
         />
-      </div>
+      </div> */}
     </section>
   );
 };
