@@ -37,6 +37,7 @@ export const POST = async (req) => {
       }
     );
   } catch (error) {
+    console.log(error);
     return new NextResponse(
       JSON.stringify({
         error: "Form failed to submit. Please contact our admin.",
