@@ -20,30 +20,20 @@
 #         "asia-southeast1",
 #       ]
 
-# serviceAccount: "cloud-run-landing@cult-creative-421007.iam.gserviceaccount.com"
+# serviceAccount: "projects/cult-creative-421007/serviceAccounts/cloud-run-landing@cult-creative-421007.iam.gserviceaccount.com"
 
 # images:
 #   - "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA"
 
 # options:
 #   defaultLogsBucketBehavior: "REGIONAL_USER_OWNED_BUCKET"
-
 steps:
   # Step 1: Build the Docker image
   - name: "gcr.io/cloud-builders/docker"
-    args:
-      # ["build", "-t", "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA", "."]
-      [
-        "build",
-        "-t",
-        "gcr.io/cult-creative-421007/github.com:${COMMIT_SHA:-default}",
-        ".",
-      ]
+    args: ["build", "-t", "gcr.io/cult-creative-421007/github.com:latest", "."]
 
   - name: "gcr.io/cloud-builders/docker"
-    args:
-      # ["push", "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA"]
-      ["push", "gcr.io/cult-creative-421007/github.com:${COMMIT_SHA:-default}"]
+    args: ["push", "gcr.io/cult-creative-421007/github.com:latest"]
 
   # Step 3: Deploy to Google Cloud Run, using secrets from Google Cloud Secret Manager
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
@@ -54,13 +44,9 @@ steps:
         "deploy",
         "cult-creative-landing",
         "--image",
-        "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA",
+        "gcr.io/cult-creative-421007/github.com:latest",
         "--region",
         "asia-southeast1",
-        "--platform",
-        "managed",
-        "--service-account",
-        "projects/cult-creative-421007/serviceAccounts/cloud-run-landing@cult-creative-421007.iam.gserviceaccount.com",
         "--set-secrets",
         "DATABASE_URL=DATABASE_URL:latest",
         "--set-secrets",
@@ -75,7 +61,7 @@ steps:
 serviceAccount: "projects/cult-creative-421007/serviceAccounts/cloud-run-landing@cult-creative-421007.iam.gserviceaccount.com"
 
 images:
-  - "gcr.io/cult-creative-421007/github.com:$COMMIT_SHA"
+  - "gcr.io/cult-creative-421007/github.com:latest"
 
 options:
   defaultLogsBucketBehavior: "REGIONAL_USER_OWNED_BUCKET"
