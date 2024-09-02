@@ -124,7 +124,7 @@ const HomeFirst = () => {
             whileTap={{ scale: 0.8 }}
             className="bg-slate-100 py-2 px-12 rounded-full text-[#1340FF] font-aileron uppercase font-bold"
           >
-            Get Started
+            Our Services
           </motion.button>
         </Link>
       </div>

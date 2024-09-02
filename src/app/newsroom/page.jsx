@@ -17,13 +17,16 @@ const Newsroom = () => {
     <>
       <Header />
       <main className="flex min-h-screen flex-col bg-[#F4F4F4] text-white">
-        <div className="text-center py-10 bg-[#8A5AFE]">
-          <h1 className="text-2xl md:text-4xl lg:text-6xl font-times font-semibold">
-            Newsroom
+        <div className="text-center py-10 bg-[#004830]">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-aileron">
+            News
+            <span className="font-times italic text-[1.15em]">room</span>
           </h1>
         </div>
-        <div className="px-5 py-10 bg-slate-300">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+
+        <div className="px-5 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {newsdata.map((elem, i) => (
               <div key={i}>
                 <News

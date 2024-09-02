@@ -17,7 +17,7 @@ const News = ({ image, date, link, title, source, type, path, author }) => {
                 alt={source}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out" // Rounded corners for the image
+                className="rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out" 
               />
             </div>
           </Link>

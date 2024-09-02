@@ -149,7 +149,7 @@ const FourthSection = () => {
             whileTap={{ scale: 0.8 }}
             className="uppercase bg-[#8A5AFE] py-2 px-12 rounded-full text-[#F4F4F4] font-aileron font-semibold"
           >
-            Book a call
+            Let’s Have A Quick Chat
           </motion.button>
         </Link>
       </div>
