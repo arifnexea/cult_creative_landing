@@ -44,3 +44,4 @@ videos/*
 /databaseConfig
 .env
 cult_creative_cloud.json
+cloudbuild.yaml
