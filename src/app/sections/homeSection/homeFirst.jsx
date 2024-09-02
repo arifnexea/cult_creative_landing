@@ -28,7 +28,7 @@ const HomeFirst = () => {
 
   return (
     <section className="p-8 bg-[#1340FF]">
-      {/* Testing from arif */}
+      
       <div className="flex lg:flex-row flex-col justify-stretch gap-10 items-center lg:items-start text-[#F4F4F4]">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
