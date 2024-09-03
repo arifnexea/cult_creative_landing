@@ -52,12 +52,12 @@ const Resource10 = () => {
         </rp.p>
         <rp.IgEmbed url="https://www.instagram.com/p/C6GQr38Oehb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" />
 
-        <rp.h2>Organic UGC</rp.h2>
+        {/* <rp.h2>Organic UGC</rp.h2>
         <rp.p>
           These are content created voluntarily by the consumers, simply because
           they feel inspired to share a good word about the business with their
           followers.
-        </rp.p>
+        </rp.p> */}
 
         <rp.h2>Improves Efficiency</rp.h2>
         <rp.p>

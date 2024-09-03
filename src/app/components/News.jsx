@@ -5,10 +5,13 @@ import React from "react";
 const News = ({ image, date, link, title, source, type, path, author }) => {
   const href = type === "resource" ? path : link;
 
+  // Conditional class for image width
+  const imageWidthClass = type === "newsroom" ? "md:w-full" : "md:w-3/5";
+
   return (
-    <div className={`flex flex-col bg-stone-100 rounded-lg overflow-hidden p-3 mb-4 w-full`}>
+    <div className={`flex flex-col md:${type === "newsroom" ? "flex-col" : "flex-row"} bg-stone-100 rounded-lg overflow-hidden p-3 mb-4 w-full`}>
       {/* Image Section */}
-      <div className="relative w-full h-[300px] mb-3">
+      <div className={`flex-shrink-0 w-full ${imageWidthClass} h-[300px] relative mb-3 md:mb-0`}>
         {image ? (
           <Link href={href} passHref>
             <div className="w-full h-full relative cursor-pointer">
@@ -27,21 +30,21 @@ const News = ({ image, date, link, title, source, type, path, author }) => {
       </div>
 
       {/* Text Section */}
-      <div className="w-full text-black">
+      <div className="flex-grow flex flex-col justify-center p-3">
         <Link href={href} passHref>
-          <div className="flex flex-col text-black cursor-pointer">
+          <div className="flex flex-col h-full text-black cursor-pointer">
             {type !== "resource" && (
-              <div className="inline-flex gap-1 text-xs text-black mb-2">
+              <div className="inline-flex gap-1 text-xs text-black mb-2 md:mb-3">
                 <p className="font-semibold">Featured</p>
                 <p>.</p>
                 <p>{date}</p>
               </div>
             )}
-            <p className="text-lg md:text-xl lg:text-2xl font-semibold mb-2 leading-tight">
+            <p className="text-lg md:text-xl lg:text-2xl font-semibold mb-2 md:mb-3 leading-tight">
               {title}
             </p>
             {author && (
-              <p className="text-[10px] md:text-xs text-gray-700 mb-2">
+              <p className="text-[10px] md:text-xs text-gray-700 mb-2 md:mb-3">
                 Written by <span className="font-semibold">{author}</span>
               </p>
             )}
