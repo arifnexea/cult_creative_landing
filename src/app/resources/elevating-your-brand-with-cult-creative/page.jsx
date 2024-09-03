@@ -4,9 +4,9 @@ import { whatsappLink_interestedMsg } from "@/app/components/misc.js";
 
 const resource = resources[10];
 const relatedResources = [
-  resources[1], 
-  resources[2],
-  resources[3],
+  resources[9], 
+  resources[0],
+  resources[1],
 ];
 
 const latestResources = [

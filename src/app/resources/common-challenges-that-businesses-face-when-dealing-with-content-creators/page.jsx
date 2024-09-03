@@ -5,9 +5,9 @@ import * as rp from "@/app/components/resource-page.jsx";
 
 const resource = resources[7];
 const relatedResources = [
-  resources[5], 
+  resources[6], 
+  resources[8],
   resources[9],
-  resources[0],
 ];
 
 const latestResources = [

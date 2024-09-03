@@ -3,8 +3,8 @@ import * as rp from "@/app/components/resource-page.jsx";
 
 const resource = resources[9];
 const relatedResources = [
-  resources[5], 
-  resources[9],
+  resources[8], 
+  resources[10],
   resources[0],
 ];
 

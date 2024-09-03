@@ -4,8 +4,8 @@ import * as rp from "@/app/components/resource-page.jsx";
 const resource = resources[5];
 const relatedResources = [
   resources[4], 
-  resources[9],
-  resources[0],
+  resources[6],
+  resources[7],
 ];
 
 const latestResources = [
