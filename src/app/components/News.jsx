@@ -5,7 +5,6 @@ import React from "react";
 const News = ({ image, date, link, title, source, type, path, author }) => {
   const href = type === "resource" ? path : link;
 
-  // Conditional class for image width
   const imageWidthClass = type === "newsroom" ? "md:w-full" : "md:w-3/5";
 
   return (
